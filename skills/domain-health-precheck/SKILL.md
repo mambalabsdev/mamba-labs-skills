@@ -2,6 +2,12 @@
 name: domain-health-precheck
 description: |
   Check if a sending domain is safe for cold outreach by scanning SPF, DKIM, DMARC records, and blacklist status. Takes a single domain, calls the Mamba Labs Domain Deliverability Checker MCP server, and returns a plain-English deliverability verdict with pass/fail per check and recommended DNS fixes. Use this skill whenever someone asks about email deliverability, domain health, SPF/DKIM/DMARC setup, whether a domain is blacklisted, whether their sending domain is ready for cold email, or if their email infrastructure is configured correctly. Also trigger when someone says "check my domain" or "am I going to land in spam."
+license: MIT
+metadata:
+  category: deliverability
+  tags: [dns, spf, dkim, dmarc, domain-health]
+compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
+version: 1.0.0
 ---
 
 # Domain Health Pre-Check

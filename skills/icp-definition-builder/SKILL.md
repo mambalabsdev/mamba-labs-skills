@@ -2,6 +2,12 @@
 name: icp-definition-builder
 description: |
   Build a structured Ideal Customer Profile (ICP) from a description of a business, product, or target market. Outputs a complete ICP block with firmographic criteria, tech signals, hiring signals, pain indicators, and exclusion rules formatted for use in Clay tables, CRM filters, or outbound targeting. Use this skill when someone asks to define their ICP, build a target account profile, create targeting criteria, figure out who to sell to, segment their market, or set up account filters for outbound. Also trigger when someone says "who is my ideal customer" or "help me define my target market."
+license: MIT
+metadata:
+  category: targeting
+  tags: [icp, segmentation, clay, targeting]
+compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
+version: 1.0.0
 ---
 
 # ICP Definition Builder

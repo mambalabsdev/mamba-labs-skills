@@ -2,6 +2,12 @@
 name: cold-email-structure-checker
 description: |
   Audit a cold email draft against a 7-point outbound framework and return a pass/fail scorecard with a revised version. Checks for: signal anchor, relevance hook, value statement, social proof, single CTA, length (under 100 words), and spam word scan. Use this skill whenever someone asks to review a cold email, check their outreach copy, audit an email draft, improve a prospecting email, fix a cold email, or wants feedback on outbound messaging. Also trigger when someone pastes an email and asks "is this good?" or "will this get replies?"
+license: MIT
+metadata:
+  category: outbound
+  tags: [cold-email, copywriting, qa, outbound]
+compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
+version: 1.0.0
 ---
 
 # Cold Email Structure Checker

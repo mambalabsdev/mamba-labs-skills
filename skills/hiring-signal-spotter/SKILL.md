@@ -2,6 +2,12 @@
 name: hiring-signal-spotter
 description: |
   Analyze a company's GTM hiring activity to identify buying signals for outbound sales. Takes a company domain or name, checks job boards (Greenhouse, Lever, Ashby) for open GTM roles (SDR, AE, VP Sales, RevOps, CRO, CMO), and returns a plain-English hiring brief with signal strength, detected roles, and a suggested outbound angle. Use this skill whenever someone asks about a company's hiring signals, GTM hiring activity, whether a company is investing in sales or growth, job board signals, hiring intent, or buying signals from job postings. Also use when the user wants to research a prospect company before outreach, build a signal-based prospecting list, or check if a company is ramping its go-to-market team.
+license: MIT
+metadata:
+  category: signals
+  tags: [hiring-signals, job-boards, prospecting, outbound]
+compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
+version: 1.0.0
 ---
 
 # Hiring Signal Spotter

@@ -1,0 +1,48 @@
+{
+  "name": "mamba-labs-skills",
+  "owner": {
+    "name": "Mamba Labs"
+  },
+  "metadata": {
+    "description": "Free Mamba Labs skills for signal-based GTM workflows",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "icp-definition-builder",
+      "description": "Build a structured Ideal Customer Profile (ICP) from a description of a business, product, or target market. Outputs a complete ICP block with firmographic criteria, tech signals, hiring signals, pain indicators, and exclusion rules formatted for use in Clay tables, CRM filters, or outbound targeting. Use this skill when someone asks to define their ICP, build a target account profile, create targeting criteria, figure out who to sell to, segment their market, or set up account filters for outbound. Also trigger when someone says \"who is my ideal customer\" or \"help me define my target market.\"",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/icp-definition-builder"
+      ]
+    },
+    {
+      "name": "cold-email-structure-checker",
+      "description": "Audit a cold email draft against a 7-point outbound framework and return a pass/fail scorecard with a revised version. Checks for: signal anchor, relevance hook, value statement, social proof, single CTA, length (under 100 words), and spam word scan. Use this skill whenever someone asks to review a cold email, check their outreach copy, audit an email draft, improve a prospecting email, fix a cold email, or wants feedback on outbound messaging. Also trigger when someone pastes an email and asks \"is this good?\" or \"will this get replies?\"",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/cold-email-structure-checker"
+      ]
+    },
+    {
+      "name": "domain-health-precheck",
+      "description": "Check if a sending domain is safe for cold outreach by scanning SPF, DKIM, DMARC records, and blacklist status. Takes a single domain, calls the Mamba Labs Domain Deliverability Checker MCP server, and returns a plain-English deliverability verdict with pass/fail per check and recommended DNS fixes. Use this skill whenever someone asks about email deliverability, domain health, SPF/DKIM/DMARC setup, whether a domain is blacklisted, whether their sending domain is ready for cold email, or if their email infrastructure is configured correctly. Also trigger when someone says \"check my domain\" or \"am I going to land in spam.\"",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/domain-health-precheck"
+      ]
+    },
+    {
+      "name": "hiring-signal-spotter",
+      "description": "Analyze a company's GTM hiring activity to identify buying signals for outbound sales. Takes a company domain or name, checks job boards (Greenhouse, Lever, Ashby) for open GTM roles (SDR, AE, VP Sales, RevOps, CRO, CMO), and returns a plain-English hiring brief with signal strength, detected roles, and a suggested outbound angle. Use this skill whenever someone asks about a company's hiring signals, GTM hiring activity, whether a company is investing in sales or growth, job board signals, hiring intent, or buying signals from job postings. Also use when the user wants to research a prospect company before outreach, build a signal-based prospecting list, or check if a company is ramping its go-to-market team.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/hiring-signal-spotter"
+      ]
+    }
+  ]
+}
