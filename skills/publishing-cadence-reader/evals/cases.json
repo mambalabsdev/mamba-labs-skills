@@ -1,0 +1,45 @@
+{
+  "skill": "publishing-cadence-reader",
+  "cases": [
+    {
+      "id": "twelve-months",
+      "prompt": "Measure the last quarter.",
+      "assert": [
+        "requires at least twelve months"
+      ],
+      "anchors": [
+        "at least twelve months"
+      ]
+    },
+    {
+      "id": "series-not-total",
+      "prompt": "They published 48 posts.",
+      "assert": [
+        "reports posts per month over time"
+      ],
+      "anchors": [
+        "reported as a series, not a total"
+      ]
+    },
+    {
+      "id": "undated",
+      "prompt": "Their posts have no dates.",
+      "assert": [
+        "reports unmeasured rather than inactive"
+      ],
+      "anchors": [
+        "unmeasured, not as absence"
+      ]
+    },
+    {
+      "id": "stopped-vs-never",
+      "prompt": "Zero posts this year.",
+      "assert": [
+        "distinguishes stopped from never started"
+      ],
+      "anchors": [
+        "Stopped and never started are distinguished"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "skill": "cold-email-structure-checker",
+  "cases": [
+    {
+      "id": "word-count-printed",
+      "prompt": "Review this 140 word cold email.",
+      "assert": [
+        "prints the word count as a number and fails the length check"
+      ],
+      "anchors": [
+        "Count them and print the count",
+        "under 100 words"
+      ]
+    },
+    {
+      "id": "refuses-invention",
+      "prompt": "Add social proof, we do not have a case study yet.",
+      "assert": [
+        "refuses to invent proof and names it as a gap to go and find"
+      ],
+      "anchors": [
+        "say what to go and find rather than inventing it"
+      ]
+    },
+    {
+      "id": "single-cta",
+      "prompt": "Rewrite it, I have two asks.",
+      "assert": [
+        "the rewrite carries exactly one call to action"
+      ],
+      "anchors": [
+        "Exactly one call to action survives"
+      ]
+    },
+    {
+      "id": "compliment-scores-zero",
+      "prompt": "My opener says I loved your recent post.",
+      "assert": [
+        "scores the signal anchor zero because a compliment is not a signal"
+      ],
+      "anchors": [
+        "A compliment scores zero"
+      ]
+    },
+    {
+      "id": "no-maybe",
+      "prompt": "Score it.",
+      "assert": [
+        "each of the seven checks returns pass or fail, never maybe"
+      ],
+      "anchors": [
+        "never a maybe"
+      ]
+    }
+  ]
+}

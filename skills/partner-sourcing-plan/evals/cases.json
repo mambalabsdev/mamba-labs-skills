@@ -1,0 +1,55 @@
+{
+  "skill": "partner-sourcing-plan",
+  "cases": [
+    {
+      "id": "detected-overlap",
+      "prompt": "Let us brainstorm partners.",
+      "assert": [
+        "finds them by detected overlap instead"
+      ],
+      "anchors": [
+        "not by brainstorm"
+      ]
+    },
+    {
+      "id": "incentive",
+      "prompt": "This large company would be a great partner.",
+      "assert": [
+        "assesses whether they have an incentive"
+      ],
+      "anchors": [
+        "incentive is assessed"
+      ]
+    },
+    {
+      "id": "reciprocal-test",
+      "prompt": "Draft a partnership agreement.",
+      "assert": [
+        "proposes a small reciprocal test with a date first"
+      ],
+      "anchors": [
+        "small reciprocal test with a date"
+      ]
+    },
+    {
+      "id": "capacity-cap",
+      "prompt": "Sign up thirty partners.",
+      "assert": [
+        "caps at serviceable capacity"
+      ],
+      "anchors": [
+        "capped at serviceable capacity"
+      ]
+    },
+    {
+      "id": "ending",
+      "prompt": "What if it goes nowhere?",
+      "assert": [
+        "writes an ending condition"
+      ],
+      "anchors": [
+        "ending condition is written"
+      ]
+    }
+  ]
+}

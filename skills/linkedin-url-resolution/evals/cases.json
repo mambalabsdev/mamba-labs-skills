@@ -1,0 +1,45 @@
+{
+  "skill": "linkedin-url-resolution",
+  "cases": [
+    {
+      "id": "fill-rate",
+      "prompt": "Resolve these 500 domains.",
+      "assert": [
+        "reports fill rate before and after"
+      ],
+      "anchors": [
+        "Fill rate is reported before and after"
+      ]
+    },
+    {
+      "id": "parent-rule",
+      "prompt": "The parent and the local entity both have pages.",
+      "assert": [
+        "decides and states the parent versus subsidiary rule"
+      ],
+      "anchors": [
+        "parent versus subsidiary rule is decided"
+      ]
+    },
+    {
+      "id": "miss-pattern",
+      "prompt": "Forty did not resolve.",
+      "assert": [
+        "labels each with a miss pattern"
+      ],
+      "anchors": [
+        "labeled with a miss pattern"
+      ]
+    },
+    {
+      "id": "hand-check",
+      "prompt": "Ninety five percent resolved.",
+      "assert": [
+        "still includes a hand checked sample"
+      ],
+      "anchors": [
+        "hand checked sample"
+      ]
+    }
+  ]
+}

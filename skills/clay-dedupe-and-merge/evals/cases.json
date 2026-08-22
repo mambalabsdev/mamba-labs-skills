@@ -1,0 +1,45 @@
+{
+  "skill": "clay-dedupe-and-merge",
+  "cases": [
+    {
+      "id": "key-uniqueness",
+      "prompt": "Merge these two lists on email.",
+      "assert": [
+        "measures key uniqueness on real rows and notes email is unique per address not per person"
+      ],
+      "anchors": [
+        "unique per address, not per person"
+      ]
+    },
+    {
+      "id": "normalize-both",
+      "prompt": "Set up the match.",
+      "assert": [
+        "applies identical normalization to both sides"
+      ],
+      "anchors": [
+        "Normalize before matching"
+      ]
+    },
+    {
+      "id": "field-precedence",
+      "prompt": "Which record wins?",
+      "assert": [
+        "sets precedence per field, not per record"
+      ],
+      "anchors": [
+        "field level precedence, not record level"
+      ]
+    },
+    {
+      "id": "blank-audit",
+      "prompt": "Did the merge lose anything?",
+      "assert": [
+        "audits fields that went from populated to blank and requires that count to be zero"
+      ],
+      "anchors": [
+        "populated field became blank"
+      ]
+    }
+  ]
+}

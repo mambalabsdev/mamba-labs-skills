@@ -1,0 +1,45 @@
+{
+  "skill": "icp-definition-builder",
+  "cases": [
+    {
+      "id": "no-adjectives",
+      "prompt": "We sell to mid market SaaS.",
+      "assert": [
+        "converts mid market into a numeric headcount band"
+      ],
+      "anchors": [
+        "never as adjectives"
+      ]
+    },
+    {
+      "id": "exclusions-present",
+      "prompt": "Write my ICP.",
+      "assert": [
+        "includes exclusions covering existing customers and competitors"
+      ],
+      "anchors": [
+        "existing customers and competitors"
+      ]
+    },
+    {
+      "id": "deterministic-tiers",
+      "prompt": "How do I tier accounts?",
+      "assert": [
+        "the tier rule is deterministic enough for two people to sort identically"
+      ],
+      "anchors": [
+        "sort the same list identically"
+      ]
+    },
+    {
+      "id": "from-wins",
+      "prompt": "We want to sell to enterprises next.",
+      "assert": [
+        "derives the profile from actual wins and separates the ambition"
+      ],
+      "anchors": [
+        "derived from stated wins rather than from ambition"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "skill": "knowledge-write-discipline",
+  "cases": [
+    {
+      "id": "search-first",
+      "prompt": "Save this new document.",
+      "assert": [
+        "searches for existing documents first"
+      ],
+      "anchors": [
+        "runs before writing"
+      ]
+    },
+    {
+      "id": "read-back",
+      "prompt": "The write returned success.",
+      "assert": [
+        "reads back and compares content and length"
+      ],
+      "anchors": [
+        "compares content and length"
+      ]
+    },
+    {
+      "id": "update-or-create",
+      "prompt": "There is already a doc on this.",
+      "assert": [
+        "makes update versus create an explicit decision"
+      ],
+      "anchors": [
+        "stated decision"
+      ]
+    },
+    {
+      "id": "finding-first",
+      "prompt": "Start with the background.",
+      "assert": [
+        "opens with the finding instead"
+      ],
+      "anchors": [
+        "opens with the finding, not the method"
+      ]
+    },
+    {
+      "id": "supersession",
+      "prompt": "This replaces last month's doc.",
+      "assert": [
+        "states supersession inside the document"
+      ],
+      "anchors": [
+        "Supersession is stated in the document"
+      ]
+    }
+  ]
+}

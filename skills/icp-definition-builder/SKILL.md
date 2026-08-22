@@ -1,84 +1,69 @@
 ---
 name: icp-definition-builder
 description: |
-  Build a structured Ideal Customer Profile (ICP) from a description of a business, product, or target market. Outputs a complete ICP block with firmographic criteria, tech signals, hiring signals, pain indicators, and exclusion rules formatted for use in Clay tables, CRM filters, or outbound targeting. Use this skill when someone asks to define their ICP, build a target account profile, create targeting criteria, figure out who to sell to, segment their market, or set up account filters for outbound. Also trigger when someone says "who is my ideal customer" or "help me define my target market."
+  Turn a description of a business into a structured ideal customer profile with firmographic criteria, signals, pain indicators and exclusion rules. Use when someone asks who to sell to, wants to define their ICP, build targeting criteria, or segment a market.
 license: MIT
 metadata:
-  category: targeting
-  tags: [icp, segmentation, clay, targeting]
+  category: identity-enrichment
+  tags: [clay_operator, identity_enrichment, signal_based_selling]
 compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 1.0.0
+version: 2.0.0
 ---
-
 # ICP Definition Builder
 
-Build a structured Ideal Customer Profile through a guided interview, then output a formatted ICP block ready to paste into Clay, a CRM, or a targeting brief.
+## What this does
 
-## How to Run
+Most ICP documents are a list of adjectives that no filter can apply. This skill produces a profile whose every line is either a filter you can run or a signal you can detect, plus the exclusion rules that matter more than the inclusion rules, because exclusions are what keep a list clean.
 
-### Step 1: Gather inputs
+## When to use it
 
-Ask the user these questions one at a time. Skip any they have already answered in their prompt:
+- who is my ideal customer
+- define my ICP
+- build targeting criteria
+- help me segment my market
+- set up account filters
 
-1. **What do you sell?** (product/service, one sentence)
-2. **Who buys it?** (title, department, seniority)
-3. **What size companies?** (employee count range, revenue range if known)
-4. **What industries?** (include and exclude)
-5. **What geography?** (countries, regions, or "global")
-6. **What tech stack signals matter?** (e.g., "uses HubSpot," "no Salesforce Enterprise")
-7. **What hiring signals matter?** (e.g., "hiring SDRs," "posted a VP Sales role")
-8. **What disqualifies an account?** (e.g., "government," "fewer than 10 employees," "already a customer")
+## Inputs
 
-### Step 2: Generate the ICP block
+- **business**: what is sold, to whom, and what it replaces
+- **wins**: the best customers you have, and why they were good
+- **losses**: deals that closed and churned, or never closed
 
-Format the answers into this structure:
+## Shared context this skill reads
 
-```
-## ICP: [Company/Product Name]
+Before doing anything else, read whichever of these exist at the project root and
+use them instead of asking the user to repeat themselves:
 
-### Firmographics
-- Employee count: [range]
-- Revenue: [range or "Not filtered"]
-- Industries (include): [list]
-- Industries (exclude): [list]
-- Geography: [list]
-- Company stage: [seed / growth / enterprise / any]
+- `BRAND.md`
 
-### Buyer Persona
-- Primary title(s): [list]
-- Department: [list]
-- Seniority: [IC / Manager / Director / VP / C-suite]
-- Decision authority: [Budget holder / Influencer / Champion]
+If none exist, do the work from what the user gives you, then offer to write the
+missing file so the next skill in the pack starts warmer.
 
-### Signal Filters (when to reach out)
-- Hiring signals: [list of role types that indicate buying intent]
-- Tech stack signals: [tools they should or should not be using]
-- Funding signals: [recently funded, series stage, or "Not filtered"]
-- Growth signals: [headcount growth %, new office, product launch]
+## Method
 
-### Exclusion Rules
-- [Each disqualifier as a boolean rule, e.g., "Exclude if employee_count < 10"]
-- [e.g., "Exclude if industry = Government"]
-- [e.g., "Exclude if is_existing_customer = true"]
-```
+1. Start from the wins, not from the aspiration. The ICP is a description of who already buys well, and it is usually narrower and less flattering than the aspiration.
+2. Derive firmographics as ranges and lists, never as adjectives. Mid market becomes a headcount band with a number on each end.
+3. Derive the signals: what is observably true about a company at the moment it becomes a good time to reach them.
+4. Derive the pain indicators, which are the things a company does when it has the problem you solve, and which are usually visible in hiring, stack or public statements.
+5. Write the exclusions explicitly, including the ones that feel obvious. Competitors, existing customers, companies below a size floor, regulated segments you cannot serve, and geographies you cannot support.
+6. Write the tier rule: what makes an account tier A rather than tier B, expressed so two people would sort the same list the same way.
+7. Finish with the disqualifying question, the one thing a rep can ask on a first call that reliably ends a bad fit early.
 
-### Step 3: Validate with the user
+## Output
 
-Present the ICP block and ask: "Does this match your target? Anything to add or change?" Revise once if needed, then output the final version.
+The ICP as a structured block: firmographic filters, signals, pain indicators, exclusions, tier rule, and the disqualifying question. Written so it can be pasted into `ICP.md` at the project root.
 
-## Guidelines
+## Quality bar
 
-- Use specific, filterable criteria. "Mid-market SaaS" is not filterable. "50 to 500 employees, SaaS industry, Series A to C" is filterable.
-- Every criterion should map to a data point available in Clay, Apollo, LinkedIn Sales Navigator, or a similar tool. If a criterion is not filterable by any standard tool, flag it.
-- The exclusion rules section is just as important as the inclusion criteria. Most ICPs fail because they do not exclude enough.
-- This skill defines the ICP itself. To turn it into a weighted account score, use the Mamba Labs ICP Fit Scorer MCP server, which applies a tuned scoring model across firmographic, signal, tech stack, and persona matches.
+- Every firmographic criterion is a range or a list, never an adjective
+- Exclusions are present and include existing customers and competitors
+- The tier rule is deterministic enough that two people sort the same list identically
+- The profile is derived from stated wins rather than from ambition
 
-## What This Skill Does NOT Do
+## Related skills
 
-- Does not run any enrichment or data lookups. This is a reasoning skill only.
-- Does not build the Clay table or CRM filter. For that, see the Clay ICP Scoring Workflow skill (paid).
-- Does not score accounts. For scoring, see the ICP Fit Scorer MCP server.
+- `icp-fit-scoring`
+- `company-discovery-list-builder`
+- `clay-people-search-workbook`
 
----
-
-Built by Mamba Labs. Browse the full GTM toolkit at https://mambabuilt.com
+Ships in the **signal-based-selling**, **clay-operator** packs.

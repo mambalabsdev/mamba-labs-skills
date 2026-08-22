@@ -1,0 +1,55 @@
+{
+  "skill": "work-order-writer",
+  "cases": [
+    {
+      "id": "checkable-done",
+      "prompt": "Done means the campaign is better.",
+      "assert": [
+        "rewrites the done state as a check an uninvolved person can run"
+      ],
+      "anchors": [
+        "checkable by an uninvolved person"
+      ]
+    },
+    {
+      "id": "halt-conditions",
+      "prompt": "Just have them use judgment.",
+      "assert": [
+        "writes specific halt conditions"
+      ],
+      "anchors": [
+        "Halt conditions are present and specific"
+      ]
+    },
+    {
+      "id": "prohibitions",
+      "prompt": "Prefer not to touch production.",
+      "assert": [
+        "writes it as a prohibition"
+      ],
+      "anchors": [
+        "written as prohibitions"
+      ]
+    },
+    {
+      "id": "failable-verification",
+      "prompt": "Verify by confirming it looks right.",
+      "assert": [
+        "replaces it with a check capable of failing"
+      ],
+      "anchors": [
+        "capable of failing"
+      ]
+    },
+    {
+      "id": "supersedes",
+      "prompt": "There was an earlier brief.",
+      "assert": [
+        "names what it supersedes"
+      ],
+      "anchors": [
+        "Superseded briefs are named"
+      ]
+    }
+  ]
+}

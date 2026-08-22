@@ -1,0 +1,55 @@
+{
+  "skill": "weekly-pipeline-review",
+  "cases": [
+    {
+      "id": "staleness-sort",
+      "prompt": "Start with the biggest deals.",
+      "assert": [
+        "sorts by staleness instead"
+      ],
+      "anchors": [
+        "sorted by staleness, not by amount"
+      ]
+    },
+    {
+      "id": "slipped-twice",
+      "prompt": "The date moved again.",
+      "assert": [
+        "flags it and reflects the pattern in the forecast"
+      ],
+      "anchors": [
+        "forecast reflects the pattern"
+      ]
+    },
+    {
+      "id": "one-question",
+      "prompt": "Ask them for an update.",
+      "assert": [
+        "writes one specific question instead"
+      ],
+      "anchors": [
+        "not an update request"
+      ]
+    },
+    {
+      "id": "capacity-cut",
+      "prompt": "Forty deals are flagged.",
+      "assert": [
+        "cuts the working list to capacity"
+      ],
+      "anchors": [
+        "cut to stated capacity"
+      ]
+    },
+    {
+      "id": "close-out",
+      "prompt": "Nothing to remove.",
+      "assert": [
+        "produces a close out list anyway"
+      ],
+      "anchors": [
+        "close out list is produced"
+      ]
+    }
+  ]
+}

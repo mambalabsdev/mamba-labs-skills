@@ -27,3 +27,18 @@ Open a GitHub issue and include:
 
 - American English spelling.
 - Do not use em dashes or en dashes in skill content, comments, or docs.
+
+## What may appear in a skill in this repo
+
+Skills here are published free. What they may and may not contain is a standing rule,
+last amended 2026-08-22.
+
+Allowed: the job to be done, the method, the output format, the reasoning, public Apify
+actor slugs, Apify Store URLs, and runnable actor input examples.
+
+Not allowed: scoring weights and weight tables, provider waterfall order logic, Clay
+formulas and column expressions, client names, internal hostnames, internal project
+references, and anything resembling a credential.
+
+The check that enforces this lives in the build repo and self tests before it sweeps, so
+a clean result is only reported when the check could have failed.

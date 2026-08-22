@@ -1,0 +1,45 @@
+{
+  "skill": "bounce-and-catchall-policy",
+  "cases": [
+    {
+      "id": "shares-reported",
+      "prompt": "Here are my verification results.",
+      "assert": [
+        "reports each class as a share of the list"
+      ],
+      "anchors": [
+        "share of the list"
+      ]
+    },
+    {
+      "id": "arithmetic",
+      "prompt": "Should I send to catch all?",
+      "assert": [
+        "shows the bounce arithmetic against the stated tolerance"
+      ],
+      "anchors": [
+        "bounce arithmetic"
+      ]
+    },
+    {
+      "id": "role-by-persona",
+      "prompt": "What about info@ addresses?",
+      "assert": [
+        "decides by persona rather than a blanket rule"
+      ],
+      "anchors": [
+        "decided by persona"
+      ]
+    },
+    {
+      "id": "soft-bounce-number",
+      "prompt": "How many soft bounces before I drop them?",
+      "assert": [
+        "gives a number and says where it is recorded"
+      ],
+      "anchors": [
+        "soft bounce threshold is a number"
+      ]
+    }
+  ]
+}

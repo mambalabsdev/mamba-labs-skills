@@ -1,0 +1,45 @@
+{
+  "skill": "public-award-prospecting",
+  "cases": [
+    {
+      "id": "exclude-gov",
+      "prompt": "Pull the award list.",
+      "assert": [
+        "excludes government recipients and reports the count"
+      ],
+      "anchors": [
+        "Government recipients are excluded"
+      ]
+    },
+    {
+      "id": "resolution-rate",
+      "prompt": "How usable is this list?",
+      "assert": [
+        "states the domain resolution rate"
+      ],
+      "anchors": [
+        "domain resolution rate is stated"
+      ]
+    },
+    {
+      "id": "floor-justified",
+      "prompt": "Set the floor at 5000.",
+      "assert": [
+        "justifies the floor against the offer price"
+      ],
+      "anchors": [
+        "justified against the offer price"
+      ]
+    },
+    {
+      "id": "repeat-winners",
+      "prompt": "Some names appear every year.",
+      "assert": [
+        "identifies repeat winners separately"
+      ],
+      "anchors": [
+        "Repeat winners are identified separately"
+      ]
+    }
+  ]
+}

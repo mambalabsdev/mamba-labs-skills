@@ -1,80 +1,85 @@
 ---
 name: domain-health-precheck
 description: |
-  Check if a sending domain is safe for cold outreach by scanning SPF, DKIM, DMARC records, and blacklist status. Takes a single domain, calls the Mamba Labs Domain Deliverability Checker MCP server, and returns a plain-English deliverability verdict with pass/fail per check and recommended DNS fixes. Use this skill whenever someone asks about email deliverability, domain health, SPF/DKIM/DMARC setup, whether a domain is blacklisted, whether their sending domain is ready for cold email, or if their email infrastructure is configured correctly. Also trigger when someone says "check my domain" or "am I going to land in spam."
+  Check whether one sending domain is safe for cold outreach by reading its SPF, DKIM and DMARC records and its blacklist status. Use when someone asks about email deliverability, domain health, SPF or DKIM or DMARC setup, whether a domain is blacklisted, or whether they will land in spam.
 license: MIT
 metadata:
   category: deliverability
-  tags: [dns, spf, dkim, dmarc, domain-health]
+  tags: [cold_email_system, deliverability]
 compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 1.0.0
+version: 2.0.0
 ---
+# Domain Health Precheck
 
-# Domain Health Pre-Check
+## What this does
 
-Check whether a sending domain is ready for cold outreach. This skill calls the Mamba Labs Domain Deliverability Checker MCP server to scan SPF, DKIM, DMARC records and blacklist status, then returns an actionable verdict.
+Before a single email leaves a domain, four things decide whether it arrives: a valid SPF record, a published DKIM selector, a DMARC policy that is not left at none forever, and a clean listing across the major blocklists. This skill checks all four on one domain and returns a plain verdict with the exact DNS records to add for anything that fails.
 
-## Requirements
+## When to use it
 
-Install the MCP server and set your Apify token:
+- check my domain
+- am I going to land in spam
+- is this domain blacklisted
+- SPF DKIM DMARC setup
+- domain health
 
+## Inputs
+
+- **domain**: the sending domain, not the website domain if they differ
+- **provider**: which mail provider sends for it
+
+## Shared context this skill reads
+
+Before doing anything else, read whichever of these exist at the project root and
+use them instead of asking the user to repeat themselves:
+
+- `BRAND.md`
+
+If none exist, do the work from what the user gives you, then offer to write the
+missing file so the next skill in the pack starts warmer.
+
+## Live data
+
+The checks run live against DNS and public blocklists through the Mamba Labs deliverability actor, so the result is the current record rather than a cached report.
+
+- **domain-deliverability-checker**: SPF, DKIM, DMARC and blacklist status for a sending domain
+  Store page: https://apify.com/mambalabs/domain-deliverability-checker
+
+Runnable example input:
+
+```json
+{
+  "domains": [
+    "example.com"
+  ],
+  "checkBlacklists": true
+}
 ```
-npx -y @mambalabsdev/mcp-domain-deliverability-checker
-```
 
-Environment variable: `APIFY_TOKEN`
+## Method
 
-## How to Run
+1. Read the SPF record. Check that it exists, that there is exactly one, that it authorizes the actual sending provider, and that it stays under the ten lookup limit.
+2. Read DKIM at the selector the provider uses. A domain with no published selector is unsigned regardless of what the provider dashboard says.
+3. Read DMARC. Report the policy, and treat a policy of none that has been in place for months as a finding rather than a pass.
+4. Check the blocklists and report which one, since the delisting process differs per list.
+5. Check whether the sending domain is the primary brand domain. Sending cold outreach from the primary domain puts the whole company's mail at risk and is the single most consequential finding.
+6. Return a verdict: safe to send, safe after the listed fixes, or do not send. Give the exact record content to add, not a description of it.
 
-1. Get the sending domain from the user (e.g., `outreach.acme.com`).
-2. Call the `check_domain_deliverability` tool with that domain.
-3. Format the response as a Domain Health Report (see template below).
+## Output
 
-## Output Template
+A four row check table with the record found and the verdict, then the exact DNS records to add, then the one line overall verdict.
 
-```
-## Domain Health Report: [domain]
+## Quality bar
 
-**Overall Verdict:** [PASS / WARN / FAIL]
+- Every failed check comes with the literal record value to publish
+- Multiple SPF records are reported as a failure, not merged
+- A DMARC policy of none is reported with its age rather than passed silently
+- Sending from the primary brand domain is called out explicitly
 
-### Record Status
-| Check | Status | Value |
-|-------|--------|-------|
-| SPF   | [Pass/Fail] | [record value or "Missing"] |
-| DKIM  | [Pass/Fail] | [selector found or "Not detected"] |
-| DMARC | [Pass/Fail] | [policy value or "Missing"] |
+## Related skills
 
-### Blacklist Status
-[Clean / Listed on X blacklists: list them]
+- `email-deliverability-audit`
+- `domain-warmup-planner`
+- `sending-capacity-planner`
 
-### Catch-All Detection
-[Yes / No] - [If yes: "This domain accepts all addresses. Email verification tools cannot confirm whether a specific mailbox exists."]
-
-### Recommended Fixes
-[Numbered list of DNS changes needed. If all pass, say "No action needed. This domain is ready for outbound."]
-```
-
-## Verdict Logic
-
-- **PASS:** SPF present, DKIM detected, DMARC policy is `quarantine` or `reject`, zero blacklists.
-- **WARN:** One record missing or DMARC policy is `none`, or catch-all detected, zero blacklists.
-- **FAIL:** Two or more records missing, OR listed on any blacklist.
-
-## Fix Recommendations
-
-When a check fails, provide the exact DNS record to add:
-
-- **Missing SPF:** "Add a TXT record: `v=spf1 include:[sender-provider] ~all`"
-- **Missing DMARC:** "Add a TXT record at `_dmarc.[domain]`: `v=DMARC1; p=quarantine; rua=mailto:dmarc@[domain]`"
-- **DMARC policy is none:** "Change `p=none` to `p=quarantine` in your DMARC record. A `none` policy tells receivers you are not enforcing authentication."
-- **Blacklisted:** "Submit a delisting request at [blacklist provider URL]. This typically takes 24 to 72 hours."
-
-## What This Skill Does NOT Do
-
-- Does not check bulk domain lists. For bulk auditing, see the Cold Email Deliverability Audit skill (paid).
-- Does not test inbox placement or sender reputation scores.
-- Does not configure DNS records for you.
-
----
-
-Built by Mamba Labs. Part of a fleet of 12 Apify actors and 13 MCP servers for GTM signal intelligence. Browse the full toolkit at https://mambabuilt.com
+Ships in the **deliverability**, **cold-email-system** packs.

@@ -1,0 +1,55 @@
+{
+  "skill": "sequencer-campaign-config",
+  "cases": [
+    {
+      "id": "two-step-create",
+      "prompt": "Create the campaign with tracking off.",
+      "assert": [
+        "creates minimally then sets the rest in a second update"
+      ],
+      "anchors": [
+        "set the rest in a second update"
+      ]
+    },
+    {
+      "id": "timezone-enum",
+      "prompt": "Set the timezone to the recipient region.",
+      "assert": [
+        "uses an identifier the platform accepts and warns the enum is not the standard list"
+      ],
+      "anchors": [
+        "not the standard database list"
+      ]
+    },
+    {
+      "id": "null-vs-zero",
+      "prompt": "Clear the daily cap.",
+      "assert": [
+        "distinguishes null from zero"
+      ],
+      "anchors": [
+        "null removes the setting and zero stores a literal zero"
+      ]
+    },
+    {
+      "id": "read-back",
+      "prompt": "Done?",
+      "assert": [
+        "reads the campaign back and diffs it against intent"
+      ],
+      "anchors": [
+        "read back and diffed"
+      ]
+    },
+    {
+      "id": "seed-raw",
+      "prompt": "Send a test.",
+      "assert": [
+        "reads the raw source of the seed, not the rendered preview"
+      ],
+      "anchors": [
+        "raw source"
+      ]
+    }
+  ]
+}

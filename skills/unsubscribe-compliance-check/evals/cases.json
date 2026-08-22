@@ -1,0 +1,45 @@
+{
+  "skill": "unsubscribe-compliance-check",
+  "cases": [
+    {
+      "id": "end-to-end",
+      "prompt": "The footer has an unsubscribe link.",
+      "assert": [
+        "tests it end to end on a seed rather than inspecting the template"
+      ],
+      "anchors": [
+        "tested end to end on a seed"
+      ]
+    },
+    {
+      "id": "reaches-suppression",
+      "prompt": "It showed a confirmation page.",
+      "assert": [
+        "requires confirmation that the write reached the suppression layer"
+      ],
+      "anchors": [
+        "write is confirmed at the suppression layer"
+      ]
+    },
+    {
+      "id": "timing",
+      "prompt": "Next step goes out tomorrow.",
+      "assert": [
+        "checks the write takes effect before the next scheduled step"
+      ],
+      "anchors": [
+        "before the next scheduled step"
+      ]
+    },
+    {
+      "id": "reply-path",
+      "prompt": "Someone replied asking to stop.",
+      "assert": [
+        "treats it as an opt out and checks that path exists"
+      ],
+      "anchors": [
+        "reply based opt out path"
+      ]
+    }
+  ]
+}

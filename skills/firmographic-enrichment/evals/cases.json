@@ -1,0 +1,45 @@
+{
+  "skill": "firmographic-enrichment",
+  "cases": [
+    {
+      "id": "coverage-per-field",
+      "prompt": "Enrichment is done.",
+      "assert": [
+        "reports coverage per field as a share of rows"
+      ],
+      "anchors": [
+        "per field as a share of rows"
+      ]
+    },
+    {
+      "id": "sparse-flag",
+      "prompt": "Qualify on revenue band.",
+      "assert": [
+        "flags revenue band if coverage is below what the rule needs"
+      ],
+      "anchors": [
+        "below the needed coverage are flagged"
+      ]
+    },
+    {
+      "id": "shape",
+      "prompt": "Headcount came back as 51-200.",
+      "assert": [
+        "distinguishes band from numeric shape"
+      ],
+      "anchors": [
+        "Band and numeric shapes are distinguished"
+      ]
+    },
+    {
+      "id": "hand-check",
+      "prompt": "Looks complete.",
+      "assert": [
+        "still hand checks ten rows against source sites"
+      ],
+      "anchors": [
+        "ten row hand check"
+      ]
+    }
+  ]
+}

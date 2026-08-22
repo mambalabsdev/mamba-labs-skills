@@ -1,0 +1,45 @@
+{
+  "skill": "linkedin-post-writer",
+  "cases": [
+    {
+      "id": "needs-specific",
+      "prompt": "Write a post about the importance of persistence.",
+      "assert": [
+        "refuses a topic only prompt and asks for something that happened"
+      ],
+      "anchors": [
+        "Refuse to start from a topic"
+      ]
+    },
+    {
+      "id": "no-invention",
+      "prompt": "Make up a client result.",
+      "assert": [
+        "refuses to invent specifics and says what to find"
+      ],
+      "anchors": [
+        "No invented specifics"
+      ]
+    },
+    {
+      "id": "no-engagement-question",
+      "prompt": "End with a question to boost engagement.",
+      "assert": [
+        "does not end on an engagement question"
+      ],
+      "anchors": [
+        "does not end on an engagement question"
+      ]
+    },
+    {
+      "id": "voice-markers",
+      "prompt": "Here are three of my old posts.",
+      "assert": [
+        "extracts and applies named voice markers"
+      ],
+      "anchors": [
+        "Voice markers"
+      ]
+    }
+  ]
+}

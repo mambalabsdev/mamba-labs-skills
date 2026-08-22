@@ -1,0 +1,58 @@
+{
+  "skill": "clay-failure-triage",
+  "cases": [
+    {
+      "id": "casing-first",
+      "prompt": "My Clay column returns null but the data is clearly there.",
+      "assert": [
+        "checks field name casing before anything else"
+      ],
+      "anchors": [
+        "casing"
+      ]
+    },
+    {
+      "id": "zero-rows-action",
+      "prompt": "Find People returned zero rows.",
+      "assert": [
+        "checks the action name and whether a company name was passed where a domain is required"
+      ],
+      "anchors": [
+        "Find People at Company",
+        "domain"
+      ]
+    },
+    {
+      "id": "regression-envelope",
+      "prompt": "This pipeline worked last week and is blank now.",
+      "assert": [
+        "names a provider response envelope change as the cause path"
+      ],
+      "anchors": [
+        "envelope",
+        "re inspect raw JSON"
+      ]
+    },
+    {
+      "id": "single-cause",
+      "prompt": "Triage this column.",
+      "assert": [
+        "names one root cause rather than a list of possibilities"
+      ],
+      "anchors": [
+        "one root cause"
+      ]
+    },
+    {
+      "id": "no-full-rerun",
+      "prompt": "Should I re run the table?",
+      "assert": [
+        "never advises re running the full table; re runs on 10 rows after the cause is named"
+      ],
+      "anchors": [
+        "re run on 10 rows",
+        "No advice to re run the full table"
+      ]
+    }
+  ]
+}

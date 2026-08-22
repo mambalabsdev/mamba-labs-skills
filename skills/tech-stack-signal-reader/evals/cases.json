@@ -1,0 +1,45 @@
+{
+  "skill": "tech-stack-signal-reader",
+  "cases": [
+    {
+      "id": "unknown-not-absent",
+      "prompt": "No CRM was detected.",
+      "assert": [
+        "reports unknown rather than absence"
+      ],
+      "anchors": [
+        "reported as unknown, not as absence"
+      ]
+    },
+    {
+      "id": "crawl-beyond-home",
+      "prompt": "Detect their stack.",
+      "assert": [
+        "crawls pages beyond the homepage"
+      ],
+      "anchors": [
+        "Pages beyond the homepage are crawled"
+      ]
+    },
+    {
+      "id": "combination-angle",
+      "prompt": "Write the angle.",
+      "assert": [
+        "builds the angle from the combination rather than one tool name"
+      ],
+      "anchors": [
+        "from the combination"
+      ]
+    },
+    {
+      "id": "confidence",
+      "prompt": "How sure are you?",
+      "assert": [
+        "states confidence per detection"
+      ],
+      "anchors": [
+        "Confidence is stated per detection"
+      ]
+    }
+  ]
+}

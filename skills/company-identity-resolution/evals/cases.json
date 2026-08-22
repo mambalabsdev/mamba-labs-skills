@@ -1,0 +1,45 @@
+{
+  "skill": "company-identity-resolution",
+  "cases": [
+    {
+      "id": "no-guess",
+      "prompt": "Best guess is fine.",
+      "assert": [
+        "returns nothing below the confidence floor"
+      ],
+      "anchors": [
+        "return nothing rather than a guess"
+      ]
+    },
+    {
+      "id": "floor-number",
+      "prompt": "Set the threshold.",
+      "assert": [
+        "states the confidence floor as a number"
+      ],
+      "anchors": [
+        "confidence floor is stated as a number"
+      ]
+    },
+    {
+      "id": "subsidiary",
+      "prompt": "Two entities share the name.",
+      "assert": [
+        "handles parent and subsidiary collisions explicitly"
+      ],
+      "anchors": [
+        "Parent and subsidiary collisions are handled"
+      ]
+    },
+    {
+      "id": "batch-rate",
+      "prompt": "Is this list usable?",
+      "assert": [
+        "reports the batch resolution rate"
+      ],
+      "anchors": [
+        "batch resolution rate is reported"
+      ]
+    }
+  ]
+}

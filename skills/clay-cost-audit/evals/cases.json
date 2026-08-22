@@ -1,0 +1,47 @@
+{
+  "skill": "clay-cost-audit",
+  "cases": [
+    {
+      "id": "flags-ungated",
+      "prompt": "Here are my columns and prices.",
+      "assert": [
+        "flags every paid column with no run condition"
+      ],
+      "anchors": [
+        "no run condition"
+      ]
+    },
+    {
+      "id": "three-volumes",
+      "prompt": "What will this cost?",
+      "assert": [
+        "prices at 10 rows, 100 rows and full volume"
+      ],
+      "anchors": [
+        "10 row ramp",
+        "100 row ramp",
+        "full volume"
+      ]
+    },
+    {
+      "id": "pass-rate-stated",
+      "prompt": "Re price it with gates.",
+      "assert": [
+        "states the pass rate used for each gate"
+      ],
+      "anchors": [
+        "pass rate"
+      ]
+    },
+    {
+      "id": "ordered-by-savings",
+      "prompt": "What do I fix first?",
+      "assert": [
+        "orders fixes by money saved"
+      ],
+      "anchors": [
+        "orders fixes by money saved"
+      ]
+    }
+  ]
+}

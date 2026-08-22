@@ -1,0 +1,55 @@
+{
+  "skill": "handoff-writer",
+  "cases": [
+    {
+      "id": "ten-minute-start",
+      "prompt": "Next step is to continue the migration.",
+      "assert": [
+        "rewrites it as something startable in ten minutes with a location"
+      ],
+      "anchors": [
+        "startable in ten minutes"
+      ]
+    },
+    {
+      "id": "failed-paths",
+      "prompt": "Here is what worked.",
+      "assert": [
+        "also records the paths that failed"
+      ],
+      "anchors": [
+        "Failed paths are recorded"
+      ]
+    },
+    {
+      "id": "exact-names",
+      "prompt": "Update the config file.",
+      "assert": [
+        "requires the exact path"
+      ],
+      "anchors": [
+        "named exactly"
+      ]
+    },
+    {
+      "id": "no-narrative",
+      "prompt": "Include what we did in order.",
+      "assert": [
+        "omits the narrative section"
+      ],
+      "anchors": [
+        "No narrative section"
+      ]
+    },
+    {
+      "id": "supersedes",
+      "prompt": "There is an older handoff.",
+      "assert": [
+        "names what this supersedes and timestamps it"
+      ],
+      "anchors": [
+        "names what it supersedes"
+      ]
+    }
+  ]
+}

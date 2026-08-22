@@ -1,0 +1,45 @@
+{
+  "skill": "clay-credit-forecast",
+  "cases": [
+    {
+      "id": "labels-assumptions",
+      "prompt": "Forecast my month.",
+      "assert": [
+        "labels every per row cost as measured or assumed"
+      ],
+      "anchors": [
+        "Mark which is which"
+      ]
+    },
+    {
+      "id": "exhaustion-date",
+      "prompt": "When do I run out?",
+      "assert": [
+        "derives an exhaustion date"
+      ],
+      "anchors": [
+        "exhaustion date"
+      ]
+    },
+    {
+      "id": "whole-build-cut",
+      "prompt": "I am over budget.",
+      "assert": [
+        "recommends cutting a whole build rather than shrinking every build"
+      ],
+      "anchors": [
+        "whole build to cut"
+      ]
+    },
+    {
+      "id": "cut-priced",
+      "prompt": "What does that cut cost me?",
+      "assert": [
+        "expresses the cut in expected contacts"
+      ],
+      "anchors": [
+        "expected contacts"
+      ]
+    }
+  ]
+}

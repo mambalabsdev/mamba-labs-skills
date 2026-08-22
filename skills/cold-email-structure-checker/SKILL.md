@@ -1,107 +1,70 @@
 ---
 name: cold-email-structure-checker
 description: |
-  Audit a cold email draft against a 7-point outbound framework and return a pass/fail scorecard with a revised version. Checks for: signal anchor, relevance hook, value statement, social proof, single CTA, length (under 100 words), and spam word scan. Use this skill whenever someone asks to review a cold email, check their outreach copy, audit an email draft, improve a prospecting email, fix a cold email, or wants feedback on outbound messaging. Also trigger when someone pastes an email and asks "is this good?" or "will this get replies?"
+  Audit a cold email draft against a seven point outbound framework and return a pass or fail scorecard with a rewritten version. Use whenever someone pastes a cold email and asks whether it is good, whether it will get replies, or asks for a review of outreach copy.
 license: MIT
 metadata:
-  category: outbound
-  tags: [cold-email, copywriting, qa, outbound]
+  category: outbound-email
+  tags: [cold_email_system, outbound_email]
 compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 1.0.0
+version: 2.0.0
 ---
-
 # Cold Email Structure Checker
 
-Audit a cold email against the 7-point framework that top-performing outbound teams use, then output a scorecard and a revised version.
+## What this does
 
-## The 7-Point Framework
+Most cold emails fail on structure before they fail on wording. This skill scores a draft on seven checks that are each objectively decidable, returns the scorecard, then rewrites the draft so every failed check passes without inventing facts the sender did not supply.
 
-Every cold email that earns replies follows this structure. Each element is scored Pass or Fail.
+## When to use it
 
-### 1. Signal Anchor (first sentence)
-Does the opening reference a specific, verifiable event at the prospect's company? Good: "You just posted a VP RevOps role on Greenhouse." Bad: "I noticed your company is growing."
+- review this cold email
+- is this email good
+- will this get replies
+- audit my outreach copy
+- fix this cold email
 
-**Pass criteria:** names a specific event (hire, funding round, product launch, job posting, tech adoption, leadership change) with enough detail that the reader knows you researched them.
+## Inputs
 
-### 2. Relevance Hook (second sentence)
-Does the email connect that signal to a problem the recipient personally cares about? Good: "Most teams in that position burn 60 days getting new reps productive." Bad: "We help companies like yours."
+- **draft**: the email body, subject line included if there is one
+- **context**: who it is going to and what the sender actually knows about them
 
-**Pass criteria:** bridges from the signal to a pain point relevant to the recipient's role, not just the company.
+## Shared context this skill reads
 
-### 3. Value Statement (third sentence)
-Does it state the outcome the sender delivers, in one sentence, without jargon? Good: "We cut that ramp time to 21 days for 3 Series B teams last quarter." Bad: "Our platform provides a comprehensive solution for sales enablement."
+Before doing anything else, read whichever of these exist at the project root and
+use them instead of asking the user to repeat themselves:
 
-**Pass criteria:** includes a quantified outcome or a named reference customer. No feature descriptions.
+- `ICP.md`
+- `VOICE.md`
 
-### 4. Social Proof (optional but scored)
-Is there a reference to a similar company, a metric, or a recognizable name? Good: "including [Company X] who had the same challenge last year." Bad: "Trusted by hundreds of companies."
+If none exist, do the work from what the user gives you, then offer to write the
+missing file so the next skill in the pack starts warmer.
 
-**Pass criteria:** at least one named company or specific metric. Generic claims fail.
+## Method
 
-### 5. Single CTA (closing)
-Is there exactly one ask, and is it low-friction? Good: "Open to a 15-minute call next Tuesday?" Bad: "Let me know if you want to hop on a call, or I can send you a case study, or feel free to check out our website."
+1. Score the signal anchor: does the first line reference something specific and verifiable about the recipient, or is it a compliment. A compliment scores zero.
+2. Score the relevance hook: does the email connect that signal to a problem the recipient plausibly has.
+3. Score the value statement: is there one concrete claim, ideally with a number, rather than a list of capabilities.
+4. Score social proof: is there one relevant reference, named or described, and is it the same size and shape as the recipient.
+5. Score the call to action: exactly one, low commitment, and answerable in a sentence. Two calls to action score zero.
+6. Score length: under 100 words in the body. Count them and print the count.
+7. Score the spam scan: flag the words and formatting that trigger filters, and flag link and image counts.
+8. Rewrite the draft so every failed check passes. Where a check fails because the sender lacks information, say what to go and find rather than inventing it.
 
-**Pass criteria:** one question, one action. The ask should take the recipient less than 30 seconds to answer.
+## Output
 
-### 6. Length Check
-Is the email under 100 words (body only, excluding signature)?
+A seven row scorecard with pass or fail and the reason, the word count, the flagged terms, then the rewrite, then a one line note on what the sender still needs to find out.
 
-**Pass criteria:** 100 words or fewer. Each word over 100 is a point against. Ideal range: 50 to 85 words.
+## Quality bar
 
-### 7. Spam Word Scan
-Does the email contain words that trigger spam filters or sound like marketing copy?
+- The word count is printed as a number
+- Any invented fact about the recipient is refused and named as a gap instead
+- Exactly one call to action survives in the rewrite
+- Each of the seven checks gets an explicit pass or fail, never a maybe
 
-**Flagged words:** guarantee, free, act now, limited time, exclusive offer, click here, buy now, no obligation, risk-free, congratulations, winner, amazing, incredible, revolutionary, game-changing, synergy, best-in-class, world-class, next-generation, end-to-end, turnkey
+## Related skills
 
-**Pass criteria:** zero flagged words.
+- `subject-line-lab`
+- `outbound-copy-humanizer`
+- `cold-email-sequence-system`
 
-## How to Run
-
-1. User provides their cold email draft.
-2. Run each of the 7 checks. Score Pass or Fail.
-3. Output the scorecard.
-4. Below the scorecard, provide a revised version that fixes every Fail.
-
-## Output Template
-
-```
-## Cold Email Audit
-
-**Overall Score:** [X/7]
-
-| # | Check | Result | Note |
-|---|-------|--------|------|
-| 1 | Signal Anchor | [Pass/Fail] | [one-line reason] |
-| 2 | Relevance Hook | [Pass/Fail] | [one-line reason] |
-| 3 | Value Statement | [Pass/Fail] | [one-line reason] |
-| 4 | Social Proof | [Pass/Fail] | [one-line reason] |
-| 5 | Single CTA | [Pass/Fail] | [one-line reason] |
-| 6 | Length | [Pass/Fail] | [word count] |
-| 7 | Spam Words | [Pass/Fail] | [flagged words or "Clean"] |
-
-### Revised Version
-
-Subject: [revised subject line]
-
-[revised email body, fixing every failed check]
-
-### What Changed
-[Bullet list of each change made and why]
-```
-
-## Guidelines
-
-- Be direct in the audit. "This email has no signal anchor" is better than "You might consider adding a signal."
-- The revised version must preserve the sender's voice. Do not rewrite into a generic template.
-- If the email scores 7/7, say so and do not force changes. Suggest one optional improvement if applicable.
-- Never use the word "personalization" in the revised copy. Show it, do not name it.
-
-## What This Skill Does NOT Do
-
-- Does not look up real signals for the prospect. For signal research, see the Hiring Signal Spotter or the Signal-Based Outbound Workflow skill.
-- Does not send the email or check deliverability.
-- Does not generate emails from scratch. It audits and revises existing drafts.
-
----
-
-Built by Mamba Labs. Browse the full GTM toolkit at https://mambabuilt.com
+Ships in the **cold-email-system** pack.

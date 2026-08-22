@@ -1,0 +1,55 @@
+{
+  "skill": "people-finder-recipe",
+  "cases": [
+    {
+      "id": "cap-first",
+      "prompt": "Find people at these 200 companies.",
+      "assert": [
+        "sets the per company cap before searching"
+      ],
+      "anchors": [
+        "cap is set before the search"
+      ]
+    },
+    {
+      "id": "exclusions-first",
+      "prompt": "Target heads of sales.",
+      "assert": [
+        "writes the exclusion list before the inclusion list"
+      ],
+      "anchors": [
+        "Exclusions are written before inclusions"
+      ]
+    },
+    {
+      "id": "team-page-fallback",
+      "prompt": "Small companies returned nothing.",
+      "assert": [
+        "falls back to team page extraction"
+      ],
+      "anchors": [
+        "Team page fallback"
+      ]
+    },
+    {
+      "id": "distribution",
+      "prompt": "We averaged three per company.",
+      "assert": [
+        "reports the distribution rather than the average"
+      ],
+      "anchors": [
+        "reported as a distribution"
+      ]
+    },
+    {
+      "id": "dedupe-before-spend",
+      "prompt": "Enrich their emails.",
+      "assert": [
+        "deduplicates people before paid enrichment"
+      ],
+      "anchors": [
+        "before any paid enrichment"
+      ]
+    }
+  ]
+}

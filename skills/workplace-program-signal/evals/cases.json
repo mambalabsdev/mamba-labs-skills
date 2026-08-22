@@ -1,0 +1,45 @@
+{
+  "skill": "workplace-program-signal",
+  "cases": [
+    {
+      "id": "direction-first",
+      "prompt": "Scan these companies.",
+      "assert": [
+        "establishes whether presence or absence is the signal first"
+      ],
+      "anchors": [
+        "signal direction is set before scanning"
+      ]
+    },
+    {
+      "id": "both-sources",
+      "prompt": "Their benefits page lists nothing.",
+      "assert": [
+        "also scans job postings and reports the two separately"
+      ],
+      "anchors": [
+        "reported separately"
+      ]
+    },
+    {
+      "id": "headcount-floor",
+      "prompt": "This 8 person company has no program.",
+      "assert": [
+        "says absence is not a signal below the headcount floor"
+      ],
+      "anchors": [
+        "above the stated headcount floor"
+      ]
+    },
+    {
+      "id": "careful-angle",
+      "prompt": "Write the angle.",
+      "assert": [
+        "avoids implying anything about how the company treats people"
+      ],
+      "anchors": [
+        "how a company treats its people"
+      ]
+    }
+  ]
+}

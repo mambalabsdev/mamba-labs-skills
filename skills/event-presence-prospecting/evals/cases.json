@@ -1,0 +1,45 @@
+{
+  "skill": "event-presence-prospecting",
+  "cases": [
+    {
+      "id": "three-types",
+      "prompt": "They were at the show.",
+      "assert": [
+        "separates sponsoring, exhibiting and speaking"
+      ],
+      "anchors": [
+        "Presence types are separated"
+      ]
+    },
+    {
+      "id": "own-events",
+      "prompt": "They run their own summit.",
+      "assert": [
+        "distinguishes own events from third party events"
+      ],
+      "anchors": [
+        "Own events are distinguished"
+      ]
+    },
+    {
+      "id": "timing-date",
+      "prompt": "When should I reach out?",
+      "assert": [
+        "ties the recommendation to a date relative to the event"
+      ],
+      "anchors": [
+        "relative to the event"
+      ]
+    },
+    {
+      "id": "angle-names-event",
+      "prompt": "Write the angle.",
+      "assert": [
+        "names the specific event"
+      ],
+      "anchors": [
+        "names the specific event"
+      ]
+    }
+  ]
+}

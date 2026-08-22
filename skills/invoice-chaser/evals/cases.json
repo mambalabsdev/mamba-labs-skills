@@ -1,0 +1,55 @@
+{
+  "skill": "invoice-chaser",
+  "cases": [
+    {
+      "id": "check-own-side",
+      "prompt": "Send the chase.",
+      "assert": [
+        "checks your own invoice details first"
+      ],
+      "anchors": [
+        "checked before the first chase"
+      ]
+    },
+    {
+      "id": "find-payer",
+      "prompt": "Email my usual contact.",
+      "assert": [
+        "identifies the payer separately"
+      ],
+      "anchors": [
+        "identified separately from the contact"
+      ]
+    },
+    {
+      "id": "attach",
+      "prompt": "They can look it up.",
+      "assert": [
+        "attaches the invoice at every step"
+      ],
+      "anchors": [
+        "attached at every step"
+      ]
+    },
+    {
+      "id": "escalate-person",
+      "prompt": "Get firmer with them.",
+      "assert": [
+        "escalates up the chain before changing tone"
+      ],
+      "anchors": [
+        "up the chain before it changes tone"
+      ]
+    },
+    {
+      "id": "asks-date",
+      "prompt": "Write the message.",
+      "assert": [
+        "asks for a date"
+      ],
+      "anchors": [
+        "asks for a date"
+      ]
+    }
+  ]
+}

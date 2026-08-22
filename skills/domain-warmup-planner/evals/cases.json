@@ -1,0 +1,45 @@
+{
+  "skill": "domain-warmup-planner",
+  "cases": [
+    {
+      "id": "two-clocks",
+      "prompt": "The domains are three days old but warming fast.",
+      "assert": [
+        "treats age and volume as separate clocks"
+      ],
+      "anchors": [
+        "two separate clocks"
+      ]
+    },
+    {
+      "id": "gap-in-emails",
+      "prompt": "Will we make the date?",
+      "assert": [
+        "states the gap in emails per day"
+      ],
+      "anchors": [
+        "gap is stated in emails per day"
+      ]
+    },
+    {
+      "id": "pause-metric",
+      "prompt": "When do I stop ramping?",
+      "assert": [
+        "names a pause metric with a threshold"
+      ],
+      "anchors": [
+        "pause metric is named"
+      ]
+    },
+    {
+      "id": "two-options",
+      "prompt": "We cannot move the date.",
+      "assert": [
+        "gives inbox counts and costs for the add inboxes option"
+      ],
+      "anchors": [
+        "inbox counts and costs"
+      ]
+    }
+  ]
+}

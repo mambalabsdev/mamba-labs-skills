@@ -1,0 +1,55 @@
+{
+  "skill": "friction-log-to-rules",
+  "cases": [
+    {
+      "id": "three-part-rule",
+      "prompt": "Lesson: be more careful.",
+      "assert": [
+        "rejects it or rewrites it with trigger, action and reason"
+      ],
+      "anchors": [
+        "trigger, an action and a reason"
+      ]
+    },
+    {
+      "id": "cause-below",
+      "prompt": "The check passed but the bug shipped.",
+      "assert": [
+        "states the cause one level below the event"
+      ],
+      "anchors": [
+        "one level below the event"
+      ]
+    },
+    {
+      "id": "discard",
+      "prompt": "The vendor had an outage.",
+      "assert": [
+        "discards it explicitly as not rule material"
+      ],
+      "anchors": [
+        "discarded explicitly"
+      ]
+    },
+    {
+      "id": "placement-problem",
+      "prompt": "We already have that rule.",
+      "assert": [
+        "treats it as a placement problem"
+      ],
+      "anchors": [
+        "identified as a placement problem"
+      ]
+    },
+    {
+      "id": "home",
+      "prompt": "Write the rules.",
+      "assert": [
+        "gives each rule a stated home"
+      ],
+      "anchors": [
+        "stated home"
+      ]
+    }
+  ]
+}

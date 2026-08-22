@@ -1,0 +1,55 @@
+{
+  "skill": "mamba-gtm-router",
+  "cases": [
+    {
+      "id": "one-route",
+      "prompt": "I need help with outbound.",
+      "assert": [
+        "names exactly one primary skill"
+      ],
+      "anchors": [
+        "Exactly one skill is named"
+      ]
+    },
+    {
+      "id": "installed-status",
+      "prompt": "Use the deliverability audit.",
+      "assert": [
+        "states whether it is installed"
+      ],
+      "anchors": [
+        "Installed status is stated"
+      ]
+    },
+    {
+      "id": "no-invention",
+      "prompt": "Is there a skill for cold calling scripts?",
+      "assert": [
+        "says the catalog has no fit rather than inventing a name"
+      ],
+      "anchors": [
+        "No skill name is invented"
+      ]
+    },
+    {
+      "id": "order-not-list",
+      "prompt": "I need to build a whole campaign.",
+      "assert": [
+        "returns an ordered sequence"
+      ],
+      "anchors": [
+        "an order, not a list"
+      ]
+    },
+    {
+      "id": "context-check",
+      "prompt": "Route my request.",
+      "assert": [
+        "checks for the shared context files and recommends the builder if missing"
+      ],
+      "anchors": [
+        "context file check runs"
+      ]
+    }
+  ]
+}

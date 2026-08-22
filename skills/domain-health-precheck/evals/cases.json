@@ -1,0 +1,45 @@
+{
+  "skill": "domain-health-precheck",
+  "cases": [
+    {
+      "id": "literal-records",
+      "prompt": "My SPF is missing.",
+      "assert": [
+        "gives the literal record value to publish"
+      ],
+      "anchors": [
+        "literal record value"
+      ]
+    },
+    {
+      "id": "multiple-spf",
+      "prompt": "I have two SPF records.",
+      "assert": [
+        "reports this as a failure rather than merging them"
+      ],
+      "anchors": [
+        "Multiple SPF records are reported as a failure"
+      ]
+    },
+    {
+      "id": "dmarc-none",
+      "prompt": "DMARC is set to none.",
+      "assert": [
+        "reports it with its age rather than passing it"
+      ],
+      "anchors": [
+        "policy of none"
+      ]
+    },
+    {
+      "id": "primary-domain",
+      "prompt": "I send from my main company domain.",
+      "assert": [
+        "calls this out explicitly as the most consequential finding"
+      ],
+      "anchors": [
+        "primary brand domain"
+      ]
+    }
+  ]
+}

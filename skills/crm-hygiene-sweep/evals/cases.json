@@ -1,0 +1,55 @@
+{
+  "skill": "crm-hygiene-sweep",
+  "cases": [
+    {
+      "id": "windowed",
+      "prompt": "Sweep the whole database weekly.",
+      "assert": [
+        "scopes to a window instead"
+      ],
+      "anchors": [
+        "scoped to a window"
+      ]
+    },
+    {
+      "id": "two-lists",
+      "prompt": "Give me the fixes.",
+      "assert": [
+        "separates automatic from manual"
+      ],
+      "anchors": [
+        "listed separately"
+      ]
+    },
+    {
+      "id": "intake-attribution",
+      "prompt": "Same defects again.",
+      "assert": [
+        "attributes each defect to its intake"
+      ],
+      "anchors": [
+        "attributed to an intake"
+      ]
+    },
+    {
+      "id": "drift-rate",
+      "prompt": "Is it getting better?",
+      "assert": [
+        "tracks defects per hundred new records across sweeps"
+      ],
+      "anchors": [
+        "drift rate is tracked across sweeps"
+      ]
+    },
+    {
+      "id": "cap",
+      "prompt": "The manual list is 600 records.",
+      "assert": [
+        "caps it and routes the excess to an intake fix"
+      ],
+      "anchors": [
+        "manual list is capped"
+      ]
+    }
+  ]
+}

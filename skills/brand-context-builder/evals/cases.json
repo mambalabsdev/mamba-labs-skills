@@ -1,0 +1,55 @@
+{
+  "skill": "brand-context-builder",
+  "cases": [
+    {
+      "id": "no-redundant-questions",
+      "prompt": "Here is my website and two posts.",
+      "assert": [
+        "does not ask for what it can read from those"
+      ],
+      "anchors": [
+        "Do not ask anything you can read"
+      ]
+    },
+    {
+      "id": "unknowns-marked",
+      "prompt": "I do not have proof points yet.",
+      "assert": [
+        "marks it unknown rather than inventing one"
+      ],
+      "anchors": [
+        "marked as unknown rather than filled"
+      ]
+    },
+    {
+      "id": "voice-from-samples",
+      "prompt": "My voice is friendly and professional.",
+      "assert": [
+        "derives markers from real samples instead"
+      ],
+      "anchors": [
+        "derived from real samples"
+      ]
+    },
+    {
+      "id": "dates",
+      "prompt": "Write the files.",
+      "assert": [
+        "each file carries a written date and a review date"
+      ],
+      "anchors": [
+        "written date and a review date"
+      ]
+    },
+    {
+      "id": "disallowed-claims",
+      "prompt": "We can say we are the best.",
+      "assert": [
+        "records disallowed claims in the brand file"
+      ],
+      "anchors": [
+        "Disallowed claims are recorded"
+      ]
+    }
+  ]
+}

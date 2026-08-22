@@ -1,0 +1,55 @@
+{
+  "skill": "content-brief-builder",
+  "cases": [
+    {
+      "id": "unrepeatable-required",
+      "prompt": "Brief a post on best practices.",
+      "assert": [
+        "requires a sourced unrepeatable section or refuses the brief"
+      ],
+      "anchors": [
+        "or the brief is refused"
+      ]
+    },
+    {
+      "id": "questions-not-headings",
+      "prompt": "Give me the headings.",
+      "assert": [
+        "specifies ordered questions instead"
+      ],
+      "anchors": [
+        "ordered questions rather than headings"
+      ]
+    },
+    {
+      "id": "exclusions",
+      "prompt": "Write the brief.",
+      "assert": [
+        "states what to leave out"
+      ],
+      "anchors": [
+        "states what to leave out"
+      ]
+    },
+    {
+      "id": "claim-sources",
+      "prompt": "The writer can research it.",
+      "assert": [
+        "names a source for every factual claim"
+      ],
+      "anchors": [
+        "Every factual claim has a named source"
+      ]
+    },
+    {
+      "id": "link-placement",
+      "prompt": "We will add links after.",
+      "assert": [
+        "specifies internal links with their placement"
+      ],
+      "anchors": [
+        "specified with their placement"
+      ]
+    }
+  ]
+}

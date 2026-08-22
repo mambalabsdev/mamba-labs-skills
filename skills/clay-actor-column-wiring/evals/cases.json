@@ -1,0 +1,47 @@
+{
+  "skill": "clay-actor-column-wiring",
+  "cases": [
+    {
+      "id": "string-typing",
+      "prompt": "My actor rejects the number Clay sends.",
+      "assert": [
+        "says every field crossing the boundary is typed as a string on the tool side and coerced internally"
+      ],
+      "anchors": [
+        "typed as a string",
+        "coercing internally"
+      ]
+    },
+    {
+      "id": "one-row-first",
+      "prompt": "Run it.",
+      "assert": [
+        "first run is one row, not ten"
+      ],
+      "anchors": [
+        "Not ten, one"
+      ]
+    },
+    {
+      "id": "preview-paths",
+      "prompt": "What path do I extract from?",
+      "assert": [
+        "copies the path from the column output preview rather than documentation"
+      ],
+      "anchors": [
+        "column output preview",
+        "not from documentation"
+      ]
+    },
+    {
+      "id": "run-condition",
+      "prompt": "Ready for the full table.",
+      "assert": [
+        "requires a run condition on the actor column before the full ramp"
+      ],
+      "anchors": [
+        "run condition on the actor column"
+      ]
+    }
+  ]
+}

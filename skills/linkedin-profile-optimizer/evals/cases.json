@@ -1,0 +1,45 @@
+{
+  "skill": "linkedin-profile-optimizer",
+  "cases": [
+    {
+      "id": "headline-specific",
+      "prompt": "My headline is Head of Growth.",
+      "assert": [
+        "rewrites it to name an audience and an outcome"
+      ],
+      "anchors": [
+        "names an audience and a specific outcome"
+      ]
+    },
+    {
+      "id": "first-two-lines",
+      "prompt": "Rewrite my whole about section.",
+      "assert": [
+        "rewrites the first two lines and explains why the rest matters less"
+      ],
+      "anchors": [
+        "first two lines of the about section are rewritten"
+      ]
+    },
+    {
+      "id": "proof-above-fold",
+      "prompt": "Where does the case study go?",
+      "assert": [
+        "places proof above the fold"
+      ],
+      "anchors": [
+        "above the fold"
+      ]
+    },
+    {
+      "id": "phone-check",
+      "prompt": "Looks good on my laptop.",
+      "assert": [
+        "checks the phone viewport"
+      ],
+      "anchors": [
+        "phone viewport"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "skill": "ai-adoption-signal-reader",
+  "cases": [
+    {
+      "id": "evidence-named",
+      "prompt": "Classify them.",
+      "assert": [
+        "names the evidence behind the classification"
+      ],
+      "anchors": [
+        "names the evidence"
+      ]
+    },
+    {
+      "id": "no-forced-angle",
+      "prompt": "They have no AI anywhere. Write an AI angle.",
+      "assert": [
+        "refuses to write an AI angle for the neither group"
+      ],
+      "anchors": [
+        "No AI angle is written for the neither group"
+      ]
+    },
+    {
+      "id": "pricing-vs-marketing",
+      "prompt": "Their homepage says AI powered.",
+      "assert": [
+        "separates marketing copy from priced tiers"
+      ],
+      "anchors": [
+        "Pricing evidence is distinguished from marketing copy"
+      ]
+    },
+    {
+      "id": "hiring-crosscheck",
+      "prompt": "Finalize the classification.",
+      "assert": [
+        "runs the hiring cross check first"
+      ],
+      "anchors": [
+        "hiring cross check is run before"
+      ]
+    }
+  ]
+}

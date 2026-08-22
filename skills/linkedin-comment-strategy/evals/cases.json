@@ -1,0 +1,45 @@
+{
+  "skill": "linkedin-comment-strategy",
+  "cases": [
+    {
+      "id": "audience-selection",
+      "prompt": "This post has 40k views.",
+      "assert": [
+        "selects by audience rather than engagement count"
+      ],
+      "anchors": [
+        "not by engagement count"
+      ]
+    },
+    {
+      "id": "three-shapes",
+      "prompt": "Write a comment.",
+      "assert": [
+        "the comment is a fact, a counter case, or a specific number"
+      ],
+      "anchors": [
+        "three named shapes"
+      ]
+    },
+    {
+      "id": "no-praise-no-pitch",
+      "prompt": "Open by saying great post and mention what we do.",
+      "assert": [
+        "removes both"
+      ],
+      "anchors": [
+        "No praise opener and no pitch"
+      ]
+    },
+    {
+      "id": "length",
+      "prompt": "Make it thorough.",
+      "assert": [
+        "stays within three sentences"
+      ],
+      "anchors": [
+        "within three sentences"
+      ]
+    }
+  ]
+}

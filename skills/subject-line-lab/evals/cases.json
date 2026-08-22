@@ -1,0 +1,46 @@
+{
+  "skill": "subject-line-lab",
+  "cases": [
+    {
+      "id": "four-shapes",
+      "prompt": "Give me subject lines.",
+      "assert": [
+        "variants span four distinct shapes"
+      ],
+      "anchors": [
+        "four distinct shapes"
+      ]
+    },
+    {
+      "id": "truncation",
+      "prompt": "Show me how they look on mobile.",
+      "assert": [
+        "shows each variant cut at 30 and at 45 characters"
+      ],
+      "anchors": [
+        "30 characters",
+        "45"
+      ]
+    },
+    {
+      "id": "preview-pairing",
+      "prompt": "What preview text will show?",
+      "assert": [
+        "renders the preview text beside each subject"
+      ],
+      "anchors": [
+        "Preview text is rendered beside each subject"
+      ]
+    },
+    {
+      "id": "states-test",
+      "prompt": "Which should I test?",
+      "assert": [
+        "says what each variant tests"
+      ],
+      "anchors": [
+        "what each variant tests"
+      ]
+    }
+  ]
+}

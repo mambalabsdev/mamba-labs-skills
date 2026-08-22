@@ -1,0 +1,45 @@
+{
+  "skill": "outbound-copy-humanizer",
+  "cases": [
+    {
+      "id": "facts-survive",
+      "prompt": "Humanize this, it cites a 30 percent number.",
+      "assert": [
+        "keeps the 30 percent claim"
+      ],
+      "anchors": [
+        "Every factual claim in the original survives"
+      ]
+    },
+    {
+      "id": "varied-length",
+      "prompt": "Rewrite it.",
+      "assert": [
+        "sentence lengths vary"
+      ],
+      "anchors": [
+        "Sentence lengths vary"
+      ]
+    },
+    {
+      "id": "no-triples",
+      "prompt": "Rewrite it.",
+      "assert": [
+        "no adjective triples remain"
+      ],
+      "anchors": [
+        "adjective triples"
+      ]
+    },
+    {
+      "id": "teaches",
+      "prompt": "What did you change?",
+      "assert": [
+        "names the pattern removed, not only the words"
+      ],
+      "anchors": [
+        "names the pattern"
+      ]
+    }
+  ]
+}

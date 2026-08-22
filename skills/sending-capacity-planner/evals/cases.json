@@ -1,0 +1,45 @@
+{
+  "skill": "sending-capacity-planner",
+  "cases": [
+    {
+      "id": "steps-multiply",
+      "prompt": "I have 4 inboxes at 50 a day and a 5 step sequence.",
+      "assert": [
+        "divides raw capacity by the number of steps for steady state"
+      ],
+      "anchors": [
+        "divided by the number of steps"
+      ]
+    },
+    {
+      "id": "ramp-shown",
+      "prompt": "How does week one differ?",
+      "assert": [
+        "shows the first four weeks separately"
+      ],
+      "anchors": [
+        "first four weeks are shown separately"
+      ]
+    },
+    {
+      "id": "warmup-counted",
+      "prompt": "I will buy more inboxes.",
+      "assert": [
+        "excludes new accounts from capacity until warmup completes"
+      ],
+      "anchors": [
+        "Warmup time is included"
+      ]
+    },
+    {
+      "id": "date-given",
+      "prompt": "When do I finish the list?",
+      "assert": [
+        "gives a calendar date"
+      ],
+      "anchors": [
+        "The finish date is a date"
+      ]
+    }
+  ]
+}

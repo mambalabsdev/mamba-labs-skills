@@ -1,0 +1,55 @@
+{
+  "skill": "cash-runway-snapshot",
+  "cases": [
+    {
+      "id": "exclude-uninvoiced",
+      "prompt": "Include the deals we expect to sign.",
+      "assert": [
+        "excludes them from the conservative case"
+      ],
+      "anchors": [
+        "excluded from the conservative case"
+      ]
+    },
+    {
+      "id": "annual-costs",
+      "prompt": "Our costs are 40k a month.",
+      "assert": [
+        "adds annual items falling inside the window"
+      ],
+      "anchors": [
+        "Annual costs falling inside the window"
+      ]
+    },
+    {
+      "id": "range",
+      "prompt": "How many months?",
+      "assert": [
+        "gives a range with the assumption at each end"
+      ],
+      "anchors": [
+        "range with the assumption at each end"
+      ]
+    },
+    {
+      "id": "late-payment",
+      "prompt": "Assume everyone pays on time.",
+      "assert": [
+        "models the largest receivable arriving late anyway"
+      ],
+      "anchors": [
+        "largest single receivable"
+      ]
+    },
+    {
+      "id": "action-date",
+      "prompt": "When do we run out?",
+      "assert": [
+        "gives an action date distinct from the zero cash date"
+      ],
+      "anchors": [
+        "distinct from the date cash runs out"
+      ]
+    }
+  ]
+}

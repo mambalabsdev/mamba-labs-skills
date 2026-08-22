@@ -1,0 +1,55 @@
+{
+  "skill": "monday-morning-brief",
+  "cases": [
+    {
+      "id": "names-gaps",
+      "prompt": "The finance connector timed out.",
+      "assert": [
+        "names it as a coverage gap rather than omitting it"
+      ],
+      "anchors": [
+        "never silently omitted"
+      ]
+    },
+    {
+      "id": "movement",
+      "prompt": "Report revenue.",
+      "assert": [
+        "reports movement rather than a level"
+      ],
+      "anchors": [
+        "Movement is reported rather than levels"
+      ]
+    },
+    {
+      "id": "blocked-and-aged",
+      "prompt": "List the decisions.",
+      "assert": [
+        "gives what each is blocked on and how long it has waited"
+      ],
+      "anchors": [
+        "how long they have waited"
+      ]
+    },
+    {
+      "id": "one-screen",
+      "prompt": "Include everything.",
+      "assert": [
+        "keeps the brief to one screen"
+      ],
+      "anchors": [
+        "fits one screen"
+      ]
+    },
+    {
+      "id": "carry-forward",
+      "prompt": "Write this week's brief.",
+      "assert": [
+        "carries last week's decisions forward with a status"
+      ],
+      "anchors": [
+        "carried forward with a status"
+      ]
+    }
+  ]
+}

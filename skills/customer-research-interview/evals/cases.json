@@ -1,0 +1,55 @@
+{
+  "skill": "customer-research-interview",
+  "cases": [
+    {
+      "id": "decision-first",
+      "prompt": "Let us just talk to customers.",
+      "assert": [
+        "states the decision the research informs first"
+      ],
+      "anchors": [
+        "stated before the questions are written"
+      ]
+    },
+    {
+      "id": "include-losses",
+      "prompt": "Interview our happiest customers.",
+      "assert": [
+        "includes recent losses"
+      ],
+      "anchors": [
+        "Losses are included"
+      ]
+    },
+    {
+      "id": "events-not-opinions",
+      "prompt": "Ask what matters to them in a vendor.",
+      "assert": [
+        "reframes to what happened"
+      ],
+      "anchors": [
+        "ask about events rather than opinions"
+      ]
+    },
+    {
+      "id": "verbatim",
+      "prompt": "Summarize what they meant.",
+      "assert": [
+        "captures the language verbatim"
+      ],
+      "anchors": [
+        "captured verbatim"
+      ]
+    },
+    {
+      "id": "writes-icp",
+      "prompt": "We are done interviewing.",
+      "assert": [
+        "writes findings back into ICP.md"
+      ],
+      "anchors": [
+        "written back into ICP.md"
+      ]
+    }
+  ]
+}

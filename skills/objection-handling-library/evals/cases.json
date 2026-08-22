@@ -1,0 +1,55 @@
+{
+  "skill": "objection-handling-library",
+  "cases": [
+    {
+      "id": "cluster-by-cause",
+      "prompt": "They said no budget and they said not a priority.",
+      "assert": [
+        "clusters them as the same underlying objection"
+      ],
+      "anchors": [
+        "clustered by cause, not by wording"
+      ]
+    },
+    {
+      "id": "two-metrics",
+      "prompt": "Rank the objections.",
+      "assert": [
+        "reports frequency and kill rate separately"
+      ],
+      "anchors": [
+        "Frequency and kill rate are reported separately"
+      ]
+    },
+    {
+      "id": "concede-first",
+      "prompt": "Write the response.",
+      "assert": [
+        "concedes the true part before answering"
+      ],
+      "anchors": [
+        "concedes the true part"
+      ]
+    },
+    {
+      "id": "proof-gap",
+      "prompt": "We have no case study for that.",
+      "assert": [
+        "flags it as a gap rather than shipping the response"
+      ],
+      "anchors": [
+        "flagged as gaps rather than shipped"
+      ]
+    },
+    {
+      "id": "untested-label",
+      "prompt": "Add this response we have never used.",
+      "assert": [
+        "labels it untested"
+      ],
+      "anchors": [
+        "labeled untested"
+      ]
+    }
+  ]
+}

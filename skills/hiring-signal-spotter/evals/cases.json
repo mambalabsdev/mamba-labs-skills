@@ -1,0 +1,45 @@
+{
+  "skill": "hiring-signal-spotter",
+  "cases": [
+    {
+      "id": "no-board-unknown",
+      "prompt": "This company has no job board I can find.",
+      "assert": [
+        "reports unknown rather than zero roles"
+      ],
+      "anchors": [
+        "reported as unknown, never as zero"
+      ]
+    },
+    {
+      "id": "grade-names-role",
+      "prompt": "Grade the signal.",
+      "assert": [
+        "the grade names the specific role carrying it"
+      ],
+      "anchors": [
+        "names the specific role"
+      ]
+    },
+    {
+      "id": "angle-specific",
+      "prompt": "Write the outreach angle.",
+      "assert": [
+        "references what the role is for rather than that hiring is happening"
+      ],
+      "anchors": [
+        "not that hiring is happening"
+      ]
+    },
+    {
+      "id": "reads-descriptions",
+      "prompt": "They have five open roles.",
+      "assert": [
+        "reads posting bodies for stack and problem hints"
+      ],
+      "anchors": [
+        "Role descriptions are read"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "skill": "positioning-statement",
+  "cases": [
+    {
+      "id": "alternative-named",
+      "prompt": "We are better than the other tools.",
+      "assert": [
+        "names the real alternative, which may be doing nothing"
+      ],
+      "anchors": [
+        "may be doing nothing"
+      ]
+    },
+    {
+      "id": "inversion",
+      "prompt": "We help teams work smarter.",
+      "assert": [
+        "applies the inversion test and rejects the platitude"
+      ],
+      "anchors": [
+        "inversion test is applied"
+      ]
+    },
+    {
+      "id": "objection-written",
+      "prompt": "Finish the statement.",
+      "assert": [
+        "writes down the objection the positioning invites"
+      ],
+      "anchors": [
+        "invited objection is written down"
+      ]
+    },
+    {
+      "id": "two-tests",
+      "prompt": "Is it good?",
+      "assert": [
+        "tests it as an email first line and as a headline"
+      ],
+      "anchors": [
+        "as an email first line and as a headline"
+      ]
+    },
+    {
+      "id": "writes-brand",
+      "prompt": "Save it.",
+      "assert": [
+        "writes it into BRAND.md"
+      ],
+      "anchors": [
+        "written back into BRAND.md"
+      ]
+    }
+  ]
+}

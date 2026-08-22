@@ -1,0 +1,55 @@
+{
+  "skill": "results-doc-verifier",
+  "cases": [
+    {
+      "id": "claims-split",
+      "prompt": "This paragraph says four things.",
+      "assert": [
+        "extracts each claim separately"
+      ],
+      "anchors": [
+        "extracted separately"
+      ]
+    },
+    {
+      "id": "could-it-fail",
+      "prompt": "The test passed.",
+      "assert": [
+        "asks whether the test could have failed"
+      ],
+      "anchors": [
+        "could this check have failed"
+      ]
+    },
+    {
+      "id": "absence-flag",
+      "prompt": "No errors appeared.",
+      "assert": [
+        "flags the claim as resting on an absence"
+      ],
+      "anchors": [
+        "resting on an absence are flagged"
+      ]
+    },
+    {
+      "id": "baseline",
+      "prompt": "Performance improved 40 percent.",
+      "assert": [
+        "flags the unmeasured baseline"
+      ],
+      "anchors": [
+        "Unmeasured baselines are flagged"
+      ]
+    },
+    {
+      "id": "names-missing-evidence",
+      "prompt": "Classify the claims.",
+      "assert": [
+        "names the evidence that would verify each asserted claim"
+      ],
+      "anchors": [
+        "name the evidence that would verify them"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "skill": "merge-variable-linter",
+  "cases": [
+    {
+      "id": "exact-name",
+      "prompt": "I have firstName on the rows and first_name in the copy.",
+      "assert": [
+        "reports this as a miss, not a match"
+      ],
+      "anchors": [
+        "Case and separator differences are misses"
+      ]
+    },
+    {
+      "id": "one-side-fix",
+      "prompt": "How do I fix it?",
+      "assert": [
+        "picks one side to change rather than changing both"
+      ],
+      "anchors": [
+        "pick one so both sides do not get changed at once"
+      ]
+    },
+    {
+      "id": "subject-lines",
+      "prompt": "Lint the sequence.",
+      "assert": [
+        "includes subject lines in the extraction"
+      ],
+      "anchors": [
+        "including subject lines"
+      ]
+    },
+    {
+      "id": "verdict",
+      "prompt": "Am I clear to send?",
+      "assert": [
+        "returns a single go or no go line"
+      ],
+      "anchors": [
+        "go or no go"
+      ]
+    }
+  ]
+}

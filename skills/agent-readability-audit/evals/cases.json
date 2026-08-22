@@ -1,0 +1,55 @@
+{
+  "skill": "agent-readability-audit",
+  "cases": [
+    {
+      "id": "directives-first",
+      "prompt": "Add schema to the blog.",
+      "assert": [
+        "checks crawl directives before anything else"
+      ],
+      "anchors": [
+        "checked before anything else"
+      ]
+    },
+    {
+      "id": "commercial-pages",
+      "prompt": "Audit the homepage.",
+      "assert": [
+        "audits product, pricing and documentation pages instead"
+      ],
+      "anchors": [
+        "not the homepage"
+      ]
+    },
+    {
+      "id": "no-script",
+      "prompt": "Our content loads via script.",
+      "assert": [
+        "tests content availability without scripting"
+      ],
+      "anchors": [
+        "without scripting is tested"
+      ]
+    },
+    {
+      "id": "ranked-by-answer",
+      "prompt": "Give me the fix list.",
+      "assert": [
+        "ranks fixes by what they change in an agent answer"
+      ],
+      "anchors": [
+        "what they change in an agent answer"
+      ]
+    },
+    {
+      "id": "retest",
+      "prompt": "We applied the fixes.",
+      "assert": [
+        "runs a re test"
+      ],
+      "anchors": [
+        "re test is run after the fixes"
+      ]
+    }
+  ]
+}

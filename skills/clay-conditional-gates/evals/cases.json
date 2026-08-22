@@ -1,0 +1,46 @@
+{
+  "skill": "clay-conditional-gates",
+  "cases": [
+    {
+      "id": "handles-blanks",
+      "prompt": "Only enrich rows where employee count is over 50.",
+      "assert": [
+        "writes the negative case so blank values do not pass"
+      ],
+      "anchors": [
+        "blank values do not silently pass"
+      ]
+    },
+    {
+      "id": "gate-cheaper",
+      "prompt": "Gate this on a Claygent judgment.",
+      "assert": [
+        "prefers a deterministic cheap column and says a gate must cost less than the column it guards"
+      ],
+      "anchors": [
+        "deterministic cheap column",
+        "costs as much as the column it guards"
+      ]
+    },
+    {
+      "id": "ordered-gates",
+      "prompt": "I have three conditions.",
+      "assert": [
+        "orders gates by rejection rate, highest first"
+      ],
+      "anchors": [
+        "rejection rate"
+      ]
+    },
+    {
+      "id": "rejected-rows",
+      "prompt": "What happens to rows that fail?",
+      "assert": [
+        "states whether rejected rows are left blank, tagged or moved"
+      ],
+      "anchors": [
+        "left blank, tagged, or moved"
+      ]
+    }
+  ]
+}

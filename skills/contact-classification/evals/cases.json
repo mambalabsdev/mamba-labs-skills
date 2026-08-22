@@ -1,0 +1,45 @@
+{
+  "skill": "contact-classification",
+  "cases": [
+    {
+      "id": "department-first",
+      "prompt": "Classify to my personas.",
+      "assert": [
+        "derives department and seniority before persona"
+      ],
+      "anchors": [
+        "derived before persona"
+      ]
+    },
+    {
+      "id": "ambiguous",
+      "prompt": "This one says Founder and Head of Sales.",
+      "assert": [
+        "handles the ambiguous family explicitly rather than defaulting"
+      ],
+      "anchors": [
+        "not defaulted"
+      ]
+    },
+    {
+      "id": "unclassifiable",
+      "prompt": "Done.",
+      "assert": [
+        "reports the unclassifiable share"
+      ],
+      "anchors": [
+        "unclassifiable share is reported"
+      ]
+    },
+    {
+      "id": "low-confidence-route",
+      "prompt": "Route the uncertain ones.",
+      "assert": [
+        "routes them to a generic sequence"
+      ],
+      "anchors": [
+        "route to a generic sequence"
+      ]
+    }
+  ]
+}

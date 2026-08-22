@@ -1,0 +1,55 @@
+{
+  "skill": "directory-submission-plan",
+  "cases": [
+    {
+      "id": "traffic-not-authority",
+      "prompt": "Sort them by domain authority.",
+      "assert": [
+        "ranks by whether they send visitors instead"
+      ],
+      "anchors": [
+        "not by domain authority"
+      ]
+    },
+    {
+      "id": "category-specific",
+      "prompt": "Submit to the big general directories.",
+      "assert": [
+        "separates category specific from general and prefers the former"
+      ],
+      "anchors": [
+        "separated from general ones"
+      ]
+    },
+    {
+      "id": "length-limits",
+      "prompt": "Use the same description everywhere.",
+      "assert": [
+        "writes at each length limit rather than truncating"
+      ],
+      "anchors": [
+        "rather than truncated"
+      ]
+    },
+    {
+      "id": "tracker",
+      "prompt": "We submitted them all.",
+      "assert": [
+        "records approvals and rejections"
+      ],
+      "anchors": [
+        "records approvals and rejections"
+      ]
+    },
+    {
+      "id": "review-date",
+      "prompt": "Done.",
+      "assert": [
+        "sets a review date to check what sent traffic"
+      ],
+      "anchors": [
+        "review date is set to check what actually sent traffic"
+      ]
+    }
+  ]
+}

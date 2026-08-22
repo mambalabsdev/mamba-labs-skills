@@ -1,0 +1,45 @@
+{
+  "skill": "outbound-stack-fingerprint",
+  "cases": [
+    {
+      "id": "band-not-count",
+      "prompt": "How many sending domains?",
+      "assert": [
+        "reports a band with the discovery limits stated"
+      ],
+      "anchors": [
+        "band with the discovery limits"
+      ]
+    },
+    {
+      "id": "not-found",
+      "prompt": "Nothing was detected.",
+      "assert": [
+        "reports not found rather than absence"
+      ],
+      "anchors": [
+        "not found rather than as absence"
+      ]
+    },
+    {
+      "id": "provisioning",
+      "prompt": "They use a known sequencer.",
+      "assert": [
+        "assesses the provisioning pattern, not only the tool"
+      ],
+      "anchors": [
+        "provisioning pattern is assessed"
+      ]
+    },
+    {
+      "id": "ends-in-qualification",
+      "prompt": "Give me the read.",
+      "assert": [
+        "ends in a qualification rather than a tool list"
+      ],
+      "anchors": [
+        "qualification, not a tool list"
+      ]
+    }
+  ]
+}

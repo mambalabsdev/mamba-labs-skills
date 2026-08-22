@@ -1,0 +1,55 @@
+{
+  "skill": "sales-one-pager",
+  "cases": [
+    {
+      "id": "written-for-forward",
+      "prompt": "Write it for the person I met.",
+      "assert": [
+        "writes for the reader who was not in the meeting"
+      ],
+      "anchors": [
+        "was not in the meeting"
+      ]
+    },
+    {
+      "id": "quoted-problem",
+      "prompt": "Describe the problem in our words.",
+      "assert": [
+        "uses the champion's own words where available"
+      ],
+      "anchors": [
+        "champion's own words"
+      ]
+    },
+    {
+      "id": "cost-before-solution",
+      "prompt": "Lead with the product.",
+      "assert": [
+        "puts the cost of inaction first"
+      ],
+      "anchors": [
+        "cost of inaction appears before the solution"
+      ]
+    },
+    {
+      "id": "commitment-shape",
+      "prompt": "Say it is easy to get started.",
+      "assert": [
+        "states money, time and people instead"
+      ],
+      "anchors": [
+        "states money, time and people"
+      ]
+    },
+    {
+      "id": "one-page",
+      "prompt": "Add three more sections.",
+      "assert": [
+        "keeps it to one page"
+      ],
+      "anchors": [
+        "fits one page"
+      ]
+    }
+  ]
+}

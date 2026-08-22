@@ -1,0 +1,45 @@
+{
+  "skill": "job-board-keyword-scanner",
+  "cases": [
+    {
+      "id": "implication-required",
+      "prompt": "Scan for the word migrating.",
+      "assert": [
+        "requires a stated implication for the keyword"
+      ],
+      "anchors": [
+        "stated implication"
+      ]
+    },
+    {
+      "id": "quotes-sentence",
+      "prompt": "Show me the hits.",
+      "assert": [
+        "returns the surrounding sentence, not only a count"
+      ],
+      "anchors": [
+        "surrounding sentence"
+      ]
+    },
+    {
+      "id": "boilerplate",
+      "prompt": "I got hits in the benefits section.",
+      "assert": [
+        "excludes boilerplate sections"
+      ],
+      "anchors": [
+        "Boilerplate sections are excluded"
+      ]
+    },
+    {
+      "id": "rank-by-implication",
+      "prompt": "Rank the companies.",
+      "assert": [
+        "ranks by implication strength rather than hit count"
+      ],
+      "anchors": [
+        "not hit count"
+      ]
+    }
+  ]
+}

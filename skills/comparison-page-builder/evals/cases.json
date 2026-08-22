@@ -1,0 +1,45 @@
+{
+  "skill": "comparison-page-builder",
+  "cases": [
+    {
+      "id": "competitor-wins",
+      "prompt": "We should win every row.",
+      "assert": [
+        "gives the competitor at least one row readers care about"
+      ],
+      "anchors": [
+        "competitor wins at least one row"
+      ]
+    },
+    {
+      "id": "sourced-dated",
+      "prompt": "Their pricing is 99 a month.",
+      "assert": [
+        "requires a source and a date on the claim"
+      ],
+      "anchors": [
+        "source and a date"
+      ]
+    },
+    {
+      "id": "conditional-rec",
+      "prompt": "Recommend us.",
+      "assert": [
+        "gives a conditional recommendation including who should pick them"
+      ],
+      "anchors": [
+        "conditional on the reader's situation"
+      ]
+    },
+    {
+      "id": "review-date",
+      "prompt": "Publish it.",
+      "assert": [
+        "includes a review date in the content"
+      ],
+      "anchors": [
+        "review date appears in the published content"
+      ]
+    }
+  ]
+}

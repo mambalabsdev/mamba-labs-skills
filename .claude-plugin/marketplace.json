@@ -4,22 +4,112 @@
     "name": "Mamba Labs"
   },
   "metadata": {
-    "description": "Free Mamba Labs skills for signal-based GTM workflows",
-    "version": "1.0.0"
+    "description": "Free Mamba Labs skills for signal based GTM workflows",
+    "version": "2.0.0"
   },
   "plugins": [
     {
-      "name": "icp-definition-builder",
-      "description": "Build a structured Ideal Customer Profile (ICP) from a description of a business, product, or target market. Outputs a complete ICP block with firmographic criteria, tech signals, hiring signals, pain indicators, and exclusion rules formatted for use in Clay tables, CRM filters, or outbound targeting. Use this skill when someone asks to define their ICP, build a target account profile, create targeting criteria, figure out who to sell to, segment their market, or set up account filters for outbound. Also trigger when someone says \"who is my ideal customer\" or \"help me define my target market.\"",
+      "name": "agent-readability-audit",
+      "description": "Check whether a website can be read and used by AI agents, and fix what blocks them. Use when someone asks about AI search visibility, agent accessibility, structured data, or whether their site works for AI crawlers.",
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/icp-definition-builder"
+        "./skills/agent-readability-audit"
+      ]
+    },
+    {
+      "name": "ai-adoption-signal-reader",
+      "description": "Detect whether a company has shipped AI features or adopted AI vendors, and read that as a budget and priority signal. Use when someone targets companies adopting AI, wants to know if a prospect is building AI features, or needs an AI readiness read on an account list.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/ai-adoption-signal-reader"
+      ]
+    },
+    {
+      "name": "bounce-and-catchall-policy",
+      "description": "Decide what to do with catch all domains, role addresses and soft bounces before they cost you a domain. Use when verification returns unknown, when someone asks whether to send to catch all addresses, or when bounce rate is creeping up.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/bounce-and-catchall-policy"
+      ]
+    },
+    {
+      "name": "brand-context-builder",
+      "description": "Interview once and write the shared context files that every other skill reads. Use at the start of any engagement, when skills keep asking the same questions, or when someone wants their AI tools to stop needing re explaining.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/brand-context-builder"
+      ]
+    },
+    {
+      "name": "cash-runway-snapshot",
+      "description": "Work out how many months of cash are left and what actually changes it. Use when someone asks about runway, cash position, whether they can afford a hire, or what happens if a payment is late.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/cash-runway-snapshot"
+      ]
+    },
+    {
+      "name": "clay-actor-column-wiring",
+      "description": "Wire an external actor or API into a Clay column so the types survive the round trip. Use when someone wants to call an Apify actor from Clay, add an HTTP API column, pass Clay values into a scraper, or is getting type errors from an external enrichment.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/clay-actor-column-wiring"
+      ]
+    },
+    {
+      "name": "clay-conditional-gates",
+      "description": "Write the run conditions that stop expensive Clay columns from firing on rows that will never qualify. Use when someone wants to skip enrichment for non ICP rows, gate a waterfall, add a run condition, or stop paying to enrich junk.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/clay-conditional-gates"
+      ]
+    },
+    {
+      "name": "clay-cost-audit",
+      "description": "Price a Clay table before it runs and find the columns that are burning credits for no return. Use when someone asks what a Clay build will cost, why their credits are gone, how to cut Clay spend, or wants a run before a full table ramp priced out.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/clay-cost-audit"
+      ]
+    },
+    {
+      "name": "clay-credit-forecast",
+      "description": "Forecast how far a Clay credit balance goes across a month of planned builds, and say which build to cut when it does not reach. Use when someone asks whether they have enough credits, how to plan a month of Clay work, or which campaign to drop on a fixed budget.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/clay-credit-forecast"
+      ]
+    },
+    {
+      "name": "clay-dedupe-and-merge",
+      "description": "Deduplicate and merge people or company rows across Clay tables without losing enrichment or double counting a person. Use when merging lists, importing a second source into an existing table, deduping a people pool, or deciding which record wins on a conflict.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/clay-dedupe-and-merge"
+      ]
+    },
+    {
+      "name": "clay-failure-triage",
+      "description": "Diagnose a Clay column that returns null, zero rows, or the wrong shape, by symptom rather than by guesswork. Use when a Clay enrichment stopped working, a column is empty for rows that clearly have data, a pipeline that worked last week is now blank, or someone asks why their Clay table is broken.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/clay-failure-triage"
       ]
     },
     {
       "name": "cold-email-structure-checker",
-      "description": "Audit a cold email draft against a 7-point outbound framework and return a pass/fail scorecard with a revised version. Checks for: signal anchor, relevance hook, value statement, social proof, single CTA, length (under 100 words), and spam word scan. Use this skill whenever someone asks to review a cold email, check their outreach copy, audit an email draft, improve a prospecting email, fix a cold email, or wants feedback on outbound messaging. Also trigger when someone pastes an email and asks \"is this good?\" or \"will this get replies?\"",
+      "description": "Audit a cold email draft against a seven point outbound framework and return a pass or fail scorecard with a rewritten version. Use whenever someone pastes a cold email and asks whether it is good, whether it will get replies, or asks for a review of outreach copy.",
       "source": "./",
       "strict": false,
       "skills": [
@@ -27,8 +117,71 @@
       ]
     },
     {
+      "name": "company-identity-resolution",
+      "description": "Resolve a messy company name to the right domain and canonical record, and say how confident the match is. Use when a list has company names but no domains, when names are ambiguous, or when enrichment is matching the wrong company.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/company-identity-resolution"
+      ]
+    },
+    {
+      "name": "comparison-page-builder",
+      "description": "Write a comparison or alternatives page that a reader trusts and a competitor cannot get taken down. Use when someone needs a versus page, an alternatives page, or wants to rank for competitor comparison queries.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/comparison-page-builder"
+      ]
+    },
+    {
+      "name": "contact-classification",
+      "description": "Classify contacts by department, seniority and role from their job title, and route them to the right persona. Use when a contact list has messy titles, when routing by persona, or when deciding who in a company to actually contact.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/contact-classification"
+      ]
+    },
+    {
+      "name": "content-brief-builder",
+      "description": "Write a content brief a writer can execute without inventing the substance, including where the non generic part comes from. Use when briefing a writer, planning an article, or when published content keeps reading like everything else.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/content-brief-builder"
+      ]
+    },
+    {
+      "name": "crm-hygiene-sweep",
+      "description": "Run a recurring cleanup on new and changed CRM records so the database stops degrading between audits. Use when someone wants ongoing data hygiene, has just finished a cleanup and wants it to hold, or needs a weekly CRM routine.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/crm-hygiene-sweep"
+      ]
+    },
+    {
+      "name": "customer-research-interview",
+      "description": "Run customer interviews that produce usable language instead of agreement, and turn the transcripts into a sharper ICP. Use when someone wants to talk to customers, needs messaging research, or does not know why their best customers bought.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/customer-research-interview"
+      ]
+    },
+    {
+      "name": "directory-submission-plan",
+      "description": "Pick the directories and marketplaces worth listing on, and prepare one set of assets that fits all of them. Use when launching a tool, when someone asks where to list a product, or when directory submissions are eating time for no return.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/directory-submission-plan"
+      ]
+    },
+    {
       "name": "domain-health-precheck",
-      "description": "Check if a sending domain is safe for cold outreach by scanning SPF, DKIM, DMARC records, and blacklist status. Takes a single domain, calls the Mamba Labs Domain Deliverability Checker MCP server, and returns a plain-English deliverability verdict with pass/fail per check and recommended DNS fixes. Use this skill whenever someone asks about email deliverability, domain health, SPF/DKIM/DMARC setup, whether a domain is blacklisted, whether their sending domain is ready for cold email, or if their email infrastructure is configured correctly. Also trigger when someone says \"check my domain\" or \"am I going to land in spam.\"",
+      "description": "Check whether one sending domain is safe for cold outreach by reading its SPF, DKIM and DMARC records and its blacklist status. Use when someone asks about email deliverability, domain health, SPF or DKIM or DMARC setup, whether a domain is blacklisted, or whether they will land in spam.",
       "source": "./",
       "strict": false,
       "skills": [
@@ -36,12 +189,327 @@
       ]
     },
     {
+      "name": "domain-warmup-planner",
+      "description": "Plan the warmup ramp for new sending domains and inboxes so real campaign volume starts on the date it is needed. Use when someone bought new domains, is adding inboxes, asks how long warmup takes, or needs to know when they can start sending for real.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/domain-warmup-planner"
+      ]
+    },
+    {
+      "name": "event-presence-prospecting",
+      "description": "Find which conferences a company sponsors, exhibits at, or speaks at, and use that as a budget and audience signal. Use when someone wants event based prospecting, wants to know if a prospect will be at a show, or is planning outreach around a conference.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/event-presence-prospecting"
+      ]
+    },
+    {
+      "name": "firmographic-enrichment",
+      "description": "Fill headcount, industry, headquarters and revenue band on a company list, and report honestly which fields actually filled. Use when a list needs firmographics, when qualification needs company size, or when someone asks how complete their company data is.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/firmographic-enrichment"
+      ]
+    },
+    {
+      "name": "friction-log-to-rules",
+      "description": "Turn the things that went wrong in a working session into standing rules that stop them recurring. Use at the end of a project, after a mistake, during a retrospective, or when the same problem keeps happening.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/friction-log-to-rules"
+      ]
+    },
+    {
+      "name": "handoff-writer",
+      "description": "Write the handoff that lets the next person or the next session continue without re deriving anything. Use when ending a working session, handing a project to someone else, or when context is about to be lost.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/handoff-writer"
+      ]
+    },
+    {
       "name": "hiring-signal-spotter",
-      "description": "Analyze a company's GTM hiring activity to identify buying signals for outbound sales. Takes a company domain or name, checks job boards (Greenhouse, Lever, Ashby) for open GTM roles (SDR, AE, VP Sales, RevOps, CRO, CMO), and returns a plain-English hiring brief with signal strength, detected roles, and a suggested outbound angle. Use this skill whenever someone asks about a company's hiring signals, GTM hiring activity, whether a company is investing in sales or growth, job board signals, hiring intent, or buying signals from job postings. Also use when the user wants to research a prospect company before outreach, build a signal-based prospecting list, or check if a company is ramping its go-to-market team.",
+      "description": "Read a company's open roles as a buying signal and turn them into an outreach angle. Use when someone asks about hiring signals, whether a company is investing in sales or growth, job board intent, or wants to research a prospect before outreach.",
       "source": "./",
       "strict": false,
       "skills": [
         "./skills/hiring-signal-spotter"
+      ]
+    },
+    {
+      "name": "icp-definition-builder",
+      "description": "Turn a description of a business into a structured ideal customer profile with firmographic criteria, signals, pain indicators and exclusion rules. Use when someone asks who to sell to, wants to define their ICP, build targeting criteria, or segment a market.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/icp-definition-builder"
+      ]
+    },
+    {
+      "name": "invoice-chaser",
+      "description": "Chase overdue invoices on a fixed escalation ladder that gets paid without damaging the relationship. Use when invoices are overdue, when someone dreads chasing payment, or when they want a repeatable collections routine.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/invoice-chaser"
+      ]
+    },
+    {
+      "name": "job-board-keyword-scanner",
+      "description": "Scan a company's job postings for the specific words that indicate a problem your product solves. Use when someone wants to find companies mentioning a tool, a process, or a pain in their job ads, or wants keyword based intent rather than role based intent.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/job-board-keyword-scanner"
+      ]
+    },
+    {
+      "name": "knowledge-write-discipline",
+      "description": "Write to a knowledge base so the document is findable later and provably stored. Use when saving a document, writing up a result, or when notes keep getting lost or duplicated.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/knowledge-write-discipline"
+      ]
+    },
+    {
+      "name": "legal-entity-resolution",
+      "description": "Resolve a company domain to its registered legal entity, company number and tax identifier. Use when someone needs the legal name for a contract, is checking whether a company is registered, needs a VAT number, or is doing supplier due diligence.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/legal-entity-resolution"
+      ]
+    },
+    {
+      "name": "linkedin-comment-strategy",
+      "description": "Decide which posts to comment on and write comments that do something other than agree. Use when someone wants to build presence through commenting, wants to be visible to a target account, or asks what to say on someone's post.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/linkedin-comment-strategy"
+      ]
+    },
+    {
+      "name": "linkedin-post-writer",
+      "description": "Write a LinkedIn post that sounds like the person and earns a reason to exist. Use when someone needs a post, wants to build a publishing cadence, has a result to share, or asks for content ideas for their profile.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/linkedin-post-writer"
+      ]
+    },
+    {
+      "name": "linkedin-profile-optimizer",
+      "description": "Rewrite a profile so it converts the visits that outbound and commenting send to it. Use when someone's profile is not converting, before starting outbound, or when someone asks how to improve their LinkedIn profile.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/linkedin-profile-optimizer"
+      ]
+    },
+    {
+      "name": "linkedin-url-resolution",
+      "description": "Turn a list of company domains into company profile URLs, and fill the gaps a native enrichment leaves behind. Use when a profile URL column has holes, when someone needs profile URLs from domains, or when building a social enrichment pipeline.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/linkedin-url-resolution"
+      ]
+    },
+    {
+      "name": "mamba-gtm-router",
+      "description": "Route a plain language go to market request to the right skill, and name the ones that would help but are not installed. Use when someone does not know which skill to use, asks a broad GTM question, or wants to know what is available.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/mamba-gtm-router"
+      ]
+    },
+    {
+      "name": "merge-variable-linter",
+      "description": "Check that every merge variable in a sequence resolves against the fields actually present on the rows, before the campaign sends. Use when someone is about to launch, has seen blank gaps in a sent email, or wants their personalization tokens verified.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/merge-variable-linter"
+      ]
+    },
+    {
+      "name": "monday-morning-brief",
+      "description": "Produce the weekly operating brief: what moved, what is at risk, and the three things that need a decision. Use when someone wants a Monday update, a weekly business summary, or a recurring brief across their tools.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/monday-morning-brief"
+      ]
+    },
+    {
+      "name": "objection-handling-library",
+      "description": "Build an objection library from the replies you actually received, with a tested response per objection. Use when the same objections keep coming back, when onboarding a new rep, or when someone asks how to handle a specific pushback.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/objection-handling-library"
+      ]
+    },
+    {
+      "name": "outbound-copy-humanizer",
+      "description": "Rewrite outbound copy so it reads like a person wrote it, removing the tells that mark a message as generated. Use when copy sounds robotic, when a draft is full of hedges and stock phrases, or when someone wants their outreach to sound like them.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/outbound-copy-humanizer"
+      ]
+    },
+    {
+      "name": "outbound-stack-fingerprint",
+      "description": "Detect whether a company runs cold outbound, which tools it sends with, and how many sending domains it operates. Use when selling to sales teams, sizing a competitor's outbound, or qualifying whether a prospect already runs the motion you sell into.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/outbound-stack-fingerprint"
+      ]
+    },
+    {
+      "name": "partner-sourcing-plan",
+      "description": "Find the partners whose customers are your buyers, and structure the first conversation so it produces something. Use when someone wants referral partners, co marketing, channel relationships, or a warmer route into a market.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/partner-sourcing-plan"
+      ]
+    },
+    {
+      "name": "people-finder-recipe",
+      "description": "Find the right people at a list of companies without pulling a hundred irrelevant contacts per account. Use when someone needs contacts at target accounts, wants to cap contacts per company, or is building a people list from a company list.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/people-finder-recipe"
+      ]
+    },
+    {
+      "name": "positioning-statement",
+      "description": "Write a positioning statement that names the real alternative and survives contact with a sales call. Use when messaging is vague, when a new product needs positioning, or when nobody can explain what the company does in one sentence.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/positioning-statement"
+      ]
+    },
+    {
+      "name": "public-award-prospecting",
+      "description": "Find companies that just won a government contract or public grant and reach them while the money is new. Use when someone wants to target contract winners, grant recipients, or public sector suppliers.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/public-award-prospecting"
+      ]
+    },
+    {
+      "name": "publishing-cadence-reader",
+      "description": "Measure how often a company actually publishes and read that as a content investment signal. Use when someone wants to know if a company invests in content, is benchmarking against competitors, or is qualifying a content marketing buyer.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/publishing-cadence-reader"
+      ]
+    },
+    {
+      "name": "results-doc-verifier",
+      "description": "Check a results write up for claims that were asserted rather than verified, before anyone acts on it. Use when reviewing a report, before sending results to a client, or when a document says something worked.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/results-doc-verifier"
+      ]
+    },
+    {
+      "name": "sales-one-pager",
+      "description": "Write the one page document a prospect forwards internally to the person who has to approve. Use when a deal needs an internal champion, when someone asks for a leave behind, or when a prospect says they need to check with someone.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/sales-one-pager"
+      ]
+    },
+    {
+      "name": "sending-capacity-planner",
+      "description": "Work out how many contacts a set of sending accounts can actually reach per week, and how long a list will take to work through. Use when someone asks how many emails they can send, how many inboxes they need, how long a campaign will run, or whether to buy more domains.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/sending-capacity-planner"
+      ]
+    },
+    {
+      "name": "sequencer-campaign-config",
+      "description": "Configure a sending platform campaign correctly the first time: schedule, tracking, limits, timezone and the fields that silently reset. Use when creating a campaign in a sequencer, when settings appear not to save, or when a campaign is sending at the wrong time.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/sequencer-campaign-config"
+      ]
+    },
+    {
+      "name": "subject-line-lab",
+      "description": "Generate and screen cold email subject lines against truncation, spam triggers and the preview text they create. Use when someone needs subject lines, has low open rates, or wants to test subject variants.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/subject-line-lab"
+      ]
+    },
+    {
+      "name": "tech-stack-signal-reader",
+      "description": "Detect which tools a company runs from its own website and turn the stack into a qualification and an angle. Use when someone wants to know what CRM or sequencer or analytics a company uses, wants to find companies on a competitor, or wants tech stack based targeting.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/tech-stack-signal-reader"
+      ]
+    },
+    {
+      "name": "unsubscribe-compliance-check",
+      "description": "Check that outbound campaigns carry a working unsubscribe path and that opt outs land somewhere that actually stops the next send. Use before launching, during a compliance review, or when someone asks what an outbound email legally needs.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/unsubscribe-compliance-check"
+      ]
+    },
+    {
+      "name": "weekly-pipeline-review",
+      "description": "Run a weekly pipeline review that finds the deals that are quietly dying rather than admiring the big ones. Use for a weekly sales review, forecasting, or when someone asks which deals to focus on this week.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/weekly-pipeline-review"
+      ]
+    },
+    {
+      "name": "work-order-writer",
+      "description": "Write a work order an agent or a contractor can execute end to end without asking a question. Use when delegating a task, briefing an agent, writing a spec, or when work keeps coming back wrong.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/work-order-writer"
+      ]
+    },
+    {
+      "name": "workplace-program-signal",
+      "description": "Detect which workplace programs and benefits a company runs, as a signal for anyone selling into people operations, benefits or internal communications. Use when targeting HR buyers, checking benefits maturity, or looking for companies with or without a specific program.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/workplace-program-signal"
       ]
     }
   ]

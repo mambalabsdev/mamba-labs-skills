@@ -1,0 +1,45 @@
+{
+  "skill": "legal-entity-resolution",
+  "cases": [
+    {
+      "id": "register-named",
+      "prompt": "Resolve this entity.",
+      "assert": [
+        "names the register used"
+      ],
+      "anchors": [
+        "register used is named"
+      ]
+    },
+    {
+      "id": "validate-vat",
+      "prompt": "Their website lists a VAT number.",
+      "assert": [
+        "validates rather than copying it"
+      ],
+      "anchors": [
+        "not copied from the website"
+      ]
+    },
+    {
+      "id": "status",
+      "prompt": "Give me the record.",
+      "assert": [
+        "reports entity status"
+      ],
+      "anchors": [
+        "Entity status is reported"
+      ]
+    },
+    {
+      "id": "missing-input",
+      "prompt": "It is ambiguous.",
+      "assert": [
+        "returns nothing and names the missing input"
+      ],
+      "anchors": [
+        "names the missing input"
+      ]
+    }
+  ]
+}
