@@ -3,7 +3,7 @@ name: ai-adoption-signal-reader
 description: |
   Detect whether a company has shipped AI features or adopted AI vendors, and read that as a budget and priority signal. Use when someone targets companies adopting AI, wants to know if a prospect is building AI features, or needs an AI readiness read on an account list.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [signal_based_selling, signal_research]
 metadata:
   title: "AI Adoption Signal Reader"
@@ -11,6 +11,7 @@ metadata:
   tags: "signal_based_selling, signal_research"
   keywords: "signals, are they using ai, find companies adopting ai, ai readiness of this account list, did they ship ai features, ai vendor detection"
   version: "2.1.0"
+  requirements: "Needs an Apify token (usage billed to your Apify account); Node.js 18+."
 ---
 
 # AI Adoption Signal Reader
@@ -18,6 +19,20 @@ metadata:
 ## What this does
 
 AI adoption splits companies into three groups that need different messages: shipped it, announced it, and neither. This skill detects vendor presence and product surface on the live site, places the company in one of the three, and reads the pricing page for whether the AI is a feature or a line item, which is the part that indicates real budget.
+
+## Requirements
+
+Check these before you run the skill. Nothing outside this table is needed.
+
+| Requirement | Needed | Used for | What it costs you |
+| --- | --- | --- | --- |
+| Apify account and API token (`APIFY_TOKEN`) | Required | Runs the live data actors | A free Apify account works. Each run bills your own Apify account at the actor's Store price: ai-tooling-detector 0.003 USD per domain. |
+| Node.js 18 or newer | Required | The MCP tool calls | Free. It starts the Mamba Labs MCP server with `npx`. |
+
+**Missing a required item?** Stop before the live steps and tell the user which item is
+missing and what it is for. Do not run the step without it and do not present an empty
+result as an answer. Keys are read from the environment at run time and are never
+written into a file, a prompt or the output.
 
 ## When to use it
 
@@ -44,7 +59,7 @@ missing file so the next skill in the pack starts warmer.
 
 ## Tool connection
 
-Vendor detection and the pricing page read run against the live site.
+Vendor detection and the pricing page read run against the live site. The tool reports every vendor it detects; filter to the vendors you named.
 
 This skill calls live data through the Mamba Labs MCP server, which runs the
 actors on Apify with your own Apify token (https://console.apify.com/account/integrations).
@@ -61,15 +76,13 @@ claude mcp add mamba-gtm-suite -e APIFY_TOKEN=<your token> -- npx -y @mambalabsd
 | --- | --- | --- | --- |
 | AI Tooling Detector | `detect_ai_tooling` | AI vendor presence, product surface and pricing signals from the live site | https://apify.com/mambalabs/ai-tooling-detector |
 
-Runnable example input:
+Runnable example input, matched to the live tool schema:
+
+`detect_ai_tooling`:
 
 ```json
 {
   "domain": "example.com",
-  "vendors": [
-    "openai",
-    "anthropic"
-  ],
   "check_pricing": true
 }
 ```

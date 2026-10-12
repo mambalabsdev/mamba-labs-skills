@@ -3,7 +3,7 @@ name: outbound-stack-fingerprint
 description: |
   Detect whether a company runs cold outbound, which tools it sends with, and how many sending domains it operates. Use when selling to sales teams, sizing a competitor's outbound, or qualifying whether a prospect already runs the motion you sell into.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [deliverability, signal_based_selling, signal_research]
 metadata:
   title: "Outbound Stack Fingerprint"
@@ -11,6 +11,7 @@ metadata:
   tags: "deliverability, signal_based_selling, signal_research"
   keywords: "signals, do they run cold outbound, what sequencer do they use, how many sending domains, size a competitors outbound, qualify an outbound buyer"
   version: "2.1.0"
+  requirements: "Needs an Apify token (usage billed to your Apify account); Node.js 18+."
 ---
 
 # Outbound Stack Fingerprint
@@ -18,6 +19,20 @@ metadata:
 ## What this does
 
 Whether a company already runs cold outbound is the single most useful qualifier for anyone selling outbound tooling or services, and it is visible from the outside: sending domains, mail records, and the fingerprints of the tools that provision them. This skill reads that infrastructure and reports scale as well as presence.
+
+## Requirements
+
+Check these before you run the skill. Nothing outside this table is needed.
+
+| Requirement | Needed | Used for | What it costs you |
+| --- | --- | --- | --- |
+| Apify account and API token (`APIFY_TOKEN`) | Required | Runs the live data actors | A free Apify account works. Each run bills your own Apify account at the actor's Store price: outbound-infrastructure-fingerprint 0.004 USD per domain. |
+| Node.js 18 or newer | Required | The MCP tool calls | Free. It starts the Mamba Labs MCP server with `npx`. |
+
+**Missing a required item?** Stop before the live steps and tell the user which item is
+missing and what it is for. Do not run the step without it and do not present an empty
+result as an answer. Keys are read from the environment at run time and are never
+written into a file, a prompt or the output.
 
 ## When to use it
 
@@ -61,7 +76,9 @@ claude mcp add mamba-gtm-suite -e APIFY_TOKEN=<your token> -- npx -y @mambalabsd
 | --- | --- | --- | --- |
 | Outbound Infrastructure Fingerprint | `fingerprint_outbound_infrastructure` | sending domain discovery and outbound tool fingerprinting | https://apify.com/mambalabs/outbound-infrastructure-fingerprint |
 
-Runnable example input:
+Runnable example input, matched to the live tool schema:
+
+`fingerprint_outbound_infrastructure`:
 
 ```json
 {

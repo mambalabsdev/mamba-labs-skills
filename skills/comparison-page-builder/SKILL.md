@@ -3,7 +3,7 @@ name: comparison-page-builder
 description: |
   Write a comparison or alternatives page that a reader trusts and a competitor cannot get taken down. Use when someone needs a versus page, an alternatives page, or wants to rank for competitor comparison queries.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [seo_content, seo_content_engine]
 metadata:
   title: "Comparison Page Builder"
@@ -11,6 +11,7 @@ metadata:
   tags: "seo_content, seo_content_engine"
   keywords: "seo and content, write a versus page, alternatives page, comparison content, rank for competitor queries, compare us to a competitor"
   version: "2.1.0"
+  requirements: "Needs no account, key or paid service: it works from the files, exports and answers you give it."
 ---
 
 # Comparison Page Builder
@@ -18,6 +19,11 @@ metadata:
 ## What this does
 
 Comparison pages convert better than almost any other page type and they are the easiest to write badly, because the temptation is to win every row. A page that wins every row is not read as information. This skill writes comparisons where the competitor genuinely wins some rows, every claim is dated and sourced, and the recommendation is conditional on the reader's situation.
+
+## Requirements
+
+This skill needs no account, API key or paid service. It works from the files,
+exports and answers you give it, in any agent that reads SKILL.md.
 
 ## When to use it
 

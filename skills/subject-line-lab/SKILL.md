@@ -3,7 +3,7 @@ name: subject-line-lab
 description: |
   Generate and screen cold email subject lines against truncation, spam triggers and the preview text they create. Use when someone needs subject lines, has low open rates, or wants to test subject variants.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [cold_email_system, outbound_email]
 metadata:
   title: "Subject Line Lab"
@@ -11,6 +11,7 @@ metadata:
   tags: "cold_email_system, outbound_email"
   keywords: "outbound, write subject lines, my open rates are low, test subject variants, improve this subject line, subject line ideas"
   version: "2.1.0"
+  requirements: "Needs no account, key or paid service: it works from the files, exports and answers you give it."
 ---
 
 # Subject Line Lab
@@ -18,6 +19,11 @@ metadata:
 ## What this does
 
 Subject lines are judged on a phone, truncated, next to preview text pulled from the first line of the body. Most subject line advice ignores all three. This skill generates variants, then screens each against character truncation on the common clients, against filter triggers, and against the preview text it will actually appear beside.
+
+## Requirements
+
+This skill needs no account, API key or paid service. It works from the files,
+exports and answers you give it, in any agent that reads SKILL.md.
 
 ## When to use it
 

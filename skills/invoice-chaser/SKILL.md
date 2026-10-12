@@ -3,7 +3,7 @@ name: invoice-chaser
 description: |
   Chase overdue invoices on a fixed escalation ladder that gets paid without damaging the relationship. Use when invoices are overdue, when someone dreads chasing payment, or when they want a repeatable collections routine.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [agency_delivery, small_business_operations, small_business_ops]
 metadata:
   title: "Invoice Chaser"
@@ -11,6 +11,7 @@ metadata:
   tags: "agency_delivery, small_business_operations, small_business_ops"
   keywords: "small business, chase overdue invoices, this client has not paid, collections routine, payment reminder, how do i ask for payment"
   version: "2.1.0"
+  requirements: "Needs no account, key or paid service: it works from the files, exports and answers you give it."
 ---
 
 # Invoice Chaser
@@ -18,6 +19,11 @@ metadata:
 ## What this does
 
 Late payment is usually a process failure at the payer, not a refusal, and it is fixed by reaching the right person with the right document rather than by escalating tone. This skill sets a dated ladder, writes each message so it is easy to act on, and only shifts tone at the point where the ladder has run out.
+
+## Requirements
+
+This skill needs no account, API key or paid service. It works from the files,
+exports and answers you give it, in any agent that reads SKILL.md.
 
 ## When to use it
 

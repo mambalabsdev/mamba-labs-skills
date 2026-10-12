@@ -3,7 +3,7 @@ name: domain-warmup-planner
 description: |
   Plan the warmup ramp for new sending domains and inboxes so real campaign volume starts on the date it is needed. Use when someone bought new domains, is adding inboxes, asks how long warmup takes, or needs to know when they can start sending for real.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [deliverability]
 metadata:
   title: "Domain Warmup Planner"
@@ -11,6 +11,7 @@ metadata:
   tags: "deliverability"
   keywords: "deliverability, i bought new domains, how long does warmup take, when can i send for real, adding inboxes, warmup schedule"
   version: "2.1.0"
+  requirements: "Needs no account, key or paid service: it works from the files, exports and answers you give it."
 ---
 
 # Domain Warmup Planner
@@ -18,6 +19,11 @@ metadata:
 ## What this does
 
 Warmup is a scheduling problem more than a technique problem. The question that matters is not how to warm up but whether the domains bought today can carry the volume the campaign needs on its start date. This skill works backward from the campaign date, computes the required ramp, and says plainly whether the date holds.
+
+## Requirements
+
+This skill needs no account, API key or paid service. It works from the files,
+exports and answers you give it, in any agent that reads SKILL.md.
 
 ## When to use it
 

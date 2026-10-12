@@ -3,7 +3,7 @@ name: event-presence-prospecting
 description: |
   Find which conferences a company sponsors, exhibits at, or speaks at, and use that as a budget and audience signal. Use when someone wants event based prospecting, wants to know if a prospect will be at a show, or is planning outreach around a conference.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [signal_based_selling, signal_research]
 metadata:
   title: "Event Presence Prospecting"
@@ -11,6 +11,7 @@ metadata:
   tags: "signal_based_selling, signal_research"
   keywords: "signals, which conferences do they sponsor, event based prospecting, will this company be at the show, conference outreach, who exhibits at this event"
   version: "2.1.0"
+  requirements: "Needs an Apify token (usage billed to your Apify account); Node.js 18+."
 ---
 
 # Event Presence Prospecting
@@ -18,6 +19,20 @@ metadata:
 ## What this does
 
 Event presence is an unusually honest signal because it costs money and it is public. A company that buys a booth has both budget and a stated audience. This skill finds the events, separates sponsorship from attendance from speaking, and builds outreach that is timed to the event rather than generic.
+
+## Requirements
+
+Check these before you run the skill. Nothing outside this table is needed.
+
+| Requirement | Needed | Used for | What it costs you |
+| --- | --- | --- | --- |
+| Apify account and API token (`APIFY_TOKEN`) | Required | Runs the live data actors | A free Apify account works. Each run bills your own Apify account at the actor's Store price: event-presence-index 0.005 USD per company. |
+| Node.js 18 or newer | Required | The MCP tool calls | Free. It starts the Mamba Labs MCP server with `npx`. |
+
+**Missing a required item?** Stop before the live steps and tell the user which item is
+missing and what it is for. Do not run the step without it and do not present an empty
+result as an answer. Keys are read from the environment at run time and are never
+written into a file, a prompt or the output.
 
 ## When to use it
 
@@ -62,7 +77,9 @@ claude mcp add mamba-gtm-suite -e APIFY_TOKEN=<your token> -- npx -y @mambalabsd
 | --- | --- | --- | --- |
 | Event Presence Index | `map_company_event_presence` | conference sponsorship, booth and speaker presence for a company | https://apify.com/mambalabs/event-presence-index |
 
-Runnable example input:
+Runnable example input, matched to the live tool schema:
+
+`map_company_event_presence`:
 
 ```json
 {

@@ -3,7 +3,7 @@ name: monday-morning-brief
 description: |
   Produce the weekly operating brief: what moved, what is at risk, and the three things that need a decision. Use when someone wants a Monday update, a weekly business summary, or a recurring brief across their tools.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [small_business_operations, small_business_ops]
 metadata:
   title: "Monday Morning Brief"
@@ -11,6 +11,7 @@ metadata:
   tags: "small_business_operations, small_business_ops"
   keywords: "small business, monday morning brief, weekly business summary, what happened last week, weekly update across my tools, recurring operating brief"
   version: "2.1.0"
+  requirements: "Needs Connectors in your agent for the sources the brief reads (calendar, mail, CRM, finance, tracker)."
 ---
 
 # Monday Morning Brief
@@ -18,6 +19,19 @@ metadata:
 ## What this does
 
 A weekly brief is only read if it is short and if it is honest about what it could not see. This skill pulls from whatever is connected, reports movement rather than levels, names the decisions that are waiting, and states plainly which sources were unavailable rather than quietly leaving them out.
+
+## Requirements
+
+Check these before you run the skill. Nothing outside this table is needed.
+
+| Requirement | Needed | Used for | What it costs you |
+| --- | --- | --- | --- |
+| Connectors in your agent for the sources the brief reads (calendar, mail, CRM, finance, tracker) | Required | The sources the brief reads | None beyond the tools you already use. |
+
+**Missing a required item?** Stop before the live steps and tell the user which item is
+missing and what it is for. Do not run the step without it and do not present an empty
+result as an answer. Keys are read from the environment at run time and are never
+written into a file, a prompt or the output.
 
 ## When to use it
 

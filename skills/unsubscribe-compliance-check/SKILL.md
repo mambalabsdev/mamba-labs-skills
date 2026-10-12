@@ -3,7 +3,7 @@ name: unsubscribe-compliance-check
 description: |
   Check that outbound campaigns carry a working unsubscribe path and that opt outs land somewhere that actually stops the next send. Use before launching, during a compliance review, or when someone asks what an outbound email legally needs.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [cold_email_system, deliverability]
 metadata:
   title: "Unsubscribe Compliance Check"
@@ -11,6 +11,7 @@ metadata:
   tags: "cold_email_system, deliverability"
   keywords: "deliverability, do my emails need an unsubscribe, compliance review of outbound, test my opt out, unsubscribe handling, what does an outbound email legally need"
   version: "2.1.0"
+  requirements: "Needs Access to your sending platform (Instantly, Smartlead or similar); Seed inboxes at Gmail, Microsoft and Yahoo that you control, or an inbox placement test service."
 ---
 
 # Unsubscribe Compliance Check
@@ -18,6 +19,20 @@ metadata:
 ## What this does
 
 An unsubscribe link that renders is not an unsubscribe path. The path has three parts, and the one that breaks is always the third: the link, the confirmation, and the write that reaches the suppression layer before the next scheduled send. This skill tests all three end to end rather than checking that the footer exists.
+
+## Requirements
+
+Check these before you run the skill. Nothing outside this table is needed.
+
+| Requirement | Needed | Used for | What it costs you |
+| --- | --- | --- | --- |
+| Access to your sending platform (Instantly, Smartlead or similar) | Required | The campaign and its unsubscribe path | None beyond your existing sending plan. |
+| Seed inboxes at Gmail, Microsoft and Yahoo that you control, or an inbox placement test service | Required | The end to end opt out test | Free with your own seed inboxes; a placement test service bills you directly. |
+
+**Missing a required item?** Stop before the live steps and tell the user which item is
+missing and what it is for. Do not run the step without it and do not present an empty
+result as an answer. Keys are read from the environment at run time and are never
+written into a file, a prompt or the output.
 
 ## When to use it
 

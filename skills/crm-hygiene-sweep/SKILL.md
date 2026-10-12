@@ -3,7 +3,7 @@ name: crm-hygiene-sweep
 description: |
   Run a recurring cleanup on new and changed CRM records so the database stops degrading between audits. Use when someone wants ongoing data hygiene, has just finished a cleanup and wants it to hold, or needs a weekly CRM routine.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [crm_operations, crm_operations_pack]
 metadata:
   title: "CRM Hygiene Sweep"
@@ -11,6 +11,7 @@ metadata:
   tags: "crm_operations, crm_operations_pack"
   keywords: "crm, weekly crm cleanup, keep the crm clean, data hygiene routine, we cleaned it and it is dirty again, new record hygiene"
   version: "2.1.0"
+  requirements: "Needs Read access to your CRM, or an export of the records."
 ---
 
 # CRM Hygiene Sweep
@@ -18,6 +19,19 @@ metadata:
 ## What this does
 
 A CRM cleaned once is dirty again in a quarter, because the intake keeps producing the same defects. This skill fixes the records that arrived since the last sweep, measures the drift rate, and points at the intake that caused it, so the sweep gets shorter over time instead of longer.
+
+## Requirements
+
+Check these before you run the skill. Nothing outside this table is needed.
+
+| Requirement | Needed | Used for | What it costs you |
+| --- | --- | --- | --- |
+| Read access to your CRM, or an export of the records | Required | The records created or changed in the window | None beyond your existing CRM. |
+
+**Missing a required item?** Stop before the live steps and tell the user which item is
+missing and what it is for. Do not run the step without it and do not present an empty
+result as an answer. Keys are read from the environment at run time and are never
+written into a file, a prompt or the output.
 
 ## When to use it
 

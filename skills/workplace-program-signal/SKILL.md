@@ -3,7 +3,7 @@ name: workplace-program-signal
 description: |
   Detect which workplace programs and benefits a company runs, as a signal for anyone selling into people operations, benefits or internal communications. Use when targeting HR buyers, checking benefits maturity, or looking for companies with or without a specific program.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [signal_based_selling, signal_research]
 metadata:
   title: "Workplace Program Signal"
@@ -11,6 +11,7 @@ metadata:
   tags: "signal_based_selling, signal_research"
   keywords: "signals, what benefits does this company offer, hr buyer targeting, benefits maturity check, do they have this program, people operations prospecting"
   version: "2.1.0"
+  requirements: "Needs an Apify token (usage billed to your Apify account); Python 3."
 ---
 
 # Workplace Program Signal
@@ -18,6 +19,20 @@ metadata:
 ## What this does
 
 For anyone selling to people operations, the buying signal is program presence or absence, and both are usually public across careers pages, benefits pages and job postings. This skill detects the programs, distinguishes a program that exists from one that is merely mentioned, and reads absence as the more actionable of the two.
+
+## Requirements
+
+Check these before you run the skill. Nothing outside this table is needed.
+
+| Requirement | Needed | Used for | What it costs you |
+| --- | --- | --- | --- |
+| Apify account and API token (`APIFY_TOKEN`) | Required | Runs the live data actors | A free Apify account works. Each run bills your own Apify account at the actor's Store price: workplace-program-detector 0.008 USD per domain. |
+| Python 3 with root certificates | Required | The direct actor script `scripts/apify-run.py` | Free. On a python.org install on macOS, run `Install Certificates.command` once, or the script falls back to the system certificate file and says so if it cannot. |
+
+**Missing a required item?** Stop before the live steps and tell the user which item is
+missing and what it is for. Do not run the step without it and do not present an empty
+result as an answer. Keys are read from the environment at run time and are never
+written into a file, a prompt or the output.
 
 ## When to use it
 

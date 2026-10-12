@@ -28,12 +28,22 @@
   "approval_stop": "writing, merging, or deleting any CRM record",
   "validator": "scripts/check-output.py",
   "version": "2.1.0",
+  "requirements": [
+    {
+      "item": "Read access to your CRM, or an export of the records",
+      "needed": "required",
+      "used_for": "The records created or changed in the window",
+      "cost": "None beyond your existing CRM."
+    }
+  ],
+  "requirements_summary": "Needs Read access to your CRM, or an export of the records.",
   "channels": {
     "agent_skills_spec": {
       "pass": true,
       "checks": {
         "name": true,
-        "description": true
+        "description": true,
+        "requirements_summary": true
       },
       "rules_source": "agentskills.io specification"
     },
@@ -41,7 +51,8 @@
       "pass": true,
       "checks": {
         "name": true,
-        "description": true
+        "description": true,
+        "requirements_summary": true
       },
       "rules_source": "Claude plugin directory rules"
     },
@@ -50,7 +61,8 @@
       "checks": {
         "title": true,
         "one_line": true,
-        "paragraph": true
+        "paragraph": true,
+        "requirements_summary": true
       },
       "rules_source": "mcprush skill listing form, read by Lane D"
     },
@@ -59,14 +71,16 @@
       "checks": {
         "title": true,
         "one_line": true,
-        "keywords": true
+        "keywords": true,
+        "requirements_summary": true
       },
       "rules_source": "conservative defaults; Agensi publishes no documented limit"
     },
     "smithery_skills": {
       "pass": true,
       "checks": {
-        "description": true
+        "description": true,
+        "requirements_summary": true
       },
       "rules_source": "Smithery skill reads SKILL.md frontmatter"
     }

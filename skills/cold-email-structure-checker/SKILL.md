@@ -3,7 +3,7 @@ name: cold-email-structure-checker
 description: |
   Audit a cold email draft against a seven point outbound framework and return a pass or fail scorecard with a rewritten version. Use whenever someone pastes a cold email and asks whether it is good, whether it will get replies, or asks for a review of outreach copy.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [cold_email_system, outbound_email]
 metadata:
   title: "Cold Email Structure Checker"
@@ -11,6 +11,7 @@ metadata:
   tags: "cold_email_system, outbound_email"
   keywords: "outbound, review this cold email, is this email good, will this get replies, audit my outreach copy, fix this cold email"
   version: "2.1.0"
+  requirements: "Needs no account, key or paid service: it works from the files, exports and answers you give it."
 ---
 
 # Cold Email Structure Checker
@@ -18,6 +19,11 @@ metadata:
 ## What this does
 
 Most cold emails fail on structure before they fail on wording. This skill scores a draft on seven checks that are each objectively decidable, returns the scorecard, then rewrites the draft so every failed check passes without inventing facts the sender did not supply.
+
+## Requirements
+
+This skill needs no account, API key or paid service. It works from the files,
+exports and answers you give it, in any agent that reads SKILL.md.
 
 ## When to use it
 

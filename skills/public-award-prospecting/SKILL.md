@@ -3,7 +3,7 @@ name: public-award-prospecting
 description: |
   Find companies that just won a government contract or public grant and reach them while the money is new. Use when someone wants to target contract winners, grant recipients, or public sector suppliers.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [signal_based_selling, signal_research]
 metadata:
   title: "Public Award Prospecting"
@@ -11,6 +11,7 @@ metadata:
   tags: "signal_based_selling, signal_research"
   keywords: "signals, who won government contracts, grant recipients, public sector suppliers, contract award prospecting, federal award list"
   version: "2.1.0"
+  requirements: "Needs an Apify token (usage billed to your Apify account); Node.js 18+."
 ---
 
 # Public Award Prospecting
@@ -18,6 +19,20 @@ metadata:
 ## What this does
 
 A public award is a funding event with a public record, a date, and an amount, and it is far less contested than a venture round. This skill reads the award registers, filters to awards large enough to change behavior, resolves the recipient to a domain, and builds outreach timed to the award date.
+
+## Requirements
+
+Check these before you run the skill. Nothing outside this table is needed.
+
+| Requirement | Needed | Used for | What it costs you |
+| --- | --- | --- | --- |
+| Apify account and API token (`APIFY_TOKEN`) | Required | Runs the live data actors | A free Apify account works. Each run bills your own Apify account at the actor's Store price: public-award-monitor 0.005 USD per award winner returned. |
+| Node.js 18 or newer | Required | The MCP tool calls | Free. It starts the Mamba Labs MCP server with `npx`. |
+
+**Missing a required item?** Stop before the live steps and tell the user which item is
+missing and what it is for. Do not run the step without it and do not present an empty
+result as an answer. Keys are read from the environment at run time and are never
+written into a file, a prompt or the output.
 
 ## When to use it
 
@@ -62,13 +77,15 @@ claude mcp add mamba-gtm-suite -e APIFY_TOKEN=<your token> -- npx -y @mambalabsd
 | --- | --- | --- | --- |
 | Government Contract Award Monitor | `monitor_public_awards` | public contract and grant awards with recipient domain resolution | https://apify.com/mambalabs/public-award-monitor |
 
-Runnable example input:
+Runnable example input, matched to the live tool schema:
+
+`monitor_public_awards`:
 
 ```json
 {
   "register": "us_federal_contracts",
-  "window_days": 30,
-  "min_award_value": 250000,
+  "window_days": "30",
+  "min_award_value": "250000",
   "exclude_government_recipients": true,
   "resolve_domains": true
 }

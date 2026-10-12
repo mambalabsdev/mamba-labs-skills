@@ -3,7 +3,7 @@ name: company-identity-resolution
 description: |
   Resolve a messy company name to the right domain and canonical record, and say how confident the match is. Use when a list has company names but no domains, when names are ambiguous, or when enrichment is matching the wrong company.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [clay_operator, identity_enrichment]
 metadata:
   title: "Company Identity Resolution"
@@ -11,6 +11,7 @@ metadata:
   tags: "clay_operator, identity_enrichment"
   keywords: "identity, i have company names but no domains, the enrichment matched the wrong company, resolve these company names, which domain is this company, ambiguous company names"
   version: "2.1.0"
+  requirements: "Needs an Apify token (usage billed to your Apify account); Node.js 18+."
 ---
 
 # Company Identity Resolution
@@ -18,6 +19,20 @@ metadata:
 ## What this does
 
 Every enrichment downstream is only as good as the identity it was run on, and company names collide constantly across markets, subsidiaries and rebrands. This skill resolves name to domain with a stated confidence, and refuses a low confidence match rather than guessing, because a wrong match silently poisons every column after it.
+
+## Requirements
+
+Check these before you run the skill. Nothing outside this table is needed.
+
+| Requirement | Needed | Used for | What it costs you |
+| --- | --- | --- | --- |
+| Apify account and API token (`APIFY_TOKEN`) | Required | Runs the live data actors | A free Apify account works. Each run bills your own Apify account at the actor's Store price: company-identity-resolver 0.007 USD per company. |
+| Node.js 18 or newer | Required | The MCP tool calls | Free. It starts the Mamba Labs MCP server with `npx`. |
+
+**Missing a required item?** Stop before the live steps and tell the user which item is
+missing and what it is for. Do not run the step without it and do not present an empty
+result as an answer. Keys are read from the environment at run time and are never
+written into a file, a prompt or the output.
 
 ## When to use it
 
@@ -62,13 +77,14 @@ claude mcp add mamba-gtm-suite -e APIFY_TOKEN=<your token> -- npx -y @mambalabsd
 | --- | --- | --- | --- |
 | Company Identity Resolver | `resolve_company_identity` | name, domain and profile URL reconciled into one canonical company record | https://apify.com/mambalabs/company-identity-resolver |
 
-Runnable example input:
+Runnable example input, matched to the live tool schema:
+
+`resolve_company_identity`:
 
 ```json
 {
   "company_name": "Example Co",
-  "domain": "",
-  "skipCache": "false"
+  "skipCache": false
 }
 ```
 

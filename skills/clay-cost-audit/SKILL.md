@@ -3,7 +3,7 @@ name: clay-cost-audit
 description: |
   Price a Clay table before it runs and find the columns that are burning credits for no return. Use when someone asks what a Clay build will cost, why their credits are gone, how to cut Clay spend, or wants a run before a full table ramp priced out.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [clay_builds, clay_operator]
 metadata:
   title: "Clay Cost Audit"
@@ -11,6 +11,7 @@ metadata:
   tags: "clay_builds, clay_operator"
   keywords: "clay, what will this clay table cost, my clay credits are gone, how do i cut clay spend, price this clay build, credit optimization in clay"
   version: "2.1.0"
+  requirements: "Needs A Clay workspace."
 ---
 
 # Clay Cost Audit
@@ -18,6 +19,19 @@ metadata:
 ## What this does
 
 Most Clay overspend comes from one pattern: an expensive column running on every row when it only needed to run on the rows that passed a cheap filter. This skill prices the table column by column, finds the columns with no run condition, and rewrites the run order so the expensive work sits behind the cheap work.
+
+## Requirements
+
+Check these before you run the skill. Nothing outside this table is needed.
+
+| Requirement | Needed | Used for | What it costs you |
+| --- | --- | --- | --- |
+| A Clay workspace | Required | The table being priced | Billed by Clay in credits on your own plan. |
+
+**Missing a required item?** Stop before the live steps and tell the user which item is
+missing and what it is for. Do not run the step without it and do not present an empty
+result as an answer. Keys are read from the environment at run time and are never
+written into a file, a prompt or the output.
 
 ## When to use it
 

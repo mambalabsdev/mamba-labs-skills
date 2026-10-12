@@ -3,7 +3,7 @@ name: partner-sourcing-plan
 description: |
   Find the partners whose customers are your buyers, and structure the first conversation so it produces something. Use when someone wants referral partners, co marketing, channel relationships, or a warmer route into a market.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [agency_delivery, agency_operations]
 metadata:
   title: "Partner Sourcing Plan"
@@ -11,6 +11,7 @@ metadata:
   tags: "agency_delivery, agency_operations"
   keywords: "agency, find referral partners, co marketing, channel partnerships, who should we partner with, warm route into a market"
   version: "2.1.0"
+  requirements: "Needs an Apify token (usage billed to your Apify account); Node.js 18+."
 ---
 
 # Partner Sourcing Plan
@@ -18,6 +19,20 @@ metadata:
 ## What this does
 
 Partner brainstorms produce a list of well known companies who will not reply. The partners worth approaching are the ones already serving your buyers with something adjacent, and that overlap is detectable rather than guessable. This skill finds them by overlap and structures the first exchange around a small reciprocal test rather than a partnership agreement.
+
+## Requirements
+
+Check these before you run the skill. Nothing outside this table is needed.
+
+| Requirement | Needed | Used for | What it costs you |
+| --- | --- | --- | --- |
+| Apify account and API token (`APIFY_TOKEN`) | Required | Runs the live data actors | A free Apify account works. Each run bills your own Apify account at the actor's Store price: gtm-tech-stack-signal-scraper 0.015 USD per company; company-social-presence-mapper 0.015 USD per company. |
+| Node.js 18 or newer | Required | The MCP tool calls | Free. It starts the Mamba Labs MCP server with `npx`. |
+
+**Missing a required item?** Stop before the live steps and tell the user which item is
+missing and what it is for. Do not run the step without it and do not present an empty
+result as an answer. Keys are read from the environment at run time and are never
+written into a file, a prompt or the output.
 
 ## When to use it
 
@@ -64,15 +79,13 @@ claude mcp add mamba-gtm-suite -e APIFY_TOKEN=<your token> -- npx -y @mambalabsd
 | GTM Tech Stack Signal Enrichment | `detect_gtm_tech_stack` | the adjacent tools your customers already run | https://apify.com/mambalabs/gtm-tech-stack-signal-scraper |
 | Company Social Presence Mapper | `map_company_social_presence` | the partner's reach and audience | https://apify.com/mambalabs/company-social-presence-mapper |
 
-Runnable example input:
+Runnable example input, matched to the live tool schema:
+
+`detect_gtm_tech_stack`:
 
 ```json
 {
   "domain": "customer.example",
-  "technologies": [
-    "hubspot",
-    "segment"
-  ],
   "crawl_additional_pages": true
 }
 ```

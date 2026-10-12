@@ -32,12 +32,28 @@
   "approval_stop": null,
   "validator": "scripts/check-output.py",
   "version": "2.1.0",
+  "requirements": [
+    {
+      "item": "Apify account and API token (`APIFY_TOKEN`)",
+      "needed": "required",
+      "used_for": "Runs the live data actors",
+      "cost": "A free Apify account works. Each run bills your own Apify account at the actor's Store price: gtm-tech-stack-signal-scraper 0.015 USD per company."
+    },
+    {
+      "item": "Node.js 18 or newer",
+      "needed": "required",
+      "used_for": "The MCP tool calls",
+      "cost": "Free. It starts the Mamba Labs MCP server with `npx`."
+    }
+  ],
+  "requirements_summary": "Needs an Apify token (usage billed to your Apify account); Node.js 18+.",
   "channels": {
     "agent_skills_spec": {
       "pass": true,
       "checks": {
         "name": true,
-        "description": true
+        "description": true,
+        "requirements_summary": true
       },
       "rules_source": "agentskills.io specification"
     },
@@ -45,7 +61,8 @@
       "pass": true,
       "checks": {
         "name": true,
-        "description": true
+        "description": true,
+        "requirements_summary": true
       },
       "rules_source": "Claude plugin directory rules"
     },
@@ -54,7 +71,8 @@
       "checks": {
         "title": true,
         "one_line": true,
-        "paragraph": true
+        "paragraph": true,
+        "requirements_summary": true
       },
       "rules_source": "mcprush skill listing form, read by Lane D"
     },
@@ -63,14 +81,16 @@
       "checks": {
         "title": true,
         "one_line": true,
-        "keywords": true
+        "keywords": true,
+        "requirements_summary": true
       },
       "rules_source": "conservative defaults; Agensi publishes no documented limit"
     },
     "smithery_skills": {
       "pass": true,
       "checks": {
-        "description": true
+        "description": true,
+        "requirements_summary": true
       },
       "rules_source": "Smithery skill reads SKILL.md frontmatter"
     }

@@ -3,7 +3,7 @@ name: directory-submission-plan
 description: |
   Pick the directories and marketplaces worth listing on, and prepare one set of assets that fits all of them. Use when launching a tool, when someone asks where to list a product, or when directory submissions are eating time for no return.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [seo_content, seo_content_engine]
 metadata:
   title: "Directory Submission Plan"
@@ -11,6 +11,7 @@ metadata:
   tags: "seo_content, seo_content_engine"
   keywords: "seo and content, where should i list my product, directory submissions, launch listings, submit to directories, marketplace listings"
   version: "2.1.0"
+  requirements: "Needs no account, key or paid service: it works from the files, exports and answers you give it."
 ---
 
 # Directory Submission Plan
@@ -18,6 +19,11 @@ metadata:
 ## What this does
 
 Directory submission is usually done as a volume exercise against a list of a hundred sites, most of which send nobody. This skill ranks by whether a directory actually sends traffic to listings like yours, then prepares one asset set that satisfies the field requirements of all the ones that made the cut, so the submissions take an afternoon rather than a month.
+
+## Requirements
+
+This skill needs no account, API key or paid service. It works from the files,
+exports and answers you give it, in any agent that reads SKILL.md.
 
 ## When to use it
 

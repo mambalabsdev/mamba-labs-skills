@@ -3,7 +3,7 @@ name: objection-handling-library
 description: |
   Build an objection library from the replies you actually received, with a tested response per objection. Use when the same objections keep coming back, when onboarding a new rep, or when someone asks how to handle a specific pushback.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [agency_delivery, cold_email_system, sales_enablement]
 metadata:
   title: "Objection Handling Library"
@@ -11,6 +11,7 @@ metadata:
   tags: "agency_delivery, cold_email_system, sales_enablement"
   keywords: "enablement, handle this objection, we keep hearing the same pushback, onboard a new rep, objection library, what do i say when they say"
   version: "2.1.0"
+  requirements: "Needs no account, key or paid service: it works from the files, exports and answers you give it."
 ---
 
 # Objection Handling Library
@@ -18,6 +19,11 @@ metadata:
 ## What this does
 
 A generic objection list is a list of objections other companies get. The useful library is built from your own replies, ranked by how often each objection appears and how often it kills the deal, because those two are different and the second is what decides where to spend the effort.
+
+## Requirements
+
+This skill needs no account, API key or paid service. It works from the files,
+exports and answers you give it, in any agent that reads SKILL.md.
 
 ## When to use it
 

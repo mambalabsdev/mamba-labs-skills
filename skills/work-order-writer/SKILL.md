@@ -3,7 +3,7 @@ name: work-order-writer
 description: |
   Write a work order an agent or a contractor can execute end to end without asking a question. Use when delegating a task, briefing an agent, writing a spec, or when work keeps coming back wrong.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [agency_delivery, agency_operations, knowledge_ops_pack]
 metadata:
   title: "Work Order Writer"
@@ -11,6 +11,7 @@ metadata:
   tags: "agency_delivery, agency_operations, knowledge_ops_pack"
   keywords: "agency, write a work order, brief this task, delegate this properly, the work keeps coming back wrong, write a spec for an agent"
   version: "2.1.0"
+  requirements: "Needs no account, key or paid service: it works from the files, exports and answers you give it."
 ---
 
 # Work Order Writer
@@ -18,6 +19,11 @@ metadata:
 ## What this does
 
 Work comes back wrong when the brief specified the output but not the done state, the constraints, or what to do at a fork. This skill writes the four sections that remove the ambiguity, and the one that most briefs omit entirely: the halt conditions, which say when to stop and ask rather than guess.
+
+## Requirements
+
+This skill needs no account, API key or paid service. It works from the files,
+exports and answers you give it, in any agent that reads SKILL.md.
 
 ## When to use it
 

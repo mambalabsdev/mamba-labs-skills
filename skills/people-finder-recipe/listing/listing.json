@@ -31,12 +31,46 @@
   "approval_stop": null,
   "validator": "scripts/check-output.py",
   "version": "2.1.0",
+  "requirements": [
+    {
+      "item": "Apify account and API token (`APIFY_TOKEN`)",
+      "needed": "required",
+      "used_for": "Runs the live data actors",
+      "cost": "A free Apify account works. Each run bills your own Apify account at the actor's Store price: people-finder 0.02 USD per company searched, 0.02 USD per person, 0.04 USD per email found and 0.015 USD per email verified; team-page-people-extractor 0.006 USD per person."
+    },
+    {
+      "item": "Python 3 with root certificates",
+      "needed": "required",
+      "used_for": "The direct actor script `scripts/apify-run.py`",
+      "cost": "Free. On a python.org install on macOS, run `Install Certificates.command` once, or the script falls back to the system certificate file and says so if it cannot."
+    },
+    {
+      "item": "Serper API key (`SERPER_API_KEY`, serper.dev)",
+      "needed": "required",
+      "used_for": "The people search layer; without it people-finder returns few or no people",
+      "cost": "Billed by Serper on your own account. This skill adds no markup."
+    },
+    {
+      "item": "One of: Prospeo API key or Icypeas API key",
+      "needed": "optional",
+      "used_for": "Work emails for the people found",
+      "cost": "Billed by that provider on your own plan. This skill adds no markup."
+    },
+    {
+      "item": "One of: Reoon API key or BounceBan API key",
+      "needed": "optional",
+      "used_for": "Verifying those emails",
+      "cost": "Billed by that provider on your own plan. This skill adds no markup."
+    }
+  ],
+  "requirements_summary": "Needs an Apify token (usage billed to your Apify account); Python 3; Serper API key. Optional: one of Prospeo API key or Icypeas API key; one of Reoon API key or BounceBan API key.",
   "channels": {
     "agent_skills_spec": {
       "pass": true,
       "checks": {
         "name": true,
-        "description": true
+        "description": true,
+        "requirements_summary": true
       },
       "rules_source": "agentskills.io specification"
     },
@@ -44,7 +78,8 @@
       "pass": true,
       "checks": {
         "name": true,
-        "description": true
+        "description": true,
+        "requirements_summary": true
       },
       "rules_source": "Claude plugin directory rules"
     },
@@ -53,7 +88,8 @@
       "checks": {
         "title": true,
         "one_line": true,
-        "paragraph": true
+        "paragraph": true,
+        "requirements_summary": true
       },
       "rules_source": "mcprush skill listing form, read by Lane D"
     },
@@ -62,14 +98,16 @@
       "checks": {
         "title": true,
         "one_line": true,
-        "keywords": true
+        "keywords": true,
+        "requirements_summary": true
       },
       "rules_source": "conservative defaults; Agensi publishes no documented limit"
     },
     "smithery_skills": {
       "pass": true,
       "checks": {
-        "description": true
+        "description": true,
+        "requirements_summary": true
       },
       "rules_source": "Smithery skill reads SKILL.md frontmatter"
     }

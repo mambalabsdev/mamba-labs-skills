@@ -3,7 +3,7 @@ name: results-doc-verifier
 description: |
   Check a results write up for claims that were asserted rather than verified, before anyone acts on it. Use when reviewing a report, before sending results to a client, or when a document says something worked.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [agency_delivery, knowledge_ops, knowledge_ops_pack]
 metadata:
   title: "Results Document Verifier"
@@ -11,6 +11,7 @@ metadata:
   tags: "agency_delivery, knowledge_ops, knowledge_ops_pack"
   keywords: "knowledge, review this report, check these results before i send them, did this actually work, verify this write up, results review"
   version: "2.1.0"
+  requirements: "Needs no account, key or paid service: it works from the files, exports and answers you give it."
 ---
 
 # Results Document Verifier
@@ -18,6 +19,11 @@ metadata:
 ## What this does
 
 The failure in results documents is not lying, it is asserting. A claim that a fix worked, backed by a test that could not have failed, reads exactly like a verified claim. This skill checks each claim against its evidence and asks the one question that separates them: could this check have come out the other way.
+
+## Requirements
+
+This skill needs no account, API key or paid service. It works from the files,
+exports and answers you give it, in any agent that reads SKILL.md.
 
 ## When to use it
 

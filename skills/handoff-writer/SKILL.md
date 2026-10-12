@@ -3,7 +3,7 @@ name: handoff-writer
 description: |
   Write the handoff that lets the next person or the next session continue without re deriving anything. Use when ending a working session, handing a project to someone else, or when context is about to be lost.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [knowledge_ops, knowledge_ops_pack]
 metadata:
   title: "Handoff Writer"
@@ -11,6 +11,7 @@ metadata:
   tags: "knowledge_ops, knowledge_ops_pack"
   keywords: "knowledge, write a handoff, i am handing this over, end of session summary, the next person needs to pick this up, context is about to be lost"
   version: "2.1.0"
+  requirements: "Needs no account, key or paid service: it works from the files, exports and answers you give it."
 ---
 
 # Handoff Writer
@@ -18,6 +19,11 @@ metadata:
 ## What this does
 
 A handoff fails when it describes what was done instead of what the next person needs. The reader does not need the history, they need the state, the next action, and the traps. This skill writes those three and refuses to include the narrative, which is the part that makes handoffs too long to read.
+
+## Requirements
+
+This skill needs no account, API key or paid service. It works from the files,
+exports and answers you give it, in any agent that reads SKILL.md.
 
 ## When to use it
 

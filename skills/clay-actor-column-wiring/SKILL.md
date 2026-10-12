@@ -3,7 +3,7 @@ name: clay-actor-column-wiring
 description: |
   Wire an external actor or API into a Clay column so the types survive the round trip. Use when someone wants to call an Apify actor from Clay, add an HTTP API column, pass Clay values into a scraper, or is getting type errors from an external enrichment.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [clay_builds, clay_operator]
 metadata:
   title: "Clay Actor Column Wiring"
@@ -11,6 +11,7 @@ metadata:
   tags: "clay_builds, clay_operator"
   keywords: "clay, call an apify actor from clay, add an http api column, pass clay values to a scraper, type error from external enrichment, wire an actor into clay"
   version: "2.1.0"
+  requirements: "Needs A Clay workspace."
 ---
 
 # Clay Actor Column Wiring
@@ -18,6 +19,19 @@ metadata:
 ## What this does
 
 Clay sends every column value as a string. An external tool that declares a field as a number, a boolean or an array will reject or silently mishandle what Clay sends it. This skill covers the wiring: how to type the fields on the tool side, how to build the request body, and how to read the response back into extraction columns without guessing at the path.
+
+## Requirements
+
+Check these before you run the skill. Nothing outside this table is needed.
+
+| Requirement | Needed | Used for | What it costs you |
+| --- | --- | --- | --- |
+| A Clay workspace | Required | The table being wired | Billed by Clay in credits on your own plan. |
+
+**Missing a required item?** Stop before the live steps and tell the user which item is
+missing and what it is for. Do not run the step without it and do not present an empty
+result as an answer. Keys are read from the environment at run time and are never
+written into a file, a prompt or the output.
 
 ## When to use it
 

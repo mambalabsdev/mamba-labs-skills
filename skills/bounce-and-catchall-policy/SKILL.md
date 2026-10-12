@@ -3,7 +3,7 @@ name: bounce-and-catchall-policy
 description: |
   Decide what to do with catch all domains, role addresses and soft bounces before they cost you a domain. Use when verification returns unknown, when someone asks whether to send to catch all addresses, or when bounce rate is creeping up.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [cold_email_system, deliverability]
 metadata:
   title: "Bounce And Catch All Policy"
@@ -11,6 +11,7 @@ metadata:
   tags: "cold_email_system, deliverability"
   keywords: "deliverability, should i send to catch all addresses, verification returned unknown, my bounce rate is creeping up, role addresses, what do i do with unknown emails"
   version: "2.1.0"
+  requirements: "Needs no account, key or paid service: it works from the files, exports and answers you give it."
 ---
 
 # Bounce And Catch All Policy
@@ -18,6 +19,11 @@ metadata:
 ## What this does
 
 Verification returns three answers and most teams only plan for two. Valid sends, invalid drops, and unknown, which is mostly catch all domains, is where the decision actually lives. Sending to all of them raises bounce rate; dropping all of them can remove a large share of an enterprise list. This skill sets a policy per class with the arithmetic that justifies it.
+
+## Requirements
+
+This skill needs no account, API key or paid service. It works from the files,
+exports and answers you give it, in any agent that reads SKILL.md.
 
 ## When to use it
 

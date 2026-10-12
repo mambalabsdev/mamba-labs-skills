@@ -3,7 +3,7 @@ name: content-brief-builder
 description: |
   Write a content brief a writer can execute without inventing the substance, including where the non generic part comes from. Use when briefing a writer, planning an article, or when published content keeps reading like everything else.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [seo_content, seo_content_engine]
 metadata:
   title: "Content Brief Builder"
@@ -11,6 +11,7 @@ metadata:
   tags: "seo_content, seo_content_engine"
   keywords: "seo and content, brief a writer, plan an article, our content reads generic, content brief, what should this post cover"
   version: "2.1.0"
+  requirements: "Needs no account, key or paid service: it works from the files, exports and answers you give it."
 ---
 
 # Content Brief Builder
@@ -18,6 +19,11 @@ metadata:
 ## What this does
 
 Content reads generic when the brief specified the topic and the structure but not the substance, so the writer fills the gap with what everyone already knows. This skill requires a source for the one section that makes the piece unrepeatable, and refuses to brief a piece where that section does not exist.
+
+## Requirements
+
+This skill needs no account, API key or paid service. It works from the files,
+exports and answers you give it, in any agent that reads SKILL.md.
 
 ## When to use it
 

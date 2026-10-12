@@ -3,7 +3,7 @@ name: clay-dedupe-and-merge
 description: |
   Deduplicate and merge people or company rows across Clay tables without losing enrichment or double counting a person. Use when merging lists, importing a second source into an existing table, deduping a people pool, or deciding which record wins on a conflict.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [agency_delivery, clay_builds, clay_operator]
 metadata:
   title: "Clay Dedupe And Merge"
@@ -11,6 +11,7 @@ metadata:
   tags: "agency_delivery, clay_builds, clay_operator"
   keywords: "clay, merge two clay lists, dedupe my people pool, import a second source into this table, which record wins, am i double counting people"
   version: "2.1.0"
+  requirements: "Needs A Clay workspace."
 ---
 
 # Clay Dedupe And Merge
@@ -18,6 +19,19 @@ metadata:
 ## What this does
 
 Merging two lists is easy. Merging them without losing the enrichment already paid for, and without counting the same person twice under two email addresses, is the part that goes wrong. This skill sets the match key, the precedence rule, and the audit that proves the merge did not silently drop rows.
+
+## Requirements
+
+Check these before you run the skill. Nothing outside this table is needed.
+
+| Requirement | Needed | Used for | What it costs you |
+| --- | --- | --- | --- |
+| A Clay workspace | Required | The tables being merged | Billed by Clay in credits on your own plan. |
+
+**Missing a required item?** Stop before the live steps and tell the user which item is
+missing and what it is for. Do not run the step without it and do not present an empty
+result as an answer. Keys are read from the environment at run time and are never
+written into a file, a prompt or the output.
 
 ## When to use it
 

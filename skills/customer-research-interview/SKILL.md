@@ -3,7 +3,7 @@ name: customer-research-interview
 description: |
   Run customer interviews that produce usable language instead of agreement, and turn the transcripts into a sharper ICP. Use when someone wants to talk to customers, needs messaging research, or does not know why their best customers bought.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [agency_delivery, sales_enablement, signal_based_selling]
 metadata:
   title: "Customer Research Interview"
@@ -11,6 +11,7 @@ metadata:
   tags: "agency_delivery, sales_enablement, signal_based_selling"
   keywords: "enablement, talk to my customers, messaging research, why do people buy from us, customer interviews, voice of customer"
   version: "2.1.0"
+  requirements: "Needs no account, key or paid service: it works from the files, exports and answers you give it."
 ---
 
 # Customer Research Interview
@@ -18,6 +19,11 @@ metadata:
 ## What this does
 
 Customer interviews fail by producing agreement. Ask whether a problem is painful and everyone says yes. This skill asks about what happened instead of what people think, extracts the language customers actually use, and writes the result into the shared ICP file so every other skill in the catalog gets sharper from it.
+
+## Requirements
+
+This skill needs no account, API key or paid service. It works from the files,
+exports and answers you give it, in any agent that reads SKILL.md.
 
 ## When to use it
 

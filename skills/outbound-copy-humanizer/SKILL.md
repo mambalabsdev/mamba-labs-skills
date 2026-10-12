@@ -3,7 +3,7 @@ name: outbound-copy-humanizer
 description: |
   Rewrite outbound copy so it reads like a person wrote it, removing the tells that mark a message as generated. Use when copy sounds robotic, when a draft is full of hedges and stock phrases, or when someone wants their outreach to sound like them.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [cold_email_system, outbound_email]
 metadata:
   title: "Outbound Copy Humanizer"
@@ -11,6 +11,7 @@ metadata:
   tags: "cold_email_system, outbound_email"
   keywords: "outbound, this sounds robotic, make this sound human, too much ai voice, rewrite in my voice, humanize this copy"
   version: "2.1.0"
+  requirements: "Needs no account, key or paid service: it works from the files, exports and answers you give it."
 ---
 
 # Outbound Copy Humanizer
@@ -18,6 +19,11 @@ metadata:
 ## What this does
 
 Generated outbound has a recognizable surface: tripled adjectives, a hedge before every claim, transitions nobody says out loud, and a closing sentence that restates the email. This skill strips those patterns and rebuilds the sentence rhythm against the sender's own writing, without flattening the message into slang.
+
+## Requirements
+
+This skill needs no account, API key or paid service. It works from the files,
+exports and answers you give it, in any agent that reads SKILL.md.
 
 ## When to use it
 

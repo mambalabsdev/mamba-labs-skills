@@ -3,7 +3,7 @@ name: agent-readability-audit
 description: |
   Check whether a website can be read and used by AI agents, and fix what blocks them. Use when someone asks about AI search visibility, agent accessibility, structured data, or whether their site works for AI crawlers.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [seo_content, seo_content_engine]
 metadata:
   title: "Agent Readability Audit"
@@ -11,6 +11,7 @@ metadata:
   tags: "seo_content, seo_content_engine"
   keywords: "seo and content, ai search visibility, can agents read my site, structured data audit, llms txt, ai crawler accessibility"
   version: "2.1.0"
+  requirements: "Needs an Apify token (usage billed to your Apify account); Node.js 18+."
 ---
 
 # Agent Readability Audit
@@ -18,6 +19,20 @@ metadata:
 ## What this does
 
 A growing share of buying research happens through agents that never render a page. What they can read is a small, checkable set of things: the crawl directives, the structured data, the machine readable endpoints, and whether the important content survives without scripting. This skill audits those four and returns the fixes in the order that changes an agent's answer.
+
+## Requirements
+
+Check these before you run the skill. Nothing outside this table is needed.
+
+| Requirement | Needed | Used for | What it costs you |
+| --- | --- | --- | --- |
+| Apify account and API token (`APIFY_TOKEN`) | Required | Runs the live data actors | A free Apify account works. Each run bills your own Apify account at the actor's Store price: agent-accessibility-auditor 0.005 USD per domain. |
+| Node.js 18 or newer | Required | The MCP tool calls | Free. It starts the Mamba Labs MCP server with `npx`. |
+
+**Missing a required item?** Stop before the live steps and tell the user which item is
+missing and what it is for. Do not run the step without it and do not present an empty
+result as an answer. Keys are read from the environment at run time and are never
+written into a file, a prompt or the output.
 
 ## When to use it
 
@@ -61,15 +76,13 @@ claude mcp add mamba-gtm-suite -e APIFY_TOKEN=<your token> -- npx -y @mambalabsd
 | --- | --- | --- | --- |
 | Agent Accessibility Auditor | `audit_agent_accessibility` | crawl directives, structured data, endpoints and agent readability checks | https://apify.com/mambalabs/agent-accessibility-auditor |
 
-Runnable example input:
+Runnable example input, matched to the live tool schema:
+
+`audit_agent_accessibility`:
 
 ```json
 {
   "domain": "example.com",
-  "checks": [
-    "llms_txt",
-    "robots"
-  ],
   "check_endpoints": true,
   "check_structured_data": true
 }

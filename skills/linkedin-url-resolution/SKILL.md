@@ -3,7 +3,7 @@ name: linkedin-url-resolution
 description: |
   Turn a list of company domains into company profile URLs, and fill the gaps a native enrichment leaves behind. Use when a profile URL column has holes, when someone needs profile URLs from domains, or when building a social enrichment pipeline.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [clay_operator, identity_enrichment, linkedin_authority]
 metadata:
   title: "LinkedIn URL Resolution"
@@ -11,6 +11,7 @@ metadata:
   tags: "clay_operator, identity_enrichment, linkedin_authority"
   keywords: "identity, find linkedin urls from domains, my linkedin column has gaps, domain to linkedin, enrich with social data, resolve company profiles"
   version: "2.1.0"
+  requirements: "Needs an Apify token (usage billed to your Apify account); Node.js 18+."
 ---
 
 # LinkedIn URL Resolution
@@ -18,6 +19,20 @@ metadata:
 ## What this does
 
 Native enrichments resolve most domains to a company profile and quietly return nothing for the rest, and the rest is where the interesting companies often are. This skill resolves the list, reports the fill rate, and handles the specific cases that cause misses: holding company structures, country subsidiaries, and companies whose profile name does not resemble their domain.
+
+## Requirements
+
+Check these before you run the skill. Nothing outside this table is needed.
+
+| Requirement | Needed | Used for | What it costs you |
+| --- | --- | --- | --- |
+| Apify account and API token (`APIFY_TOKEN`) | Required | Runs the live data actors | A free Apify account works. Each run bills your own Apify account at the actor's Store price: domain-to-linkedin-url-resolver 0.006 USD per domain. |
+| Node.js 18 or newer | Required | The MCP tool calls | Free. It starts the Mamba Labs MCP server with `npx`. |
+
+**Missing a required item?** Stop before the live steps and tell the user which item is
+missing and what it is for. Do not run the step without it and do not present an empty
+result as an answer. Keys are read from the environment at run time and are never
+written into a file, a prompt or the output.
 
 ## When to use it
 
@@ -61,7 +76,9 @@ claude mcp add mamba-gtm-suite -e APIFY_TOKEN=<your token> -- npx -y @mambalabsd
 | --- | --- | --- | --- |
 | Domain to LinkedIn URL Resolver | `resolve_linkedin_url` | company domain to company profile URL, with optional firmographics | https://apify.com/mambalabs/domain-to-linkedin-url-resolver |
 
-Runnable example input:
+Runnable example input, matched to the live tool schema:
+
+`resolve_linkedin_url`:
 
 ```json
 {

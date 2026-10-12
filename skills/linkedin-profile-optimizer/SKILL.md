@@ -3,7 +3,7 @@ name: linkedin-profile-optimizer
 description: |
   Rewrite a profile so it converts the visits that outbound and commenting send to it. Use when someone's profile is not converting, before starting outbound, or when someone asks how to improve their LinkedIn profile.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [linkedin, linkedin_authority]
 metadata:
   title: "LinkedIn Profile Optimizer"
@@ -11,6 +11,7 @@ metadata:
   tags: "linkedin, linkedin_authority"
   keywords: "linkedin, improve my linkedin profile, my profile is not converting, profile before i start outbound, rewrite my headline, optimize my about section"
   version: "2.1.0"
+  requirements: "Needs no account, key or paid service: it works from the files, exports and answers you give it."
 ---
 
 # LinkedIn Profile Optimizer
@@ -18,6 +19,11 @@ metadata:
 ## What this does
 
 For anyone doing outbound, the profile is a landing page with one job: confirm within four seconds that the person who just messaged is worth replying to. Most profiles are written as a resume instead. This skill rewrites the three elements a visitor actually reads and ignores the rest.
+
+## Requirements
+
+This skill needs no account, API key or paid service. It works from the files,
+exports and answers you give it, in any agent that reads SKILL.md.
 
 ## When to use it
 

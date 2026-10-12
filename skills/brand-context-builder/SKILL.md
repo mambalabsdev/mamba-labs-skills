@@ -3,7 +3,7 @@ name: brand-context-builder
 description: |
   Interview once and write the shared context files that every other skill reads. Use at the start of any engagement, when skills keep asking the same questions, or when someone wants their AI tools to stop needing re explaining.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [agency_operations, clay_operator, cold_email_system]
 metadata:
   title: "Brand Context Builder"
@@ -11,6 +11,7 @@ metadata:
   tags: "agency_operations, clay_operator, cold_email_system"
   keywords: "agency, set up my context, start a new engagement, write my brand and icp files, bootstrap"
   version: "2.1.0"
+  requirements: "Needs no account, key or paid service: it works from the files, exports and answers you give it."
 ---
 
 # Brand Context Builder
@@ -18,6 +19,11 @@ metadata:
 ## What this does
 
 Every skill in this catalog reads three files at the project root before it does anything: BRAND.md, ICP.md and VOICE.md. This skill runs the interview that produces them. It is the highest leverage twenty minutes in the whole catalog, because after it every other skill starts from a warm start instead of a questionnaire.
+
+## Requirements
+
+This skill needs no account, API key or paid service. It works from the files,
+exports and answers you give it, in any agent that reads SKILL.md.
 
 ## When to use it
 

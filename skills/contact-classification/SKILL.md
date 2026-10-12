@@ -3,7 +3,7 @@ name: contact-classification
 description: |
   Classify contacts by department, seniority and role from their job title, and route them to the right persona. Use when a contact list has messy titles, when routing by persona, or when deciding who in a company to actually contact.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [clay_operator, identity_enrichment, signal_based_selling]
 metadata:
   title: "Contact Classification"
@@ -11,6 +11,7 @@ metadata:
   tags: "clay_operator, identity_enrichment, signal_based_selling"
   keywords: "identity, classify these job titles, route contacts by persona, who should i contact at this company, messy title data, seniority filtering"
   version: "2.1.0"
+  requirements: "Needs an Apify token (usage billed to your Apify account); Node.js 18+."
 ---
 
 # Contact Classification
@@ -18,6 +19,20 @@ metadata:
 ## What this does
 
 Job titles are unstandardized across companies and countries, and title matching by keyword sends the wrong message to the wrong person at scale. This skill classifies to department and seniority rather than matching strings, handles the ambiguous titles explicitly, and routes each contact to a persona with a stated confidence.
+
+## Requirements
+
+Check these before you run the skill. Nothing outside this table is needed.
+
+| Requirement | Needed | Used for | What it costs you |
+| --- | --- | --- | --- |
+| Apify account and API token (`APIFY_TOKEN`) | Required | Runs the live data actors | A free Apify account works. Each run bills your own Apify account at the actor's Store price: contact-classifier 0.003 USD per contact. |
+| Node.js 18 or newer | Required | The MCP tool calls | Free. It starts the Mamba Labs MCP server with `npx`. |
+
+**Missing a required item?** Stop before the live steps and tell the user which item is
+missing and what it is for. Do not run the step without it and do not present an empty
+result as an answer. Keys are read from the environment at run time and are never
+written into a file, a prompt or the output.
 
 ## When to use it
 
@@ -62,7 +77,9 @@ claude mcp add mamba-gtm-suite -e APIFY_TOKEN=<your token> -- npx -y @mambalabsd
 | --- | --- | --- | --- |
 | Contact Classifier | `classify_contact` | department, seniority and role classification from a job title | https://apify.com/mambalabs/contact-classifier |
 
-Runnable example input:
+Runnable example input, matched to the live tool schema:
+
+`classify_contact`:
 
 ```json
 {

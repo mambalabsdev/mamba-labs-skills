@@ -3,7 +3,7 @@ name: merge-variable-linter
 description: |
   Check that every merge variable in a sequence resolves against the fields actually present on the rows, before the campaign sends. Use when someone is about to launch, has seen blank gaps in a sent email, or wants their personalization tokens verified.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [cold_email_system, outbound_email]
 metadata:
   title: "Merge Variable Linter"
@@ -11,6 +11,7 @@ metadata:
   tags: "cold_email_system, outbound_email"
   keywords: "outbound, check my merge variables, blank gaps in my sent email, verify personalization tokens, about to launch check the copy, why is my email missing a word"
   version: "2.1.0"
+  requirements: "Needs no account, key or paid service: it works from the files, exports and answers you give it."
 ---
 
 # Merge Variable Linter
@@ -18,6 +19,11 @@ metadata:
 ## What this does
 
 An unresolved merge variable is the quietest failure in outbound. It does not raise an error and it does not stop the send. It renders as nothing, leaving a sentence that reads like a bug, and it is only visible after the email has gone. This skill compares the variables used in the copy against the fields present on the rows and reports the gaps before the send rather than after.
+
+## Requirements
+
+This skill needs no account, API key or paid service. It works from the files,
+exports and answers you give it, in any agent that reads SKILL.md.
 
 ## When to use it
 

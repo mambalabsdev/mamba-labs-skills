@@ -3,7 +3,7 @@ name: clay-conditional-gates
 description: |
   Write the run conditions that stop expensive Clay columns from firing on rows that will never qualify. Use when someone wants to skip enrichment for non ICP rows, gate a waterfall, add a run condition, or stop paying to enrich junk.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [clay_builds, clay_operator]
 metadata:
   title: "Clay Conditional Gates"
@@ -11,6 +11,7 @@ metadata:
   tags: "clay_builds, clay_operator"
   keywords: "clay, add a run condition, skip enrichment for non icp rows, gate this column, only enrich rows that, stop paying to enrich junk"
   version: "2.1.0"
+  requirements: "Needs A Clay workspace."
 ---
 
 # Clay Conditional Gates
@@ -18,6 +19,19 @@ metadata:
 ## What this does
 
 A run condition is the cheapest performance work in Clay and the most commonly skipped. This skill turns a qualification rule stated in plain language into the exact condition expression, placed on the right column, in the right order, with the pass rate estimated so the saving is known before the run.
+
+## Requirements
+
+Check these before you run the skill. Nothing outside this table is needed.
+
+| Requirement | Needed | Used for | What it costs you |
+| --- | --- | --- | --- |
+| A Clay workspace | Required | The table being gated | Billed by Clay in credits on your own plan. |
+
+**Missing a required item?** Stop before the live steps and tell the user which item is
+missing and what it is for. Do not run the step without it and do not present an empty
+result as an answer. Keys are read from the environment at run time and are never
+written into a file, a prompt or the output.
 
 ## When to use it
 

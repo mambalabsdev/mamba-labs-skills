@@ -3,7 +3,7 @@ name: positioning-statement
 description: |
   Write a positioning statement that names the real alternative and survives contact with a sales call. Use when messaging is vague, when a new product needs positioning, or when nobody can explain what the company does in one sentence.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [agency_delivery, sales_enablement, seo_content_engine]
 metadata:
   title: "Positioning Statement"
@@ -11,6 +11,7 @@ metadata:
   tags: "agency_delivery, sales_enablement, seo_content_engine"
   keywords: "enablement, our messaging is vague, position this product, what do we actually do, write our positioning, one sentence pitch"
   version: "2.1.0"
+  requirements: "Needs no account, key or paid service: it works from the files, exports and answers you give it."
 ---
 
 # Positioning Statement
@@ -18,6 +19,11 @@ metadata:
 ## What this does
 
 Positioning fails when the alternative is unnamed, because a claim to be better is meaningless without a stated comparison, and the honest alternative is usually not a competitor but doing nothing or doing it manually. This skill forces the alternative into the statement and tests the result against the objection it invites.
+
+## Requirements
+
+This skill needs no account, API key or paid service. It works from the files,
+exports and answers you give it, in any agent that reads SKILL.md.
 
 ## When to use it
 

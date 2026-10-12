@@ -3,7 +3,7 @@ name: cash-runway-snapshot
 description: |
   Work out how many months of cash are left and what actually changes it. Use when someone asks about runway, cash position, whether they can afford a hire, or what happens if a payment is late.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [small_business_operations, small_business_ops]
 metadata:
   title: "Cash Runway Snapshot"
@@ -11,6 +11,7 @@ metadata:
   tags: "small_business_operations, small_business_ops"
   keywords: "small business, how much runway do we have, cash position, can we afford a hire, what if a client pays late, runway calculation"
   version: "2.1.0"
+  requirements: "Needs no account, key or paid service: it works from the files, exports and answers you give it."
 ---
 
 # Cash Runway Snapshot
@@ -18,6 +19,11 @@ metadata:
 ## What this does
 
 Runway calculated as cash divided by average burn is wrong in the one direction that matters, because it treats expected income as certain. This skill separates committed inflows from expected ones, models the late payment case, and gives a range with the assumption behind each end of it.
+
+## Requirements
+
+This skill needs no account, API key or paid service. It works from the files,
+exports and answers you give it, in any agent that reads SKILL.md.
 
 ## When to use it
 

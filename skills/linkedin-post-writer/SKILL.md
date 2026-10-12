@@ -3,7 +3,7 @@ name: linkedin-post-writer
 description: |
   Write a LinkedIn post that sounds like the person and earns a reason to exist. Use when someone needs a post, wants to build a publishing cadence, has a result to share, or asks for content ideas for their profile.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [linkedin, linkedin_authority]
 metadata:
   title: "LinkedIn Post Writer"
@@ -11,6 +11,7 @@ metadata:
   tags: "linkedin, linkedin_authority"
   keywords: "linkedin, write a linkedin post, post idea for my profile, i have a result to share, publishing cadence, content for linkedin"
   version: "2.1.0"
+  requirements: "Needs no account, key or paid service: it works from the files, exports and answers you give it."
 ---
 
 # LinkedIn Post Writer
@@ -18,6 +19,11 @@ metadata:
 ## What this does
 
 Most generated LinkedIn posts fail on the first line and on the reason for posting. This skill starts from something that actually happened, finds the first line that makes the second line necessary, and writes in the poster's own rhythm rather than in platform voice.
+
+## Requirements
+
+This skill needs no account, API key or paid service. It works from the files,
+exports and answers you give it, in any agent that reads SKILL.md.
 
 ## When to use it
 

@@ -3,7 +3,7 @@ name: clay-credit-forecast
 description: |
   Forecast how far a Clay credit balance goes across a month of planned builds, and say which build to cut when it does not reach. Use when someone asks whether they have enough credits, how to plan a month of Clay work, or which campaign to drop on a fixed budget.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [agency_delivery, clay_builds, clay_operator]
 metadata:
   title: "Clay Credit Forecast"
@@ -11,6 +11,7 @@ metadata:
   tags: "agency_delivery, clay_builds, clay_operator"
   keywords: "clay, do i have enough clay credits, plan a month of clay work, which campaign should i drop, credit burn forecast, clay capacity planning"
   version: "2.1.0"
+  requirements: "Needs A Clay workspace."
 ---
 
 # Clay Credit Forecast
@@ -18,6 +19,19 @@ metadata:
 ## What this does
 
 Credit balances are consumed by builds nobody priced. This skill takes the planned work for a period, prices each build at realistic pass rates, and produces a burn forecast with the date the balance runs out. When the plan exceeds the balance it names the build to cut and what that costs in pipeline, rather than trimming every build a little.
+
+## Requirements
+
+Check these before you run the skill. Nothing outside this table is needed.
+
+| Requirement | Needed | Used for | What it costs you |
+| --- | --- | --- | --- |
+| A Clay workspace | Required | The balance and the planned builds | Billed by Clay in credits on your own plan. |
+
+**Missing a required item?** Stop before the live steps and tell the user which item is
+missing and what it is for. Do not run the step without it and do not present an empty
+result as an answer. Keys are read from the environment at run time and are never
+written into a file, a prompt or the output.
 
 ## When to use it
 

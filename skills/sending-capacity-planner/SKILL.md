@@ -3,7 +3,7 @@ name: sending-capacity-planner
 description: |
   Work out how many contacts a set of sending accounts can actually reach per week, and how long a list will take to work through. Use when someone asks how many emails they can send, how many inboxes they need, how long a campaign will run, or whether to buy more domains.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [cold_email_system, deliverability, outbound_email]
 metadata:
   title: "Sending Capacity Planner"
@@ -11,6 +11,7 @@ metadata:
   tags: "cold_email_system, deliverability, outbound_email"
   keywords: "outbound, how many emails can i send, how many inboxes do i need, how long will this campaign take, should i buy more domains, sending capacity"
   version: "2.1.0"
+  requirements: "Needs no account, key or paid service: it works from the files, exports and answers you give it."
 ---
 
 # Sending Capacity Planner
@@ -18,6 +19,11 @@ metadata:
 ## What this does
 
 Sending capacity is usually estimated from the per inbox daily limit and then quietly broken by follow up steps, which multiply every new contact by the number of steps in the sequence. This skill computes capacity from the sequence shape rather than from the contact count, so the plan survives contact with the second week.
+
+## Requirements
+
+This skill needs no account, API key or paid service. It works from the files,
+exports and answers you give it, in any agent that reads SKILL.md.
 
 ## When to use it
 

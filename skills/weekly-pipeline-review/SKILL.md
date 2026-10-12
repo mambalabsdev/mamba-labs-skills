@@ -3,7 +3,7 @@ name: weekly-pipeline-review
 description: |
   Run a weekly pipeline review that finds the deals that are quietly dying rather than admiring the big ones. Use for a weekly sales review, forecasting, or when someone asks which deals to focus on this week.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [crm_operations_pack, small_business_operations, small_business_ops]
 metadata:
   title: "Weekly Pipeline Review"
@@ -11,6 +11,7 @@ metadata:
   tags: "crm_operations_pack, small_business_operations, small_business_ops"
   keywords: "small business, weekly pipeline review, which deals should i focus on, forecast this week, sales review agenda, what is stuck"
   version: "2.1.0"
+  requirements: "Needs Read access to your CRM, or an export of the records."
 ---
 
 # Weekly Pipeline Review
@@ -18,6 +19,19 @@ metadata:
 ## What this does
 
 Pipeline reviews spend their time on the largest deals, which are usually the ones already getting attention. The deals that decide the quarter are the ones that stopped moving three weeks ago and nobody noticed. This skill sorts by movement and staleness first, and asks one specific question per deal instead of a general update.
+
+## Requirements
+
+Check these before you run the skill. Nothing outside this table is needed.
+
+| Requirement | Needed | Used for | What it costs you |
+| --- | --- | --- | --- |
+| Read access to your CRM, or an export of the records | Required | The open deals | None beyond your existing CRM. |
+
+**Missing a required item?** Stop before the live steps and tell the user which item is
+missing and what it is for. Do not run the step without it and do not present an empty
+result as an answer. Keys are read from the environment at run time and are never
+written into a file, a prompt or the output.
 
 ## When to use it
 

@@ -3,7 +3,7 @@ name: firmographic-enrichment
 description: |
   Fill headcount, industry, headquarters and revenue band on a company list, and report honestly which fields actually filled. Use when a list needs firmographics, when qualification needs company size, or when someone asks how complete their company data is.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [clay_operator, identity_enrichment]
 metadata:
   title: "Firmographic Enrichment"
@@ -11,6 +11,7 @@ metadata:
   tags: "clay_operator, identity_enrichment"
   keywords: "identity, enrich these companies, add headcount and industry, how complete is my company data, company size for qualification, firmographics"
   version: "2.1.0"
+  requirements: "Needs an Apify token (usage billed to your Apify account); Node.js 18+."
 ---
 
 # Firmographic Enrichment
@@ -18,6 +19,20 @@ metadata:
 ## What this does
 
 Firmographic enrichment always looks like it worked, because the rows that filled are visible and the rows that did not are blank rather than flagged. This skill enriches, then measures coverage per field, so a qualification rule built on a field that is only forty percent populated is caught before it silently disqualifies half the list.
+
+## Requirements
+
+Check these before you run the skill. Nothing outside this table is needed.
+
+| Requirement | Needed | Used for | What it costs you |
+| --- | --- | --- | --- |
+| Apify account and API token (`APIFY_TOKEN`) | Required | Runs the live data actors | A free Apify account works. Each run bills your own Apify account at the actor's Store price: company-firmographic-enricher 0.004 USD per company. |
+| Node.js 18 or newer | Required | The MCP tool calls | Free. It starts the Mamba Labs MCP server with `npx`. |
+
+**Missing a required item?** Stop before the live steps and tell the user which item is
+missing and what it is for. Do not run the step without it and do not present an empty
+result as an answer. Keys are read from the environment at run time and are never
+written into a file, a prompt or the output.
 
 ## When to use it
 
@@ -44,7 +59,7 @@ missing file so the next skill in the pack starts warmer.
 
 ## Tool connection
 
-Enrichment runs in batch across the domain list and returns per field values so coverage can be measured rather than assumed.
+Enrichment runs in batch across the domain list and returns per field values so coverage can be measured rather than assumed. `industry` is often null, and `revenue_estimate` is a heuristic band derived from headcount, not a reported figure.
 
 This skill calls live data through the Mamba Labs MCP server, which runs the
 actors on Apify with your own Apify token (https://console.apify.com/account/integrations).
@@ -61,7 +76,9 @@ claude mcp add mamba-gtm-suite -e APIFY_TOKEN=<your token> -- npx -y @mambalabsd
 | --- | --- | --- | --- |
 | Company Firmographic Enricher | `enrich_company_firmographics` | headcount, industry, headquarters and revenue band by domain | https://apify.com/mambalabs/company-firmographic-enricher |
 
-Runnable example input:
+Runnable example input, matched to the live tool schema:
+
+`enrich_company_firmographics`:
 
 ```json
 {

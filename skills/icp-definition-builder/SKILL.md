@@ -3,7 +3,7 @@ name: icp-definition-builder
 description: |
   Turn a description of a business into a structured ideal customer profile with firmographic criteria, signals, pain indicators and exclusion rules. Use when someone asks who to sell to, wants to define their ICP, build targeting criteria, or segment a market.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [clay_operator, identity_enrichment, signal_based_selling]
 metadata:
   title: "ICP Definition Builder"
@@ -11,6 +11,7 @@ metadata:
   tags: "clay_operator, identity_enrichment, signal_based_selling"
   keywords: "identity, who is my ideal customer, define my icp, build targeting criteria, help me segment my market, set up account filters"
   version: "2.1.0"
+  requirements: "Needs no account, key or paid service: it works from the files, exports and answers you give it."
 ---
 
 # ICP Definition Builder
@@ -18,6 +19,11 @@ metadata:
 ## What this does
 
 Most ICP documents are a list of adjectives that no filter can apply. This skill produces a profile whose every line is either a filter you can run or a signal you can detect, plus the exclusion rules that matter more than the inclusion rules, because exclusions are what keep a list clean.
+
+## Requirements
+
+This skill needs no account, API key or paid service. It works from the files,
+exports and answers you give it, in any agent that reads SKILL.md.
 
 ## When to use it
 

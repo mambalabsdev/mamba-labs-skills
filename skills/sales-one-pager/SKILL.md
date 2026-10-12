@@ -3,7 +3,7 @@ name: sales-one-pager
 description: |
   Write the one page document a prospect forwards internally to the person who has to approve. Use when a deal needs an internal champion, when someone asks for a leave behind, or when a prospect says they need to check with someone.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [agency_delivery, sales_enablement]
 metadata:
   title: "Sales One Pager"
@@ -11,6 +11,7 @@ metadata:
   tags: "agency_delivery, sales_enablement"
   keywords: "enablement, write a one pager, they need to check with someone, leave behind for the meeting, our champion needs something to forward, sales collateral"
   version: "2.1.0"
+  requirements: "Needs no account, key or paid service: it works from the files, exports and answers you give it."
 ---
 
 # Sales One Pager
@@ -18,6 +19,11 @@ metadata:
 ## What this does
 
 A leave behind is not read by the person you met. It is forwarded to somebody who was not in the meeting, has no context, and is deciding whether to spend money. This skill writes for that second reader, which changes what goes on the page: the problem in their language, the cost of not acting, and the shape of the commitment.
+
+## Requirements
+
+This skill needs no account, API key or paid service. It works from the files,
+exports and answers you give it, in any agent that reads SKILL.md.
 
 ## When to use it
 

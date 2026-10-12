@@ -3,7 +3,7 @@ name: tech-stack-signal-reader
 description: |
   Detect which tools a company runs from its own website and turn the stack into a qualification and an angle. Use when someone wants to know what CRM or sequencer or analytics a company uses, wants to find companies on a competitor, or wants tech stack based targeting.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [signal_based_selling, signal_research]
 metadata:
   title: "Tech Stack Signal Reader"
@@ -11,6 +11,7 @@ metadata:
   tags: "signal_based_selling, signal_research"
   keywords: "signals, what crm do they use, find companies using this tool, detect their tech stack, competitor displacement targeting, what analytics are they running"
   version: "2.1.0"
+  requirements: "Needs an Apify token (usage billed to your Apify account); Node.js 18+."
 ---
 
 # Tech Stack Signal Reader
@@ -18,6 +19,20 @@ metadata:
 ## What this does
 
 A detected tool is a fact; a useful signal is what the tool implies. This skill detects the stack from the live site, then reads it three ways: what it qualifies, what it disqualifies, and what it says about the company's maturity, which is usually the most useful of the three.
+
+## Requirements
+
+Check these before you run the skill. Nothing outside this table is needed.
+
+| Requirement | Needed | Used for | What it costs you |
+| --- | --- | --- | --- |
+| Apify account and API token (`APIFY_TOKEN`) | Required | Runs the live data actors | A free Apify account works. Each run bills your own Apify account at the actor's Store price: gtm-tech-stack-signal-scraper 0.015 USD per company. |
+| Node.js 18 or newer | Required | The MCP tool calls | Free. It starts the Mamba Labs MCP server with `npx`. |
+
+**Missing a required item?** Stop before the live steps and tell the user which item is
+missing and what it is for. Do not run the step without it and do not present an empty
+result as an answer. Keys are read from the environment at run time and are never
+written into a file, a prompt or the output.
 
 ## When to use it
 
@@ -45,7 +60,7 @@ missing file so the next skill in the pack starts warmer.
 
 ## Tool connection
 
-Detection reads the live site and its additional pages rather than a historical index, which is the difference between a current stack and one from two years ago.
+Detection reads the live site and its additional pages rather than a historical index, which is the difference between a current stack and one from two years ago. The tool reports every tool it detects; filter to the ones you named.
 
 This skill calls live data through the Mamba Labs MCP server, which runs the
 actors on Apify with your own Apify token (https://console.apify.com/account/integrations).
@@ -62,16 +77,13 @@ claude mcp add mamba-gtm-suite -e APIFY_TOKEN=<your token> -- npx -y @mambalabsd
 | --- | --- | --- | --- |
 | GTM Tech Stack Signal Enrichment | `detect_gtm_tech_stack` | tool detection from the live site, with additional page crawling | https://apify.com/mambalabs/gtm-tech-stack-signal-scraper |
 
-Runnable example input:
+Runnable example input, matched to the live tool schema:
+
+`detect_gtm_tech_stack`:
 
 ```json
 {
   "domain": "example.com",
-  "technologies": [
-    "hubspot",
-    "segment",
-    "intercom"
-  ],
   "crawl_additional_pages": true
 }
 ```

@@ -3,7 +3,7 @@ name: mamba-gtm-router
 description: |
   Route a plain language go to market request to the right skill, and name the ones that would help but are not installed. Use when someone does not know which skill to use, asks a broad GTM question, or wants to know what is available.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [agency_operations, clay_operator, cold_email_system]
 metadata:
   title: "Mamba GTM Router"
@@ -11,6 +11,7 @@ metadata:
   tags: "agency_operations, clay_operator, cold_email_system"
   keywords: "agency, which skill should i use, what can you help with, i need help with outbound, what skills do i have, where do i start"
   version: "2.1.0"
+  requirements: "Needs no account, key or paid service: it works from the files, exports and answers you give it."
 ---
 
 # Mamba GTM Router
@@ -18,6 +19,11 @@ metadata:
 ## What this does
 
 A catalog of fifty skills is only useful if the right one fires. This skill takes a request in the user's own words, names the skill that handles it, says why, and lists the two or three adjacent skills that would make the answer better, marking clearly which are installed and which are not, without pretending an uninstalled skill is running.
+
+## Requirements
+
+This skill needs no account, API key or paid service. It works from the files,
+exports and answers you give it, in any agent that reads SKILL.md.
 
 ## When to use it
 

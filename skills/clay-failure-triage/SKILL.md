@@ -3,7 +3,7 @@ name: clay-failure-triage
 description: |
   Diagnose a Clay column that returns null, zero rows, or the wrong shape, by symptom rather than by guesswork. Use when a Clay enrichment stopped working, a column is empty for rows that clearly have data, a pipeline that worked last week is now blank, or someone asks why their Clay table is broken.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [clay_builds, clay_operator]
 metadata:
   title: "Clay Failure Triage"
@@ -11,6 +11,7 @@ metadata:
   tags: "clay_builds, clay_operator"
   keywords: "clay, my clay column is empty, clay enrichment returns null, find people returned zero rows, why is my clay table broken"
   version: "2.1.0"
+  requirements: "Needs A Clay workspace."
 ---
 
 # Clay Failure Triage
@@ -18,6 +19,19 @@ metadata:
 ## What this does
 
 Clay failures cluster into a small number of recurring shapes, and almost all of them present as the same symptom: a column that is empty when the data is obviously there. This skill walks the symptom to the root cause in the order that resolves fastest, cheapest checks first, and never suggests re running the column until the cause is named.
+
+## Requirements
+
+Check these before you run the skill. Nothing outside this table is needed.
+
+| Requirement | Needed | Used for | What it costs you |
+| --- | --- | --- | --- |
+| A Clay workspace | Required | The failing column | Billed by Clay in credits on your own plan. |
+
+**Missing a required item?** Stop before the live steps and tell the user which item is
+missing and what it is for. Do not run the step without it and do not present an empty
+result as an answer. Keys are read from the environment at run time and are never
+written into a file, a prompt or the output.
 
 ## When to use it
 

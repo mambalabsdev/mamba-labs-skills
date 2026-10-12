@@ -3,7 +3,7 @@ name: sequencer-campaign-config
 description: |
   Configure a sending platform campaign correctly the first time: schedule, tracking, limits, timezone and the fields that silently reset. Use when creating a campaign in a sequencer, when settings appear not to save, or when a campaign is sending at the wrong time.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [cold_email_system, outbound_email]
 metadata:
   title: "Sequencer Campaign Config"
@@ -11,6 +11,7 @@ metadata:
   tags: "cold_email_system, outbound_email"
   keywords: "outbound, set up a campaign in my sequencer, my campaign settings did not save, sending at the wrong time, configure tracking and limits, campaign schedule"
   version: "2.1.0"
+  requirements: "Needs an Apify token (usage billed to your Apify account); Node.js 18+; Instantly v2 or Smartlead API key."
 ---
 
 # Sequencer Campaign Config
@@ -18,6 +19,21 @@ metadata:
 ## What this does
 
 Sequencer campaign settings have a specific failure shape: some fields are dropped silently at creation and must be set in a second update call, and some values that look valid are rejected or, worse, stored as a literal zero. This skill sets the configuration in the order that survives, then reads it back and diffs it against what was intended.
+
+## Requirements
+
+Check these before you run the skill. Nothing outside this table is needed.
+
+| Requirement | Needed | Used for | What it costs you |
+| --- | --- | --- | --- |
+| Apify account and API token (`APIFY_TOKEN`) | Required | Runs the live data actors | A free Apify account works. Each run bills your own Apify account at the actor's Store price: clay-to-instantly-smartlead-push 0.01 USD per lead pushed. |
+| Node.js 18 or newer | Required | The MCP tool calls | Free. It starts the Mamba Labs MCP server with `npx`. |
+| Instantly v2 or Smartlead API key | Required | Creating the campaign, pushing leads and reading the campaign back | Comes with your existing sending plan. An Instantly v1 key does not work. |
+
+**Missing a required item?** Stop before the live steps and tell the user which item is
+missing and what it is for. Do not run the step without it and do not present an empty
+result as an answer. Keys are read from the environment at run time and are never
+written into a file, a prompt or the output.
 
 ## When to use it
 
@@ -46,7 +62,7 @@ missing file so the next skill in the pack starts warmer.
 
 ## Tool connection
 
-Pushing a finished list into the sequencer can run through the Mamba Labs push actor rather than a manual CSV, which keeps the field names identical between the enrichment table and the campaign payload.
+Pushing a finished list into the sequencer can run through the Mamba Labs push actor rather than a manual CSV, which keeps the field names identical between the enrichment table and the campaign payload. The push needs your Instantly v2 or Smartlead API key as `api_key`: read it from the environment at call time and never write it into a file or the output. Run with `dry_run` first, which returns the exact payload and writes nothing.
 
 This skill calls live data through the Mamba Labs MCP server, which runs the
 actors on Apify with your own Apify token (https://console.apify.com/account/integrations).
@@ -63,11 +79,16 @@ claude mcp add mamba-gtm-suite -e APIFY_TOKEN=<your token> -- npx -y @mambalabsd
 | --- | --- | --- | --- |
 | Sequencer Lead Push | `push_leads_to_sequencer` | push enriched rows into a sequencer campaign with the field names preserved | https://apify.com/mambalabs/clay-to-instantly-smartlead-push |
 
-Runnable example input:
+Runnable example input, matched to the live tool schema:
+
+`push_leads_to_sequencer`:
 
 ```json
 {
+  "sequencer": "instantly",
+  "api_key": "${INSTANTLY_API_KEY}",
   "campaign_id": "example-campaign",
+  "dry_run": true,
   "leads": [
     {
       "email": "jordan@example.com",

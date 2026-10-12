@@ -1,12 +1,6 @@
 {
   "domain": "example.com",
-  "targetCount": 3,
-  "jobTitles": [
-    "Head of Revenue Operations",
-    "VP Sales"
-  ],
-  "excludeJobTitles": [
-    "intern",
-    "assistant"
-  ]
+  "output_grain": "person",
+  "seniority_filter": "leadership",
+  "max_people": "25"
 }

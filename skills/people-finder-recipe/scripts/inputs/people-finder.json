@@ -9,5 +9,10 @@
     "intern",
     "assistant"
   ],
-  "verifyEmails": true
+  "verifyEmails": true,
+  "serpApiKey": "${SERPER_API_KEY}",
+  "prospeoApiKey": "${PROSPEO_API_KEY?}",
+  "icypeasApiKey": "${ICYPEAS_API_KEY?}",
+  "reoonApiKey": "${REOON_API_KEY?}",
+  "bounceBanApiKey": "${BOUNCEBAN_API_KEY?}"
 }

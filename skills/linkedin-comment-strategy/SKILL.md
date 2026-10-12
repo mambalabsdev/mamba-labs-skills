@@ -3,7 +3,7 @@ name: linkedin-comment-strategy
 description: |
   Decide which posts to comment on and write comments that do something other than agree. Use when someone wants to build presence through commenting, wants to be visible to a target account, or asks what to say on someone's post.
 license: MIT
-compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need only what the Requirements section of the skill lists."
 tags: [linkedin, linkedin_authority]
 metadata:
   title: "LinkedIn Comment Strategy"
@@ -11,6 +11,7 @@ metadata:
   tags: "linkedin, linkedin_authority"
   keywords: "linkedin, what should i comment on, build presence through commenting, be visible to this account, comment strategy, reply to this post"
   version: "2.1.0"
+  requirements: "Needs no account, key or paid service: it works from the files, exports and answers you give it."
 ---
 
 # LinkedIn Comment Strategy
@@ -18,6 +19,11 @@ metadata:
 ## What this does
 
 Commenting is the cheapest visible surface on the platform and almost all of it is wasted on agreement. This skill picks posts by whose audience matters rather than by whose post is popular, and writes comments that add a fact, a counter case, or a specific the post left out.
+
+## Requirements
+
+This skill needs no account, API key or paid service. It works from the files,
+exports and answers you give it, in any agent that reads SKILL.md.
 
 ## When to use it
 
