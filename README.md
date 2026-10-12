@@ -155,9 +155,9 @@ premium skills that finish it.
 | --- | --- | --- | --- | --- |
 | [The Cold Email System](packs/cold-email-system.md) | 12 | 8 | 29 USD | Everything between a list and a reply, in the order it has to happen. |
 | [The Clay Operator](packs/clay-operator.md) | 15 | 5 | 19 USD | Build tables that produce rows you can send to, at a cost you decided in advance. |
-| [Signal Based Selling](packs/signal-based-selling.md) | 14 | 14 | 49 USD | Reach accounts at the moment something changed, with a message about the change. |
+| [Signal Based Selling](packs/signal-based-selling.md) | 14 | 13 | 49 USD | Reach accounts at the moment something changed, with a message about the change. |
 | [The Deliverability Pack](packs/deliverability.md) | 8 | 3 | 14.99 USD | Get the mail delivered, and know why when it is not. |
-| [LinkedIn Authority](packs/linkedin-authority.md) | 6 | 3 | 12.99 USD | Post, comment and connect in a way that makes the outbound land. |
+| [LinkedIn Authority](packs/linkedin-authority.md) | 6 | 2 | 12.99 USD | Post, comment and connect in a way that makes the outbound land. |
 | [The SEO And Content Engine](packs/seo-content-engine.md) | 8 | 3 | 9.99 USD | Pages and posts that exist because there is something on them worth reading. |
 | [CRM Operations](packs/crm-operations-pack.md) | 4 | 7 | 24 USD | Make the pipeline report mean something, then keep it that way. |
 | [Small Business Operations](packs/small-business-operations.md) | 6 | 1 | 19 USD | The weekly and monthly routines a small company actually has to run. |
@@ -166,7 +166,7 @@ premium skills that finish it.
 
 ## Premium catalog
 
-36 premium skills, sold at https://mambabuilt.com/store: 11 at 9.99 USD, 14 at 7.99 USD, 11 at 5.99 USD. The full catalog bundle, all 36 premium skills, is 99 USD.
+35 premium skills, sold at https://mambabuilt.com/store: 11 at 9.99 USD, 13 at 7.99 USD, 11 at 5.99 USD. The full catalog bundle, all 35 premium skills, is 99 USD.
 
 ## More
 

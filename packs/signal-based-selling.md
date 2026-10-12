@@ -49,7 +49,6 @@ These encode the system rather than the single task. They are not in this repo.
 | `gtm-signal-aggregator` | 7.99 USD | Combine hiring, tech stack and funding signals into one score per account and a branch decision on which message to send |
 | `icp-fit-scoring` | 7.99 USD | Score an account list from zero to one hundred against your ICP and split it into tiers you can route on |
 | `company-discovery-list-builder` | 7.99 USD | Build a company list from a market definition rather than from an existing list, using hiring activity or filing language as the discovery mechanism |
-| `linkedin-engager-mining` | 7.99 USD | Turn the people engaging with relevant posts into a qualified prospect list |
 | `clay-people-search-workbook` | 7.99 USD | Build the full company to contact workbook in Clay: source companies, qualify them, find the right people, waterfall their emails, and export a send ready list |
 | `competitor-battlecard` | 7.99 USD | Build an internal battlecard against one competitor that a rep can use without getting caught out |
 | `abm-account-plan` | 7.99 USD | Build a working plan for one named account: who to reach, in what order, on what trigger, and what has to be true to keep spending time on it |

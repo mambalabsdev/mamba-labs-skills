@@ -12,7 +12,7 @@ Social content is written for reach and outbound is sent to a list, and the two 
 
 ## What is in it
 
-This pack treats the profile as the landing page for outbound, the posts and comments as the reason a name is familiar, and the engagers on relevant posts as a list. The connection campaign shares its exit gate with the email sequence, so one reply stops both.
+This pack treats the profile as the landing page for outbound, and the posts and comments as the reason a name is familiar. The connection campaign shares its exit gate with the email sequence, so one reply stops both.
 
 ## Free skills in this pack
 
@@ -35,7 +35,6 @@ These encode the system rather than the single task. They are not in this repo.
 
 | Skill | Price | What it does |
 | --- | --- | --- |
-| `linkedin-engager-mining` | 7.99 USD | Turn the people engaging with relevant posts into a qualified prospect list |
 | `linkedin-connection-campaign` | 9.99 USD | Run a connection and message campaign that stays inside platform limits, does not double touch a prospect, and hands off cleanly to email |
 | `multichannel-enrollment-rules` | 5.99 USD | Set the rules that let email and social outreach run on the same prospect without double touching or double counting them |
 

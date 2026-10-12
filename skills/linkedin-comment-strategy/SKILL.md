@@ -97,7 +97,6 @@ contract it checks is `scripts/output-contract.json`.
 ## Related skills
 
 - `linkedin-post-writer`
-- `linkedin-engager-mining`
 - `linkedin-connection-campaign`
 
 Ships in the **linkedin-authority** pack.
