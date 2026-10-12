@@ -43,7 +43,7 @@
       "cost": "Free with your own seed inboxes; a placement test service bills you directly."
     }
   ],
-  "requirements_summary": "Needs Access to your sending platform (Instantly, Smartlead or similar); Seed inboxes at Gmail, Microsoft and Yahoo that you control, or an inbox placement test service.",
+  "requirements_summary": "Needs access to your sending platform (Instantly, Smartlead or similar); seed inboxes at Gmail, Microsoft and Yahoo that you control, or an inbox placement test service.",
   "channels": {
     "agent_skills_spec": {
       "pass": true,

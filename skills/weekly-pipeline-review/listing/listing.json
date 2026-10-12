@@ -37,7 +37,7 @@
       "cost": "None beyond your existing CRM."
     }
   ],
-  "requirements_summary": "Needs Read access to your CRM, or an export of the records.",
+  "requirements_summary": "Needs read access to your CRM, or an export of the records.",
   "channels": {
     "agent_skills_spec": {
       "pass": true,

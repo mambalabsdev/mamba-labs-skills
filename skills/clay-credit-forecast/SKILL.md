@@ -11,7 +11,7 @@ metadata:
   tags: "agency_delivery, clay_builds, clay_operator"
   keywords: "clay, do i have enough clay credits, plan a month of clay work, which campaign should i drop, credit burn forecast, clay capacity planning"
   version: "2.1.0"
-  requirements: "Needs A Clay workspace."
+  requirements: "Needs a Clay workspace."
 ---
 
 # Clay Credit Forecast

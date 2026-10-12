@@ -11,7 +11,7 @@ metadata:
   tags: "crm_operations_pack, small_business_operations, small_business_ops"
   keywords: "small business, weekly pipeline review, which deals should i focus on, forecast this week, sales review agenda, what is stuck"
   version: "2.1.0"
-  requirements: "Needs Read access to your CRM, or an export of the records."
+  requirements: "Needs read access to your CRM, or an export of the records."
 ---
 
 # Weekly Pipeline Review

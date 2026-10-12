@@ -11,7 +11,7 @@ metadata:
   tags: "cold_email_system, deliverability"
   keywords: "deliverability, do my emails need an unsubscribe, compliance review of outbound, test my opt out, unsubscribe handling, what does an outbound email legally need"
   version: "2.1.0"
-  requirements: "Needs Access to your sending platform (Instantly, Smartlead or similar); Seed inboxes at Gmail, Microsoft and Yahoo that you control, or an inbox placement test service."
+  requirements: "Needs access to your sending platform (Instantly, Smartlead or similar); seed inboxes at Gmail, Microsoft and Yahoo that you control, or an inbox placement test service."
 ---
 
 # Unsubscribe Compliance Check

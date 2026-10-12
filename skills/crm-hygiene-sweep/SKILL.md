@@ -11,7 +11,7 @@ metadata:
   tags: "crm_operations, crm_operations_pack"
   keywords: "crm, weekly crm cleanup, keep the crm clean, data hygiene routine, we cleaned it and it is dirty again, new record hygiene"
   version: "2.1.0"
-  requirements: "Needs Read access to your CRM, or an export of the records."
+  requirements: "Needs read access to your CRM, or an export of the records."
 ---
 
 # CRM Hygiene Sweep

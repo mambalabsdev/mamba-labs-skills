@@ -11,7 +11,7 @@ metadata:
   tags: "clay_builds, clay_operator"
   keywords: "clay, add a run condition, skip enrichment for non icp rows, gate this column, only enrich rows that, stop paying to enrich junk"
   version: "2.1.0"
-  requirements: "Needs A Clay workspace."
+  requirements: "Needs a Clay workspace."
 ---
 
 # Clay Conditional Gates

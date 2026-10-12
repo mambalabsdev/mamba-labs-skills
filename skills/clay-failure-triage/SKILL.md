@@ -11,7 +11,7 @@ metadata:
   tags: "clay_builds, clay_operator"
   keywords: "clay, my clay column is empty, clay enrichment returns null, find people returned zero rows, why is my clay table broken"
   version: "2.1.0"
-  requirements: "Needs A Clay workspace."
+  requirements: "Needs a Clay workspace."
 ---
 
 # Clay Failure Triage

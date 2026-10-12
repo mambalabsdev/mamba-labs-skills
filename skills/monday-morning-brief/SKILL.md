@@ -11,7 +11,7 @@ metadata:
   tags: "small_business_operations, small_business_ops"
   keywords: "small business, monday morning brief, weekly business summary, what happened last week, weekly update across my tools, recurring operating brief"
   version: "2.1.0"
-  requirements: "Needs Connectors in your agent for the sources the brief reads (calendar, mail, CRM, finance, tracker)."
+  requirements: "Needs connectors in your agent for the sources the brief reads (calendar, mail, CRM, finance, tracker)."
 ---
 
 # Monday Morning Brief

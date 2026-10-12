@@ -36,7 +36,7 @@
       "cost": "Billed by Clay in credits on your own plan."
     }
   ],
-  "requirements_summary": "Needs A Clay workspace.",
+  "requirements_summary": "Needs a Clay workspace.",
   "channels": {
     "agent_skills_spec": {
       "pass": true,

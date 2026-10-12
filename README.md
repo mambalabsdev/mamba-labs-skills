@@ -77,12 +77,12 @@ Every free skill sits on a 30 day review cycle. Fixes and improvements ship as r
 
 ### Clay builds
 
-- [`clay-actor-column-wiring`](skills/clay-actor-column-wiring): Wire an external actor or API into a Clay column so the types survive the round trip. Needs A Clay workspace.
-- [`clay-conditional-gates`](skills/clay-conditional-gates): Write the run conditions that stop expensive Clay columns from firing on rows that will never qualify. Needs A Clay workspace.
-- [`clay-cost-audit`](skills/clay-cost-audit): Price a Clay table before it runs and find the columns that are burning credits for no return. Needs A Clay workspace.
-- [`clay-credit-forecast`](skills/clay-credit-forecast): Forecast how far a Clay credit balance goes across a month of planned builds, and say which build to cut when it does not reach. Needs A Clay workspace.
-- [`clay-dedupe-and-merge`](skills/clay-dedupe-and-merge): Deduplicate and merge people or company rows across Clay tables without losing enrichment or double counting a person. Needs A Clay workspace.
-- [`clay-failure-triage`](skills/clay-failure-triage): Diagnose a Clay column that returns null, zero rows, or the wrong shape, by symptom rather than by guesswork. Needs A Clay workspace.
+- [`clay-actor-column-wiring`](skills/clay-actor-column-wiring): Wire an external actor or API into a Clay column so the types survive the round trip. Needs a Clay workspace.
+- [`clay-conditional-gates`](skills/clay-conditional-gates): Write the run conditions that stop expensive Clay columns from firing on rows that will never qualify. Needs a Clay workspace.
+- [`clay-cost-audit`](skills/clay-cost-audit): Price a Clay table before it runs and find the columns that are burning credits for no return. Needs a Clay workspace.
+- [`clay-credit-forecast`](skills/clay-credit-forecast): Forecast how far a Clay credit balance goes across a month of planned builds, and say which build to cut when it does not reach. Needs a Clay workspace.
+- [`clay-dedupe-and-merge`](skills/clay-dedupe-and-merge): Deduplicate and merge people or company rows across Clay tables without losing enrichment or double counting a person. Needs a Clay workspace.
+- [`clay-failure-triage`](skills/clay-failure-triage): Diagnose a Clay column that returns null, zero rows, or the wrong shape, by symptom rather than by guesswork. Needs a Clay workspace.
 
 ### Outbound email
 
@@ -114,7 +114,7 @@ Every free skill sits on a 30 day review cycle. Fixes and improvements ship as r
 - [`bounce-and-catchall-policy`](skills/bounce-and-catchall-policy): Decide what to do with catch all domains, role addresses and soft bounces before they cost you a domain. Needs no account, key or paid service: it works from the files, exports and answers you give it.
 - [`domain-health-precheck`](skills/domain-health-precheck): Check whether one sending domain is safe for cold outreach by reading its SPF, DKIM and DMARC records and its blacklist status. Needs an Apify token (usage billed to your Apify account); Node.js 18+. Optional: DNS access at your registrar, to apply the fixes.
 - [`domain-warmup-planner`](skills/domain-warmup-planner): Plan the warmup ramp for new sending domains and inboxes so real campaign volume starts on the date it is needed. Needs no account, key or paid service: it works from the files, exports and answers you give it.
-- [`unsubscribe-compliance-check`](skills/unsubscribe-compliance-check): Check that outbound campaigns carry a working unsubscribe path and that opt outs land somewhere that actually stops the next send. Needs Access to your sending platform (Instantly, Smartlead or similar); Seed inboxes at Gmail, Microsoft and Yahoo that you control, or an inbox placement test service.
+- [`unsubscribe-compliance-check`](skills/unsubscribe-compliance-check): Check that outbound campaigns carry a working unsubscribe path and that opt outs land somewhere that actually stops the next send. Needs access to your sending platform (Instantly, Smartlead or similar); seed inboxes at Gmail, Microsoft and Yahoo that you control, or an inbox placement test service.
 
 ### Sales enablement
 
@@ -127,8 +127,8 @@ Every free skill sits on a 30 day review cycle. Fixes and improvements ship as r
 
 - [`cash-runway-snapshot`](skills/cash-runway-snapshot): Work out how many months of cash are left and what actually changes it. Needs no account, key or paid service: it works from the files, exports and answers you give it.
 - [`invoice-chaser`](skills/invoice-chaser): Chase overdue invoices on a fixed escalation ladder that gets paid without damaging the relationship. Needs no account, key or paid service: it works from the files, exports and answers you give it.
-- [`monday-morning-brief`](skills/monday-morning-brief): Produce the weekly operating brief: what moved, what is at risk, and the three things that need a decision. Needs Connectors in your agent for the sources the brief reads (calendar, mail, CRM, finance, tracker).
-- [`weekly-pipeline-review`](skills/weekly-pipeline-review): Run a weekly pipeline review that finds the deals that are quietly dying rather than admiring the big ones. Needs Read access to your CRM, or an export of the records.
+- [`monday-morning-brief`](skills/monday-morning-brief): Produce the weekly operating brief: what moved, what is at risk, and the three things that need a decision. Needs connectors in your agent for the sources the brief reads (calendar, mail, CRM, finance, tracker).
+- [`weekly-pipeline-review`](skills/weekly-pipeline-review): Run a weekly pipeline review that finds the deals that are quietly dying rather than admiring the big ones. Needs read access to your CRM, or an export of the records.
 
 ### Knowledge operations
 
@@ -144,7 +144,7 @@ Every free skill sits on a 30 day review cycle. Fixes and improvements ship as r
 
 ### CRM operations
 
-- [`crm-hygiene-sweep`](skills/crm-hygiene-sweep): Run a recurring cleanup on new and changed CRM records so the database stops degrading between audits. Needs Read access to your CRM, or an export of the records.
+- [`crm-hygiene-sweep`](skills/crm-hygiene-sweep): Run a recurring cleanup on new and changed CRM records so the database stops degrading between audits. Needs read access to your CRM, or an export of the records.
 
 ## Packs
 

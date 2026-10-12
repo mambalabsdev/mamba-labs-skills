@@ -11,7 +11,7 @@ metadata:
   tags: "clay_builds, clay_operator"
   keywords: "clay, what will this clay table cost, my clay credits are gone, how do i cut clay spend, price this clay build, credit optimization in clay"
   version: "2.1.0"
-  requirements: "Needs A Clay workspace."
+  requirements: "Needs a Clay workspace."
 ---
 
 # Clay Cost Audit

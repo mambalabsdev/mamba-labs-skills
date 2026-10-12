@@ -11,7 +11,7 @@ metadata:
   tags: "agency_delivery, clay_builds, clay_operator"
   keywords: "clay, merge two clay lists, dedupe my people pool, import a second source into this table, which record wins, am i double counting people"
   version: "2.1.0"
-  requirements: "Needs A Clay workspace."
+  requirements: "Needs a Clay workspace."
 ---
 
 # Clay Dedupe And Merge

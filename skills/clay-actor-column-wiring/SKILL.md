@@ -11,7 +11,7 @@ metadata:
   tags: "clay_builds, clay_operator"
   keywords: "clay, call an apify actor from clay, add an http api column, pass clay values to a scraper, type error from external enrichment, wire an actor into clay"
   version: "2.1.0"
-  requirements: "Needs A Clay workspace."
+  requirements: "Needs a Clay workspace."
 ---
 
 # Clay Actor Column Wiring
