@@ -55,6 +55,34 @@ def cells(row):
     return [c.strip() for c in row.strip().strip("|").split("|")]
 
 
+TOOL_ERROR = re.compile(r"\b(error|exception|failed)\s*[:=]|\bis required\.|\bnot authorized\b|\binvalid (api )?(key|token)\b", re.I)
+
+
+def tables(lines):
+    """[(header cells, [row cells])] for every table in a section."""
+    out, cur = [], None
+    for l in lines + [""]:
+        if l.strip().startswith("|"):
+            if re.match(r"^\s*\|(\s*:?-{3,}:?\s*\|)+\s*$", l):
+                continue
+            if cur is None:
+                cur = (cells(l), [])
+            else:
+                cur[1].append(cells(l))
+        elif cur is not None:
+            out.append(cur)
+            cur = None
+    return out
+
+
+def is_zero(v):
+    v = v.strip().strip("*").split(" ")[0].split("/")[0]
+    try:
+        return float(v) == 0
+    except ValueError:
+        return False
+
+
 def check_markdown(text, c):
     problems = []
     if len(text.strip()) < c["min_chars"]:
@@ -82,6 +110,18 @@ def check_markdown(text, c):
     for name, lines in sections.items():
         for r in table_rows(lines):
             allcells += cells(r)
+        for header, rows in tables(lines):
+            for row in rows:
+                for x in row:
+                    if TOOL_ERROR.search(x):
+                        problems.append("section '## %s' carries a tool error instead of a result: '%s'"
+                                        % (name, x[:80]))
+                        break
+            for i, h in enumerate(header):
+                col = [r[i] for r in rows if i < len(r) and r[i]]
+                if re.search(r"\bscore\b", h, re.I) and len(col) >= 2 and all(is_zero(v) for v in col):
+                    problems.append("every value in the '%s' column of '## %s' is 0. A scorer returns 0 when "
+                                    "it received no signals: pass the gathered signals and score again" % (h, name))
     if allcells:
         empty = sum(1 for x in allcells if x.lower() in EMPTY_CELLS)
         share = empty / float(len(allcells))
