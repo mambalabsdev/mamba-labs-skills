@@ -101,6 +101,15 @@ def check_markdown(text, c):
         body = "\n".join(sections[hit[0]]).strip()
         if not body:
             problems.append("section '## %s' is empty" % req)
+    for req, words in c.get("required_columns", {}).items():
+        key = req.lower()
+        hit = [s for s in sections if s == key or s.startswith(key)]
+        if not hit:
+            continue
+        headers = " | ".join(" | ".join(h) for h, _ in tables(sections[hit[0]])).lower()
+        for w in words:
+            if w.lower() not in headers:
+                problems.append("section '## %s' needs a table column named '%s'" % (req, w))
     for req in c["table_sections"]:
         key = req.lower()
         hit = [s for s in sections if s == key or s.startswith(key)]

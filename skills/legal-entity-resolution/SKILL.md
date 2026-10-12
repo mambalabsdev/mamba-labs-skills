@@ -69,7 +69,7 @@ actors on Apify with your own Apify token (https://console.apify.com/account/int
   `APIFY_TOKEN` in your environment, or run:
 
 ```
-claude mcp add mamba-gtm-suite -e APIFY_TOKEN=<your token> -- npx -y @mambalabsdev/mcp-gtm-suite@1.10.0
+claude mcp add mamba-gtm-suite -e APIFY_TOKEN=<your token> -- npx -y @mambalabsdev/mcp-gtm-suite@1.12.0
 ```
 
 | Actor | MCP tool | Used for | Store page |

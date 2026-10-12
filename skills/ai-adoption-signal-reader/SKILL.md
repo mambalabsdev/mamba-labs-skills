@@ -59,7 +59,7 @@ missing file so the next skill in the pack starts warmer.
 
 ## Tool connection
 
-Vendor detection and the pricing page read run against the live site. The tool reports every vendor it detects; filter to the vendors you named.
+Vendor detection and the pricing page read run against the live site. Pass the vendors you named as `vendors` to report only those; detection is unchanged and costs the same either way.
 
 This skill calls live data through the Mamba Labs MCP server, which runs the
 actors on Apify with your own Apify token (https://console.apify.com/account/integrations).
@@ -69,7 +69,7 @@ actors on Apify with your own Apify token (https://console.apify.com/account/int
   `APIFY_TOKEN` in your environment, or run:
 
 ```
-claude mcp add mamba-gtm-suite -e APIFY_TOKEN=<your token> -- npx -y @mambalabsdev/mcp-gtm-suite@1.10.0
+claude mcp add mamba-gtm-suite -e APIFY_TOKEN=<your token> -- npx -y @mambalabsdev/mcp-gtm-suite@1.12.0
 ```
 
 | Actor | MCP tool | Used for | Store page |

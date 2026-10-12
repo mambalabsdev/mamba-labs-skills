@@ -96,7 +96,7 @@
           "command": "npx",
           "args": [
             "-y",
-            "@mambalabsdev/mcp-gtm-suite@1.10.0"
+            "@mambalabsdev/mcp-gtm-suite@1.12.0"
           ],
           "env": {
             "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
@@ -146,7 +146,7 @@
           "command": "npx",
           "args": [
             "-y",
-            "@mambalabsdev/mcp-gtm-suite@1.10.0"
+            "@mambalabsdev/mcp-gtm-suite@1.12.0"
           ],
           "env": {
             "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
@@ -186,7 +186,7 @@
           "command": "npx",
           "args": [
             "-y",
-            "@mambalabsdev/mcp-gtm-suite@1.10.0"
+            "@mambalabsdev/mcp-gtm-suite@1.12.0"
           ],
           "env": {
             "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
@@ -414,7 +414,7 @@
           "command": "npx",
           "args": [
             "-y",
-            "@mambalabsdev/mcp-gtm-suite@1.10.0"
+            "@mambalabsdev/mcp-gtm-suite@1.12.0"
           ],
           "env": {
             "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
@@ -473,7 +473,7 @@
           "command": "npx",
           "args": [
             "-y",
-            "@mambalabsdev/mcp-gtm-suite@1.10.0"
+            "@mambalabsdev/mcp-gtm-suite@1.12.0"
           ],
           "env": {
             "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
@@ -648,7 +648,7 @@
           "command": "npx",
           "args": [
             "-y",
-            "@mambalabsdev/mcp-gtm-suite@1.10.0"
+            "@mambalabsdev/mcp-gtm-suite@1.12.0"
           ],
           "env": {
             "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
@@ -688,7 +688,7 @@
           "command": "npx",
           "args": [
             "-y",
-            "@mambalabsdev/mcp-gtm-suite@1.10.0"
+            "@mambalabsdev/mcp-gtm-suite@1.12.0"
           ],
           "env": {
             "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
@@ -765,7 +765,7 @@
           "command": "npx",
           "args": [
             "-y",
-            "@mambalabsdev/mcp-gtm-suite@1.10.0"
+            "@mambalabsdev/mcp-gtm-suite@1.12.0"
           ],
           "env": {
             "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
@@ -842,7 +842,7 @@
           "command": "npx",
           "args": [
             "-y",
-            "@mambalabsdev/mcp-gtm-suite@1.10.0"
+            "@mambalabsdev/mcp-gtm-suite@1.12.0"
           ],
           "env": {
             "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
@@ -901,7 +901,7 @@
           "command": "npx",
           "args": [
             "-y",
-            "@mambalabsdev/mcp-gtm-suite@1.10.0"
+            "@mambalabsdev/mcp-gtm-suite@1.12.0"
           ],
           "env": {
             "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
@@ -998,7 +998,7 @@
           "command": "npx",
           "args": [
             "-y",
-            "@mambalabsdev/mcp-gtm-suite@1.10.0"
+            "@mambalabsdev/mcp-gtm-suite@1.12.0"
           ],
           "env": {
             "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
@@ -1133,7 +1133,7 @@
           "command": "npx",
           "args": [
             "-y",
-            "@mambalabsdev/mcp-gtm-suite@1.10.0"
+            "@mambalabsdev/mcp-gtm-suite@1.12.0"
           ],
           "env": {
             "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
@@ -1173,7 +1173,7 @@
           "command": "npx",
           "args": [
             "-y",
-            "@mambalabsdev/mcp-gtm-suite@1.10.0"
+            "@mambalabsdev/mcp-gtm-suite@1.12.0"
           ],
           "env": {
             "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
@@ -1251,7 +1251,7 @@
           "command": "npx",
           "args": [
             "-y",
-            "@mambalabsdev/mcp-gtm-suite@1.10.0"
+            "@mambalabsdev/mcp-gtm-suite@1.12.0"
           ],
           "env": {
             "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
@@ -1291,7 +1291,7 @@
           "command": "npx",
           "args": [
             "-y",
-            "@mambalabsdev/mcp-gtm-suite@1.10.0"
+            "@mambalabsdev/mcp-gtm-suite@1.12.0"
           ],
           "env": {
             "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
@@ -1388,7 +1388,7 @@
           "command": "npx",
           "args": [
             "-y",
-            "@mambalabsdev/mcp-gtm-suite@1.10.0"
+            "@mambalabsdev/mcp-gtm-suite@1.12.0"
           ],
           "env": {
             "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
@@ -1447,7 +1447,7 @@
           "command": "npx",
           "args": [
             "-y",
-            "@mambalabsdev/mcp-gtm-suite@1.10.0"
+            "@mambalabsdev/mcp-gtm-suite@1.12.0"
           ],
           "env": {
             "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"

@@ -44,9 +44,9 @@ agents.
 
 ## Shared context
 
-Every skill reads `BRAND.md`, `ICP.md` and `VOICE.md` from your project root where
-they exist, so you stop repeating yourself. `brand-context-builder` writes all three
-from one interview and every other skill gets sharper from it.
+Each skill reads the files its Shared context section names, from `BRAND.md`, `ICP.md`
+and `VOICE.md`, where they exist, so you stop repeating yourself. `brand-context-builder`
+writes all three from one interview and every other skill gets sharper from it.
 
 ## Review cadence
 

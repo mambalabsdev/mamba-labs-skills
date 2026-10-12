@@ -60,7 +60,7 @@ missing file so the next skill in the pack starts warmer.
 
 ## Tool connection
 
-Detection reads the live site and its additional pages rather than a historical index, which is the difference between a current stack and one from two years ago. The tool reports every tool it detects; filter to the ones you named.
+Detection reads the live site and its additional pages rather than a historical index, which is the difference between a current stack and one from two years ago. Pass the tools you named as `technologies` to report only those (hubspot, salesforce, marketo, pardot, intercom, drift, apollo, outreach, gong, zoominfo); Clay, Salesloft, Instantly and Lemlist leave no trace on a website and cannot be detected.
 
 This skill calls live data through the Mamba Labs MCP server, which runs the
 actors on Apify with your own Apify token (https://console.apify.com/account/integrations).
@@ -70,7 +70,7 @@ actors on Apify with your own Apify token (https://console.apify.com/account/int
   `APIFY_TOKEN` in your environment, or run:
 
 ```
-claude mcp add mamba-gtm-suite -e APIFY_TOKEN=<your token> -- npx -y @mambalabsdev/mcp-gtm-suite@1.10.0
+claude mcp add mamba-gtm-suite -e APIFY_TOKEN=<your token> -- npx -y @mambalabsdev/mcp-gtm-suite@1.12.0
 ```
 
 | Actor | MCP tool | Used for | Store page |

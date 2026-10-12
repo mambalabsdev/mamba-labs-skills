@@ -24,7 +24,7 @@
   "logo_svg": "listing/logo.svg",
   "example_output": null,
   "mcp_servers": [
-    "@mambalabsdev/mcp-gtm-suite@1.10.0"
+    "@mambalabsdev/mcp-gtm-suite@1.12.0"
   ],
   "mcp_tools": [
     "track_publication_cadence"

@@ -45,7 +45,7 @@ The full pack, every premium skill above plus the free ones: 12.99 USD at https:
 
 ## Shared context
 
-Every skill in this pack reads `BRAND.md`, `ICP.md` and `VOICE.md` from your
-project root where they exist. `brand-context-builder` writes all three from one
-interview, and output quality compounds across the pack as those files improve.
+Each skill in this pack reads the files its Shared context section names, from
+`BRAND.md`, `ICP.md` and `VOICE.md`, where they exist. `brand-context-builder` writes
+all three from one interview, and output quality compounds as those files improve.
 

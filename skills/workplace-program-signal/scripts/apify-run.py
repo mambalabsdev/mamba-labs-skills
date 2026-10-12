@@ -64,6 +64,47 @@ def call(method, path, token, body=None):
         return json.loads(r.read().decode())
 
 
+def report_charges(run_id, actor_id, token):
+    """Print what the run bills: its charged events priced at the actor's Store list
+    price. usageTotalUsd is platform compute only and is a small fraction of what a
+    pay per event actor charges, so it is never reported as the cost."""
+    try:
+        # Charged events settle after the run finishes; a read at SUCCEEDED can be
+        # short. Re read until two reads 15 seconds apart agree, for up to 90 seconds.
+        counts, waited = None, 0
+        while waited <= 90:
+            now_counts = call("GET", "/actor-runs/%s" % run_id, token)["data"].get("chargedEventCounts") or {}
+            if now_counts == counts:
+                break
+            counts = now_counts
+            time.sleep(15)
+            waited += 15
+        act = call("GET", "/acts/%s" % actor_id, token)["data"]
+    except (urllib.error.URLError, KeyError, ValueError) as e:
+        print("Charges: could not be read (%s). Read them on the run page in the Apify Console." % e)
+        return
+    now = time.strftime("%Y-%m-%dT%H:%M:%S", time.gmtime())
+    infos = [i for i in act.get("pricingInfos") or [] if (i.get("startedAt") or "") <= now]
+    events = ((infos[-1].get("pricingPerEvent") or {}).get("actorChargeEvents") or {}) if infos else {}
+    total, parts = 0.0, []
+    for name, n in sorted(counts.items()):
+        if not n:
+            continue
+        ev = events.get(name) or {}
+        tiers = ev.get("eventTieredPricingUsd") or {}
+        price = (tiers.get("FREE") or {}).get("tieredEventPriceUsd", ev.get("eventPriceUsd"))
+        if price is None:
+            parts.append("%d x %s (price not listed)" % (n, name))
+            continue
+        total += n * price
+        parts.append("%d x %s at %.4f USD" % (n, name, price))
+    if not parts:
+        print("Charges: no charged events recorded on this run yet. Check the run page in a minute.")
+        return
+    print("Charges at Store list price: %.4f USD (%s). This is what the run bills your Apify "
+          "account; a paid Apify plan can lower the per event price." % (total, "; ".join(parts)))
+
+
 PLACEHOLDER = re.compile(r"^\$\{([A-Z0-9_]+)(\??)\}$")
 
 
@@ -155,10 +196,8 @@ def main(argv):
         return 1
     items = call("GET", "/datasets/%s/items?clean=true&format=json" % run["defaultDatasetId"], token)
     json.dump(items, open(out, "w"), indent=2)
-    usage = run.get("usageTotalUsd")
     print("SUCCEEDED: %d items written to %s" % (len(items), out))
-    if usage is not None:
-        print("Apify usage so far: %.4f USD (this figure can still rise for about a minute)" % usage)
+    report_charges(run_id, actor_id, token)
     # Some actors append a run summary row, or write a notice row such as "No people
     # found" for an input that returned nothing. Neither is a result, so neither counts.
     rows = [i for i in items if not (isinstance(i, dict) and (i.get("is_summary_row") or i.get("row_status") in ("summary", "notice")))]
