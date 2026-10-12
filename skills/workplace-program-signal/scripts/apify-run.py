@@ -159,10 +159,11 @@ def main(argv):
     print("SUCCEEDED: %d items written to %s" % (len(items), out))
     if usage is not None:
         print("Apify usage so far: %.4f USD (this figure can still rise for about a minute)" % usage)
-    # Some actors append a run summary row. It is not a result, so it does not count.
-    rows = [i for i in items if not (isinstance(i, dict) and (i.get("is_summary_row") or i.get("row_status") == "summary"))]
+    # Some actors append a run summary row, or write a notice row such as "No people
+    # found" for an input that returned nothing. Neither is a result, so neither counts.
+    rows = [i for i in items if not (isinstance(i, dict) and (i.get("is_summary_row") or i.get("row_status") in ("summary", "notice")))]
     if len(rows) != len(items):
-        print("  %d of the %d items are result rows; the rest is the run summary." % (len(rows), len(items)))
+        print("  %d of the %d items are result rows; the rest are summary or notice rows." % (len(rows), len(items)))
     if not rows:
         print("EMPTY: the run succeeded but returned no result rows. Report this, do not treat it as a result.")
         return 2
