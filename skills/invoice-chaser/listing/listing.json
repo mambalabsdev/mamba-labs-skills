@@ -1,0 +1,75 @@
+{
+  "sku": "invoice-chaser",
+  "tier": "free",
+  "title": "Invoice Chaser",
+  "previous_title": null,
+  "one_line": "Chase overdue invoices on a fixed escalation ladder that gets paid without damaging the relationship.",
+  "description": "Chase overdue invoices on a fixed escalation ladder that gets paid without damaging the relationship. Use when invoices are overdue, when someone dreads chasing payment, or when they want a repeatable collections routine.",
+  "paragraph": "Late payment is usually a process failure at the payer, not a refusal, and it is fixed by reaching the right person with the right document rather than by escalating tone. This skill sets a dated ladder, writes each message so it is easy to act on, and only shifts tone at the point where the ladder has run out.",
+  "keywords": [
+    "small business",
+    "chase overdue invoices",
+    "this client has not paid",
+    "collections routine",
+    "payment reminder",
+    "how do i ask for payment"
+  ],
+  "family": "small-business-ops",
+  "packs": [
+    "small-business-operations",
+    "agency-delivery"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": "sending any reminder to a customer",
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

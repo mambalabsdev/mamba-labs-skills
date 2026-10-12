@@ -3,12 +3,16 @@ name: clay-credit-forecast
 description: |
   Forecast how far a Clay credit balance goes across a month of planned builds, and say which build to cut when it does not reach. Use when someone asks whether they have enough credits, how to plan a month of Clay work, or which campaign to drop on a fixed budget.
 license: MIT
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+tags: [agency_delivery, clay_builds, clay_operator]
 metadata:
-  category: clay-builds
-  tags: [agency_delivery, clay_builds, clay_operator]
-compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 2.0.0
+  title: "Clay Credit Forecast"
+  category: "clay-builds"
+  tags: "agency_delivery, clay_builds, clay_operator"
+  keywords: "clay, do i have enough clay credits, plan a month of clay work, which campaign should i drop, credit burn forecast, clay capacity planning"
+  version: "2.1.0"
 ---
+
 # Clay Credit Forecast
 
 ## What this does
@@ -39,6 +43,11 @@ use them instead of asking the user to repeat themselves:
 If none exist, do the work from what the user gives you, then offer to write the
 missing file so the next skill in the pack starts warmer.
 
+## Tool connection
+
+This skill needs no live data tool. It works from the files, exports and answers
+you give it, so it runs the same in any agent with no setup.
+
 ## Method
 
 1. Price each planned build per row using history where it exists and a stated assumption where it does not. Mark which is which.
@@ -47,10 +56,26 @@ missing file so the next skill in the pack starts warmer.
 4. If the plan exceeds the balance, rank the builds by contacts per credit, not by credits. The cheapest build is not the most efficient one.
 5. Recommend a whole build to cut or defer rather than shrinking every build, because a half sized campaign has the same fixed setup cost and less output.
 6. State what the cut costs in expected contacts so the decision is priced.
+7. Check the output with `scripts/check-output.py` before you return it.
+
+## Approval stop
+
+This skill does not send email or write to a CRM. If the user asks it to, stop first:
+show what would be sent or written and wait for an explicit yes.
 
 ## Output
 
 A build by build forecast table, the exhaustion date, and a ranked cut list with the pipeline cost of each cut.
+
+## Check the output before you return it
+
+Save the output to a file and run `python3 scripts/check-output.py <file>`. The
+contract it checks is `scripts/output-contract.json`.
+
+- Exit 0, `COMPLETE`: return the output.
+- Exit 2, `INCOMPLETE`: do not present the output as finished. Fill what you can, run
+  the check again, and if parts stay missing, return the output under the heading
+  `Incomplete` with every reason the check printed.
 
 ## Quality bar
 

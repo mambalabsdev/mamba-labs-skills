@@ -3,12 +3,16 @@ name: clay-cost-audit
 description: |
   Price a Clay table before it runs and find the columns that are burning credits for no return. Use when someone asks what a Clay build will cost, why their credits are gone, how to cut Clay spend, or wants a run before a full table ramp priced out.
 license: MIT
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+tags: [clay_builds, clay_operator]
 metadata:
-  category: clay-builds
-  tags: [clay_builds, clay_operator]
-compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 2.0.0
+  title: "Clay Cost Audit"
+  category: "clay-builds"
+  tags: "clay_builds, clay_operator"
+  keywords: "clay, what will this clay table cost, my clay credits are gone, how do i cut clay spend, price this clay build, credit optimization in clay"
+  version: "2.1.0"
 ---
+
 # Clay Cost Audit
 
 ## What this does
@@ -39,6 +43,11 @@ use them instead of asking the user to repeat themselves:
 If none exist, do the work from what the user gives you, then offer to write the
 missing file so the next skill in the pack starts warmer.
 
+## Tool connection
+
+This skill needs no live data tool. It works from the files, exports and answers
+you give it, so it runs the same in any agent with no setup.
+
 ## Method
 
 1. List every column with a per run cost. Columns with zero cost are still listed because they are the candidates for run conditions.
@@ -47,10 +56,26 @@ missing file so the next skill in the pack starts warmer.
 4. For each flagged column, name the cheap column that should gate it and the condition to write.
 5. Re price the table with the gates applied, using a realistic pass rate for each gate rather than an optimistic one.
 6. Present both numbers side by side, at the 10 row ramp, the 100 row ramp, and full volume.
+7. Check the output with `scripts/check-output.py` before you return it.
+
+## Approval stop
+
+This skill does not send email or write to a CRM. If the user asks it to, stop first:
+show what would be sent or written and wait for an explicit yes.
 
 ## Output
 
 A two column table, before and after, priced at three volumes, plus the list of run conditions to add in the order that saves the most first.
+
+## Check the output before you return it
+
+Save the output to a file and run `python3 scripts/check-output.py <file>`. The
+contract it checks is `scripts/output-contract.json`.
+
+- Exit 0, `COMPLETE`: return the output.
+- Exit 2, `INCOMPLETE`: do not present the output as finished. Fill what you can, run
+  the check again, and if parts stay missing, return the output under the heading
+  `Incomplete` with every reason the check printed.
 
 ## Quality bar
 

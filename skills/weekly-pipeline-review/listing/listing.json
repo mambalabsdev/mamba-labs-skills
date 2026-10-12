@@ -1,0 +1,75 @@
+{
+  "sku": "weekly-pipeline-review",
+  "tier": "free",
+  "title": "Weekly Pipeline Review",
+  "previous_title": null,
+  "one_line": "Run a weekly pipeline review that finds the deals that are quietly dying rather than admiring the big ones.",
+  "description": "Run a weekly pipeline review that finds the deals that are quietly dying rather than admiring the big ones. Use for a weekly sales review, forecasting, or when someone asks which deals to focus on this week.",
+  "paragraph": "Pipeline reviews spend their time on the largest deals, which are usually the ones already getting attention. The deals that decide the quarter are the ones that stopped moving three weeks ago and nobody noticed. This skill sorts by movement and staleness first, and asks one specific question per deal instead of a general update.",
+  "keywords": [
+    "small business",
+    "weekly pipeline review",
+    "which deals should i focus on",
+    "forecast this week",
+    "sales review agenda",
+    "what is stuck"
+  ],
+  "family": "small-business-ops",
+  "packs": [
+    "small-business-operations",
+    "crm-operations-pack"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": "writing any stage or close date change to the CRM",
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

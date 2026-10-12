@@ -1,0 +1,78 @@
+{
+  "sku": "agent-readability-audit",
+  "tier": "free",
+  "title": "Agent Readability Audit",
+  "previous_title": null,
+  "one_line": "Check whether a website can be read and used by AI agents, and fix what blocks them.",
+  "description": "Check whether a website can be read and used by AI agents, and fix what blocks them. Use when someone asks about AI search visibility, agent accessibility, structured data, or whether their site works for AI crawlers.",
+  "paragraph": "A growing share of buying research happens through agents that never render a page. What they can read is a small, checkable set of things: the crawl directives, the structured data, the machine readable endpoints, and whether the important content survives without scripting. This skill audits those four and returns the fixes in the order that changes an agent's answer.",
+  "keywords": [
+    "seo and content",
+    "ai search visibility",
+    "can agents read my site",
+    "structured data audit",
+    "llms txt",
+    "ai crawler accessibility"
+  ],
+  "family": "seo-content",
+  "packs": [
+    "seo-content-engine"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [
+    "@mambalabsdev/mcp-gtm-suite@1.10.0"
+  ],
+  "mcp_tools": [
+    "audit_agent_accessibility"
+  ],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

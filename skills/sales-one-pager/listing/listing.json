@@ -1,0 +1,74 @@
+{
+  "sku": "sales-one-pager",
+  "tier": "free",
+  "title": "Sales One Pager",
+  "previous_title": null,
+  "one_line": "Write the one page document a prospect forwards internally to the person who has to approve.",
+  "description": "Write the one page document a prospect forwards internally to the person who has to approve. Use when a deal needs an internal champion, when someone asks for a leave behind, or when a prospect says they need to check with someone.",
+  "paragraph": "A leave behind is not read by the person you met. It is forwarded to somebody who was not in the meeting, has no context, and is deciding whether to spend money. This skill writes for that second reader, which changes what goes on the page: the problem in their language, the cost of not acting, and the shape of the commitment.",
+  "keywords": [
+    "enablement",
+    "write a one pager",
+    "they need to check with someone",
+    "leave behind for the meeting",
+    "our champion needs something to forward",
+    "sales collateral"
+  ],
+  "family": "sales-enablement",
+  "packs": [
+    "agency-delivery"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

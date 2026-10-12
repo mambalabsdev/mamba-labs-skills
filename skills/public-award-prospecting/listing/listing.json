@@ -1,0 +1,78 @@
+{
+  "sku": "public-award-prospecting",
+  "tier": "free",
+  "title": "Public Award Prospecting",
+  "previous_title": null,
+  "one_line": "Find companies that just won a government contract or public grant and reach them while the money is new.",
+  "description": "Find companies that just won a government contract or public grant and reach them while the money is new. Use when someone wants to target contract winners, grant recipients, or public sector suppliers.",
+  "paragraph": "A public award is a funding event with a public record, a date, and an amount, and it is far less contested than a venture round. This skill reads the award registers, filters to awards large enough to change behavior, resolves the recipient to a domain, and builds outreach timed to the award date.",
+  "keywords": [
+    "signals",
+    "who won government contracts",
+    "grant recipients",
+    "public sector suppliers",
+    "contract award prospecting",
+    "federal award list"
+  ],
+  "family": "signal-research",
+  "packs": [
+    "signal-based-selling"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [
+    "@mambalabsdev/mcp-gtm-suite@1.10.0"
+  ],
+  "mcp_tools": [
+    "monitor_public_awards"
+  ],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

@@ -3,12 +3,16 @@ name: linkedin-profile-optimizer
 description: |
   Rewrite a profile so it converts the visits that outbound and commenting send to it. Use when someone's profile is not converting, before starting outbound, or when someone asks how to improve their LinkedIn profile.
 license: MIT
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+tags: [linkedin, linkedin_authority]
 metadata:
-  category: linkedin
-  tags: [linkedin, linkedin_authority]
-compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 2.0.0
+  title: "LinkedIn Profile Optimizer"
+  category: "linkedin"
+  tags: "linkedin, linkedin_authority"
+  keywords: "linkedin, improve my linkedin profile, my profile is not converting, profile before i start outbound, rewrite my headline, optimize my about section"
+  version: "2.1.0"
 ---
+
 # LinkedIn Profile Optimizer
 
 ## What this does
@@ -41,6 +45,11 @@ use them instead of asking the user to repeat themselves:
 If none exist, do the work from what the user gives you, then offer to write the
 missing file so the next skill in the pack starts warmer.
 
+## Tool connection
+
+This skill needs no live data tool. It works from the files, exports and answers
+you give it, so it runs the same in any agent with no setup.
+
 ## Method
 
 1. Establish the visitor's context. Someone arriving from a cold message is checking legitimacy; someone arriving from a comment is checking expertise. These need different first lines.
@@ -50,10 +59,26 @@ missing file so the next skill in the pack starts warmer.
 5. Fix the featured section to carry the one thing you want a visitor to do, and remove everything else from it.
 6. Leave the experience history alone unless it contradicts the positioning. Rewriting it is effort spent below the fold.
 7. Check the profile against a phone viewport, since that is where most visits from a message happen.
+8. Check the output with `scripts/check-output.py` before you return it.
+
+## Approval stop
+
+This skill does not send email or write to a CRM. If the user asks it to, stop first:
+show what would be sent or written and wait for an explicit yes.
 
 ## Output
 
 The rewritten headline with two alternatives, the rewritten first two lines, the proof placement, the featured recommendation, and the phone viewport check.
+
+## Check the output before you return it
+
+Save the output to a file and run `python3 scripts/check-output.py <file>`. The
+contract it checks is `scripts/output-contract.json`.
+
+- Exit 0, `COMPLETE`: return the output.
+- Exit 2, `INCOMPLETE`: do not present the output as finished. Fill what you can, run
+  the check again, and if parts stay missing, return the output under the heading
+  `Incomplete` with every reason the check printed.
 
 ## Quality bar
 

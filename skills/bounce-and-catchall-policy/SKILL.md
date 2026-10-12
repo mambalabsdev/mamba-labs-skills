@@ -3,12 +3,16 @@ name: bounce-and-catchall-policy
 description: |
   Decide what to do with catch all domains, role addresses and soft bounces before they cost you a domain. Use when verification returns unknown, when someone asks whether to send to catch all addresses, or when bounce rate is creeping up.
 license: MIT
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+tags: [cold_email_system, deliverability]
 metadata:
-  category: deliverability
-  tags: [cold_email_system, deliverability]
-compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 2.0.0
+  title: "Bounce And Catch All Policy"
+  category: "deliverability"
+  tags: "cold_email_system, deliverability"
+  keywords: "deliverability, should i send to catch all addresses, verification returned unknown, my bounce rate is creeping up, role addresses, what do i do with unknown emails"
+  version: "2.1.0"
 ---
+
 # Bounce And Catch All Policy
 
 ## What this does
@@ -39,6 +43,11 @@ use them instead of asking the user to repeat themselves:
 If none exist, do the work from what the user gives you, then offer to write the
 missing file so the next skill in the pack starts warmer.
 
+## Tool connection
+
+This skill needs no live data tool. It works from the files, exports and answers
+you give it, so it runs the same in any agent with no setup.
+
 ## Method
 
 1. Split the list into valid, invalid, catch all, role address, and disposable. Report the share of the list each class holds, because the decision changes entirely at 5 percent versus 40 percent.
@@ -48,10 +57,26 @@ missing file so the next skill in the pack starts warmer.
 5. For role addresses, decide by target. A role address is worthless for a founder persona and often correct for a support or procurement persona.
 6. Set the soft bounce rule: how many soft bounces before the address is treated as hard, and where that is recorded.
 7. Write the policy down as a rule other people can apply without asking.
+8. Check the output with `scripts/check-output.py` before you return it.
+
+## Approval stop
+
+This skill does not send email or write to a CRM. If the user asks it to, stop first:
+show what would be sent or written and wait for an explicit yes.
 
 ## Output
 
 The class split with shares, the bounce arithmetic against the tolerance, the decision per class, the separate domain recommendation if it applies, and the written policy.
+
+## Check the output before you return it
+
+Save the output to a file and run `python3 scripts/check-output.py <file>`. The
+contract it checks is `scripts/output-contract.json`.
+
+- Exit 0, `COMPLETE`: return the output.
+- Exit 2, `INCOMPLETE`: do not present the output as finished. Fill what you can, run
+  the check again, and if parts stay missing, return the output under the heading
+  `Incomplete` with every reason the check printed.
 
 ## Quality bar
 

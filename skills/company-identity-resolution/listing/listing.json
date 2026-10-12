@@ -1,0 +1,78 @@
+{
+  "sku": "company-identity-resolution",
+  "tier": "free",
+  "title": "Company Identity Resolution",
+  "previous_title": null,
+  "one_line": "Resolve a messy company name to the right domain and canonical record, and say how confident the match is.",
+  "description": "Resolve a messy company name to the right domain and canonical record, and say how confident the match is. Use when a list has company names but no domains, when names are ambiguous, or when enrichment is matching the wrong company.",
+  "paragraph": "Every enrichment downstream is only as good as the identity it was run on, and company names collide constantly across markets, subsidiaries and rebrands. This skill resolves name to domain with a stated confidence, and refuses a low confidence match rather than guessing, because a wrong match silently poisons every column after it.",
+  "keywords": [
+    "identity",
+    "i have company names but no domains",
+    "the enrichment matched the wrong company",
+    "resolve these company names",
+    "which domain is this company",
+    "ambiguous company names"
+  ],
+  "family": "identity-enrichment",
+  "packs": [
+    "clay-operator"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [
+    "@mambalabsdev/mcp-gtm-suite@1.10.0"
+  ],
+  "mcp_tools": [
+    "resolve_company_identity"
+  ],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

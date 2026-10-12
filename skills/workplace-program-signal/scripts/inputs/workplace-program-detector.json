@@ -1,0 +1,10 @@
+{
+  "domain": "example.com",
+  "programs": [
+    "parental",
+    "learning",
+    "wellbeing"
+  ],
+  "scan_job_postings": true,
+  "scan_web_pages": true
+}

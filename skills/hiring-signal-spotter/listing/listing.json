@@ -1,0 +1,77 @@
+{
+  "sku": "hiring-signal-spotter",
+  "tier": "free",
+  "title": "Hiring Signal Spotter",
+  "previous_title": null,
+  "one_line": "Read a company's open roles as a buying signal and turn them into an outreach angle.",
+  "description": "Read a company's open roles as a buying signal and turn them into an outreach angle. Use when someone asks about hiring signals, whether a company is investing in sales or growth, job board intent, or wants to research a prospect before outreach.",
+  "paragraph": "Open roles are the most reliable public statement of what a company has decided to spend money on next quarter. This skill reads the roles from the applicant tracking system the company actually uses, separates the roles that mean something from the backfills that do not, and turns the surviving signal into one specific outreach angle.",
+  "keywords": [
+    "signals",
+    "is this company hiring",
+    "hiring signals for this domain",
+    "are they investing in sales",
+    "job board intent"
+  ],
+  "family": "signal-research",
+  "packs": [
+    "signal-based-selling"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [
+    "@mambalabsdev/mcp-gtm-suite@1.10.0"
+  ],
+  "mcp_tools": [
+    "scan_gtm_hiring_signals"
+  ],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

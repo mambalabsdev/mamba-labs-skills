@@ -1,0 +1,83 @@
+{
+  "sku": "mamba-gtm-router",
+  "tier": "free",
+  "title": "Mamba GTM Router",
+  "previous_title": null,
+  "one_line": "Route a plain language go to market request to the right skill, and name the ones that would help but are not installed.",
+  "description": "Route a plain language go to market request to the right skill, and name the ones that would help but are not installed. Use when someone does not know which skill to use, asks a broad GTM question, or wants to know what is available.",
+  "paragraph": "A catalog of fifty skills is only useful if the right one fires. This skill takes a request in the user's own words, names the skill that handles it, says why, and lists the two or three adjacent skills that would make the answer better, marking clearly which are installed and which are not, without pretending an uninstalled skill is running.",
+  "keywords": [
+    "agency",
+    "which skill should i use",
+    "what can you help with",
+    "i need help with outbound",
+    "what skills do i have",
+    "where do i start"
+  ],
+  "family": "agency-operations",
+  "packs": [
+    "cold-email-system",
+    "clay-operator",
+    "signal-based-selling",
+    "linkedin-authority",
+    "seo-content-engine",
+    "agency-delivery",
+    "small-business-operations",
+    "deliverability",
+    "crm-operations-pack",
+    "knowledge-ops-pack"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

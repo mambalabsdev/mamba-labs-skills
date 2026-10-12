@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "mamba-deliverability": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@mambalabsdev/mcp-domain-deliverability-checker@1.1.1"
+      ],
+      "env": {
+        "APIFY_TOKEN": "${APIFY_TOKEN}"
+      }
+    }
+  }
+}

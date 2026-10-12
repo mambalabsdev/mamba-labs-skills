@@ -3,12 +3,16 @@ name: merge-variable-linter
 description: |
   Check that every merge variable in a sequence resolves against the fields actually present on the rows, before the campaign sends. Use when someone is about to launch, has seen blank gaps in a sent email, or wants their personalization tokens verified.
 license: MIT
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+tags: [cold_email_system, outbound_email]
 metadata:
-  category: outbound-email
-  tags: [cold_email_system, outbound_email]
-compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 2.0.0
+  title: "Merge Variable Linter"
+  category: "outbound-email"
+  tags: "cold_email_system, outbound_email"
+  keywords: "outbound, check my merge variables, blank gaps in my sent email, verify personalization tokens, about to launch check the copy, why is my email missing a word"
+  version: "2.1.0"
 ---
+
 # Merge Variable Linter
 
 ## What this does
@@ -39,6 +43,11 @@ use them instead of asking the user to repeat themselves:
 If none exist, do the work from what the user gives you, then offer to write the
 missing file so the next skill in the pack starts warmer.
 
+## Tool connection
+
+This skill needs no live data tool. It works from the files, exports and answers
+you give it, so it runs the same in any agent with no setup.
+
 ## Method
 
 1. Extract every variable token from every step, including subject lines, and deduplicate.
@@ -47,10 +56,26 @@ missing file so the next skill in the pack starts warmer.
 4. Render every step against the sample row and read the result as a sentence. A variable that resolves to an empty string still leaves broken grammar.
 5. Check fallbacks: every variable needs one, and the fallback must read naturally in the sentence rather than as a bracketed placeholder.
 6. Report the count of variables used, matched, missing, and without a fallback.
+7. Check the output with `scripts/check-output.py` before you return it.
+
+## Approval stop
+
+This skill does not send email or write to a CRM. If the user asks it to, stop first:
+show what would be sent or written and wait for an explicit yes.
 
 ## Output
 
 A variable table with used, matched, fallback present, and the rendered sample. Plus a go or no go line.
+
+## Check the output before you return it
+
+Save the output to a file and run `python3 scripts/check-output.py <file>`. The
+contract it checks is `scripts/output-contract.json`.
+
+- Exit 0, `COMPLETE`: return the output.
+- Exit 2, `INCOMPLETE`: do not present the output as finished. Fill what you can, run
+  the check again, and if parts stay missing, return the output under the heading
+  `Incomplete` with every reason the check printed.
 
 ## Quality bar
 

@@ -1,0 +1,74 @@
+{
+  "sku": "subject-line-lab",
+  "tier": "free",
+  "title": "Subject Line Lab",
+  "previous_title": null,
+  "one_line": "Generate and screen cold email subject lines against truncation, spam triggers and the preview text they create.",
+  "description": "Generate and screen cold email subject lines against truncation, spam triggers and the preview text they create. Use when someone needs subject lines, has low open rates, or wants to test subject variants.",
+  "paragraph": "Subject lines are judged on a phone, truncated, next to preview text pulled from the first line of the body. Most subject line advice ignores all three. This skill generates variants, then screens each against character truncation on the common clients, against filter triggers, and against the preview text it will actually appear beside.",
+  "keywords": [
+    "outbound",
+    "write subject lines",
+    "my open rates are low",
+    "test subject variants",
+    "improve this subject line",
+    "subject line ideas"
+  ],
+  "family": "outbound-email",
+  "packs": [
+    "cold-email-system"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "sku": "domain-warmup-planner",
+  "tier": "free",
+  "title": "Domain Warmup Planner",
+  "previous_title": null,
+  "one_line": "Plan the warmup ramp for new sending domains and inboxes so real campaign volume starts on the date it is needed.",
+  "description": "Plan the warmup ramp for new sending domains and inboxes so real campaign volume starts on the date it is needed. Use when someone bought new domains, is adding inboxes, asks how long warmup takes, or needs to know when they can start sending for real.",
+  "paragraph": "Warmup is a scheduling problem more than a technique problem. The question that matters is not how to warm up but whether the domains bought today can carry the volume the campaign needs on its start date. This skill works backward from the campaign date, computes the required ramp, and says plainly whether the date holds.",
+  "keywords": [
+    "deliverability",
+    "i bought new domains",
+    "how long does warmup take",
+    "when can i send for real",
+    "adding inboxes",
+    "warmup schedule"
+  ],
+  "family": "deliverability",
+  "packs": [
+    "deliverability"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

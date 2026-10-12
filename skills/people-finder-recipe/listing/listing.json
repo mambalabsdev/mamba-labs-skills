@@ -1,0 +1,77 @@
+{
+  "sku": "people-finder-recipe",
+  "tier": "free",
+  "title": "People Finder Recipe",
+  "previous_title": null,
+  "one_line": "Find the right people at a list of companies without pulling a hundred irrelevant contacts per account.",
+  "description": "Find the right people at a list of companies without pulling a hundred irrelevant contacts per account. Use when someone needs contacts at target accounts, wants to cap contacts per company, or is building a people list from a company list.",
+  "paragraph": "An uncapped people search returns whoever the source has most of, which is rarely the buyer. This skill sets the per company cap and the title filter before the search runs, uses the company's own team page as a second source where the database is thin, and reports contacts per company so a skewed distribution is visible.",
+  "keywords": [
+    "identity",
+    "find contacts at these companies",
+    "who works at this company",
+    "build a people list from company list",
+    "cap contacts per account",
+    "find the buyer"
+  ],
+  "family": "identity-enrichment",
+  "packs": [
+    "clay-operator"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [
+    "people-finder",
+    "team-page-people-extractor"
+  ],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

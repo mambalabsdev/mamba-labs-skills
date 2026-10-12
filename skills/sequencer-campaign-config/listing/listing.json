@@ -1,0 +1,78 @@
+{
+  "sku": "sequencer-campaign-config",
+  "tier": "free",
+  "title": "Sequencer Campaign Config",
+  "previous_title": null,
+  "one_line": "Configure a sending platform campaign correctly the first time: schedule, tracking, limits, timezone and the fields that silently reset.",
+  "description": "Configure a sending platform campaign correctly the first time: schedule, tracking, limits, timezone and the fields that silently reset. Use when creating a campaign in a sequencer, when settings appear not to save, or when a campaign is sending at the wrong time.",
+  "paragraph": "Sequencer campaign settings have a specific failure shape: some fields are dropped silently at creation and must be set in a second update call, and some values that look valid are rejected or, worse, stored as a literal zero. This skill sets the configuration in the order that survives, then reads it back and diffs it against what was intended.",
+  "keywords": [
+    "outbound",
+    "set up a campaign in my sequencer",
+    "my campaign settings did not save",
+    "sending at the wrong time",
+    "configure tracking and limits",
+    "campaign schedule"
+  ],
+  "family": "outbound-email",
+  "packs": [
+    "cold-email-system"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [
+    "@mambalabsdev/mcp-gtm-suite@1.10.0"
+  ],
+  "mcp_tools": [
+    "push_leads_to_sequencer"
+  ],
+  "direct_actors": [],
+  "approval_stop": "creating, changing, or launching a sequencer campaign, or pushing leads",
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

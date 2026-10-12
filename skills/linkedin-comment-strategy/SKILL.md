@@ -3,12 +3,16 @@ name: linkedin-comment-strategy
 description: |
   Decide which posts to comment on and write comments that do something other than agree. Use when someone wants to build presence through commenting, wants to be visible to a target account, or asks what to say on someone's post.
 license: MIT
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+tags: [linkedin, linkedin_authority]
 metadata:
-  category: linkedin
-  tags: [linkedin, linkedin_authority]
-compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 2.0.0
+  title: "LinkedIn Comment Strategy"
+  category: "linkedin"
+  tags: "linkedin, linkedin_authority"
+  keywords: "linkedin, what should i comment on, build presence through commenting, be visible to this account, comment strategy, reply to this post"
+  version: "2.1.0"
 ---
+
 # LinkedIn Comment Strategy
 
 ## What this does
@@ -40,6 +44,11 @@ use them instead of asking the user to repeat themselves:
 If none exist, do the work from what the user gives you, then offer to write the
 missing file so the next skill in the pack starts warmer.
 
+## Tool connection
+
+This skill needs no live data tool. It works from the files, exports and answers
+you give it, so it runs the same in any agent with no setup.
+
 ## Method
 
 1. Select posts by audience, not by engagement. A post with two hundred views from exactly the right people is worth more than one with twenty thousand.
@@ -49,10 +58,28 @@ missing file so the next skill in the pack starts warmer.
 5. Keep it to two or three sentences. A comment that reads as a post is read as self promotion.
 6. Do not pitch, ever. The comment earns the profile visit; the profile does the selling.
 7. Track which comments led to a profile visit or a connection, because the ones that work are usually not the ones that felt best to write.
+8. Approval stop. Before posting a comment, show the user exactly what will happen and wait for an explicit yes. Nothing live changes without it.
+9. Check the output with `scripts/check-output.py` before you return it.
+
+## Approval stop
+
+Stop and ask before posting a comment. Show exactly what will be sent or written, to whom or to
+which records, and how many. Proceed only on an explicit yes from the user in this
+conversation. A yes for one batch does not cover the next one.
 
 ## Output
 
 The comment, its shape, and why this post was chosen over the others. Plus, when a set is requested, a prioritized post list with the audience reason for each.
+
+## Check the output before you return it
+
+Save the output to a file and run `python3 scripts/check-output.py <file>`. The
+contract it checks is `scripts/output-contract.json`.
+
+- Exit 0, `COMPLETE`: return the output.
+- Exit 2, `INCOMPLETE`: do not present the output as finished. Fill what you can, run
+  the check again, and if parts stay missing, return the output under the heading
+  `Incomplete` with every reason the check printed.
 
 ## Quality bar
 

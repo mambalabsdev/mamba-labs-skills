@@ -1,0 +1,75 @@
+{
+  "sku": "results-doc-verifier",
+  "tier": "free",
+  "title": "Results Document Verifier",
+  "previous_title": null,
+  "one_line": "Check a results write up for claims that were asserted rather than verified, before anyone acts on it.",
+  "description": "Check a results write up for claims that were asserted rather than verified, before anyone acts on it. Use when reviewing a report, before sending results to a client, or when a document says something worked.",
+  "paragraph": "The failure in results documents is not lying, it is asserting. A claim that a fix worked, backed by a test that could not have failed, reads exactly like a verified claim. This skill checks each claim against its evidence and asks the one question that separates them: could this check have come out the other way.",
+  "keywords": [
+    "knowledge",
+    "review this report",
+    "check these results before i send them",
+    "did this actually work",
+    "verify this write up",
+    "results review"
+  ],
+  "family": "knowledge-ops",
+  "packs": [
+    "knowledge-ops-pack",
+    "agency-delivery"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

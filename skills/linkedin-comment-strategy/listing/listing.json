@@ -1,0 +1,74 @@
+{
+  "sku": "linkedin-comment-strategy",
+  "tier": "free",
+  "title": "LinkedIn Comment Strategy",
+  "previous_title": null,
+  "one_line": "Decide which posts to comment on and write comments that do something other than agree.",
+  "description": "Decide which posts to comment on and write comments that do something other than agree. Use when someone wants to build presence through commenting, wants to be visible to a target account, or asks what to say on someone's post.",
+  "paragraph": "Commenting is the cheapest visible surface on the platform and almost all of it is wasted on agreement. This skill picks posts by whose audience matters rather than by whose post is popular, and writes comments that add a fact, a counter case, or a specific the post left out.",
+  "keywords": [
+    "linkedin",
+    "what should i comment on",
+    "build presence through commenting",
+    "be visible to this account",
+    "comment strategy",
+    "reply to this post"
+  ],
+  "family": "linkedin",
+  "packs": [
+    "linkedin-authority"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": "posting a comment",
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

@@ -3,12 +3,16 @@ name: work-order-writer
 description: |
   Write a work order an agent or a contractor can execute end to end without asking a question. Use when delegating a task, briefing an agent, writing a spec, or when work keeps coming back wrong.
 license: MIT
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+tags: [agency_delivery, agency_operations, knowledge_ops_pack]
 metadata:
-  category: agency-operations
-  tags: [agency_delivery, agency_operations, knowledge_ops_pack]
-compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 2.0.0
+  title: "Work Order Writer"
+  category: "agency-operations"
+  tags: "agency_delivery, agency_operations, knowledge_ops_pack"
+  keywords: "agency, write a work order, brief this task, delegate this properly, the work keeps coming back wrong, write a spec for an agent"
+  version: "2.1.0"
 ---
+
 # Work Order Writer
 
 ## What this does
@@ -39,6 +43,11 @@ use them instead of asking the user to repeat themselves:
 If none exist, do the work from what the user gives you, then offer to write the
 missing file so the next skill in the pack starts warmer.
 
+## Tool connection
+
+This skill needs no live data tool. It works from the files, exports and answers
+you give it, so it runs the same in any agent with no setup.
+
 ## Method
 
 1. Write the done state as a condition that can be checked by someone who was not involved. Not improve the thing, but the thing measures above a number, verified this way.
@@ -48,10 +57,26 @@ missing file so the next skill in the pack starts warmer.
 5. Name where the output goes and in what form, because output that lands in the wrong place is close to output that does not exist.
 6. Include the verification: how the executor proves it worked, and make it a check that could fail. A verification that cannot fail proves nothing.
 7. Say what supersedes what, if this replaces an earlier brief, so nobody executes the old one.
+8. Check the output with `scripts/check-output.py` before you return it.
+
+## Approval stop
+
+This skill does not send email or write to a CRM. If the user asks it to, stop first:
+show what would be sent or written and wait for an explicit yes.
 
 ## Output
 
 A work order with goal, done state, ordered steps, constraints, halt conditions, output location, and a verification that could fail.
+
+## Check the output before you return it
+
+Save the output to a file and run `python3 scripts/check-output.py <file>`. The
+contract it checks is `scripts/output-contract.json`.
+
+- Exit 0, `COMPLETE`: return the output.
+- Exit 2, `INCOMPLETE`: do not present the output as finished. Fill what you can, run
+  the check again, and if parts stay missing, return the output under the heading
+  `Incomplete` with every reason the check printed.
 
 ## Quality bar
 

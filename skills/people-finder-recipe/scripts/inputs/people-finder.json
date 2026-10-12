@@ -1,0 +1,13 @@
+{
+  "domain": "example.com",
+  "targetCount": 3,
+  "jobTitles": [
+    "Head of Revenue Operations",
+    "VP Sales"
+  ],
+  "excludeJobTitles": [
+    "intern",
+    "assistant"
+  ],
+  "verifyEmails": true
+}

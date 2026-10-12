@@ -3,12 +3,16 @@ name: clay-conditional-gates
 description: |
   Write the run conditions that stop expensive Clay columns from firing on rows that will never qualify. Use when someone wants to skip enrichment for non ICP rows, gate a waterfall, add a run condition, or stop paying to enrich junk.
 license: MIT
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+tags: [clay_builds, clay_operator]
 metadata:
-  category: clay-builds
-  tags: [clay_builds, clay_operator]
-compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 2.0.0
+  title: "Clay Conditional Gates"
+  category: "clay-builds"
+  tags: "clay_builds, clay_operator"
+  keywords: "clay, add a run condition, skip enrichment for non icp rows, gate this column, only enrich rows that, stop paying to enrich junk"
+  version: "2.1.0"
 ---
+
 # Clay Conditional Gates
 
 ## What this does
@@ -39,6 +43,11 @@ use them instead of asking the user to repeat themselves:
 If none exist, do the work from what the user gives you, then offer to write the
 missing file so the next skill in the pack starts warmer.
 
+## Tool connection
+
+This skill needs no live data tool. It works from the files, exports and answers
+you give it, so it runs the same in any agent with no setup.
+
 ## Method
 
 1. Restate the rule as a boolean over columns that already exist. If it needs a column that does not exist yet, say so and place that column first in the order.
@@ -47,10 +56,26 @@ missing file so the next skill in the pack starts warmer.
 4. Estimate the pass rate from the user's own data if they have any rows, from a stated assumption if they do not.
 5. Order multiple gates so the highest rejection rate runs first.
 6. State what happens to rejected rows: left blank, tagged, or moved. Blank is a choice, not a default.
+7. Check the output with `scripts/check-output.py` before you return it.
+
+## Approval stop
+
+This skill does not send email or write to a CRM. If the user asks it to, stop first:
+show what would be sent or written and wait for an explicit yes.
 
 ## Output
 
 The condition expression per column, the placement in the run order, the estimated pass rate, and the resulting cost change.
+
+## Check the output before you return it
+
+Save the output to a file and run `python3 scripts/check-output.py <file>`. The
+contract it checks is `scripts/output-contract.json`.
+
+- Exit 0, `COMPLETE`: return the output.
+- Exit 2, `INCOMPLETE`: do not present the output as finished. Fill what you can, run
+  the check again, and if parts stay missing, return the output under the heading
+  `Incomplete` with every reason the check printed.
 
 ## Quality bar
 

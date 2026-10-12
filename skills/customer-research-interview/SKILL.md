@@ -3,12 +3,16 @@ name: customer-research-interview
 description: |
   Run customer interviews that produce usable language instead of agreement, and turn the transcripts into a sharper ICP. Use when someone wants to talk to customers, needs messaging research, or does not know why their best customers bought.
 license: MIT
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+tags: [agency_delivery, sales_enablement, signal_based_selling]
 metadata:
-  category: sales-enablement
-  tags: [agency_delivery, sales_enablement, signal_based_selling]
-compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 2.0.0
+  title: "Customer Research Interview"
+  category: "sales-enablement"
+  tags: "agency_delivery, sales_enablement, signal_based_selling"
+  keywords: "enablement, talk to my customers, messaging research, why do people buy from us, customer interviews, voice of customer"
+  version: "2.1.0"
 ---
+
 # Customer Research Interview
 
 ## What this does
@@ -40,6 +44,11 @@ use them instead of asking the user to repeat themselves:
 If none exist, do the work from what the user gives you, then offer to write the
 missing file so the next skill in the pack starts warmer.
 
+## Tool connection
+
+This skill needs no live data tool. It works from the files, exports and answers
+you give it, so it runs the same in any agent with no setup.
+
 ## Method
 
 1. Decide what the research changes before writing a question. Research that would not change a decision produces a document nobody uses.
@@ -49,10 +58,26 @@ missing file so the next skill in the pack starts warmer.
 5. Capture exact language. The words a customer uses for the problem are worth more than the summary of what they meant, and they belong in the copy verbatim.
 6. Stop when the answers repeat. Five interviews that agree are more useful than fifteen that were run to feel thorough.
 7. Write the findings into `ICP.md`: the trigger events, the language, and the exclusions the losses revealed.
+8. Check the output with `scripts/check-output.py` before you return it.
+
+## Approval stop
+
+This skill does not send email or write to a CRM. If the user asks it to, stop first:
+show what would be sent or written and wait for an explicit yes.
 
 ## Output
 
 The interview guide, the trigger events found, the verbatim language bank, the pattern across losses, and the updated ICP block ready to write to the file.
+
+## Check the output before you return it
+
+Save the output to a file and run `python3 scripts/check-output.py <file>`. The
+contract it checks is `scripts/output-contract.json`.
+
+- Exit 0, `COMPLETE`: return the output.
+- Exit 2, `INCOMPLETE`: do not present the output as finished. Fill what you can, run
+  the check again, and if parts stay missing, return the output under the heading
+  `Incomplete` with every reason the check printed.
 
 ## Quality bar
 

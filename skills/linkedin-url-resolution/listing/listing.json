@@ -1,0 +1,79 @@
+{
+  "sku": "linkedin-url-resolution",
+  "tier": "free",
+  "title": "LinkedIn URL Resolution",
+  "previous_title": null,
+  "one_line": "Turn a list of company domains into company profile URLs, and fill the gaps a native enrichment leaves behind.",
+  "description": "Turn a list of company domains into company profile URLs, and fill the gaps a native enrichment leaves behind. Use when a profile URL column has holes, when someone needs profile URLs from domains, or when building a social enrichment pipeline.",
+  "paragraph": "Native enrichments resolve most domains to a company profile and quietly return nothing for the rest, and the rest is where the interesting companies often are. This skill resolves the list, reports the fill rate, and handles the specific cases that cause misses: holding company structures, country subsidiaries, and companies whose profile name does not resemble their domain.",
+  "keywords": [
+    "identity",
+    "find linkedin urls from domains",
+    "my linkedin column has gaps",
+    "domain to linkedin",
+    "enrich with social data",
+    "resolve company profiles"
+  ],
+  "family": "identity-enrichment",
+  "packs": [
+    "clay-operator",
+    "linkedin-authority"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [
+    "@mambalabsdev/mcp-gtm-suite@1.10.0"
+  ],
+  "mcp_tools": [
+    "resolve_linkedin_url"
+  ],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "sku": "linkedin-profile-optimizer",
+  "tier": "free",
+  "title": "LinkedIn Profile Optimizer",
+  "previous_title": null,
+  "one_line": "Rewrite a profile so it converts the visits that outbound and commenting send to it.",
+  "description": "Rewrite a profile so it converts the visits that outbound and commenting send to it. Use when someone's profile is not converting, before starting outbound, or when someone asks how to improve their LinkedIn profile.",
+  "paragraph": "For anyone doing outbound, the profile is a landing page with one job: confirm within four seconds that the person who just messaged is worth replying to. Most profiles are written as a resume instead. This skill rewrites the three elements a visitor actually reads and ignores the rest.",
+  "keywords": [
+    "linkedin",
+    "improve my linkedin profile",
+    "my profile is not converting",
+    "profile before i start outbound",
+    "rewrite my headline",
+    "optimize my about section"
+  ],
+  "family": "linkedin",
+  "packs": [
+    "linkedin-authority"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

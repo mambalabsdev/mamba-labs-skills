@@ -3,12 +3,16 @@ name: weekly-pipeline-review
 description: |
   Run a weekly pipeline review that finds the deals that are quietly dying rather than admiring the big ones. Use for a weekly sales review, forecasting, or when someone asks which deals to focus on this week.
 license: MIT
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+tags: [crm_operations_pack, small_business_operations, small_business_ops]
 metadata:
-  category: small-business-ops
-  tags: [crm_operations_pack, small_business_operations, small_business_ops]
-compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 2.0.0
+  title: "Weekly Pipeline Review"
+  category: "small-business-ops"
+  tags: "crm_operations_pack, small_business_operations, small_business_ops"
+  keywords: "small business, weekly pipeline review, which deals should i focus on, forecast this week, sales review agenda, what is stuck"
+  version: "2.1.0"
 ---
+
 # Weekly Pipeline Review
 
 ## What this does
@@ -39,6 +43,11 @@ use them instead of asking the user to repeat themselves:
 If none exist, do the work from what the user gives you, then offer to write the
 missing file so the next skill in the pack starts warmer.
 
+## Tool connection
+
+This skill needs no live data tool. It works from the files, exports and answers
+you give it, so it runs the same in any agent with no setup.
+
 ## Method
 
 1. Sort by days since last activity, not by amount. The stale list is the agenda.
@@ -48,10 +57,28 @@ missing file so the next skill in the pack starts warmer.
 5. Cut the list to capacity. A review that flags forty deals when five can be worked is a list, not a plan.
 6. Separate the forecast from the review. The forecast is what will close; the review is what to do this week, and mixing them makes both worse.
 7. Name the deals to close out. Ending a dead deal is a result, and pipelines that never shrink are not forecasts.
+8. Approval stop. Before writing any stage or close date change to the CRM, show the user exactly what will happen and wait for an explicit yes. Nothing live changes without it.
+9. Check the output with `scripts/check-output.py` before you return it.
+
+## Approval stop
+
+Stop and ask before writing any stage or close date change to the CRM. Show exactly what will be sent or written, to whom or to
+which records, and how many. Proceed only on an explicit yes from the user in this
+conversation. A yes for one batch does not cover the next one.
 
 ## Output
 
 The staleness sorted list, the stage overrun flags, the slipped date flags, one question per flagged deal, the capacity cut, and the close out list.
+
+## Check the output before you return it
+
+Save the output to a file and run `python3 scripts/check-output.py <file>`. The
+contract it checks is `scripts/output-contract.json`.
+
+- Exit 0, `COMPLETE`: return the output.
+- Exit 2, `INCOMPLETE`: do not present the output as finished. Fill what you can, run
+  the check again, and if parts stay missing, return the output under the heading
+  `Incomplete` with every reason the check printed.
 
 ## Quality bar
 

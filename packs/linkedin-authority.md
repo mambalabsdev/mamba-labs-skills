@@ -33,15 +33,15 @@ Every free skill sits on a 30 day review cycle. Fixes and improvements ship as r
 
 These encode the system rather than the single task. They are not in this repo.
 
-| Skill | What it does |
-| --- | --- |
-| `linkedin-engager-mining` | Turn the people engaging with relevant posts into a qualified prospect list |
-| `linkedin-connection-campaign` | Run a connection and message campaign that stays inside platform limits, does not double touch a prospect, and hands off cleanly to email |
-| `multichannel-enrollment-rules` | Set the rules that let email and social outreach run on the same prospect without double touching or double counting them |
+| Skill | Price | What it does |
+| --- | --- | --- |
+| `linkedin-engager-mining` | 7.99 USD | Turn the people engaging with relevant posts into a qualified prospect list |
+| `linkedin-connection-campaign` | 9.99 USD | Run a connection and message campaign that stays inside platform limits, does not double touch a prospect, and hands off cleanly to email |
+| `multichannel-enrollment-rules` | 5.99 USD | Set the rules that let email and social outreach run on the same prospect without double touching or double counting them |
 
 Most premium skills are on a weekly review cycle. Fixes and improvements ship as updates, and buyers receive release notes by email.
 
-The full pack: https://mambabuilt.com/skills
+The full pack, every premium skill above plus the free ones: 12.99 USD at https://mambabuilt.com/store
 
 ## Shared context
 

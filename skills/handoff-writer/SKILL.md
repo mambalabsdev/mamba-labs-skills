@@ -3,12 +3,16 @@ name: handoff-writer
 description: |
   Write the handoff that lets the next person or the next session continue without re deriving anything. Use when ending a working session, handing a project to someone else, or when context is about to be lost.
 license: MIT
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+tags: [knowledge_ops, knowledge_ops_pack]
 metadata:
-  category: knowledge-ops
-  tags: [knowledge_ops, knowledge_ops_pack]
-compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 2.0.0
+  title: "Handoff Writer"
+  category: "knowledge-ops"
+  tags: "knowledge_ops, knowledge_ops_pack"
+  keywords: "knowledge, write a handoff, i am handing this over, end of session summary, the next person needs to pick this up, context is about to be lost"
+  version: "2.1.0"
 ---
+
 # Handoff Writer
 
 ## What this does
@@ -38,6 +42,11 @@ use them instead of asking the user to repeat themselves:
 If none exist, do the work from what the user gives you, then offer to write the
 missing file so the next skill in the pack starts warmer.
 
+## Tool connection
+
+This skill needs no live data tool. It works from the files, exports and answers
+you give it, so it runs the same in any agent with no setup.
+
 ## Method
 
 1. Open with the current state in three lines: what works now, what is in progress, and what has not been started.
@@ -47,10 +56,26 @@ missing file so the next skill in the pack starts warmer.
 5. State the open questions and who can answer each one.
 6. Leave out the narrative entirely. What happened in what order is not useful to the next person and it is what makes handoffs unread.
 7. Timestamp it and name what it supersedes, because two handoffs on the same work are worse than one.
+8. Check the output with `scripts/check-output.py` before you return it.
+
+## Approval stop
+
+This skill does not send email or write to a CRM. If the user asks it to, stop first:
+show what would be sent or written and wait for an explicit yes.
 
 ## Output
 
 State in three lines, the next action with its starting point, the traps including failed paths, the exact identifiers, the open questions with owners, and a timestamp.
+
+## Check the output before you return it
+
+Save the output to a file and run `python3 scripts/check-output.py <file>`. The
+contract it checks is `scripts/output-contract.json`.
+
+- Exit 0, `COMPLETE`: return the output.
+- Exit 2, `INCOMPLETE`: do not present the output as finished. Fill what you can, run
+  the check again, and if parts stay missing, return the output under the heading
+  `Incomplete` with every reason the check printed.
 
 ## Quality bar
 

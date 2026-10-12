@@ -3,12 +3,16 @@ name: tech-stack-signal-reader
 description: |
   Detect which tools a company runs from its own website and turn the stack into a qualification and an angle. Use when someone wants to know what CRM or sequencer or analytics a company uses, wants to find companies on a competitor, or wants tech stack based targeting.
 license: MIT
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+tags: [signal_based_selling, signal_research]
 metadata:
-  category: signal-research
-  tags: [signal_based_selling, signal_research]
-compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 2.0.0
+  title: "Tech Stack Signal Reader"
+  category: "signal-research"
+  tags: "signal_based_selling, signal_research"
+  keywords: "signals, what crm do they use, find companies using this tool, detect their tech stack, competitor displacement targeting, what analytics are they running"
+  version: "2.1.0"
 ---
+
 # Tech Stack Signal Reader
 
 ## What this does
@@ -39,12 +43,24 @@ use them instead of asking the user to repeat themselves:
 If none exist, do the work from what the user gives you, then offer to write the
 missing file so the next skill in the pack starts warmer.
 
-## Live data
+## Tool connection
 
 Detection reads the live site and its additional pages rather than a historical index, which is the difference between a current stack and one from two years ago.
 
-- **gtm-tech-stack-signal-scraper**: tool detection from the live site, with additional page crawling
-  Store page: https://apify.com/mambalabs/gtm-tech-stack-signal-scraper
+This skill calls live data through the Mamba Labs MCP server, which runs the
+actors on Apify with your own Apify token (https://console.apify.com/account/integrations).
+
+- Installed as a plugin: the server is already wired, and the plugin asks for the token once.
+- Installed by hand: copy `.mcp.json` from this folder into your project root and set
+  `APIFY_TOKEN` in your environment, or run:
+
+```
+claude mcp add mamba-gtm-suite -e APIFY_TOKEN=<your token> -- npx -y @mambalabsdev/mcp-gtm-suite@1.10.0
+```
+
+| Actor | MCP tool | Used for | Store page |
+| --- | --- | --- | --- |
+| GTM Tech Stack Signal Enrichment | `detect_gtm_tech_stack` | tool detection from the live site, with additional page crawling | https://apify.com/mambalabs/gtm-tech-stack-signal-scraper |
 
 Runnable example input:
 
@@ -60,6 +76,14 @@ Runnable example input:
 }
 ```
 
+**Cost line.** Before any live call, state how many calls you plan and which actors
+they bill. After the run, report the calls made, the calls that failed, and the Apify
+usage where the tool reports it. Each actor bills the user's own Apify account at its
+Store price.
+
+**No token, no live data.** If no Apify token is available, say so and stop the live
+steps. Never fill a live section from memory and present it as live.
+
 ## Method
 
 1. Detect on the live site, and crawl beyond the homepage. Many tools only load on a pricing, signup or documentation page.
@@ -68,10 +92,26 @@ Runnable example input:
 4. Read the combination, not the items. A modern analytics stack next to a legacy CRM is a specific and actionable situation; either one alone is not.
 5. Write the angle from the gap the combination implies, not from the tool name. Naming their CRM back to them proves you ran a scanner.
 6. State detection confidence per tool, because a script tag is stronger evidence than a favicon.
+7. Check the output with `scripts/check-output.py` before you return it.
+
+## Approval stop
+
+This skill does not send email or write to a CRM. If the user asks it to, stop first:
+show what would be sent or written and wait for an explicit yes.
 
 ## Output
 
 The detected stack with confidence per tool, the qualifier and disqualifier split, the maturity read, and one angle built from the combination.
+
+## Check the output before you return it
+
+Save the output to a file and run `python3 scripts/check-output.py <file>`. The
+contract it checks is `scripts/output-contract.json`.
+
+- Exit 0, `COMPLETE`: return the output.
+- Exit 2, `INCOMPLETE`: do not present the output as finished. Fill what you can, run
+  the check again, and if parts stay missing, return the output under the heading
+  `Incomplete` with every reason the check printed.
 
 ## Quality bar
 

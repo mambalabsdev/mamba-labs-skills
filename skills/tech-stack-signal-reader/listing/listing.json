@@ -1,0 +1,78 @@
+{
+  "sku": "tech-stack-signal-reader",
+  "tier": "free",
+  "title": "Tech Stack Signal Reader",
+  "previous_title": null,
+  "one_line": "Detect which tools a company runs from its own website and turn the stack into a qualification and an angle.",
+  "description": "Detect which tools a company runs from its own website and turn the stack into a qualification and an angle. Use when someone wants to know what CRM or sequencer or analytics a company uses, wants to find companies on a competitor, or wants tech stack based targeting.",
+  "paragraph": "A detected tool is a fact; a useful signal is what the tool implies. This skill detects the stack from the live site, then reads it three ways: what it qualifies, what it disqualifies, and what it says about the company's maturity, which is usually the most useful of the three.",
+  "keywords": [
+    "signals",
+    "what crm do they use",
+    "find companies using this tool",
+    "detect their tech stack",
+    "competitor displacement targeting",
+    "what analytics are they running"
+  ],
+  "family": "signal-research",
+  "packs": [
+    "signal-based-selling"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [
+    "@mambalabsdev/mcp-gtm-suite@1.10.0"
+  ],
+  "mcp_tools": [
+    "detect_gtm_tech_stack"
+  ],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "sku": "knowledge-write-discipline",
+  "tier": "free",
+  "title": "Knowledge Write Discipline",
+  "previous_title": null,
+  "one_line": "Write to a knowledge base so the document is findable later and provably stored.",
+  "description": "Write to a knowledge base so the document is findable later and provably stored. Use when saving a document, writing up a result, or when notes keep getting lost or duplicated.",
+  "paragraph": "Two things go wrong with knowledge bases and both are silent. Documents are written under names nobody will search for, and writes appear to succeed while storing nothing. This skill fixes the naming, and requires a read back that proves the content is there, because a write that returns success is not evidence.",
+  "keywords": [
+    "knowledge",
+    "save this to the knowledge base",
+    "write up this result",
+    "my notes keep getting lost",
+    "document this properly",
+    "where should this go"
+  ],
+  "family": "knowledge-ops",
+  "packs": [
+    "knowledge-ops-pack"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

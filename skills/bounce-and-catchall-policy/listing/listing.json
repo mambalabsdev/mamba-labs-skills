@@ -1,0 +1,75 @@
+{
+  "sku": "bounce-and-catchall-policy",
+  "tier": "free",
+  "title": "Bounce And Catch All Policy",
+  "previous_title": null,
+  "one_line": "Decide what to do with catch all domains, role addresses and soft bounces before they cost you a domain.",
+  "description": "Decide what to do with catch all domains, role addresses and soft bounces before they cost you a domain. Use when verification returns unknown, when someone asks whether to send to catch all addresses, or when bounce rate is creeping up.",
+  "paragraph": "Verification returns three answers and most teams only plan for two. Valid sends, invalid drops, and unknown, which is mostly catch all domains, is where the decision actually lives. Sending to all of them raises bounce rate; dropping all of them can remove a large share of an enterprise list. This skill sets a policy per class with the arithmetic that justifies it.",
+  "keywords": [
+    "deliverability",
+    "should i send to catch all addresses",
+    "verification returned unknown",
+    "my bounce rate is creeping up",
+    "role addresses",
+    "what do i do with unknown emails"
+  ],
+  "family": "deliverability",
+  "packs": [
+    "deliverability",
+    "cold-email-system"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "sku": "unsubscribe-compliance-check",
+  "tier": "free",
+  "title": "Unsubscribe Compliance Check",
+  "previous_title": null,
+  "one_line": "Check that outbound campaigns carry a working unsubscribe path and that opt outs land somewhere that actually stops the next send.",
+  "description": "Check that outbound campaigns carry a working unsubscribe path and that opt outs land somewhere that actually stops the next send. Use before launching, during a compliance review, or when someone asks what an outbound email legally needs.",
+  "paragraph": "An unsubscribe link that renders is not an unsubscribe path. The path has three parts, and the one that breaks is always the third: the link, the confirmation, and the write that reaches the suppression layer before the next scheduled send. This skill tests all three end to end rather than checking that the footer exists.",
+  "keywords": [
+    "deliverability",
+    "do my emails need an unsubscribe",
+    "compliance review of outbound",
+    "test my opt out",
+    "unsubscribe handling",
+    "what does an outbound email legally need"
+  ],
+  "family": "deliverability",
+  "packs": [
+    "deliverability",
+    "cold-email-system"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": "sending a test email to any address you do not own",
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

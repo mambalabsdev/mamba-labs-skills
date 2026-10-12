@@ -3,12 +3,16 @@ name: sales-one-pager
 description: |
   Write the one page document a prospect forwards internally to the person who has to approve. Use when a deal needs an internal champion, when someone asks for a leave behind, or when a prospect says they need to check with someone.
 license: MIT
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+tags: [agency_delivery, sales_enablement]
 metadata:
-  category: sales-enablement
-  tags: [agency_delivery, sales_enablement]
-compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 2.0.0
+  title: "Sales One Pager"
+  category: "sales-enablement"
+  tags: "agency_delivery, sales_enablement"
+  keywords: "enablement, write a one pager, they need to check with someone, leave behind for the meeting, our champion needs something to forward, sales collateral"
+  version: "2.1.0"
 ---
+
 # Sales One Pager
 
 ## What this does
@@ -41,6 +45,11 @@ use them instead of asking the user to repeat themselves:
 If none exist, do the work from what the user gives you, then offer to write the
 missing file so the next skill in the pack starts warmer.
 
+## Tool connection
+
+This skill needs no live data tool. It works from the files, exports and answers
+you give it, so it runs the same in any agent with no setup.
+
 ## Method
 
 1. Write for the forward, not for the meeting. The reader has no context and did not agree to talk to you.
@@ -50,10 +59,26 @@ missing file so the next skill in the pack starts warmer.
 5. Include one proof point that resembles them, and only one.
 6. Answer the two questions the approver will ask that the champion cannot: why now, and what happens if it does not work.
 7. One page. If it does not fit, the ask is not clear enough yet.
+8. Check the output with `scripts/check-output.py` before you return it.
+
+## Approval stop
+
+This skill does not send email or write to a CRM. If the user asks it to, stop first:
+show what would be sent or written and wait for an explicit yes.
 
 ## Output
 
 A one page document: the problem quoted, the cost of inaction, the commitment shape, one proof point, the two approver questions answered, and the next step.
+
+## Check the output before you return it
+
+Save the output to a file and run `python3 scripts/check-output.py <file>`. The
+contract it checks is `scripts/output-contract.json`.
+
+- Exit 0, `COMPLETE`: return the output.
+- Exit 2, `INCOMPLETE`: do not present the output as finished. Fill what you can, run
+  the check again, and if parts stay missing, return the output under the heading
+  `Incomplete` with every reason the check printed.
 
 ## Quality bar
 

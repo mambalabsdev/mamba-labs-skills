@@ -1,0 +1,74 @@
+{
+  "sku": "monday-morning-brief",
+  "tier": "free",
+  "title": "Monday Morning Brief",
+  "previous_title": null,
+  "one_line": "Produce the weekly operating brief: what moved, what is at risk, and the three things that need a decision.",
+  "description": "Produce the weekly operating brief: what moved, what is at risk, and the three things that need a decision. Use when someone wants a Monday update, a weekly business summary, or a recurring brief across their tools.",
+  "paragraph": "A weekly brief is only read if it is short and if it is honest about what it could not see. This skill pulls from whatever is connected, reports movement rather than levels, names the decisions that are waiting, and states plainly which sources were unavailable rather than quietly leaving them out.",
+  "keywords": [
+    "small business",
+    "monday morning brief",
+    "weekly business summary",
+    "what happened last week",
+    "weekly update across my tools",
+    "recurring operating brief"
+  ],
+  "family": "small-business-ops",
+  "packs": [
+    "small-business-operations"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": "sending the brief to anyone outside the operator",
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

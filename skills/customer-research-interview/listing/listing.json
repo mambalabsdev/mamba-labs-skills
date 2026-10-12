@@ -1,0 +1,75 @@
+{
+  "sku": "customer-research-interview",
+  "tier": "free",
+  "title": "Customer Research Interview",
+  "previous_title": null,
+  "one_line": "Run customer interviews that produce usable language instead of agreement, and turn the transcripts into a sharper ICP.",
+  "description": "Run customer interviews that produce usable language instead of agreement, and turn the transcripts into a sharper ICP. Use when someone wants to talk to customers, needs messaging research, or does not know why their best customers bought.",
+  "paragraph": "Customer interviews fail by producing agreement. Ask whether a problem is painful and everyone says yes. This skill asks about what happened instead of what people think, extracts the language customers actually use, and writes the result into the shared ICP file so every other skill in the catalog gets sharper from it.",
+  "keywords": [
+    "enablement",
+    "talk to my customers",
+    "messaging research",
+    "why do people buy from us",
+    "customer interviews",
+    "voice of customer"
+  ],
+  "family": "sales-enablement",
+  "packs": [
+    "agency-delivery",
+    "signal-based-selling"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

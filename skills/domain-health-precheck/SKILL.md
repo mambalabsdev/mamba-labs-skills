@@ -3,12 +3,16 @@ name: domain-health-precheck
 description: |
   Check whether one sending domain is safe for cold outreach by reading its SPF, DKIM and DMARC records and its blacklist status. Use when someone asks about email deliverability, domain health, SPF or DKIM or DMARC setup, whether a domain is blacklisted, or whether they will land in spam.
 license: MIT
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+tags: [cold_email_system, deliverability]
 metadata:
-  category: deliverability
-  tags: [cold_email_system, deliverability]
-compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 2.0.0
+  title: "Domain Health Precheck"
+  category: "deliverability"
+  tags: "cold_email_system, deliverability"
+  keywords: "deliverability, check my domain, am i going to land in spam, is this domain blacklisted, spf dkim dmarc setup, domain health"
+  version: "2.1.0"
 ---
+
 # Domain Health Precheck
 
 ## What this does
@@ -38,12 +42,24 @@ use them instead of asking the user to repeat themselves:
 If none exist, do the work from what the user gives you, then offer to write the
 missing file so the next skill in the pack starts warmer.
 
-## Live data
+## Tool connection
 
 The checks run live against DNS and public blocklists through the Mamba Labs deliverability actor, so the result is the current record rather than a cached report.
 
-- **domain-deliverability-checker**: SPF, DKIM, DMARC and blacklist status for a sending domain
-  Store page: https://apify.com/mambalabs/domain-deliverability-checker
+This skill calls live data through the Mamba Labs MCP server, which runs the
+actors on Apify with your own Apify token (https://console.apify.com/account/integrations).
+
+- Installed as a plugin: the server is already wired, and the plugin asks for the token once.
+- Installed by hand: copy `.mcp.json` from this folder into your project root and set
+  `APIFY_TOKEN` in your environment, or run:
+
+```
+claude mcp add mamba-deliverability -e APIFY_TOKEN=<your token> -- npx -y @mambalabsdev/mcp-domain-deliverability-checker@1.1.1
+```
+
+| Actor | MCP tool | Used for | Store page |
+| --- | --- | --- | --- |
+| Domain Deliverability Checker | `check_domain_deliverability` | SPF, DKIM, DMARC and blacklist status for a sending domain | https://apify.com/mambalabs/domain-deliverability-checker |
 
 Runnable example input:
 
@@ -56,6 +72,14 @@ Runnable example input:
 }
 ```
 
+**Cost line.** Before any live call, state how many calls you plan and which actors
+they bill. After the run, report the calls made, the calls that failed, and the Apify
+usage where the tool reports it. Each actor bills the user's own Apify account at its
+Store price.
+
+**No token, no live data.** If no Apify token is available, say so and stop the live
+steps. Never fill a live section from memory and present it as live.
+
 ## Method
 
 1. Read the SPF record. Check that it exists, that there is exactly one, that it authorizes the actual sending provider, and that it stays under the ten lookup limit.
@@ -64,10 +88,26 @@ Runnable example input:
 4. Check the blocklists and report which one, since the delisting process differs per list.
 5. Check whether the sending domain is the primary brand domain. Sending cold outreach from the primary domain puts the whole company's mail at risk and is the single most consequential finding.
 6. Return a verdict: safe to send, safe after the listed fixes, or do not send. Give the exact record content to add, not a description of it.
+7. Check the output with `scripts/check-output.py` before you return it.
+
+## Approval stop
+
+This skill does not send email or write to a CRM. If the user asks it to, stop first:
+show what would be sent or written and wait for an explicit yes.
 
 ## Output
 
 A four row check table with the record found and the verdict, then the exact DNS records to add, then the one line overall verdict.
+
+## Check the output before you return it
+
+Save the output to a file and run `python3 scripts/check-output.py <file>`. The
+contract it checks is `scripts/output-contract.json`.
+
+- Exit 0, `COMPLETE`: return the output.
+- Exit 2, `INCOMPLETE`: do not present the output as finished. Fill what you can, run
+  the check again, and if parts stay missing, return the output under the heading
+  `Incomplete` with every reason the check printed.
 
 ## Quality bar
 

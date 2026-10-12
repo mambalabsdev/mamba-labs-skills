@@ -3,12 +3,16 @@ name: mamba-gtm-router
 description: |
   Route a plain language go to market request to the right skill, and name the ones that would help but are not installed. Use when someone does not know which skill to use, asks a broad GTM question, or wants to know what is available.
 license: MIT
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+tags: [agency_operations, clay_operator, cold_email_system]
 metadata:
-  category: agency-operations
-  tags: [agency_operations, clay_operator, cold_email_system]
-compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 2.0.0
+  title: "Mamba GTM Router"
+  category: "agency-operations"
+  tags: "agency_operations, clay_operator, cold_email_system"
+  keywords: "agency, which skill should i use, what can you help with, i need help with outbound, what skills do i have, where do i start"
+  version: "2.1.0"
 ---
+
 # Mamba GTM Router
 
 ## What this does
@@ -38,6 +42,11 @@ use them instead of asking the user to repeat themselves:
 If none exist, do the work from what the user gives you, then offer to write the
 missing file so the next skill in the pack starts warmer.
 
+## Tool connection
+
+This skill needs no live data tool. It works from the files, exports and answers
+you give it, so it runs the same in any agent with no setup.
+
 ## Method
 
 1. Classify the request into a family: clay builds, outbound email, deliverability, signal research, identity and enrichment, LinkedIn, SEO and content, CRM operations, small business operations, agency operations, or knowledge operations.
@@ -47,10 +56,26 @@ missing file so the next skill in the pack starts warmer.
 5. Check whether the shared context files exist. If they do not, recommend the context builder first, because it improves every subsequent answer.
 6. If the request spans several skills, give the order rather than the list. An order is a plan; a list is homework.
 7. Never invent a skill name. If nothing in the catalog fits, say that and describe what the user should do without one.
+8. Check the output with `scripts/check-output.py` before you return it.
+
+## Approval stop
+
+This skill does not send email or write to a CRM. If the user asks it to, stop first:
+show what would be sent or written and wait for an explicit yes.
 
 ## Output
 
 The routed skill with the reason, its installed status, the ordered follow ons, the context file check, and an honest not covered answer where the catalog has no fit.
+
+## Check the output before you return it
+
+Save the output to a file and run `python3 scripts/check-output.py <file>`. The
+contract it checks is `scripts/output-contract.json`.
+
+- Exit 0, `COMPLETE`: return the output.
+- Exit 2, `INCOMPLETE`: do not present the output as finished. Fill what you can, run
+  the check again, and if parts stay missing, return the output under the heading
+  `Incomplete` with every reason the check printed.
 
 ## Quality bar
 

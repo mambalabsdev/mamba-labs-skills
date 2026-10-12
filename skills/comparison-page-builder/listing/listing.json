@@ -1,0 +1,74 @@
+{
+  "sku": "comparison-page-builder",
+  "tier": "free",
+  "title": "Comparison Page Builder",
+  "previous_title": null,
+  "one_line": "Write a comparison or alternatives page that a reader trusts and a competitor cannot get taken down.",
+  "description": "Write a comparison or alternatives page that a reader trusts and a competitor cannot get taken down. Use when someone needs a versus page, an alternatives page, or wants to rank for competitor comparison queries.",
+  "paragraph": "Comparison pages convert better than almost any other page type and they are the easiest to write badly, because the temptation is to win every row. A page that wins every row is not read as information. This skill writes comparisons where the competitor genuinely wins some rows, every claim is dated and sourced, and the recommendation is conditional on the reader's situation.",
+  "keywords": [
+    "seo and content",
+    "write a versus page",
+    "alternatives page",
+    "comparison content",
+    "rank for competitor queries",
+    "compare us to a competitor"
+  ],
+  "family": "seo-content",
+  "packs": [
+    "seo-content-engine"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

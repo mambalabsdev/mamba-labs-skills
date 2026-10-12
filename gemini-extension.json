@@ -1,0 +1,29 @@
+{
+  "name": "mamba-labs-skills",
+  "version": "2.1.0",
+  "description": "Free Mamba Labs agent skills for signal based GTM: ICP, outbound copy, deliverability, Clay, CRM, LinkedIn, SEO.",
+  "mcpServers": {
+    "mamba-gtm-suite": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@mambalabsdev/mcp-gtm-suite@1.10.0"
+      ]
+    },
+    "mamba-deliverability": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@mambalabsdev/mcp-domain-deliverability-checker@1.1.1"
+      ]
+    }
+  },
+  "settings": [
+    {
+      "name": "Apify API token",
+      "description": "Runs the Mamba Labs actors on your own Apify account.",
+      "envVar": "APIFY_TOKEN",
+      "sensitive": true
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "sku": "clay-conditional-gates",
+  "tier": "free",
+  "title": "Clay Conditional Gates",
+  "previous_title": null,
+  "one_line": "Write the run conditions that stop expensive Clay columns from firing on rows that will never qualify.",
+  "description": "Write the run conditions that stop expensive Clay columns from firing on rows that will never qualify. Use when someone wants to skip enrichment for non ICP rows, gate a waterfall, add a run condition, or stop paying to enrich junk.",
+  "paragraph": "A run condition is the cheapest performance work in Clay and the most commonly skipped. This skill turns a qualification rule stated in plain language into the exact condition expression, placed on the right column, in the right order, with the pass rate estimated so the saving is known before the run.",
+  "keywords": [
+    "clay",
+    "add a run condition",
+    "skip enrichment for non icp rows",
+    "gate this column",
+    "only enrich rows that",
+    "stop paying to enrich junk"
+  ],
+  "family": "clay-builds",
+  "packs": [
+    "clay-operator"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

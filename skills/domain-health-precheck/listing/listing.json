@@ -1,0 +1,79 @@
+{
+  "sku": "domain-health-precheck",
+  "tier": "free",
+  "title": "Domain Health Precheck",
+  "previous_title": null,
+  "one_line": "Check whether one sending domain is safe for cold outreach by reading its SPF, DKIM and DMARC records and its blacklist status.",
+  "description": "Check whether one sending domain is safe for cold outreach by reading its SPF, DKIM and DMARC records and its blacklist status. Use when someone asks about email deliverability, domain health, SPF or DKIM or DMARC setup, whether a domain is blacklisted, or whether they will land in spam.",
+  "paragraph": "Before a single email leaves a domain, four things decide whether it arrives: a valid SPF record, a published DKIM selector, a DMARC policy that is not left at none forever, and a clean listing across the major blocklists. This skill checks all four on one domain and returns a plain verdict with the exact DNS records to add for anything that fails.",
+  "keywords": [
+    "deliverability",
+    "check my domain",
+    "am i going to land in spam",
+    "is this domain blacklisted",
+    "spf dkim dmarc setup",
+    "domain health"
+  ],
+  "family": "deliverability",
+  "packs": [
+    "deliverability",
+    "cold-email-system"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [
+    "@mambalabsdev/mcp-domain-deliverability-checker@1.1.1"
+  ],
+  "mcp_tools": [
+    "check_domain_deliverability"
+  ],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

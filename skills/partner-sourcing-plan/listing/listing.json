@@ -1,0 +1,79 @@
+{
+  "sku": "partner-sourcing-plan",
+  "tier": "free",
+  "title": "Partner Sourcing Plan",
+  "previous_title": null,
+  "one_line": "Find the partners whose customers are your buyers, and structure the first conversation so it produces something.",
+  "description": "Find the partners whose customers are your buyers, and structure the first conversation so it produces something. Use when someone wants referral partners, co marketing, channel relationships, or a warmer route into a market.",
+  "paragraph": "Partner brainstorms produce a list of well known companies who will not reply. The partners worth approaching are the ones already serving your buyers with something adjacent, and that overlap is detectable rather than guessable. This skill finds them by overlap and structures the first exchange around a small reciprocal test rather than a partnership agreement.",
+  "keywords": [
+    "agency",
+    "find referral partners",
+    "co marketing",
+    "channel partnerships",
+    "who should we partner with",
+    "warm route into a market"
+  ],
+  "family": "agency-operations",
+  "packs": [
+    "agency-delivery"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [
+    "@mambalabsdev/mcp-gtm-suite@1.10.0"
+  ],
+  "mcp_tools": [
+    "detect_gtm_tech_stack",
+    "map_company_social_presence"
+  ],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

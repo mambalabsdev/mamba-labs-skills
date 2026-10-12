@@ -1,0 +1,74 @@
+{
+  "sku": "merge-variable-linter",
+  "tier": "free",
+  "title": "Merge Variable Linter",
+  "previous_title": null,
+  "one_line": "Check that every merge variable in a sequence resolves against the fields actually present on the rows, before the campaign sends.",
+  "description": "Check that every merge variable in a sequence resolves against the fields actually present on the rows, before the campaign sends. Use when someone is about to launch, has seen blank gaps in a sent email, or wants their personalization tokens verified.",
+  "paragraph": "An unresolved merge variable is the quietest failure in outbound. It does not raise an error and it does not stop the send. It renders as nothing, leaving a sentence that reads like a bug, and it is only visible after the email has gone. This skill compares the variables used in the copy against the fields present on the rows and reports the gaps before the send rather than after.",
+  "keywords": [
+    "outbound",
+    "check my merge variables",
+    "blank gaps in my sent email",
+    "verify personalization tokens",
+    "about to launch check the copy",
+    "why is my email missing a word"
+  ],
+  "family": "outbound-email",
+  "packs": [
+    "cold-email-system"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

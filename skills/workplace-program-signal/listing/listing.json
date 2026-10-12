@@ -1,0 +1,76 @@
+{
+  "sku": "workplace-program-signal",
+  "tier": "free",
+  "title": "Workplace Program Signal",
+  "previous_title": null,
+  "one_line": "Detect which workplace programs and benefits a company runs, as a signal for anyone selling into people operations, benefits or internal communications.",
+  "description": "Detect which workplace programs and benefits a company runs, as a signal for anyone selling into people operations, benefits or internal communications. Use when targeting HR buyers, checking benefits maturity, or looking for companies with or without a specific program.",
+  "paragraph": "For anyone selling to people operations, the buying signal is program presence or absence, and both are usually public across careers pages, benefits pages and job postings. This skill detects the programs, distinguishes a program that exists from one that is merely mentioned, and reads absence as the more actionable of the two.",
+  "keywords": [
+    "signals",
+    "what benefits does this company offer",
+    "hr buyer targeting",
+    "benefits maturity check",
+    "do they have this program",
+    "people operations prospecting"
+  ],
+  "family": "signal-research",
+  "packs": [
+    "signal-based-selling"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [
+    "workplace-program-detector"
+  ],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

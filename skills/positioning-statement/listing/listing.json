@@ -1,0 +1,75 @@
+{
+  "sku": "positioning-statement",
+  "tier": "free",
+  "title": "Positioning Statement",
+  "previous_title": null,
+  "one_line": "Write a positioning statement that names the real alternative and survives contact with a sales call.",
+  "description": "Write a positioning statement that names the real alternative and survives contact with a sales call. Use when messaging is vague, when a new product needs positioning, or when nobody can explain what the company does in one sentence.",
+  "paragraph": "Positioning fails when the alternative is unnamed, because a claim to be better is meaningless without a stated comparison, and the honest alternative is usually not a competitor but doing nothing or doing it manually. This skill forces the alternative into the statement and tests the result against the objection it invites.",
+  "keywords": [
+    "enablement",
+    "our messaging is vague",
+    "position this product",
+    "what do we actually do",
+    "write our positioning",
+    "one sentence pitch"
+  ],
+  "family": "sales-enablement",
+  "packs": [
+    "agency-delivery",
+    "seo-content-engine"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

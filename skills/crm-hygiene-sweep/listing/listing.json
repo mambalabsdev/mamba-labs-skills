@@ -1,0 +1,74 @@
+{
+  "sku": "crm-hygiene-sweep",
+  "tier": "free",
+  "title": "CRM Hygiene Sweep",
+  "previous_title": null,
+  "one_line": "Run a recurring cleanup on new and changed CRM records so the database stops degrading between audits.",
+  "description": "Run a recurring cleanup on new and changed CRM records so the database stops degrading between audits. Use when someone wants ongoing data hygiene, has just finished a cleanup and wants it to hold, or needs a weekly CRM routine.",
+  "paragraph": "A CRM cleaned once is dirty again in a quarter, because the intake keeps producing the same defects. This skill fixes the records that arrived since the last sweep, measures the drift rate, and points at the intake that caused it, so the sweep gets shorter over time instead of longer.",
+  "keywords": [
+    "crm",
+    "weekly crm cleanup",
+    "keep the crm clean",
+    "data hygiene routine",
+    "we cleaned it and it is dirty again",
+    "new record hygiene"
+  ],
+  "family": "crm-operations",
+  "packs": [
+    "crm-operations-pack"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": "writing, merging, or deleting any CRM record",
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

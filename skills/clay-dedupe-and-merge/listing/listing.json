@@ -1,0 +1,75 @@
+{
+  "sku": "clay-dedupe-and-merge",
+  "tier": "free",
+  "title": "Clay Dedupe And Merge",
+  "previous_title": null,
+  "one_line": "Deduplicate and merge people or company rows across Clay tables without losing enrichment or double counting a person.",
+  "description": "Deduplicate and merge people or company rows across Clay tables without losing enrichment or double counting a person. Use when merging lists, importing a second source into an existing table, deduping a people pool, or deciding which record wins on a conflict.",
+  "paragraph": "Merging two lists is easy. Merging them without losing the enrichment already paid for, and without counting the same person twice under two email addresses, is the part that goes wrong. This skill sets the match key, the precedence rule, and the audit that proves the merge did not silently drop rows.",
+  "keywords": [
+    "clay",
+    "merge two clay lists",
+    "dedupe my people pool",
+    "import a second source into this table",
+    "which record wins",
+    "am i double counting people"
+  ],
+  "family": "clay-builds",
+  "packs": [
+    "clay-operator",
+    "agency-delivery"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": "merging or deleting any row in a live table",
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

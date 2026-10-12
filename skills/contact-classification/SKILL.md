@@ -3,12 +3,16 @@ name: contact-classification
 description: |
   Classify contacts by department, seniority and role from their job title, and route them to the right persona. Use when a contact list has messy titles, when routing by persona, or when deciding who in a company to actually contact.
 license: MIT
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+tags: [clay_operator, identity_enrichment, signal_based_selling]
 metadata:
-  category: identity-enrichment
-  tags: [clay_operator, identity_enrichment, signal_based_selling]
-compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 2.0.0
+  title: "Contact Classification"
+  category: "identity-enrichment"
+  tags: "clay_operator, identity_enrichment, signal_based_selling"
+  keywords: "identity, classify these job titles, route contacts by persona, who should i contact at this company, messy title data, seniority filtering"
+  version: "2.1.0"
 ---
+
 # Contact Classification
 
 ## What this does
@@ -39,12 +43,24 @@ use them instead of asking the user to repeat themselves:
 If none exist, do the work from what the user gives you, then offer to write the
 missing file so the next skill in the pack starts warmer.
 
-## Live data
+## Tool connection
 
 Classification runs per title with optional position verification, so a title that is out of date can be caught rather than routed on.
 
-- **contact-classifier**: department, seniority and role classification from a job title
-  Store page: https://apify.com/mambalabs/contact-classifier
+This skill calls live data through the Mamba Labs MCP server, which runs the
+actors on Apify with your own Apify token (https://console.apify.com/account/integrations).
+
+- Installed as a plugin: the server is already wired, and the plugin asks for the token once.
+- Installed by hand: copy `.mcp.json` from this folder into your project root and set
+  `APIFY_TOKEN` in your environment, or run:
+
+```
+claude mcp add mamba-gtm-suite -e APIFY_TOKEN=<your token> -- npx -y @mambalabsdev/mcp-gtm-suite@1.10.0
+```
+
+| Actor | MCP tool | Used for | Store page |
+| --- | --- | --- | --- |
+| Contact Classifier | `classify_contact` | department, seniority and role classification from a job title | https://apify.com/mambalabs/contact-classifier |
 
 Runnable example input:
 
@@ -56,6 +72,14 @@ Runnable example input:
 }
 ```
 
+**Cost line.** Before any live call, state how many calls you plan and which actors
+they bill. After the run, report the calls made, the calls that failed, and the Apify
+usage where the tool reports it. Each actor bills the user's own Apify account at its
+Store price.
+
+**No token, no live data.** If no Apify token is available, say so and stop the live
+steps. Never fill a live section from memory and present it as live.
+
 ## Method
 
 1. Classify to department and seniority first, and only then to persona. Persona is a business concept and it changes; department and seniority do not.
@@ -64,10 +88,26 @@ Runnable example input:
 4. Set the seniority floor per persona and state what happens to contacts below it: dropped, or kept as a coach rather than a buyer.
 5. Report the unclassifiable share. A high share means the titles need a different source, not a better classifier.
 6. Attach a confidence and route low confidence contacts to a generic sequence rather than a persona specific one, because a wrong persona message is worse than a general one.
+7. Check the output with `scripts/check-output.py` before you return it.
+
+## Approval stop
+
+This skill does not send email or write to a CRM. If the user asks it to, stop first:
+show what would be sent or written and wait for an explicit yes.
 
 ## Output
 
 The classified table with department, seniority, persona, confidence and route; the ambiguous families flagged; and the unclassifiable share.
+
+## Check the output before you return it
+
+Save the output to a file and run `python3 scripts/check-output.py <file>`. The
+contract it checks is `scripts/output-contract.json`.
+
+- Exit 0, `COMPLETE`: return the output.
+- Exit 2, `INCOMPLETE`: do not present the output as finished. Fill what you can, run
+  the check again, and if parts stay missing, return the output under the heading
+  `Incomplete` with every reason the check printed.
 
 ## Quality bar
 

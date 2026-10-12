@@ -3,12 +3,16 @@ name: content-brief-builder
 description: |
   Write a content brief a writer can execute without inventing the substance, including where the non generic part comes from. Use when briefing a writer, planning an article, or when published content keeps reading like everything else.
 license: MIT
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+tags: [seo_content, seo_content_engine]
 metadata:
-  category: seo-content
-  tags: [seo_content, seo_content_engine]
-compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 2.0.0
+  title: "Content Brief Builder"
+  category: "seo-content"
+  tags: "seo_content, seo_content_engine"
+  keywords: "seo and content, brief a writer, plan an article, our content reads generic, content brief, what should this post cover"
+  version: "2.1.0"
 ---
+
 # Content Brief Builder
 
 ## What this does
@@ -41,6 +45,11 @@ use them instead of asking the user to repeat themselves:
 If none exist, do the work from what the user gives you, then offer to write the
 missing file so the next skill in the pack starts warmer.
 
+## Tool connection
+
+This skill needs no live data tool. It works from the files, exports and answers
+you give it, so it runs the same in any agent with no setup.
+
 ## Method
 
 1. Name the unrepeatable section first: the data, the experience, the example, or the counter position that another company could not write. If it does not exist, say so and either find it or do not brief the piece.
@@ -50,10 +59,26 @@ missing file so the next skill in the pack starts warmer.
 5. Name the source for every factual claim the piece will make, so the writer is not researching and inventing at the same time.
 6. Specify the internal links and where they go, since a link added afterward lands in the wrong sentence.
 7. Give the writer the voice markers rather than a description of the voice.
+8. Check the output with `scripts/check-output.py` before you return it.
+
+## Approval stop
+
+This skill does not send email or write to a CRM. If the user asks it to, stop first:
+show what would be sent or written and wait for an explicit yes.
 
 ## Output
 
 The unrepeatable section with its source, the searcher question, the ordered questions the piece answers, the exclusions, the claim sources, the internal links, and the voice markers.
+
+## Check the output before you return it
+
+Save the output to a file and run `python3 scripts/check-output.py <file>`. The
+contract it checks is `scripts/output-contract.json`.
+
+- Exit 0, `COMPLETE`: return the output.
+- Exit 2, `INCOMPLETE`: do not present the output as finished. Fill what you can, run
+  the check again, and if parts stay missing, return the output under the heading
+  `Incomplete` with every reason the check printed.
 
 ## Quality bar
 

@@ -1,0 +1,74 @@
+{
+  "sku": "handoff-writer",
+  "tier": "free",
+  "title": "Handoff Writer",
+  "previous_title": null,
+  "one_line": "Write the handoff that lets the next person or the next session continue without re deriving anything.",
+  "description": "Write the handoff that lets the next person or the next session continue without re deriving anything. Use when ending a working session, handing a project to someone else, or when context is about to be lost.",
+  "paragraph": "A handoff fails when it describes what was done instead of what the next person needs. The reader does not need the history, they need the state, the next action, and the traps. This skill writes those three and refuses to include the narrative, which is the part that makes handoffs too long to read.",
+  "keywords": [
+    "knowledge",
+    "write a handoff",
+    "i am handing this over",
+    "end of session summary",
+    "the next person needs to pick this up",
+    "context is about to be lost"
+  ],
+  "family": "knowledge-ops",
+  "packs": [
+    "knowledge-ops-pack"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

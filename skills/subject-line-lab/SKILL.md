@@ -3,12 +3,16 @@ name: subject-line-lab
 description: |
   Generate and screen cold email subject lines against truncation, spam triggers and the preview text they create. Use when someone needs subject lines, has low open rates, or wants to test subject variants.
 license: MIT
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+tags: [cold_email_system, outbound_email]
 metadata:
-  category: outbound-email
-  tags: [cold_email_system, outbound_email]
-compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 2.0.0
+  title: "Subject Line Lab"
+  category: "outbound-email"
+  tags: "cold_email_system, outbound_email"
+  keywords: "outbound, write subject lines, my open rates are low, test subject variants, improve this subject line, subject line ideas"
+  version: "2.1.0"
 ---
+
 # Subject Line Lab
 
 ## What this does
@@ -40,6 +44,11 @@ use them instead of asking the user to repeat themselves:
 If none exist, do the work from what the user gives you, then offer to write the
 missing file so the next skill in the pack starts warmer.
 
+## Tool connection
+
+This skill needs no live data tool. It works from the files, exports and answers
+you give it, so it runs the same in any agent with no setup.
+
 ## Method
 
 1. Generate variants across four distinct shapes: the specific observation, the direct question, the two word fragment, and the plain statement of the thing. Not four wordings of one shape.
@@ -48,10 +57,26 @@ missing file so the next skill in the pack starts warmer.
 4. Render the preview text each variant will produce, which is the first line of the body. If the subject and the preview say the same thing, one of them is wasted.
 5. Reject anything that promises what the body does not deliver. An open earned by a mismatch costs a reply.
 6. Rank by expected performance and say what each variant is testing, so a test result means something.
+7. Check the output with `scripts/check-output.py` before you return it.
+
+## Approval stop
+
+This skill does not send email or write to a CRM. If the user asks it to, stop first:
+show what would be sent or written and wait for an explicit yes.
 
 ## Output
 
 A variant table with the 30 and 45 character truncations, the filter flags, the preview text pairing, and what each variant tests.
+
+## Check the output before you return it
+
+Save the output to a file and run `python3 scripts/check-output.py <file>`. The
+contract it checks is `scripts/output-contract.json`.
+
+- Exit 0, `COMPLETE`: return the output.
+- Exit 2, `INCOMPLETE`: do not present the output as finished. Fill what you can, run
+  the check again, and if parts stay missing, return the output under the heading
+  `Incomplete` with every reason the check printed.
 
 ## Quality bar
 

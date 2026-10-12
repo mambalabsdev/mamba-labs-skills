@@ -3,12 +3,16 @@ name: linkedin-post-writer
 description: |
   Write a LinkedIn post that sounds like the person and earns a reason to exist. Use when someone needs a post, wants to build a publishing cadence, has a result to share, or asks for content ideas for their profile.
 license: MIT
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+tags: [linkedin, linkedin_authority]
 metadata:
-  category: linkedin
-  tags: [linkedin, linkedin_authority]
-compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 2.0.0
+  title: "LinkedIn Post Writer"
+  category: "linkedin"
+  tags: "linkedin, linkedin_authority"
+  keywords: "linkedin, write a linkedin post, post idea for my profile, i have a result to share, publishing cadence, content for linkedin"
+  version: "2.1.0"
 ---
+
 # LinkedIn Post Writer
 
 ## What this does
@@ -41,6 +45,11 @@ use them instead of asking the user to repeat themselves:
 If none exist, do the work from what the user gives you, then offer to write the
 missing file so the next skill in the pack starts warmer.
 
+## Tool connection
+
+This skill needs no live data tool. It works from the files, exports and answers
+you give it, so it runs the same in any agent with no setup.
+
 ## Method
 
 1. Refuse to start from a topic. Start from a thing that happened, with a number, a date or a name in it. A post with no specific is a post nobody remembers.
@@ -50,10 +59,28 @@ missing file so the next skill in the pack starts warmer.
 5. Cut every sentence that is true but does not advance. Generated posts are usually twice their necessary length.
 6. End on the thought, not on an engagement question. An engagement question at the end of a post is the clearest tell that the post was written to be posted.
 7. Do not invent the specifics. If the input has none, say what to go and find.
+8. Approval stop. Before publishing a post, show the user exactly what will happen and wait for an explicit yes. Nothing live changes without it.
+9. Check the output with `scripts/check-output.py` before you return it.
+
+## Approval stop
+
+Stop and ask before publishing a post. Show exactly what will be sent or written, to whom or to
+which records, and how many. Proceed only on an explicit yes from the user in this
+conversation. A yes for one batch does not cover the next one.
 
 ## Output
 
 The post, a one line note on what the first line is doing, and the two or three alternative first lines that were considered.
+
+## Check the output before you return it
+
+Save the output to a file and run `python3 scripts/check-output.py <file>`. The
+contract it checks is `scripts/output-contract.json`.
+
+- Exit 0, `COMPLETE`: return the output.
+- Exit 2, `INCOMPLETE`: do not present the output as finished. Fill what you can, run
+  the check again, and if parts stay missing, return the output under the heading
+  `Incomplete` with every reason the check printed.
 
 ## Quality bar
 

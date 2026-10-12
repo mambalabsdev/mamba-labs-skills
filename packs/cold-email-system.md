@@ -39,20 +39,20 @@ Every free skill sits on a 30 day review cycle. Fixes and improvements ship as r
 
 These encode the system rather than the single task. They are not in this repo.
 
-| Skill | What it does |
-| --- | --- |
-| `cold-email-sequence-system` | Build a complete multi step cold email sequence with per step angles, timing, exit rules and merge variables that actually resolve |
-| `suppression-architect` | Design the suppression layer so a contact who should never be emailed cannot be emailed from any campaign or channel |
-| `multichannel-enrollment-rules` | Set the rules that let email and social outreach run on the same prospect without double touching or double counting them |
-| `reply-classifier-router` | Classify inbound replies to outbound campaigns and route each one to the right next action, with a draft reply where a draft is appropriate |
-| `reactivation-campaign-builder` | Rework a list of previously contacted prospects into a compliant reactivation campaign, with cooldown windows, field coverage checks and copy that acknowledges the prior contact |
-| `wave-launch-precheck` | Run the pre launch check on a campaign wave and either clear it or block it with a named reason |
-| `clay-waterfall-designer` | Design a work email waterfall that finds the most addresses for the least money, with verification placed where it actually protects the send |
-| `linkedin-connection-campaign` | Run a connection and message campaign that stays inside platform limits, does not double touch a prospect, and hands off cleanly to email |
+| Skill | Price | What it does |
+| --- | --- | --- |
+| `cold-email-sequence-system` | 9.99 USD | Build a complete multi step cold email sequence with per step angles, timing, exit rules and merge variables that actually resolve |
+| `suppression-architect` | 9.99 USD | Design the suppression layer so a contact who should never be emailed cannot be emailed from any campaign or channel |
+| `multichannel-enrollment-rules` | 5.99 USD | Set the rules that let email and social outreach run on the same prospect without double touching or double counting them |
+| `reply-classifier-router` | 5.99 USD | Classify inbound replies to outbound campaigns and route each one to the right next action, with a draft reply where a draft is appropriate |
+| `reactivation-campaign-builder` | 7.99 USD | Rework a list of previously contacted prospects into a compliant reactivation campaign, with cooldown windows, field coverage checks and copy that acknowledges the prior contact |
+| `wave-launch-precheck` | 9.99 USD | Run the pre launch check on a campaign wave and either clear it or block it with a named reason |
+| `clay-waterfall-designer` | 7.99 USD | Design a work email waterfall that finds the most addresses for the least money, with verification placed where it actually protects the send |
+| `linkedin-connection-campaign` | 9.99 USD | Run a connection and message campaign that stays inside platform limits, does not double touch a prospect, and hands off cleanly to email |
 
 Most premium skills are on a weekly review cycle. Fixes and improvements ship as updates, and buyers receive release notes by email.
 
-The full pack: https://mambabuilt.com/skills
+The full pack, every premium skill above plus the free ones: 29 USD at https://mambabuilt.com/store
 
 ## Shared context
 

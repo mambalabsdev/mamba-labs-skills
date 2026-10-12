@@ -3,12 +3,16 @@ name: firmographic-enrichment
 description: |
   Fill headcount, industry, headquarters and revenue band on a company list, and report honestly which fields actually filled. Use when a list needs firmographics, when qualification needs company size, or when someone asks how complete their company data is.
 license: MIT
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+tags: [clay_operator, identity_enrichment]
 metadata:
-  category: identity-enrichment
-  tags: [clay_operator, identity_enrichment]
-compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 2.0.0
+  title: "Firmographic Enrichment"
+  category: "identity-enrichment"
+  tags: "clay_operator, identity_enrichment"
+  keywords: "identity, enrich these companies, add headcount and industry, how complete is my company data, company size for qualification, firmographics"
+  version: "2.1.0"
 ---
+
 # Firmographic Enrichment
 
 ## What this does
@@ -38,12 +42,24 @@ use them instead of asking the user to repeat themselves:
 If none exist, do the work from what the user gives you, then offer to write the
 missing file so the next skill in the pack starts warmer.
 
-## Live data
+## Tool connection
 
 Enrichment runs in batch across the domain list and returns per field values so coverage can be measured rather than assumed.
 
-- **company-firmographic-enricher**: headcount, industry, headquarters and revenue band by domain
-  Store page: https://apify.com/mambalabs/company-firmographic-enricher
+This skill calls live data through the Mamba Labs MCP server, which runs the
+actors on Apify with your own Apify token (https://console.apify.com/account/integrations).
+
+- Installed as a plugin: the server is already wired, and the plugin asks for the token once.
+- Installed by hand: copy `.mcp.json` from this folder into your project root and set
+  `APIFY_TOKEN` in your environment, or run:
+
+```
+claude mcp add mamba-gtm-suite -e APIFY_TOKEN=<your token> -- npx -y @mambalabsdev/mcp-gtm-suite@1.10.0
+```
+
+| Actor | MCP tool | Used for | Store page |
+| --- | --- | --- | --- |
+| Company Firmographic Enricher | `enrich_company_firmographics` | headcount, industry, headquarters and revenue band by domain | https://apify.com/mambalabs/company-firmographic-enricher |
 
 Runnable example input:
 
@@ -57,6 +73,14 @@ Runnable example input:
 }
 ```
 
+**Cost line.** Before any live call, state how many calls you plan and which actors
+they bill. After the run, report the calls made, the calls that failed, and the Apify
+usage where the tool reports it. Each actor bills the user's own Apify account at its
+Store price.
+
+**No token, no live data.** If no Apify token is available, say so and stop the live
+steps. Never fill a live section from memory and present it as live.
+
 ## Method
 
 1. Name the fields the downstream rule needs before enriching, so coverage is measured against a requirement rather than reported in general.
@@ -65,10 +89,26 @@ Runnable example input:
 4. For any required field below the coverage the rule needs, either find a second source or change the rule. Running a rule on a sparse field is the failure mode.
 5. Check the shape of what filled. Headcount as a band and headcount as a number are different fields and a rule written for one breaks on the other.
 6. Spot check ten rows against the companies' own sites. Enrichment sources disagree with reality often enough that a sample is not optional.
+7. Check the output with `scripts/check-output.py` before you return it.
+
+## Approval stop
+
+This skill does not send email or write to a CRM. If the user asks it to, stop first:
+show what would be sent or written and wait for an explicit yes.
 
 ## Output
 
 The enriched table, a coverage table per field against the requirement, the fields that fell short with the recommendation, and the spot check result.
+
+## Check the output before you return it
+
+Save the output to a file and run `python3 scripts/check-output.py <file>`. The
+contract it checks is `scripts/output-contract.json`.
+
+- Exit 0, `COMPLETE`: return the output.
+- Exit 2, `INCOMPLETE`: do not present the output as finished. Fill what you can, run
+  the check again, and if parts stay missing, return the output under the heading
+  `Incomplete` with every reason the check printed.
 
 ## Quality bar
 

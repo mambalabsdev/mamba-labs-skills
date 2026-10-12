@@ -3,12 +3,16 @@ name: linkedin-url-resolution
 description: |
   Turn a list of company domains into company profile URLs, and fill the gaps a native enrichment leaves behind. Use when a profile URL column has holes, when someone needs profile URLs from domains, or when building a social enrichment pipeline.
 license: MIT
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+tags: [clay_operator, identity_enrichment, linkedin_authority]
 metadata:
-  category: identity-enrichment
-  tags: [clay_operator, identity_enrichment, linkedin_authority]
-compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 2.0.0
+  title: "LinkedIn URL Resolution"
+  category: "identity-enrichment"
+  tags: "clay_operator, identity_enrichment, linkedin_authority"
+  keywords: "identity, find linkedin urls from domains, my linkedin column has gaps, domain to linkedin, enrich with social data, resolve company profiles"
+  version: "2.1.0"
 ---
+
 # LinkedIn URL Resolution
 
 ## What this does
@@ -38,12 +42,24 @@ use them instead of asking the user to repeat themselves:
 If none exist, do the work from what the user gives you, then offer to write the
 missing file so the next skill in the pack starts warmer.
 
-## Live data
+## Tool connection
 
 Resolution runs domain to company profile directly, and can return firmographics in the same call so a second enrichment is not needed.
 
-- **domain-to-linkedin-url-resolver**: company domain to company profile URL, with optional firmographics
-  Store page: https://apify.com/mambalabs/domain-to-linkedin-url-resolver
+This skill calls live data through the Mamba Labs MCP server, which runs the
+actors on Apify with your own Apify token (https://console.apify.com/account/integrations).
+
+- Installed as a plugin: the server is already wired, and the plugin asks for the token once.
+- Installed by hand: copy `.mcp.json` from this folder into your project root and set
+  `APIFY_TOKEN` in your environment, or run:
+
+```
+claude mcp add mamba-gtm-suite -e APIFY_TOKEN=<your token> -- npx -y @mambalabsdev/mcp-gtm-suite@1.10.0
+```
+
+| Actor | MCP tool | Used for | Store page |
+| --- | --- | --- | --- |
+| Domain to LinkedIn URL Resolver | `resolve_linkedin_url` | company domain to company profile URL, with optional firmographics | https://apify.com/mambalabs/domain-to-linkedin-url-resolver |
 
 Runnable example input:
 
@@ -55,6 +71,14 @@ Runnable example input:
 }
 ```
 
+**Cost line.** Before any live call, state how many calls you plan and which actors
+they bill. After the run, report the calls made, the calls that failed, and the Apify
+usage where the tool reports it. Each actor bills the user's own Apify account at its
+Store price.
+
+**No token, no live data.** If no Apify token is available, say so and stop the live
+steps. Never fill a live section from memory and present it as live.
+
 ## Method
 
 1. Normalize domains before resolving: lowercase, strip protocol, strip the www prefix, and drop tracking parameters.
@@ -63,10 +87,26 @@ Runnable example input:
 4. Handle the three miss patterns: a holding company domain whose profile is under a trading name, a country subsidiary that shares a domain with a global parent, and a company whose profile name shares no tokens with its domain.
 5. Decide the parent versus subsidiary rule up front, because both are correct answers to different questions and mixing them corrupts follower and headcount data.
 6. Spot check a sample by hand. Resolution rates look fine right up until they are matching the wrong entity.
+7. Check the output with `scripts/check-output.py` before you return it.
+
+## Approval stop
+
+This skill does not send email or write to a CRM. If the user asks it to, stop first:
+show what would be sent or written and wait for an explicit yes.
 
 ## Output
 
 The resolved table with domain, profile URL, matched name and confidence; the fill rate before and after; the unresolved list with its miss pattern; and the sample check result.
+
+## Check the output before you return it
+
+Save the output to a file and run `python3 scripts/check-output.py <file>`. The
+contract it checks is `scripts/output-contract.json`.
+
+- Exit 0, `COMPLETE`: return the output.
+- Exit 2, `INCOMPLETE`: do not present the output as finished. Fill what you can, run
+  the check again, and if parts stay missing, return the output under the heading
+  `Incomplete` with every reason the check printed.
 
 ## Quality bar
 

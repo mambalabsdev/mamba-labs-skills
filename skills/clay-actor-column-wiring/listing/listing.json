@@ -1,0 +1,74 @@
+{
+  "sku": "clay-actor-column-wiring",
+  "tier": "free",
+  "title": "Clay Actor Column Wiring",
+  "previous_title": null,
+  "one_line": "Wire an external actor or API into a Clay column so the types survive the round trip.",
+  "description": "Wire an external actor or API into a Clay column so the types survive the round trip. Use when someone wants to call an Apify actor from Clay, add an HTTP API column, pass Clay values into a scraper, or is getting type errors from an external enrichment.",
+  "paragraph": "Clay sends every column value as a string. An external tool that declares a field as a number, a boolean or an array will reject or silently mishandle what Clay sends it. This skill covers the wiring: how to type the fields on the tool side, how to build the request body, and how to read the response back into extraction columns without guessing at the path.",
+  "keywords": [
+    "clay",
+    "call an apify actor from clay",
+    "add an http api column",
+    "pass clay values to a scraper",
+    "type error from external enrichment",
+    "wire an actor into clay"
+  ],
+  "family": "clay-builds",
+  "packs": [
+    "clay-operator"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

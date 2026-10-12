@@ -3,12 +3,16 @@ name: objection-handling-library
 description: |
   Build an objection library from the replies you actually received, with a tested response per objection. Use when the same objections keep coming back, when onboarding a new rep, or when someone asks how to handle a specific pushback.
 license: MIT
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+tags: [agency_delivery, cold_email_system, sales_enablement]
 metadata:
-  category: sales-enablement
-  tags: [agency_delivery, cold_email_system, sales_enablement]
-compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 2.0.0
+  title: "Objection Handling Library"
+  category: "sales-enablement"
+  tags: "agency_delivery, cold_email_system, sales_enablement"
+  keywords: "enablement, handle this objection, we keep hearing the same pushback, onboard a new rep, objection library, what do i say when they say"
+  version: "2.1.0"
 ---
+
 # Objection Handling Library
 
 ## What this does
@@ -41,6 +45,11 @@ use them instead of asking the user to repeat themselves:
 If none exist, do the work from what the user gives you, then offer to write the
 missing file so the next skill in the pack starts warmer.
 
+## Tool connection
+
+This skill needs no live data tool. It works from the files, exports and answers
+you give it, so it runs the same in any agent with no setup.
+
 ## Method
 
 1. Cluster the replies by underlying objection, not by wording. No budget and not a priority are the same objection said two ways, and no time usually means neither.
@@ -50,10 +59,26 @@ missing file so the next skill in the pack starts warmer.
 5. Attach the proof each response needs, and mark the ones where no proof exists yet, because those are product or marketing gaps rather than script gaps.
 6. Test against the outcomes you have. If a response has never been used, label it untested rather than shipping it as a best practice.
 7. Keep the library short enough to be remembered. Five objections held in a rep's head beat twenty in a document.
+8. Check the output with `scripts/check-output.py` before you return it.
+
+## Approval stop
+
+This skill does not send email or write to a CRM. If the user asks it to, stop first:
+show what would be sent or written and wait for an explicit yes.
 
 ## Output
 
 The clustered objection list with frequency and kill rate, the response per objection with its concession, the proof needed, the untested flags, and the short list a rep should memorize.
+
+## Check the output before you return it
+
+Save the output to a file and run `python3 scripts/check-output.py <file>`. The
+contract it checks is `scripts/output-contract.json`.
+
+- Exit 0, `COMPLETE`: return the output.
+- Exit 2, `INCOMPLETE`: do not present the output as finished. Fill what you can, run
+  the check again, and if parts stay missing, return the output under the heading
+  `Incomplete` with every reason the check printed.
 
 ## Quality bar
 

@@ -1,0 +1,73 @@
+{
+  "sku": "clay-failure-triage",
+  "tier": "free",
+  "title": "Clay Failure Triage",
+  "previous_title": null,
+  "one_line": "Diagnose a Clay column that returns null, zero rows, or the wrong shape, by symptom rather than by guesswork.",
+  "description": "Diagnose a Clay column that returns null, zero rows, or the wrong shape, by symptom rather than by guesswork. Use when a Clay enrichment stopped working, a column is empty for rows that clearly have data, a pipeline that worked last week is now blank, or someone asks why their Clay table is broken.",
+  "paragraph": "Clay failures cluster into a small number of recurring shapes, and almost all of them present as the same symptom: a column that is empty when the data is obviously there. This skill walks the symptom to the root cause in the order that resolves fastest, cheapest checks first, and never suggests re running the column until the cause is named.",
+  "keywords": [
+    "clay",
+    "my clay column is empty",
+    "clay enrichment returns null",
+    "find people returned zero rows",
+    "why is my clay table broken"
+  ],
+  "family": "clay-builds",
+  "packs": [
+    "clay-operator"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

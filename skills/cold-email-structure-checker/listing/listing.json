@@ -1,0 +1,74 @@
+{
+  "sku": "cold-email-structure-checker",
+  "tier": "free",
+  "title": "Cold Email Structure Checker",
+  "previous_title": null,
+  "one_line": "Audit a cold email draft against a seven point outbound framework and return a pass or fail scorecard with a rewritten version.",
+  "description": "Audit a cold email draft against a seven point outbound framework and return a pass or fail scorecard with a rewritten version. Use whenever someone pastes a cold email and asks whether it is good, whether it will get replies, or asks for a review of outreach copy.",
+  "paragraph": "Most cold emails fail on structure before they fail on wording. This skill scores a draft on seven checks that are each objectively decidable, returns the scorecard, then rewrites the draft so every failed check passes without inventing facts the sender did not supply.",
+  "keywords": [
+    "outbound",
+    "review this cold email",
+    "is this email good",
+    "will this get replies",
+    "audit my outreach copy",
+    "fix this cold email"
+  ],
+  "family": "outbound-email",
+  "packs": [
+    "cold-email-system"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

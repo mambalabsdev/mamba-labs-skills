@@ -1,0 +1,74 @@
+{
+  "sku": "content-brief-builder",
+  "tier": "free",
+  "title": "Content Brief Builder",
+  "previous_title": null,
+  "one_line": "Write a content brief a writer can execute without inventing the substance, including where the non generic part comes from.",
+  "description": "Write a content brief a writer can execute without inventing the substance, including where the non generic part comes from. Use when briefing a writer, planning an article, or when published content keeps reading like everything else.",
+  "paragraph": "Content reads generic when the brief specified the topic and the structure but not the substance, so the writer fills the gap with what everyone already knows. This skill requires a source for the one section that makes the piece unrepeatable, and refuses to brief a piece where that section does not exist.",
+  "keywords": [
+    "seo and content",
+    "brief a writer",
+    "plan an article",
+    "our content reads generic",
+    "content brief",
+    "what should this post cover"
+  ],
+  "family": "seo-content",
+  "packs": [
+    "seo-content-engine"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

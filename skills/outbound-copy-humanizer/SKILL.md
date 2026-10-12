@@ -3,12 +3,16 @@ name: outbound-copy-humanizer
 description: |
   Rewrite outbound copy so it reads like a person wrote it, removing the tells that mark a message as generated. Use when copy sounds robotic, when a draft is full of hedges and stock phrases, or when someone wants their outreach to sound like them.
 license: MIT
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+tags: [cold_email_system, outbound_email]
 metadata:
-  category: outbound-email
-  tags: [cold_email_system, outbound_email]
-compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 2.0.0
+  title: "Outbound Copy Humanizer"
+  category: "outbound-email"
+  tags: "cold_email_system, outbound_email"
+  keywords: "outbound, this sounds robotic, make this sound human, too much ai voice, rewrite in my voice, humanize this copy"
+  version: "2.1.0"
 ---
+
 # Outbound Copy Humanizer
 
 ## What this does
@@ -39,6 +43,11 @@ use them instead of asking the user to repeat themselves:
 If none exist, do the work from what the user gives you, then offer to write the
 missing file so the next skill in the pack starts warmer.
 
+## Tool connection
+
+This skill needs no live data tool. It works from the files, exports and answers
+you give it, so it runs the same in any agent with no setup.
+
 ## Method
 
 1. Read the voice file or the samples first and extract three concrete markers: average sentence length, whether contractions are used, and how the sender opens a message.
@@ -47,10 +56,26 @@ missing file so the next skill in the pack starts warmer.
 4. Replace abstract nouns with the concrete thing they stand for. Solutions becomes the actual thing being sold.
 5. Keep every fact. Humanizing is a rewrite of the surface, not a license to soften a claim into vagueness or to invent warmth that is not earned.
 6. Read the result out loud in your head, sentence by sentence, and cut whatever you would not say.
+7. Check the output with `scripts/check-output.py` before you return it.
+
+## Approval stop
+
+This skill does not send email or write to a CRM. If the user asks it to, stop first:
+show what would be sent or written and wait for an explicit yes.
 
 ## Output
 
 The rewrite, plus a short list of what was removed and why, so the sender learns the pattern rather than depending on the skill.
+
+## Check the output before you return it
+
+Save the output to a file and run `python3 scripts/check-output.py <file>`. The
+contract it checks is `scripts/output-contract.json`.
+
+- Exit 0, `COMPLETE`: return the output.
+- Exit 2, `INCOMPLETE`: do not present the output as finished. Fill what you can, run
+  the check again, and if parts stay missing, return the output under the heading
+  `Incomplete` with every reason the check printed.
 
 ## Quality bar
 

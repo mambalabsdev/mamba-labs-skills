@@ -1,0 +1,79 @@
+{
+  "sku": "publishing-cadence-reader",
+  "tier": "free",
+  "title": "Publishing Cadence Reader",
+  "previous_title": null,
+  "one_line": "Measure how often a company actually publishes and read that as a content investment signal.",
+  "description": "Measure how often a company actually publishes and read that as a content investment signal. Use when someone wants to know if a company invests in content, is benchmarking against competitors, or is qualifying a content marketing buyer.",
+  "paragraph": "Publishing frequency is a public, dated, hard to fake statement about whether a company is investing in content, and it is one of the cleanest qualifiers for anyone selling content services or tooling. This skill measures the real cadence from the site, spots the gap where a program stopped, and reads acceleration and decline as separate signals.",
+  "keywords": [
+    "seo and content",
+    "how often do they publish",
+    "content investment signal",
+    "benchmark competitor publishing",
+    "qualify a content buyer",
+    "did their blog stop"
+  ],
+  "family": "seo-content",
+  "packs": [
+    "seo-content-engine",
+    "signal-based-selling"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [
+    "@mambalabsdev/mcp-gtm-suite@1.10.0"
+  ],
+  "mcp_tools": [
+    "track_publication_cadence"
+  ],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

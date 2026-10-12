@@ -33,13 +33,13 @@ Every free skill sits on a 30 day review cycle. Fixes and improvements ship as r
 
 These encode the system rather than the single task. They are not in this repo.
 
-| Skill | What it does |
-| --- | --- |
-| `month-end-narrative` | Close the month and write the narrative that explains the numbers, with the reconciliation done before a word is written |
+| Skill | Price | What it does |
+| --- | --- | --- |
+| `month-end-narrative` | 5.99 USD | Close the month and write the narrative that explains the numbers, with the reconciliation done before a word is written |
 
 Most premium skills are on a weekly review cycle. Fixes and improvements ship as updates, and buyers receive release notes by email.
 
-The full pack: https://mambabuilt.com/skills
+The full pack, every premium skill above plus the free ones: 19 USD at https://mambabuilt.com/store
 
 ## Shared context
 

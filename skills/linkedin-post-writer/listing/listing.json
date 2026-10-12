@@ -1,0 +1,74 @@
+{
+  "sku": "linkedin-post-writer",
+  "tier": "free",
+  "title": "LinkedIn Post Writer",
+  "previous_title": null,
+  "one_line": "Write a LinkedIn post that sounds like the person and earns a reason to exist.",
+  "description": "Write a LinkedIn post that sounds like the person and earns a reason to exist. Use when someone needs a post, wants to build a publishing cadence, has a result to share, or asks for content ideas for their profile.",
+  "paragraph": "Most generated LinkedIn posts fail on the first line and on the reason for posting. This skill starts from something that actually happened, finds the first line that makes the second line necessary, and writes in the poster's own rhythm rather than in platform voice.",
+  "keywords": [
+    "linkedin",
+    "write a linkedin post",
+    "post idea for my profile",
+    "i have a result to share",
+    "publishing cadence",
+    "content for linkedin"
+  ],
+  "family": "linkedin",
+  "packs": [
+    "linkedin-authority"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": "publishing a post",
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

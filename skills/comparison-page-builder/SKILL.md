@@ -3,12 +3,16 @@ name: comparison-page-builder
 description: |
   Write a comparison or alternatives page that a reader trusts and a competitor cannot get taken down. Use when someone needs a versus page, an alternatives page, or wants to rank for competitor comparison queries.
 license: MIT
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+tags: [seo_content, seo_content_engine]
 metadata:
-  category: seo-content
-  tags: [seo_content, seo_content_engine]
-compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 2.0.0
+  title: "Comparison Page Builder"
+  category: "seo-content"
+  tags: "seo_content, seo_content_engine"
+  keywords: "seo and content, write a versus page, alternatives page, comparison content, rank for competitor queries, compare us to a competitor"
+  version: "2.1.0"
 ---
+
 # Comparison Page Builder
 
 ## What this does
@@ -40,6 +44,11 @@ use them instead of asking the user to repeat themselves:
 If none exist, do the work from what the user gives you, then offer to write the
 missing file so the next skill in the pack starts warmer.
 
+## Tool connection
+
+This skill needs no live data tool. It works from the files, exports and answers
+you give it, so it runs the same in any agent with no setup.
+
 ## Method
 
 1. Build the comparison table from what the reader decides on, not from your feature list. Features you have and they do not are only relevant if the reader cares.
@@ -49,10 +58,26 @@ missing file so the next skill in the pack starts warmer.
 5. Write the conditional recommendation: who should pick them, and who should pick you. The first half is what makes the second half credible.
 6. Add the migration or evaluation next step, because the reader on this page is close to a decision.
 7. Set a review date on the page and put it in the content, since a comparison page is a maintenance commitment.
+8. Check the output with `scripts/check-output.py` before you return it.
+
+## Approval stop
+
+This skill does not send email or write to a CRM. If the user asks it to, stop first:
+show what would be sent or written and wait for an explicit yes.
 
 ## Output
 
 The comparison table with sources and dates, the honest wins on both sides, the conditional recommendation, the next step, and the review date.
+
+## Check the output before you return it
+
+Save the output to a file and run `python3 scripts/check-output.py <file>`. The
+contract it checks is `scripts/output-contract.json`.
+
+- Exit 0, `COMPLETE`: return the output.
+- Exit 2, `INCOMPLETE`: do not present the output as finished. Fill what you can, run
+  the check again, and if parts stay missing, return the output under the heading
+  `Incomplete` with every reason the check printed.
 
 ## Quality bar
 

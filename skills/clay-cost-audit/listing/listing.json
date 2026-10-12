@@ -1,0 +1,74 @@
+{
+  "sku": "clay-cost-audit",
+  "tier": "free",
+  "title": "Clay Cost Audit",
+  "previous_title": null,
+  "one_line": "Price a Clay table before it runs and find the columns that are burning credits for no return.",
+  "description": "Price a Clay table before it runs and find the columns that are burning credits for no return. Use when someone asks what a Clay build will cost, why their credits are gone, how to cut Clay spend, or wants a run before a full table ramp priced out.",
+  "paragraph": "Most Clay overspend comes from one pattern: an expensive column running on every row when it only needed to run on the rows that passed a cheap filter. This skill prices the table column by column, finds the columns with no run condition, and rewrites the run order so the expensive work sits behind the cheap work.",
+  "keywords": [
+    "clay",
+    "what will this clay table cost",
+    "my clay credits are gone",
+    "how do i cut clay spend",
+    "price this clay build",
+    "credit optimization in clay"
+  ],
+  "family": "clay-builds",
+  "packs": [
+    "clay-operator"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

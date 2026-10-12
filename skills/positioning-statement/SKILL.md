@@ -3,12 +3,16 @@ name: positioning-statement
 description: |
   Write a positioning statement that names the real alternative and survives contact with a sales call. Use when messaging is vague, when a new product needs positioning, or when nobody can explain what the company does in one sentence.
 license: MIT
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+tags: [agency_delivery, sales_enablement, seo_content_engine]
 metadata:
-  category: sales-enablement
-  tags: [agency_delivery, sales_enablement, seo_content_engine]
-compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 2.0.0
+  title: "Positioning Statement"
+  category: "sales-enablement"
+  tags: "agency_delivery, sales_enablement, seo_content_engine"
+  keywords: "enablement, our messaging is vague, position this product, what do we actually do, write our positioning, one sentence pitch"
+  version: "2.1.0"
 ---
+
 # Positioning Statement
 
 ## What this does
@@ -40,6 +44,11 @@ use them instead of asking the user to repeat themselves:
 If none exist, do the work from what the user gives you, then offer to write the
 missing file so the next skill in the pack starts warmer.
 
+## Tool connection
+
+This skill needs no live data tool. It works from the files, exports and answers
+you give it, so it runs the same in any agent with no setup.
+
 ## Method
 
 1. Name the alternative first, honestly. For most products it is a spreadsheet, a person doing it manually, or nothing at all, and positioning against a competitor when the real alternative is nothing produces messaging that does not land.
@@ -49,10 +58,26 @@ missing file so the next skill in the pack starts warmer.
 5. Check it against the customer language from research, if any exists. Positioning written in internal vocabulary does not survive the first sales call.
 6. Test it as a first line in an email and as a headline. Positioning that cannot survive those two uses will not be used.
 7. Write the result into `BRAND.md` with the disallowed claims that follow from it.
+8. Check the output with `scripts/check-output.py` before you return it.
+
+## Approval stop
+
+This skill does not send email or write to a CRM. If the user asks it to, stop first:
+show what would be sent or written and wait for an explicit yes.
 
 ## Output
 
 The named alternative, the statement, the inversion test result, the invited objection, the email and headline tests, and the BRAND.md block.
+
+## Check the output before you return it
+
+Save the output to a file and run `python3 scripts/check-output.py <file>`. The
+contract it checks is `scripts/output-contract.json`.
+
+- Exit 0, `COMPLETE`: return the output.
+- Exit 2, `INCOMPLETE`: do not present the output as finished. Fill what you can, run
+  the check again, and if parts stay missing, return the output under the heading
+  `Incomplete` with every reason the check printed.
 
 ## Quality bar
 

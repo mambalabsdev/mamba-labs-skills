@@ -3,12 +3,16 @@ name: clay-dedupe-and-merge
 description: |
   Deduplicate and merge people or company rows across Clay tables without losing enrichment or double counting a person. Use when merging lists, importing a second source into an existing table, deduping a people pool, or deciding which record wins on a conflict.
 license: MIT
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+tags: [agency_delivery, clay_builds, clay_operator]
 metadata:
-  category: clay-builds
-  tags: [agency_delivery, clay_builds, clay_operator]
-compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 2.0.0
+  title: "Clay Dedupe And Merge"
+  category: "clay-builds"
+  tags: "agency_delivery, clay_builds, clay_operator"
+  keywords: "clay, merge two clay lists, dedupe my people pool, import a second source into this table, which record wins, am i double counting people"
+  version: "2.1.0"
 ---
+
 # Clay Dedupe And Merge
 
 ## What this does
@@ -39,6 +43,11 @@ use them instead of asking the user to repeat themselves:
 If none exist, do the work from what the user gives you, then offer to write the
 missing file so the next skill in the pack starts warmer.
 
+## Tool connection
+
+This skill needs no live data tool. It works from the files, exports and answers
+you give it, so it runs the same in any agent with no setup.
+
 ## Method
 
 1. Pick the match key by uniqueness on your own data, not by intuition. Email is unique per address, not per person. LinkedIn URL is unique per person. Domain is unique per company only after normalization.
@@ -47,10 +56,28 @@ missing file so the next skill in the pack starts warmer.
 4. Set field level precedence, not record level. The newer record usually wins on job title and the older one usually wins on verified email.
 5. Preserve enrichment. A field that is populated on one side and blank on the other takes the populated value regardless of precedence.
 6. After the merge, count again. Rows in, rows out, distinct keys, and rows where a populated field became blank. That last count must be zero.
+7. Approval stop. Before merging or deleting any row in a live table, show the user exactly what will happen and wait for an explicit yes. Nothing live changes without it.
+8. Check the output with `scripts/check-output.py` before you return it.
+
+## Approval stop
+
+Stop and ask before merging or deleting any row in a live table. Show exactly what will be sent or written, to whom or to
+which records, and how many. Proceed only on an explicit yes from the user in this
+conversation. A yes for one batch does not cover the next one.
 
 ## Output
 
 The match key with its uniqueness measured, the normalization steps, the precedence table by field, and the before and after audit counts.
+
+## Check the output before you return it
+
+Save the output to a file and run `python3 scripts/check-output.py <file>`. The
+contract it checks is `scripts/output-contract.json`.
+
+- Exit 0, `COMPLETE`: return the output.
+- Exit 2, `INCOMPLETE`: do not present the output as finished. Fill what you can, run
+  the check again, and if parts stay missing, return the output under the heading
+  `Incomplete` with every reason the check printed.
 
 ## Quality bar
 

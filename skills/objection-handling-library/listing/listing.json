@@ -1,0 +1,75 @@
+{
+  "sku": "objection-handling-library",
+  "tier": "free",
+  "title": "Objection Handling Library",
+  "previous_title": null,
+  "one_line": "Build an objection library from the replies you actually received, with a tested response per objection.",
+  "description": "Build an objection library from the replies you actually received, with a tested response per objection. Use when the same objections keep coming back, when onboarding a new rep, or when someone asks how to handle a specific pushback.",
+  "paragraph": "A generic objection list is a list of objections other companies get. The useful library is built from your own replies, ranked by how often each objection appears and how often it kills the deal, because those two are different and the second is what decides where to spend the effort.",
+  "keywords": [
+    "enablement",
+    "handle this objection",
+    "we keep hearing the same pushback",
+    "onboard a new rep",
+    "objection library",
+    "what do i say when they say"
+  ],
+  "family": "sales-enablement",
+  "packs": [
+    "cold-email-system",
+    "agency-delivery"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

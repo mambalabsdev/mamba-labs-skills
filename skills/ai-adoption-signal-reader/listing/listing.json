@@ -1,0 +1,78 @@
+{
+  "sku": "ai-adoption-signal-reader",
+  "tier": "free",
+  "title": "AI Adoption Signal Reader",
+  "previous_title": null,
+  "one_line": "Detect whether a company has shipped AI features or adopted AI vendors, and read that as a budget and priority signal.",
+  "description": "Detect whether a company has shipped AI features or adopted AI vendors, and read that as a budget and priority signal. Use when someone targets companies adopting AI, wants to know if a prospect is building AI features, or needs an AI readiness read on an account list.",
+  "paragraph": "AI adoption splits companies into three groups that need different messages: shipped it, announced it, and neither. This skill detects vendor presence and product surface on the live site, places the company in one of the three, and reads the pricing page for whether the AI is a feature or a line item, which is the part that indicates real budget.",
+  "keywords": [
+    "signals",
+    "are they using ai",
+    "find companies adopting ai",
+    "ai readiness of this account list",
+    "did they ship ai features",
+    "ai vendor detection"
+  ],
+  "family": "signal-research",
+  "packs": [
+    "signal-based-selling"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [
+    "@mambalabsdev/mcp-gtm-suite@1.10.0"
+  ],
+  "mcp_tools": [
+    "detect_ai_tooling"
+  ],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

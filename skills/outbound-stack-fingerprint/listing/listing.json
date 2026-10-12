@@ -1,0 +1,79 @@
+{
+  "sku": "outbound-stack-fingerprint",
+  "tier": "free",
+  "title": "Outbound Stack Fingerprint",
+  "previous_title": null,
+  "one_line": "Detect whether a company runs cold outbound, which tools it sends with, and how many sending domains it operates.",
+  "description": "Detect whether a company runs cold outbound, which tools it sends with, and how many sending domains it operates. Use when selling to sales teams, sizing a competitor's outbound, or qualifying whether a prospect already runs the motion you sell into.",
+  "paragraph": "Whether a company already runs cold outbound is the single most useful qualifier for anyone selling outbound tooling or services, and it is visible from the outside: sending domains, mail records, and the fingerprints of the tools that provision them. This skill reads that infrastructure and reports scale as well as presence.",
+  "keywords": [
+    "signals",
+    "do they run cold outbound",
+    "what sequencer do they use",
+    "how many sending domains",
+    "size a competitors outbound",
+    "qualify an outbound buyer"
+  ],
+  "family": "signal-research",
+  "packs": [
+    "signal-based-selling",
+    "deliverability"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [
+    "@mambalabsdev/mcp-gtm-suite@1.10.0"
+  ],
+  "mcp_tools": [
+    "fingerprint_outbound_infrastructure"
+  ],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

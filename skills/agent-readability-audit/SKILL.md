@@ -3,12 +3,16 @@ name: agent-readability-audit
 description: |
   Check whether a website can be read and used by AI agents, and fix what blocks them. Use when someone asks about AI search visibility, agent accessibility, structured data, or whether their site works for AI crawlers.
 license: MIT
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+tags: [seo_content, seo_content_engine]
 metadata:
-  category: seo-content
-  tags: [seo_content, seo_content_engine]
-compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 2.0.0
+  title: "Agent Readability Audit"
+  category: "seo-content"
+  tags: "seo_content, seo_content_engine"
+  keywords: "seo and content, ai search visibility, can agents read my site, structured data audit, llms txt, ai crawler accessibility"
+  version: "2.1.0"
 ---
+
 # Agent Readability Audit
 
 ## What this does
@@ -38,12 +42,24 @@ use them instead of asking the user to repeat themselves:
 If none exist, do the work from what the user gives you, then offer to write the
 missing file so the next skill in the pack starts warmer.
 
-## Live data
+## Tool connection
 
 The audit reads the live site's crawl directives, structured data and endpoints.
 
-- **agent-accessibility-auditor**: crawl directives, structured data, endpoints and agent readability checks
-  Store page: https://apify.com/mambalabs/agent-accessibility-auditor
+This skill calls live data through the Mamba Labs MCP server, which runs the
+actors on Apify with your own Apify token (https://console.apify.com/account/integrations).
+
+- Installed as a plugin: the server is already wired, and the plugin asks for the token once.
+- Installed by hand: copy `.mcp.json` from this folder into your project root and set
+  `APIFY_TOKEN` in your environment, or run:
+
+```
+claude mcp add mamba-gtm-suite -e APIFY_TOKEN=<your token> -- npx -y @mambalabsdev/mcp-gtm-suite@1.10.0
+```
+
+| Actor | MCP tool | Used for | Store page |
+| --- | --- | --- | --- |
+| Agent Accessibility Auditor | `audit_agent_accessibility` | crawl directives, structured data, endpoints and agent readability checks | https://apify.com/mambalabs/agent-accessibility-auditor |
 
 Runnable example input:
 
@@ -59,6 +75,14 @@ Runnable example input:
 }
 ```
 
+**Cost line.** Before any live call, state how many calls you plan and which actors
+they bill. After the run, report the calls made, the calls that failed, and the Apify
+usage where the tool reports it. Each actor bills the user's own Apify account at its
+Store price.
+
+**No token, no live data.** If no Apify token is available, say so and stop the live
+steps. Never fill a live section from memory and present it as live.
+
 ## Method
 
 1. Check the crawl directives first. A site that blocks agent user agents has one fix that makes every other fix matter, and many sites block them without knowing.
@@ -67,10 +91,26 @@ Runnable example input:
 4. Check the machine readable surfaces: a documentation endpoint, a sitemap that is current, and any published index of what the site contains.
 5. Rank the fixes by whether they change what an agent can answer. A missing schema type on a blog post does not; a blocked user agent does.
 6. Re test after fixing rather than assuming, since crawl directives interact in ways that are easy to get wrong.
+7. Check the output with `scripts/check-output.py` before you return it.
+
+## Approval stop
+
+This skill does not send email or write to a CRM. If the user asks it to, stop first:
+show what would be sent or written and wait for an explicit yes.
 
 ## Output
 
 A four section audit with pass or fail per check, the ranked fix list with the answer each fix unblocks, and the re test result.
+
+## Check the output before you return it
+
+Save the output to a file and run `python3 scripts/check-output.py <file>`. The
+contract it checks is `scripts/output-contract.json`.
+
+- Exit 0, `COMPLETE`: return the output.
+- Exit 2, `INCOMPLETE`: do not present the output as finished. Fill what you can, run
+  the check again, and if parts stay missing, return the output under the heading
+  `Incomplete` with every reason the check printed.
 
 ## Quality bar
 

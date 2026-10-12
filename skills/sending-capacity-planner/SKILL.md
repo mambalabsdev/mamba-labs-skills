@@ -3,12 +3,16 @@ name: sending-capacity-planner
 description: |
   Work out how many contacts a set of sending accounts can actually reach per week, and how long a list will take to work through. Use when someone asks how many emails they can send, how many inboxes they need, how long a campaign will run, or whether to buy more domains.
 license: MIT
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+tags: [cold_email_system, deliverability, outbound_email]
 metadata:
-  category: outbound-email
-  tags: [cold_email_system, deliverability, outbound_email]
-compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 2.0.0
+  title: "Sending Capacity Planner"
+  category: "outbound-email"
+  tags: "cold_email_system, deliverability, outbound_email"
+  keywords: "outbound, how many emails can i send, how many inboxes do i need, how long will this campaign take, should i buy more domains, sending capacity"
+  version: "2.1.0"
 ---
+
 # Sending Capacity Planner
 
 ## What this does
@@ -40,6 +44,11 @@ use them instead of asking the user to repeat themselves:
 If none exist, do the work from what the user gives you, then offer to write the
 missing file so the next skill in the pack starts warmer.
 
+## Tool connection
+
+This skill needs no live data tool. It works from the files, exports and answers
+you give it, so it runs the same in any agent with no setup.
+
 ## Method
 
 1. Compute raw weekly capacity: accounts times daily limit times sending days.
@@ -48,10 +57,26 @@ missing file so the next skill in the pack starts warmer.
 4. Divide the list by steady state new contacts per week to get the calendar length, and give the finish date.
 5. If the finish date is beyond the point where the list goes stale, say so and give the two options: more accounts, or fewer steps.
 6. Price the extra accounts option, including domains and warmup time before they are usable.
+7. Check the output with `scripts/check-output.py` before you return it.
+
+## Approval stop
+
+This skill does not send email or write to a CRM. If the user asks it to, stop first:
+show what would be sent or written and wait for an explicit yes.
 
 ## Output
 
 Weekly capacity, steady state new contacts per week, a four week ramp table, the calendar finish date, and the two options if the date is unacceptable.
+
+## Check the output before you return it
+
+Save the output to a file and run `python3 scripts/check-output.py <file>`. The
+contract it checks is `scripts/output-contract.json`.
+
+- Exit 0, `COMPLETE`: return the output.
+- Exit 2, `INCOMPLETE`: do not present the output as finished. Fill what you can, run
+  the check again, and if parts stay missing, return the output under the heading
+  `Incomplete` with every reason the check printed.
 
 ## Quality bar
 

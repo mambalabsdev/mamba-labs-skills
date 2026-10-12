@@ -1,0 +1,79 @@
+{
+  "sku": "legal-entity-resolution",
+  "tier": "free",
+  "title": "Legal Entity Resolution",
+  "previous_title": null,
+  "one_line": "Resolve a company domain to its registered legal entity, company number and tax identifier.",
+  "description": "Resolve a company domain to its registered legal entity, company number and tax identifier. Use when someone needs the legal name for a contract, is checking whether a company is registered, needs a VAT number, or is doing supplier due diligence.",
+  "paragraph": "The trading name on a website and the registered entity that signs a contract are frequently different, and the gap is where invoicing, tax and diligence problems live. This skill resolves the domain to the register record, validates the tax identifier where it can, and states the jurisdiction rather than assuming one.",
+  "keywords": [
+    "identity",
+    "what is their legal entity",
+    "company registration number",
+    "vat number for this company",
+    "supplier due diligence",
+    "legal name for the contract"
+  ],
+  "family": "identity-enrichment",
+  "packs": [
+    "clay-operator",
+    "agency-delivery"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [
+    "@mambalabsdev/mcp-gtm-suite@1.10.0"
+  ],
+  "mcp_tools": [
+    "resolve_legal_entity"
+  ],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

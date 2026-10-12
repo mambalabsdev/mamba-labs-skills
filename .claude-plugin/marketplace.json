@@ -5,32 +5,219 @@
   },
   "metadata": {
     "description": "Free Mamba Labs skills for signal based GTM workflows",
-    "version": "2.0.0"
+    "version": "2.1.0"
   },
   "plugins": [
+    {
+      "name": "mamba-labs-skills",
+      "description": "Free Mamba Labs agent skills for signal based GTM: ICP, outbound copy, deliverability, Clay, CRM, LinkedIn, SEO and agency operations. 56 skills, each with an output check and an approval stop before any send or write.",
+      "source": "./",
+      "strict": false,
+      "version": "2.1.0",
+      "category": "bundle",
+      "author": {
+        "name": "Mamba Labs",
+        "url": "https://mambabuilt.com"
+      },
+      "homepage": "https://mambabuilt.com/skills",
+      "license": "MIT",
+      "keywords": [
+        "gtm",
+        "sales",
+        "outbound",
+        "cold-email",
+        "clay",
+        "crm",
+        "deliverability",
+        "linkedin",
+        "seo",
+        "agent-skills"
+      ],
+      "skills": [
+        "./skills/agent-readability-audit",
+        "./skills/ai-adoption-signal-reader",
+        "./skills/bounce-and-catchall-policy",
+        "./skills/brand-context-builder",
+        "./skills/cash-runway-snapshot",
+        "./skills/clay-actor-column-wiring",
+        "./skills/clay-conditional-gates",
+        "./skills/clay-cost-audit",
+        "./skills/clay-credit-forecast",
+        "./skills/clay-dedupe-and-merge",
+        "./skills/clay-failure-triage",
+        "./skills/cold-email-structure-checker",
+        "./skills/company-identity-resolution",
+        "./skills/comparison-page-builder",
+        "./skills/contact-classification",
+        "./skills/content-brief-builder",
+        "./skills/crm-hygiene-sweep",
+        "./skills/customer-research-interview",
+        "./skills/directory-submission-plan",
+        "./skills/domain-health-precheck",
+        "./skills/domain-warmup-planner",
+        "./skills/event-presence-prospecting",
+        "./skills/firmographic-enrichment",
+        "./skills/friction-log-to-rules",
+        "./skills/handoff-writer",
+        "./skills/hiring-signal-spotter",
+        "./skills/icp-definition-builder",
+        "./skills/invoice-chaser",
+        "./skills/job-board-keyword-scanner",
+        "./skills/knowledge-write-discipline",
+        "./skills/legal-entity-resolution",
+        "./skills/linkedin-comment-strategy",
+        "./skills/linkedin-post-writer",
+        "./skills/linkedin-profile-optimizer",
+        "./skills/linkedin-url-resolution",
+        "./skills/mamba-gtm-router",
+        "./skills/merge-variable-linter",
+        "./skills/monday-morning-brief",
+        "./skills/objection-handling-library",
+        "./skills/outbound-copy-humanizer",
+        "./skills/outbound-stack-fingerprint",
+        "./skills/partner-sourcing-plan",
+        "./skills/people-finder-recipe",
+        "./skills/positioning-statement",
+        "./skills/public-award-prospecting",
+        "./skills/publishing-cadence-reader",
+        "./skills/results-doc-verifier",
+        "./skills/sales-one-pager",
+        "./skills/sending-capacity-planner",
+        "./skills/sequencer-campaign-config",
+        "./skills/subject-line-lab",
+        "./skills/tech-stack-signal-reader",
+        "./skills/unsubscribe-compliance-check",
+        "./skills/weekly-pipeline-review",
+        "./skills/work-order-writer",
+        "./skills/workplace-program-signal"
+      ],
+      "mcpServers": {
+        "mamba-gtm-suite": {
+          "command": "npx",
+          "args": [
+            "-y",
+            "@mambalabsdev/mcp-gtm-suite@1.10.0"
+          ],
+          "env": {
+            "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
+          }
+        },
+        "mamba-deliverability": {
+          "command": "npx",
+          "args": [
+            "-y",
+            "@mambalabsdev/mcp-domain-deliverability-checker@1.1.1"
+          ],
+          "env": {
+            "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
+          }
+        }
+      },
+      "userConfig": {
+        "APIFY_TOKEN": {
+          "type": "string",
+          "title": "Apify API token",
+          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Get one at https://console.apify.com/account/integrations",
+          "sensitive": true,
+          "required": true
+        }
+      }
+    },
     {
       "name": "agent-readability-audit",
       "description": "Check whether a website can be read and used by AI agents, and fix what blocks them. Use when someone asks about AI search visibility, agent accessibility, structured data, or whether their site works for AI crawlers.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "seo-content",
+      "keywords": [
+        "seo and content",
+        "ai search visibility",
+        "can agents read my site",
+        "structured data audit",
+        "llms txt",
+        "ai crawler accessibility"
+      ],
       "skills": [
         "./skills/agent-readability-audit"
-      ]
+      ],
+      "mcpServers": {
+        "mamba-gtm-suite": {
+          "command": "npx",
+          "args": [
+            "-y",
+            "@mambalabsdev/mcp-gtm-suite@1.10.0"
+          ],
+          "env": {
+            "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
+          }
+        }
+      },
+      "userConfig": {
+        "APIFY_TOKEN": {
+          "type": "string",
+          "title": "Apify API token",
+          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Get one at https://console.apify.com/account/integrations",
+          "sensitive": true,
+          "required": true
+        }
+      }
     },
     {
       "name": "ai-adoption-signal-reader",
       "description": "Detect whether a company has shipped AI features or adopted AI vendors, and read that as a budget and priority signal. Use when someone targets companies adopting AI, wants to know if a prospect is building AI features, or needs an AI readiness read on an account list.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "signal-research",
+      "keywords": [
+        "signals",
+        "are they using ai",
+        "find companies adopting ai",
+        "ai readiness of this account list",
+        "did they ship ai features",
+        "ai vendor detection"
+      ],
       "skills": [
         "./skills/ai-adoption-signal-reader"
-      ]
+      ],
+      "mcpServers": {
+        "mamba-gtm-suite": {
+          "command": "npx",
+          "args": [
+            "-y",
+            "@mambalabsdev/mcp-gtm-suite@1.10.0"
+          ],
+          "env": {
+            "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
+          }
+        }
+      },
+      "userConfig": {
+        "APIFY_TOKEN": {
+          "type": "string",
+          "title": "Apify API token",
+          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Get one at https://console.apify.com/account/integrations",
+          "sensitive": true,
+          "required": true
+        }
+      }
     },
     {
       "name": "bounce-and-catchall-policy",
       "description": "Decide what to do with catch all domains, role addresses and soft bounces before they cost you a domain. Use when verification returns unknown, when someone asks whether to send to catch all addresses, or when bounce rate is creeping up.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "deliverability",
+      "keywords": [
+        "deliverability",
+        "should i send to catch all addresses",
+        "verification returned unknown",
+        "my bounce rate is creeping up",
+        "role addresses",
+        "what do i do with unknown emails"
+      ],
       "skills": [
         "./skills/bounce-and-catchall-policy"
       ]
@@ -40,6 +227,15 @@
       "description": "Interview once and write the shared context files that every other skill reads. Use at the start of any engagement, when skills keep asking the same questions, or when someone wants their AI tools to stop needing re explaining.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "agency-operations",
+      "keywords": [
+        "agency",
+        "set up my context",
+        "start a new engagement",
+        "write my brand and icp files",
+        "bootstrap"
+      ],
       "skills": [
         "./skills/brand-context-builder"
       ]
@@ -49,6 +245,16 @@
       "description": "Work out how many months of cash are left and what actually changes it. Use when someone asks about runway, cash position, whether they can afford a hire, or what happens if a payment is late.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "small-business-ops",
+      "keywords": [
+        "small business",
+        "how much runway do we have",
+        "cash position",
+        "can we afford a hire",
+        "what if a client pays late",
+        "runway calculation"
+      ],
       "skills": [
         "./skills/cash-runway-snapshot"
       ]
@@ -58,6 +264,16 @@
       "description": "Wire an external actor or API into a Clay column so the types survive the round trip. Use when someone wants to call an Apify actor from Clay, add an HTTP API column, pass Clay values into a scraper, or is getting type errors from an external enrichment.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "clay-builds",
+      "keywords": [
+        "clay",
+        "call an apify actor from clay",
+        "add an http api column",
+        "pass clay values to a scraper",
+        "type error from external enrichment",
+        "wire an actor into clay"
+      ],
       "skills": [
         "./skills/clay-actor-column-wiring"
       ]
@@ -67,6 +283,16 @@
       "description": "Write the run conditions that stop expensive Clay columns from firing on rows that will never qualify. Use when someone wants to skip enrichment for non ICP rows, gate a waterfall, add a run condition, or stop paying to enrich junk.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "clay-builds",
+      "keywords": [
+        "clay",
+        "add a run condition",
+        "skip enrichment for non icp rows",
+        "gate this column",
+        "only enrich rows that",
+        "stop paying to enrich junk"
+      ],
       "skills": [
         "./skills/clay-conditional-gates"
       ]
@@ -76,6 +302,16 @@
       "description": "Price a Clay table before it runs and find the columns that are burning credits for no return. Use when someone asks what a Clay build will cost, why their credits are gone, how to cut Clay spend, or wants a run before a full table ramp priced out.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "clay-builds",
+      "keywords": [
+        "clay",
+        "what will this clay table cost",
+        "my clay credits are gone",
+        "how do i cut clay spend",
+        "price this clay build",
+        "credit optimization in clay"
+      ],
       "skills": [
         "./skills/clay-cost-audit"
       ]
@@ -85,6 +321,16 @@
       "description": "Forecast how far a Clay credit balance goes across a month of planned builds, and say which build to cut when it does not reach. Use when someone asks whether they have enough credits, how to plan a month of Clay work, or which campaign to drop on a fixed budget.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "clay-builds",
+      "keywords": [
+        "clay",
+        "do i have enough clay credits",
+        "plan a month of clay work",
+        "which campaign should i drop",
+        "credit burn forecast",
+        "clay capacity planning"
+      ],
       "skills": [
         "./skills/clay-credit-forecast"
       ]
@@ -94,6 +340,16 @@
       "description": "Deduplicate and merge people or company rows across Clay tables without losing enrichment or double counting a person. Use when merging lists, importing a second source into an existing table, deduping a people pool, or deciding which record wins on a conflict.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "clay-builds",
+      "keywords": [
+        "clay",
+        "merge two clay lists",
+        "dedupe my people pool",
+        "import a second source into this table",
+        "which record wins",
+        "am i double counting people"
+      ],
       "skills": [
         "./skills/clay-dedupe-and-merge"
       ]
@@ -103,6 +359,15 @@
       "description": "Diagnose a Clay column that returns null, zero rows, or the wrong shape, by symptom rather than by guesswork. Use when a Clay enrichment stopped working, a column is empty for rows that clearly have data, a pipeline that worked last week is now blank, or someone asks why their Clay table is broken.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "clay-builds",
+      "keywords": [
+        "clay",
+        "my clay column is empty",
+        "clay enrichment returns null",
+        "find people returned zero rows",
+        "why is my clay table broken"
+      ],
       "skills": [
         "./skills/clay-failure-triage"
       ]
@@ -112,6 +377,16 @@
       "description": "Audit a cold email draft against a seven point outbound framework and return a pass or fail scorecard with a rewritten version. Use whenever someone pastes a cold email and asks whether it is good, whether it will get replies, or asks for a review of outreach copy.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "outbound-email",
+      "keywords": [
+        "outbound",
+        "review this cold email",
+        "is this email good",
+        "will this get replies",
+        "audit my outreach copy",
+        "fix this cold email"
+      ],
       "skills": [
         "./skills/cold-email-structure-checker"
       ]
@@ -121,15 +396,56 @@
       "description": "Resolve a messy company name to the right domain and canonical record, and say how confident the match is. Use when a list has company names but no domains, when names are ambiguous, or when enrichment is matching the wrong company.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "identity-enrichment",
+      "keywords": [
+        "identity",
+        "i have company names but no domains",
+        "the enrichment matched the wrong company",
+        "resolve these company names",
+        "which domain is this company",
+        "ambiguous company names"
+      ],
       "skills": [
         "./skills/company-identity-resolution"
-      ]
+      ],
+      "mcpServers": {
+        "mamba-gtm-suite": {
+          "command": "npx",
+          "args": [
+            "-y",
+            "@mambalabsdev/mcp-gtm-suite@1.10.0"
+          ],
+          "env": {
+            "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
+          }
+        }
+      },
+      "userConfig": {
+        "APIFY_TOKEN": {
+          "type": "string",
+          "title": "Apify API token",
+          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Get one at https://console.apify.com/account/integrations",
+          "sensitive": true,
+          "required": true
+        }
+      }
     },
     {
       "name": "comparison-page-builder",
       "description": "Write a comparison or alternatives page that a reader trusts and a competitor cannot get taken down. Use when someone needs a versus page, an alternatives page, or wants to rank for competitor comparison queries.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "seo-content",
+      "keywords": [
+        "seo and content",
+        "write a versus page",
+        "alternatives page",
+        "comparison content",
+        "rank for competitor queries",
+        "compare us to a competitor"
+      ],
       "skills": [
         "./skills/comparison-page-builder"
       ]
@@ -139,15 +455,56 @@
       "description": "Classify contacts by department, seniority and role from their job title, and route them to the right persona. Use when a contact list has messy titles, when routing by persona, or when deciding who in a company to actually contact.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "identity-enrichment",
+      "keywords": [
+        "identity",
+        "classify these job titles",
+        "route contacts by persona",
+        "who should i contact at this company",
+        "messy title data",
+        "seniority filtering"
+      ],
       "skills": [
         "./skills/contact-classification"
-      ]
+      ],
+      "mcpServers": {
+        "mamba-gtm-suite": {
+          "command": "npx",
+          "args": [
+            "-y",
+            "@mambalabsdev/mcp-gtm-suite@1.10.0"
+          ],
+          "env": {
+            "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
+          }
+        }
+      },
+      "userConfig": {
+        "APIFY_TOKEN": {
+          "type": "string",
+          "title": "Apify API token",
+          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Get one at https://console.apify.com/account/integrations",
+          "sensitive": true,
+          "required": true
+        }
+      }
     },
     {
       "name": "content-brief-builder",
       "description": "Write a content brief a writer can execute without inventing the substance, including where the non generic part comes from. Use when briefing a writer, planning an article, or when published content keeps reading like everything else.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "seo-content",
+      "keywords": [
+        "seo and content",
+        "brief a writer",
+        "plan an article",
+        "our content reads generic",
+        "content brief",
+        "what should this post cover"
+      ],
       "skills": [
         "./skills/content-brief-builder"
       ]
@@ -157,6 +514,16 @@
       "description": "Run a recurring cleanup on new and changed CRM records so the database stops degrading between audits. Use when someone wants ongoing data hygiene, has just finished a cleanup and wants it to hold, or needs a weekly CRM routine.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "crm-operations",
+      "keywords": [
+        "crm",
+        "weekly crm cleanup",
+        "keep the crm clean",
+        "data hygiene routine",
+        "we cleaned it and it is dirty again",
+        "new record hygiene"
+      ],
       "skills": [
         "./skills/crm-hygiene-sweep"
       ]
@@ -166,6 +533,16 @@
       "description": "Run customer interviews that produce usable language instead of agreement, and turn the transcripts into a sharper ICP. Use when someone wants to talk to customers, needs messaging research, or does not know why their best customers bought.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "sales-enablement",
+      "keywords": [
+        "enablement",
+        "talk to my customers",
+        "messaging research",
+        "why do people buy from us",
+        "customer interviews",
+        "voice of customer"
+      ],
       "skills": [
         "./skills/customer-research-interview"
       ]
@@ -175,6 +552,16 @@
       "description": "Pick the directories and marketplaces worth listing on, and prepare one set of assets that fits all of them. Use when launching a tool, when someone asks where to list a product, or when directory submissions are eating time for no return.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "seo-content",
+      "keywords": [
+        "seo and content",
+        "where should i list my product",
+        "directory submissions",
+        "launch listings",
+        "submit to directories",
+        "marketplace listings"
+      ],
       "skills": [
         "./skills/directory-submission-plan"
       ]
@@ -184,15 +571,56 @@
       "description": "Check whether one sending domain is safe for cold outreach by reading its SPF, DKIM and DMARC records and its blacklist status. Use when someone asks about email deliverability, domain health, SPF or DKIM or DMARC setup, whether a domain is blacklisted, or whether they will land in spam.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "deliverability",
+      "keywords": [
+        "deliverability",
+        "check my domain",
+        "am i going to land in spam",
+        "is this domain blacklisted",
+        "spf dkim dmarc setup",
+        "domain health"
+      ],
       "skills": [
         "./skills/domain-health-precheck"
-      ]
+      ],
+      "mcpServers": {
+        "mamba-deliverability": {
+          "command": "npx",
+          "args": [
+            "-y",
+            "@mambalabsdev/mcp-domain-deliverability-checker@1.1.1"
+          ],
+          "env": {
+            "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
+          }
+        }
+      },
+      "userConfig": {
+        "APIFY_TOKEN": {
+          "type": "string",
+          "title": "Apify API token",
+          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Get one at https://console.apify.com/account/integrations",
+          "sensitive": true,
+          "required": true
+        }
+      }
     },
     {
       "name": "domain-warmup-planner",
       "description": "Plan the warmup ramp for new sending domains and inboxes so real campaign volume starts on the date it is needed. Use when someone bought new domains, is adding inboxes, asks how long warmup takes, or needs to know when they can start sending for real.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "deliverability",
+      "keywords": [
+        "deliverability",
+        "i bought new domains",
+        "how long does warmup take",
+        "when can i send for real",
+        "adding inboxes",
+        "warmup schedule"
+      ],
       "skills": [
         "./skills/domain-warmup-planner"
       ]
@@ -202,24 +630,96 @@
       "description": "Find which conferences a company sponsors, exhibits at, or speaks at, and use that as a budget and audience signal. Use when someone wants event based prospecting, wants to know if a prospect will be at a show, or is planning outreach around a conference.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "signal-research",
+      "keywords": [
+        "signals",
+        "which conferences do they sponsor",
+        "event based prospecting",
+        "will this company be at the show",
+        "conference outreach",
+        "who exhibits at this event"
+      ],
       "skills": [
         "./skills/event-presence-prospecting"
-      ]
+      ],
+      "mcpServers": {
+        "mamba-gtm-suite": {
+          "command": "npx",
+          "args": [
+            "-y",
+            "@mambalabsdev/mcp-gtm-suite@1.10.0"
+          ],
+          "env": {
+            "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
+          }
+        }
+      },
+      "userConfig": {
+        "APIFY_TOKEN": {
+          "type": "string",
+          "title": "Apify API token",
+          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Get one at https://console.apify.com/account/integrations",
+          "sensitive": true,
+          "required": true
+        }
+      }
     },
     {
       "name": "firmographic-enrichment",
       "description": "Fill headcount, industry, headquarters and revenue band on a company list, and report honestly which fields actually filled. Use when a list needs firmographics, when qualification needs company size, or when someone asks how complete their company data is.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "identity-enrichment",
+      "keywords": [
+        "identity",
+        "enrich these companies",
+        "add headcount and industry",
+        "how complete is my company data",
+        "company size for qualification",
+        "firmographics"
+      ],
       "skills": [
         "./skills/firmographic-enrichment"
-      ]
+      ],
+      "mcpServers": {
+        "mamba-gtm-suite": {
+          "command": "npx",
+          "args": [
+            "-y",
+            "@mambalabsdev/mcp-gtm-suite@1.10.0"
+          ],
+          "env": {
+            "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
+          }
+        }
+      },
+      "userConfig": {
+        "APIFY_TOKEN": {
+          "type": "string",
+          "title": "Apify API token",
+          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Get one at https://console.apify.com/account/integrations",
+          "sensitive": true,
+          "required": true
+        }
+      }
     },
     {
       "name": "friction-log-to-rules",
       "description": "Turn the things that went wrong in a working session into standing rules that stop them recurring. Use at the end of a project, after a mistake, during a retrospective, or when the same problem keeps happening.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "agency-operations",
+      "keywords": [
+        "agency",
+        "retrospective",
+        "this keeps happening",
+        "write up what went wrong",
+        "friction log",
+        "turn lessons into rules"
+      ],
       "skills": [
         "./skills/friction-log-to-rules"
       ]
@@ -229,6 +729,16 @@
       "description": "Write the handoff that lets the next person or the next session continue without re deriving anything. Use when ending a working session, handing a project to someone else, or when context is about to be lost.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "knowledge-ops",
+      "keywords": [
+        "knowledge",
+        "write a handoff",
+        "i am handing this over",
+        "end of session summary",
+        "the next person needs to pick this up",
+        "context is about to be lost"
+      ],
       "skills": [
         "./skills/handoff-writer"
       ]
@@ -238,15 +748,55 @@
       "description": "Read a company's open roles as a buying signal and turn them into an outreach angle. Use when someone asks about hiring signals, whether a company is investing in sales or growth, job board intent, or wants to research a prospect before outreach.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "signal-research",
+      "keywords": [
+        "signals",
+        "is this company hiring",
+        "hiring signals for this domain",
+        "are they investing in sales",
+        "job board intent"
+      ],
       "skills": [
         "./skills/hiring-signal-spotter"
-      ]
+      ],
+      "mcpServers": {
+        "mamba-gtm-suite": {
+          "command": "npx",
+          "args": [
+            "-y",
+            "@mambalabsdev/mcp-gtm-suite@1.10.0"
+          ],
+          "env": {
+            "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
+          }
+        }
+      },
+      "userConfig": {
+        "APIFY_TOKEN": {
+          "type": "string",
+          "title": "Apify API token",
+          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Get one at https://console.apify.com/account/integrations",
+          "sensitive": true,
+          "required": true
+        }
+      }
     },
     {
       "name": "icp-definition-builder",
       "description": "Turn a description of a business into a structured ideal customer profile with firmographic criteria, signals, pain indicators and exclusion rules. Use when someone asks who to sell to, wants to define their ICP, build targeting criteria, or segment a market.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "identity-enrichment",
+      "keywords": [
+        "identity",
+        "who is my ideal customer",
+        "define my icp",
+        "build targeting criteria",
+        "help me segment my market",
+        "set up account filters"
+      ],
       "skills": [
         "./skills/icp-definition-builder"
       ]
@@ -256,6 +806,16 @@
       "description": "Chase overdue invoices on a fixed escalation ladder that gets paid without damaging the relationship. Use when invoices are overdue, when someone dreads chasing payment, or when they want a repeatable collections routine.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "small-business-ops",
+      "keywords": [
+        "small business",
+        "chase overdue invoices",
+        "this client has not paid",
+        "collections routine",
+        "payment reminder",
+        "how do i ask for payment"
+      ],
       "skills": [
         "./skills/invoice-chaser"
       ]
@@ -265,15 +825,55 @@
       "description": "Scan a company's job postings for the specific words that indicate a problem your product solves. Use when someone wants to find companies mentioning a tool, a process, or a pain in their job ads, or wants keyword based intent rather than role based intent.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "signal-research",
+      "keywords": [
+        "signals",
+        "keyword intent from job postings",
+        "find companies building this function",
+        "scan job descriptions for a phrase",
+        "job ad intent"
+      ],
       "skills": [
         "./skills/job-board-keyword-scanner"
-      ]
+      ],
+      "mcpServers": {
+        "mamba-gtm-suite": {
+          "command": "npx",
+          "args": [
+            "-y",
+            "@mambalabsdev/mcp-gtm-suite@1.10.0"
+          ],
+          "env": {
+            "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
+          }
+        }
+      },
+      "userConfig": {
+        "APIFY_TOKEN": {
+          "type": "string",
+          "title": "Apify API token",
+          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Get one at https://console.apify.com/account/integrations",
+          "sensitive": true,
+          "required": true
+        }
+      }
     },
     {
       "name": "knowledge-write-discipline",
       "description": "Write to a knowledge base so the document is findable later and provably stored. Use when saving a document, writing up a result, or when notes keep getting lost or duplicated.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "knowledge-ops",
+      "keywords": [
+        "knowledge",
+        "save this to the knowledge base",
+        "write up this result",
+        "my notes keep getting lost",
+        "document this properly",
+        "where should this go"
+      ],
       "skills": [
         "./skills/knowledge-write-discipline"
       ]
@@ -283,15 +883,56 @@
       "description": "Resolve a company domain to its registered legal entity, company number and tax identifier. Use when someone needs the legal name for a contract, is checking whether a company is registered, needs a VAT number, or is doing supplier due diligence.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "identity-enrichment",
+      "keywords": [
+        "identity",
+        "what is their legal entity",
+        "company registration number",
+        "vat number for this company",
+        "supplier due diligence",
+        "legal name for the contract"
+      ],
       "skills": [
         "./skills/legal-entity-resolution"
-      ]
+      ],
+      "mcpServers": {
+        "mamba-gtm-suite": {
+          "command": "npx",
+          "args": [
+            "-y",
+            "@mambalabsdev/mcp-gtm-suite@1.10.0"
+          ],
+          "env": {
+            "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
+          }
+        }
+      },
+      "userConfig": {
+        "APIFY_TOKEN": {
+          "type": "string",
+          "title": "Apify API token",
+          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Get one at https://console.apify.com/account/integrations",
+          "sensitive": true,
+          "required": true
+        }
+      }
     },
     {
       "name": "linkedin-comment-strategy",
       "description": "Decide which posts to comment on and write comments that do something other than agree. Use when someone wants to build presence through commenting, wants to be visible to a target account, or asks what to say on someone's post.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "linkedin",
+      "keywords": [
+        "linkedin",
+        "what should i comment on",
+        "build presence through commenting",
+        "be visible to this account",
+        "comment strategy",
+        "reply to this post"
+      ],
       "skills": [
         "./skills/linkedin-comment-strategy"
       ]
@@ -301,6 +942,16 @@
       "description": "Write a LinkedIn post that sounds like the person and earns a reason to exist. Use when someone needs a post, wants to build a publishing cadence, has a result to share, or asks for content ideas for their profile.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "linkedin",
+      "keywords": [
+        "linkedin",
+        "write a linkedin post",
+        "post idea for my profile",
+        "i have a result to share",
+        "publishing cadence",
+        "content for linkedin"
+      ],
       "skills": [
         "./skills/linkedin-post-writer"
       ]
@@ -310,6 +961,16 @@
       "description": "Rewrite a profile so it converts the visits that outbound and commenting send to it. Use when someone's profile is not converting, before starting outbound, or when someone asks how to improve their LinkedIn profile.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "linkedin",
+      "keywords": [
+        "linkedin",
+        "improve my linkedin profile",
+        "my profile is not converting",
+        "profile before i start outbound",
+        "rewrite my headline",
+        "optimize my about section"
+      ],
       "skills": [
         "./skills/linkedin-profile-optimizer"
       ]
@@ -319,15 +980,56 @@
       "description": "Turn a list of company domains into company profile URLs, and fill the gaps a native enrichment leaves behind. Use when a profile URL column has holes, when someone needs profile URLs from domains, or when building a social enrichment pipeline.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "identity-enrichment",
+      "keywords": [
+        "identity",
+        "find linkedin urls from domains",
+        "my linkedin column has gaps",
+        "domain to linkedin",
+        "enrich with social data",
+        "resolve company profiles"
+      ],
       "skills": [
         "./skills/linkedin-url-resolution"
-      ]
+      ],
+      "mcpServers": {
+        "mamba-gtm-suite": {
+          "command": "npx",
+          "args": [
+            "-y",
+            "@mambalabsdev/mcp-gtm-suite@1.10.0"
+          ],
+          "env": {
+            "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
+          }
+        }
+      },
+      "userConfig": {
+        "APIFY_TOKEN": {
+          "type": "string",
+          "title": "Apify API token",
+          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Get one at https://console.apify.com/account/integrations",
+          "sensitive": true,
+          "required": true
+        }
+      }
     },
     {
       "name": "mamba-gtm-router",
       "description": "Route a plain language go to market request to the right skill, and name the ones that would help but are not installed. Use when someone does not know which skill to use, asks a broad GTM question, or wants to know what is available.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "agency-operations",
+      "keywords": [
+        "agency",
+        "which skill should i use",
+        "what can you help with",
+        "i need help with outbound",
+        "what skills do i have",
+        "where do i start"
+      ],
       "skills": [
         "./skills/mamba-gtm-router"
       ]
@@ -337,6 +1039,16 @@
       "description": "Check that every merge variable in a sequence resolves against the fields actually present on the rows, before the campaign sends. Use when someone is about to launch, has seen blank gaps in a sent email, or wants their personalization tokens verified.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "outbound-email",
+      "keywords": [
+        "outbound",
+        "check my merge variables",
+        "blank gaps in my sent email",
+        "verify personalization tokens",
+        "about to launch check the copy",
+        "why is my email missing a word"
+      ],
       "skills": [
         "./skills/merge-variable-linter"
       ]
@@ -346,6 +1058,16 @@
       "description": "Produce the weekly operating brief: what moved, what is at risk, and the three things that need a decision. Use when someone wants a Monday update, a weekly business summary, or a recurring brief across their tools.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "small-business-ops",
+      "keywords": [
+        "small business",
+        "monday morning brief",
+        "weekly business summary",
+        "what happened last week",
+        "weekly update across my tools",
+        "recurring operating brief"
+      ],
       "skills": [
         "./skills/monday-morning-brief"
       ]
@@ -355,6 +1077,16 @@
       "description": "Build an objection library from the replies you actually received, with a tested response per objection. Use when the same objections keep coming back, when onboarding a new rep, or when someone asks how to handle a specific pushback.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "sales-enablement",
+      "keywords": [
+        "enablement",
+        "handle this objection",
+        "we keep hearing the same pushback",
+        "onboard a new rep",
+        "objection library",
+        "what do i say when they say"
+      ],
       "skills": [
         "./skills/objection-handling-library"
       ]
@@ -364,6 +1096,16 @@
       "description": "Rewrite outbound copy so it reads like a person wrote it, removing the tells that mark a message as generated. Use when copy sounds robotic, when a draft is full of hedges and stock phrases, or when someone wants their outreach to sound like them.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "outbound-email",
+      "keywords": [
+        "outbound",
+        "this sounds robotic",
+        "make this sound human",
+        "too much ai voice",
+        "rewrite in my voice",
+        "humanize this copy"
+      ],
       "skills": [
         "./skills/outbound-copy-humanizer"
       ]
@@ -373,24 +1115,96 @@
       "description": "Detect whether a company runs cold outbound, which tools it sends with, and how many sending domains it operates. Use when selling to sales teams, sizing a competitor's outbound, or qualifying whether a prospect already runs the motion you sell into.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "signal-research",
+      "keywords": [
+        "signals",
+        "do they run cold outbound",
+        "what sequencer do they use",
+        "how many sending domains",
+        "size a competitors outbound",
+        "qualify an outbound buyer"
+      ],
       "skills": [
         "./skills/outbound-stack-fingerprint"
-      ]
+      ],
+      "mcpServers": {
+        "mamba-gtm-suite": {
+          "command": "npx",
+          "args": [
+            "-y",
+            "@mambalabsdev/mcp-gtm-suite@1.10.0"
+          ],
+          "env": {
+            "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
+          }
+        }
+      },
+      "userConfig": {
+        "APIFY_TOKEN": {
+          "type": "string",
+          "title": "Apify API token",
+          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Get one at https://console.apify.com/account/integrations",
+          "sensitive": true,
+          "required": true
+        }
+      }
     },
     {
       "name": "partner-sourcing-plan",
       "description": "Find the partners whose customers are your buyers, and structure the first conversation so it produces something. Use when someone wants referral partners, co marketing, channel relationships, or a warmer route into a market.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "agency-operations",
+      "keywords": [
+        "agency",
+        "find referral partners",
+        "co marketing",
+        "channel partnerships",
+        "who should we partner with",
+        "warm route into a market"
+      ],
       "skills": [
         "./skills/partner-sourcing-plan"
-      ]
+      ],
+      "mcpServers": {
+        "mamba-gtm-suite": {
+          "command": "npx",
+          "args": [
+            "-y",
+            "@mambalabsdev/mcp-gtm-suite@1.10.0"
+          ],
+          "env": {
+            "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
+          }
+        }
+      },
+      "userConfig": {
+        "APIFY_TOKEN": {
+          "type": "string",
+          "title": "Apify API token",
+          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Get one at https://console.apify.com/account/integrations",
+          "sensitive": true,
+          "required": true
+        }
+      }
     },
     {
       "name": "people-finder-recipe",
       "description": "Find the right people at a list of companies without pulling a hundred irrelevant contacts per account. Use when someone needs contacts at target accounts, wants to cap contacts per company, or is building a people list from a company list.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "identity-enrichment",
+      "keywords": [
+        "identity",
+        "find contacts at these companies",
+        "who works at this company",
+        "build a people list from company list",
+        "cap contacts per account",
+        "find the buyer"
+      ],
       "skills": [
         "./skills/people-finder-recipe"
       ]
@@ -400,6 +1214,16 @@
       "description": "Write a positioning statement that names the real alternative and survives contact with a sales call. Use when messaging is vague, when a new product needs positioning, or when nobody can explain what the company does in one sentence.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "sales-enablement",
+      "keywords": [
+        "enablement",
+        "our messaging is vague",
+        "position this product",
+        "what do we actually do",
+        "write our positioning",
+        "one sentence pitch"
+      ],
       "skills": [
         "./skills/positioning-statement"
       ]
@@ -409,24 +1233,96 @@
       "description": "Find companies that just won a government contract or public grant and reach them while the money is new. Use when someone wants to target contract winners, grant recipients, or public sector suppliers.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "signal-research",
+      "keywords": [
+        "signals",
+        "who won government contracts",
+        "grant recipients",
+        "public sector suppliers",
+        "contract award prospecting",
+        "federal award list"
+      ],
       "skills": [
         "./skills/public-award-prospecting"
-      ]
+      ],
+      "mcpServers": {
+        "mamba-gtm-suite": {
+          "command": "npx",
+          "args": [
+            "-y",
+            "@mambalabsdev/mcp-gtm-suite@1.10.0"
+          ],
+          "env": {
+            "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
+          }
+        }
+      },
+      "userConfig": {
+        "APIFY_TOKEN": {
+          "type": "string",
+          "title": "Apify API token",
+          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Get one at https://console.apify.com/account/integrations",
+          "sensitive": true,
+          "required": true
+        }
+      }
     },
     {
       "name": "publishing-cadence-reader",
       "description": "Measure how often a company actually publishes and read that as a content investment signal. Use when someone wants to know if a company invests in content, is benchmarking against competitors, or is qualifying a content marketing buyer.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "seo-content",
+      "keywords": [
+        "seo and content",
+        "how often do they publish",
+        "content investment signal",
+        "benchmark competitor publishing",
+        "qualify a content buyer",
+        "did their blog stop"
+      ],
       "skills": [
         "./skills/publishing-cadence-reader"
-      ]
+      ],
+      "mcpServers": {
+        "mamba-gtm-suite": {
+          "command": "npx",
+          "args": [
+            "-y",
+            "@mambalabsdev/mcp-gtm-suite@1.10.0"
+          ],
+          "env": {
+            "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
+          }
+        }
+      },
+      "userConfig": {
+        "APIFY_TOKEN": {
+          "type": "string",
+          "title": "Apify API token",
+          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Get one at https://console.apify.com/account/integrations",
+          "sensitive": true,
+          "required": true
+        }
+      }
     },
     {
       "name": "results-doc-verifier",
       "description": "Check a results write up for claims that were asserted rather than verified, before anyone acts on it. Use when reviewing a report, before sending results to a client, or when a document says something worked.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "knowledge-ops",
+      "keywords": [
+        "knowledge",
+        "review this report",
+        "check these results before i send them",
+        "did this actually work",
+        "verify this write up",
+        "results review"
+      ],
       "skills": [
         "./skills/results-doc-verifier"
       ]
@@ -436,6 +1332,16 @@
       "description": "Write the one page document a prospect forwards internally to the person who has to approve. Use when a deal needs an internal champion, when someone asks for a leave behind, or when a prospect says they need to check with someone.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "sales-enablement",
+      "keywords": [
+        "enablement",
+        "write a one pager",
+        "they need to check with someone",
+        "leave behind for the meeting",
+        "our champion needs something to forward",
+        "sales collateral"
+      ],
       "skills": [
         "./skills/sales-one-pager"
       ]
@@ -445,6 +1351,16 @@
       "description": "Work out how many contacts a set of sending accounts can actually reach per week, and how long a list will take to work through. Use when someone asks how many emails they can send, how many inboxes they need, how long a campaign will run, or whether to buy more domains.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "outbound-email",
+      "keywords": [
+        "outbound",
+        "how many emails can i send",
+        "how many inboxes do i need",
+        "how long will this campaign take",
+        "should i buy more domains",
+        "sending capacity"
+      ],
       "skills": [
         "./skills/sending-capacity-planner"
       ]
@@ -454,15 +1370,56 @@
       "description": "Configure a sending platform campaign correctly the first time: schedule, tracking, limits, timezone and the fields that silently reset. Use when creating a campaign in a sequencer, when settings appear not to save, or when a campaign is sending at the wrong time.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "outbound-email",
+      "keywords": [
+        "outbound",
+        "set up a campaign in my sequencer",
+        "my campaign settings did not save",
+        "sending at the wrong time",
+        "configure tracking and limits",
+        "campaign schedule"
+      ],
       "skills": [
         "./skills/sequencer-campaign-config"
-      ]
+      ],
+      "mcpServers": {
+        "mamba-gtm-suite": {
+          "command": "npx",
+          "args": [
+            "-y",
+            "@mambalabsdev/mcp-gtm-suite@1.10.0"
+          ],
+          "env": {
+            "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
+          }
+        }
+      },
+      "userConfig": {
+        "APIFY_TOKEN": {
+          "type": "string",
+          "title": "Apify API token",
+          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Get one at https://console.apify.com/account/integrations",
+          "sensitive": true,
+          "required": true
+        }
+      }
     },
     {
       "name": "subject-line-lab",
       "description": "Generate and screen cold email subject lines against truncation, spam triggers and the preview text they create. Use when someone needs subject lines, has low open rates, or wants to test subject variants.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "outbound-email",
+      "keywords": [
+        "outbound",
+        "write subject lines",
+        "my open rates are low",
+        "test subject variants",
+        "improve this subject line",
+        "subject line ideas"
+      ],
       "skills": [
         "./skills/subject-line-lab"
       ]
@@ -472,15 +1429,56 @@
       "description": "Detect which tools a company runs from its own website and turn the stack into a qualification and an angle. Use when someone wants to know what CRM or sequencer or analytics a company uses, wants to find companies on a competitor, or wants tech stack based targeting.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "signal-research",
+      "keywords": [
+        "signals",
+        "what crm do they use",
+        "find companies using this tool",
+        "detect their tech stack",
+        "competitor displacement targeting",
+        "what analytics are they running"
+      ],
       "skills": [
         "./skills/tech-stack-signal-reader"
-      ]
+      ],
+      "mcpServers": {
+        "mamba-gtm-suite": {
+          "command": "npx",
+          "args": [
+            "-y",
+            "@mambalabsdev/mcp-gtm-suite@1.10.0"
+          ],
+          "env": {
+            "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
+          }
+        }
+      },
+      "userConfig": {
+        "APIFY_TOKEN": {
+          "type": "string",
+          "title": "Apify API token",
+          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Get one at https://console.apify.com/account/integrations",
+          "sensitive": true,
+          "required": true
+        }
+      }
     },
     {
       "name": "unsubscribe-compliance-check",
       "description": "Check that outbound campaigns carry a working unsubscribe path and that opt outs land somewhere that actually stops the next send. Use before launching, during a compliance review, or when someone asks what an outbound email legally needs.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "deliverability",
+      "keywords": [
+        "deliverability",
+        "do my emails need an unsubscribe",
+        "compliance review of outbound",
+        "test my opt out",
+        "unsubscribe handling",
+        "what does an outbound email legally need"
+      ],
       "skills": [
         "./skills/unsubscribe-compliance-check"
       ]
@@ -490,6 +1488,16 @@
       "description": "Run a weekly pipeline review that finds the deals that are quietly dying rather than admiring the big ones. Use for a weekly sales review, forecasting, or when someone asks which deals to focus on this week.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "small-business-ops",
+      "keywords": [
+        "small business",
+        "weekly pipeline review",
+        "which deals should i focus on",
+        "forecast this week",
+        "sales review agenda",
+        "what is stuck"
+      ],
       "skills": [
         "./skills/weekly-pipeline-review"
       ]
@@ -499,6 +1507,16 @@
       "description": "Write a work order an agent or a contractor can execute end to end without asking a question. Use when delegating a task, briefing an agent, writing a spec, or when work keeps coming back wrong.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "agency-operations",
+      "keywords": [
+        "agency",
+        "write a work order",
+        "brief this task",
+        "delegate this properly",
+        "the work keeps coming back wrong",
+        "write a spec for an agent"
+      ],
       "skills": [
         "./skills/work-order-writer"
       ]
@@ -508,6 +1526,16 @@
       "description": "Detect which workplace programs and benefits a company runs, as a signal for anyone selling into people operations, benefits or internal communications. Use when targeting HR buyers, checking benefits maturity, or looking for companies with or without a specific program.",
       "source": "./",
       "strict": false,
+      "version": "2.1.0",
+      "category": "signal-research",
+      "keywords": [
+        "signals",
+        "what benefits does this company offer",
+        "hr buyer targeting",
+        "benefits maturity check",
+        "do they have this program",
+        "people operations prospecting"
+      ],
       "skills": [
         "./skills/workplace-program-signal"
       ]

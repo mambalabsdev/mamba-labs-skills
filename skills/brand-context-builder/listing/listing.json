@@ -1,0 +1,81 @@
+{
+  "sku": "brand-context-builder",
+  "tier": "free",
+  "title": "Brand Context Builder",
+  "previous_title": null,
+  "one_line": "Interview once and write the shared context files that every other skill reads.",
+  "description": "Interview once and write the shared context files that every other skill reads. Use at the start of any engagement, when skills keep asking the same questions, or when someone wants their AI tools to stop needing re explaining.",
+  "paragraph": "Every skill in this catalog reads three files at the project root before it does anything: BRAND.md, ICP.md and VOICE.md. This skill runs the interview that produces them. It is the highest leverage twenty minutes in the whole catalog, because after it every other skill starts from a warm start instead of a questionnaire.",
+  "keywords": [
+    "agency",
+    "set up my context",
+    "start a new engagement",
+    "write my brand and icp files",
+    "bootstrap"
+  ],
+  "family": "agency-operations",
+  "packs": [
+    "cold-email-system",
+    "clay-operator",
+    "signal-based-selling",
+    "linkedin-authority",
+    "seo-content-engine",
+    "agency-delivery",
+    "small-business-operations",
+    "deliverability",
+    "crm-operations-pack"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

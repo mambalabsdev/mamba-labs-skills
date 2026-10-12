@@ -35,15 +35,15 @@ Every free skill sits on a 30 day review cycle. Fixes and improvements ship as r
 
 These encode the system rather than the single task. They are not in this repo.
 
-| Skill | What it does |
-| --- | --- |
-| `listing-page-optimizer` | Optimize a marketplace or directory listing so it is found in the marketplace search and converts the visit into a first run |
-| `programmatic-seo-planner` | Plan a programmatic page set that has something on every page worth reading, and a data source that keeps it current |
-| `first-party-data-post` | Turn data you already have into a study nobody else can publish, and get every downstream asset out of one analysis |
+| Skill | Price | What it does |
+| --- | --- | --- |
+| `listing-page-optimizer` | 7.99 USD | Optimize a marketplace or directory listing so it is found in the marketplace search and converts the visit into a first run |
+| `programmatic-seo-planner` | 5.99 USD | Plan a programmatic page set that has something on every page worth reading, and a data source that keeps it current |
+| `first-party-data-post` | 5.99 USD | Turn data you already have into a study nobody else can publish, and get every downstream asset out of one analysis |
 
 Most premium skills are on a weekly review cycle. Fixes and improvements ship as updates, and buyers receive release notes by email.
 
-The full pack: https://mambabuilt.com/skills
+The full pack, every premium skill above plus the free ones: 9.99 USD at https://mambabuilt.com/store
 
 ## Shared context
 

@@ -3,12 +3,16 @@ name: partner-sourcing-plan
 description: |
   Find the partners whose customers are your buyers, and structure the first conversation so it produces something. Use when someone wants referral partners, co marketing, channel relationships, or a warmer route into a market.
 license: MIT
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+tags: [agency_delivery, agency_operations]
 metadata:
-  category: agency-operations
-  tags: [agency_delivery, agency_operations]
-compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 2.0.0
+  title: "Partner Sourcing Plan"
+  category: "agency-operations"
+  tags: "agency_delivery, agency_operations"
+  keywords: "agency, find referral partners, co marketing, channel partnerships, who should we partner with, warm route into a market"
+  version: "2.1.0"
 ---
+
 # Partner Sourcing Plan
 
 ## What this does
@@ -40,14 +44,25 @@ use them instead of asking the user to repeat themselves:
 If none exist, do the work from what the user gives you, then offer to write the
 missing file so the next skill in the pack starts warmer.
 
-## Live data
+## Tool connection
 
 Overlap is detected from the tools your customers already run and the vendors present on their sites, so the partner list comes from evidence rather than from a brainstorm.
 
-- **gtm-tech-stack-signal-scraper**: the adjacent tools your customers already run
-  Store page: https://apify.com/mambalabs/gtm-tech-stack-signal-scraper
-- **company-social-presence-mapper**: the partner's reach and audience
-  Store page: https://apify.com/mambalabs/company-social-presence-mapper
+This skill calls live data through the Mamba Labs MCP server, which runs the
+actors on Apify with your own Apify token (https://console.apify.com/account/integrations).
+
+- Installed as a plugin: the server is already wired, and the plugin asks for the token once.
+- Installed by hand: copy `.mcp.json` from this folder into your project root and set
+  `APIFY_TOKEN` in your environment, or run:
+
+```
+claude mcp add mamba-gtm-suite -e APIFY_TOKEN=<your token> -- npx -y @mambalabsdev/mcp-gtm-suite@1.10.0
+```
+
+| Actor | MCP tool | Used for | Store page |
+| --- | --- | --- | --- |
+| GTM Tech Stack Signal Enrichment | `detect_gtm_tech_stack` | the adjacent tools your customers already run | https://apify.com/mambalabs/gtm-tech-stack-signal-scraper |
+| Company Social Presence Mapper | `map_company_social_presence` | the partner's reach and audience | https://apify.com/mambalabs/company-social-presence-mapper |
 
 Runnable example input:
 
@@ -62,6 +77,14 @@ Runnable example input:
 }
 ```
 
+**Cost line.** Before any live call, state how many calls you plan and which actors
+they bill. After the run, report the calls made, the calls that failed, and the Apify
+usage where the tool reports it. Each actor bills the user's own Apify account at its
+Store price.
+
+**No token, no live data.** If no Apify token is available, say so and stop the live
+steps. Never fill a live section from memory and present it as live.
+
 ## Method
 
 1. Detect the overlap. Look at what your existing customers already use and who already serves them adjacent to your offer. That set is the partner list and it is evidence rather than a guess.
@@ -71,10 +94,26 @@ Runnable example input:
 5. Set the measurement: what a successful test looks like in referrals or meetings, and by when.
 6. Cap the number of relationships at what can be serviced. An unserviced partner relationship is worse than none because it consumed the introduction.
 7. Write down what happens if the test produces nothing, so the relationship ends cleanly rather than lingering.
+8. Check the output with `scripts/check-output.py` before you return it.
+
+## Approval stop
+
+This skill does not send email or write to a CRM. If the user asks it to, stop first:
+show what would be sent or written and wait for an explicit yes.
 
 ## Output
 
 The detected partner list ranked by overlap and incentive, what you give per partner, the reciprocal test with a date, the measurement, the capacity cap, and the clean ending condition.
+
+## Check the output before you return it
+
+Save the output to a file and run `python3 scripts/check-output.py <file>`. The
+contract it checks is `scripts/output-contract.json`.
+
+- Exit 0, `COMPLETE`: return the output.
+- Exit 2, `INCOMPLETE`: do not present the output as finished. Fill what you can, run
+  the check again, and if parts stay missing, return the output under the heading
+  `Incomplete` with every reason the check printed.
 
 ## Quality bar
 

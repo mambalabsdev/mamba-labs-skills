@@ -3,12 +3,16 @@ name: clay-failure-triage
 description: |
   Diagnose a Clay column that returns null, zero rows, or the wrong shape, by symptom rather than by guesswork. Use when a Clay enrichment stopped working, a column is empty for rows that clearly have data, a pipeline that worked last week is now blank, or someone asks why their Clay table is broken.
 license: MIT
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+tags: [clay_builds, clay_operator]
 metadata:
-  category: clay-builds
-  tags: [clay_builds, clay_operator]
-compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 2.0.0
+  title: "Clay Failure Triage"
+  category: "clay-builds"
+  tags: "clay_builds, clay_operator"
+  keywords: "clay, my clay column is empty, clay enrichment returns null, find people returned zero rows, why is my clay table broken"
+  version: "2.1.0"
 ---
+
 # Clay Failure Triage
 
 ## What this does
@@ -39,6 +43,11 @@ use them instead of asking the user to repeat themselves:
 If none exist, do the work from what the user gives you, then offer to write the
 missing file so the next skill in the pack starts warmer.
 
+## Tool connection
+
+This skill needs no live data tool. It works from the files, exports and answers
+you give it, so it runs the same in any agent with no setup.
+
 ## Method
 
 1. Classify the symptom first: null on a row with good inputs, zero rows returned, an object where a scalar was expected, or a pipeline that degraded over time. The four take different paths.
@@ -50,10 +59,26 @@ missing file so the next skill in the pack starts warmer.
 7. Worked last week, blank now: the provider changed its response envelope. Re inspect raw JSON and update the extraction path. Log the date so the next degradation is measurable.
 8. Intermittent: check the run condition, not the column. A conditional gate reading a column that is itself still running produces a race, not a failure.
 9. Only after the cause is named, re run, and re run on 10 rows, not the table.
+10. Check the output with `scripts/check-output.py` before you return it.
+
+## Approval stop
+
+This skill does not send email or write to a CRM. If the user asks it to, stop first:
+show what would be sent or written and wait for an explicit yes.
 
 ## Output
 
 A short triage report: symptom class, cause, the exact fix, and the check that proves the fix worked. If the cause cannot be isolated from the sample given, say which single piece of evidence would settle it.
+
+## Check the output before you return it
+
+Save the output to a file and run `python3 scripts/check-output.py <file>`. The
+contract it checks is `scripts/output-contract.json`.
+
+- Exit 0, `COMPLETE`: return the output.
+- Exit 2, `INCOMPLETE`: do not present the output as finished. Fill what you can, run
+  the check again, and if parts stay missing, return the output under the heading
+  `Incomplete` with every reason the check printed.
 
 ## Quality bar
 

@@ -3,12 +3,16 @@ name: clay-actor-column-wiring
 description: |
   Wire an external actor or API into a Clay column so the types survive the round trip. Use when someone wants to call an Apify actor from Clay, add an HTTP API column, pass Clay values into a scraper, or is getting type errors from an external enrichment.
 license: MIT
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+tags: [clay_builds, clay_operator]
 metadata:
-  category: clay-builds
-  tags: [clay_builds, clay_operator]
-compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 2.0.0
+  title: "Clay Actor Column Wiring"
+  category: "clay-builds"
+  tags: "clay_builds, clay_operator"
+  keywords: "clay, call an apify actor from clay, add an http api column, pass clay values to a scraper, type error from external enrichment, wire an actor into clay"
+  version: "2.1.0"
 ---
+
 # Clay Actor Column Wiring
 
 ## What this does
@@ -39,6 +43,11 @@ use them instead of asking the user to repeat themselves:
 If none exist, do the work from what the user gives you, then offer to write the
 missing file so the next skill in the pack starts warmer.
 
+## Tool connection
+
+This skill needs no live data tool. It works from the files, exports and answers
+you give it, so it runs the same in any agent with no setup.
+
 ## Method
 
 1. Read the tool's input schema. Every field the request will carry from Clay must be declared as a string on the tool side, with the tool coercing internally. A field declared as a number will fail validation on a value Clay sent as text.
@@ -48,10 +57,26 @@ missing file so the next skill in the pack starts warmer.
 5. Add extraction columns one field at a time, each verified on the same single row before adding the next.
 6. Only then ramp to 10 rows, then 50 to 100, then the table.
 7. Set a run condition on the actor column before the full ramp, because an external call is almost always the most expensive column in the table.
+8. Check the output with `scripts/check-output.py` before you return it.
+
+## Approval stop
+
+This skill does not send email or write to a CRM. If the user asks it to, stop first:
+show what would be sent or written and wait for an explicit yes.
 
 ## Output
 
 The request body, the verified extraction paths with the preview evidence they came from, the run condition, and the ramp plan.
+
+## Check the output before you return it
+
+Save the output to a file and run `python3 scripts/check-output.py <file>`. The
+contract it checks is `scripts/output-contract.json`.
+
+- Exit 0, `COMPLETE`: return the output.
+- Exit 2, `INCOMPLETE`: do not present the output as finished. Fill what you can, run
+  the check again, and if parts stay missing, return the output under the heading
+  `Incomplete` with every reason the check printed.
 
 ## Quality bar
 

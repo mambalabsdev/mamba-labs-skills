@@ -34,13 +34,13 @@ Every free skill sits on a 30 day review cycle. Fixes and improvements ship as r
 
 These encode the system rather than the single task. They are not in this repo.
 
-| Skill | What it does |
-| --- | --- |
-| `knowledge-base-classification` | Classify an unstructured document store into a navigable tree, with an archive route for what should leave |
+| Skill | Price | What it does |
+| --- | --- | --- |
+| `knowledge-base-classification` | 5.99 USD | Classify an unstructured document store into a navigable tree, with an archive route for what should leave |
 
 Most premium skills are on a weekly review cycle. Fixes and improvements ship as updates, and buyers receive release notes by email.
 
-The full pack: https://mambabuilt.com/skills
+The full pack, every premium skill above plus the free ones: 19 USD at https://mambabuilt.com/store
 
 ## Shared context
 

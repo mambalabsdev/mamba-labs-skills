@@ -3,12 +3,16 @@ name: unsubscribe-compliance-check
 description: |
   Check that outbound campaigns carry a working unsubscribe path and that opt outs land somewhere that actually stops the next send. Use before launching, during a compliance review, or when someone asks what an outbound email legally needs.
 license: MIT
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+tags: [cold_email_system, deliverability]
 metadata:
-  category: deliverability
-  tags: [cold_email_system, deliverability]
-compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 2.0.0
+  title: "Unsubscribe Compliance Check"
+  category: "deliverability"
+  tags: "cold_email_system, deliverability"
+  keywords: "deliverability, do my emails need an unsubscribe, compliance review of outbound, test my opt out, unsubscribe handling, what does an outbound email legally need"
+  version: "2.1.0"
 ---
+
 # Unsubscribe Compliance Check
 
 ## What this does
@@ -39,6 +43,11 @@ use them instead of asking the user to repeat themselves:
 If none exist, do the work from what the user gives you, then offer to write the
 missing file so the next skill in the pack starts warmer.
 
+## Tool connection
+
+This skill needs no live data tool. It works from the files, exports and answers
+you give it, so it runs the same in any agent with no setup.
+
 ## Method
 
 1. Check the footer: a physical postal address, a clear identification of the sender, and an opt out that does not require a reply.
@@ -48,10 +57,28 @@ missing file so the next skill in the pack starts warmer.
 5. Check every channel. An email opt out that does not stop a social touch is not honored, whatever the letter of the rule says.
 6. Check the reply path: somebody who replies asking to stop must be treated as an opt out even though no link was clicked, so a human or a classifier has to be catching that.
 7. Report each of the six as pass or fail with the evidence.
+8. Approval stop. Before sending a test email to any address you do not own, show the user exactly what will happen and wait for an explicit yes. Nothing live changes without it.
+9. Check the output with `scripts/check-output.py` before you return it.
+
+## Approval stop
+
+Stop and ask before sending a test email to any address you do not own. Show exactly what will be sent or written, to whom or to
+which records, and how many. Proceed only on an explicit yes from the user in this
+conversation. A yes for one batch does not cover the next one.
 
 ## Output
 
 A six row check table with evidence per row, then a single compliant or not compliant verdict, then the fixes.
+
+## Check the output before you return it
+
+Save the output to a file and run `python3 scripts/check-output.py <file>`. The
+contract it checks is `scripts/output-contract.json`.
+
+- Exit 0, `COMPLETE`: return the output.
+- Exit 2, `INCOMPLETE`: do not present the output as finished. Fill what you can, run
+  the check again, and if parts stay missing, return the output under the heading
+  `Incomplete` with every reason the check printed.
 
 ## Quality bar
 

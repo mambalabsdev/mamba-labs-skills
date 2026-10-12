@@ -1,0 +1,74 @@
+{
+  "sku": "directory-submission-plan",
+  "tier": "free",
+  "title": "Directory Submission Plan",
+  "previous_title": null,
+  "one_line": "Pick the directories and marketplaces worth listing on, and prepare one set of assets that fits all of them.",
+  "description": "Pick the directories and marketplaces worth listing on, and prepare one set of assets that fits all of them. Use when launching a tool, when someone asks where to list a product, or when directory submissions are eating time for no return.",
+  "paragraph": "Directory submission is usually done as a volume exercise against a list of a hundred sites, most of which send nobody. This skill ranks by whether a directory actually sends traffic to listings like yours, then prepares one asset set that satisfies the field requirements of all the ones that made the cut, so the submissions take an afternoon rather than a month.",
+  "keywords": [
+    "seo and content",
+    "where should i list my product",
+    "directory submissions",
+    "launch listings",
+    "submit to directories",
+    "marketplace listings"
+  ],
+  "family": "seo-content",
+  "packs": [
+    "seo-content-engine"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": "submitting the listing to any directory",
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

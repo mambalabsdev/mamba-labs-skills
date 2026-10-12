@@ -3,12 +3,16 @@ name: crm-hygiene-sweep
 description: |
   Run a recurring cleanup on new and changed CRM records so the database stops degrading between audits. Use when someone wants ongoing data hygiene, has just finished a cleanup and wants it to hold, or needs a weekly CRM routine.
 license: MIT
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+tags: [crm_operations, crm_operations_pack]
 metadata:
-  category: crm-operations
-  tags: [crm_operations, crm_operations_pack]
-compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 2.0.0
+  title: "CRM Hygiene Sweep"
+  category: "crm-operations"
+  tags: "crm_operations, crm_operations_pack"
+  keywords: "crm, weekly crm cleanup, keep the crm clean, data hygiene routine, we cleaned it and it is dirty again, new record hygiene"
+  version: "2.1.0"
 ---
+
 # CRM Hygiene Sweep
 
 ## What this does
@@ -39,6 +43,11 @@ use them instead of asking the user to repeat themselves:
 If none exist, do the work from what the user gives you, then offer to write the
 missing file so the next skill in the pack starts warmer.
 
+## Tool connection
+
+This skill needs no live data tool. It works from the files, exports and answers
+you give it, so it runs the same in any agent with no setup.
+
 ## Method
 
 1. Scope to the window. A sweep that re examines the whole database is an audit and it will not run weekly.
@@ -47,10 +56,28 @@ missing file so the next skill in the pack starts warmer.
 4. Attribute every defect to its intake. That attribution is what makes the sweep shrink, because a form fixed once removes a defect class permanently.
 5. Report the drift rate: defects per hundred new records, tracked over sweeps. A flat or rising rate means the intake work is not happening.
 6. Cap the manual list. If it exceeds what a person will actually do, the excess is a fix at the intake, not a queue.
+7. Approval stop. Before writing, merging, or deleting any CRM record, show the user exactly what will happen and wait for an explicit yes. Nothing live changes without it.
+8. Check the output with `scripts/check-output.py` before you return it.
+
+## Approval stop
+
+Stop and ask before writing, merging, or deleting any CRM record. Show exactly what will be sent or written, to whom or to
+which records, and how many. Proceed only on an explicit yes from the user in this
+conversation. A yes for one batch does not cover the next one.
 
 ## Output
 
 The window counts, the defect table by type, the automatic fixes applied, the manual list within its cap, the intake attribution, and the drift rate over the last several sweeps.
+
+## Check the output before you return it
+
+Save the output to a file and run `python3 scripts/check-output.py <file>`. The
+contract it checks is `scripts/output-contract.json`.
+
+- Exit 0, `COMPLETE`: return the output.
+- Exit 2, `INCOMPLETE`: do not present the output as finished. Fill what you can, run
+  the check again, and if parts stay missing, return the output under the heading
+  `Incomplete` with every reason the check printed.
 
 ## Quality bar
 

@@ -1,0 +1,75 @@
+{
+  "sku": "clay-credit-forecast",
+  "tier": "free",
+  "title": "Clay Credit Forecast",
+  "previous_title": null,
+  "one_line": "Forecast how far a Clay credit balance goes across a month of planned builds, and say which build to cut when it does not reach.",
+  "description": "Forecast how far a Clay credit balance goes across a month of planned builds, and say which build to cut when it does not reach. Use when someone asks whether they have enough credits, how to plan a month of Clay work, or which campaign to drop on a fixed budget.",
+  "paragraph": "Credit balances are consumed by builds nobody priced. This skill takes the planned work for a period, prices each build at realistic pass rates, and produces a burn forecast with the date the balance runs out. When the plan exceeds the balance it names the build to cut and what that costs in pipeline, rather than trimming every build a little.",
+  "keywords": [
+    "clay",
+    "do i have enough clay credits",
+    "plan a month of clay work",
+    "which campaign should i drop",
+    "credit burn forecast",
+    "clay capacity planning"
+  ],
+  "family": "clay-builds",
+  "packs": [
+    "clay-operator",
+    "agency-delivery"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

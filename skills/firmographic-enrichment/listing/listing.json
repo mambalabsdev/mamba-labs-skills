@@ -1,0 +1,78 @@
+{
+  "sku": "firmographic-enrichment",
+  "tier": "free",
+  "title": "Firmographic Enrichment",
+  "previous_title": null,
+  "one_line": "Fill headcount, industry, headquarters and revenue band on a company list, and report honestly which fields actually filled.",
+  "description": "Fill headcount, industry, headquarters and revenue band on a company list, and report honestly which fields actually filled. Use when a list needs firmographics, when qualification needs company size, or when someone asks how complete their company data is.",
+  "paragraph": "Firmographic enrichment always looks like it worked, because the rows that filled are visible and the rows that did not are blank rather than flagged. This skill enriches, then measures coverage per field, so a qualification rule built on a field that is only forty percent populated is caught before it silently disqualifies half the list.",
+  "keywords": [
+    "identity",
+    "enrich these companies",
+    "add headcount and industry",
+    "how complete is my company data",
+    "company size for qualification",
+    "firmographics"
+  ],
+  "family": "identity-enrichment",
+  "packs": [
+    "clay-operator"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [
+    "@mambalabsdev/mcp-gtm-suite@1.10.0"
+  ],
+  "mcp_tools": [
+    "enrich_company_firmographics"
+  ],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

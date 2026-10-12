@@ -31,19 +31,19 @@ Every free skill sits on a 30 day review cycle. Fixes and improvements ship as r
 
 These encode the system rather than the single task. They are not in this repo.
 
-| Skill | What it does |
-| --- | --- |
-| `crm-audit` | Audit a CRM for the data and process problems that are costing pipeline, and produce a prioritized remediation plan |
-| `crm-dedupe-plan` | Plan and execute a duplicate merge in a CRM without losing history, associations or enrichment |
-| `lead-lifecycle-designer` | Define lifecycle stages and the entry and exit rules that make pipeline reporting mean something |
-| `deal-attribution-audit` | Work out which deals a channel or an agency actually sourced, and produce a number both sides accept |
-| `win-loss-analysis` | Work out why deals are actually won and lost, using evidence that did not come from the person who lost them |
-| `crm-enrichment-refresh` | Keep CRM company data current with a scheduled enrichment that only re enriches what actually changed |
-| `expansion-signal-monitor` | Watch existing customers for the public signals that mean expansion or risk, and act before renewal |
+| Skill | Price | What it does |
+| --- | --- | --- |
+| `crm-audit` | 5.99 USD | Audit a CRM for the data and process problems that are costing pipeline, and produce a prioritized remediation plan |
+| `crm-dedupe-plan` | 5.99 USD | Plan and execute a duplicate merge in a CRM without losing history, associations or enrichment |
+| `lead-lifecycle-designer` | 5.99 USD | Define lifecycle stages and the entry and exit rules that make pipeline reporting mean something |
+| `deal-attribution-audit` | 5.99 USD | Work out which deals a channel or an agency actually sourced, and produce a number both sides accept |
+| `win-loss-analysis` | 9.99 USD | Work out why deals are actually won and lost, using evidence that did not come from the person who lost them |
+| `crm-enrichment-refresh` | 7.99 USD | Keep CRM company data current with a scheduled enrichment that only re enriches what actually changed |
+| `expansion-signal-monitor` | 7.99 USD | Watch existing customers for the public signals that mean expansion or risk, and act before renewal |
 
 Most premium skills are on a weekly review cycle. Fixes and improvements ship as updates, and buyers receive release notes by email.
 
-The full pack: https://mambabuilt.com/skills
+The full pack, every premium skill above plus the free ones: 24 USD at https://mambabuilt.com/store
 
 ## Shared context
 

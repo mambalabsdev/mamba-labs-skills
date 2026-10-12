@@ -1,0 +1,75 @@
+{
+  "sku": "friction-log-to-rules",
+  "tier": "free",
+  "title": "Friction Log To Rules",
+  "previous_title": null,
+  "one_line": "Turn the things that went wrong in a working session into standing rules that stop them recurring.",
+  "description": "Turn the things that went wrong in a working session into standing rules that stop them recurring. Use at the end of a project, after a mistake, during a retrospective, or when the same problem keeps happening.",
+  "paragraph": "Most retrospectives produce observations and no change, because an observation is not actionable and a rule is. This skill converts each friction point into a rule with a trigger, an action and a place it lives, and discards the ones that cannot be written that way, because a rule nobody can apply is noise in the rule set.",
+  "keywords": [
+    "agency",
+    "retrospective",
+    "this keeps happening",
+    "write up what went wrong",
+    "friction log",
+    "turn lessons into rules"
+  ],
+  "family": "agency-operations",
+  "packs": [
+    "agency-delivery",
+    "knowledge-ops-pack"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

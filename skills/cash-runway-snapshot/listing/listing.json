@@ -1,0 +1,74 @@
+{
+  "sku": "cash-runway-snapshot",
+  "tier": "free",
+  "title": "Cash Runway Snapshot",
+  "previous_title": null,
+  "one_line": "Work out how many months of cash are left and what actually changes it.",
+  "description": "Work out how many months of cash are left and what actually changes it. Use when someone asks about runway, cash position, whether they can afford a hire, or what happens if a payment is late.",
+  "paragraph": "Runway calculated as cash divided by average burn is wrong in the one direction that matters, because it treats expected income as certain. This skill separates committed inflows from expected ones, models the late payment case, and gives a range with the assumption behind each end of it.",
+  "keywords": [
+    "small business",
+    "how much runway do we have",
+    "cash position",
+    "can we afford a hire",
+    "what if a client pays late",
+    "runway calculation"
+  ],
+  "family": "small-business-ops",
+  "packs": [
+    "small-business-operations"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

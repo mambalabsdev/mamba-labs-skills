@@ -3,12 +3,16 @@ name: knowledge-write-discipline
 description: |
   Write to a knowledge base so the document is findable later and provably stored. Use when saving a document, writing up a result, or when notes keep getting lost or duplicated.
 license: MIT
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+tags: [knowledge_ops, knowledge_ops_pack]
 metadata:
-  category: knowledge-ops
-  tags: [knowledge_ops, knowledge_ops_pack]
-compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 2.0.0
+  title: "Knowledge Write Discipline"
+  category: "knowledge-ops"
+  tags: "knowledge_ops, knowledge_ops_pack"
+  keywords: "knowledge, save this to the knowledge base, write up this result, my notes keep getting lost, document this properly, where should this go"
+  version: "2.1.0"
 ---
+
 # Knowledge Write Discipline
 
 ## What this does
@@ -38,6 +42,11 @@ use them instead of asking the user to repeat themselves:
 If none exist, do the work from what the user gives you, then offer to write the
 missing file so the next skill in the pack starts warmer.
 
+## Tool connection
+
+This skill needs no live data tool. It works from the files, exports and answers
+you give it, so it runs the same in any agent with no setup.
+
 ## Method
 
 1. Search before writing. A near duplicate is worse than no document, because a reader who finds the older one does not know a newer one exists.
@@ -47,10 +56,26 @@ missing file so the next skill in the pack starts warmer.
 5. State what supersedes what, in the document, so an old document being read cannot mislead.
 6. Write, then read the document back and compare it against what you sent, by length and by content. A write that reports success and stores nothing is a real failure mode and only a read back catches it.
 7. Record the identifier where the next person will look for it, not only in the document itself.
+8. Check the output with `scripts/check-output.py` before you return it.
+
+## Approval stop
+
+This skill does not send email or write to a CRM. If the user asks it to, stop first:
+show what would be sent or written and wait for an explicit yes.
 
 ## Output
 
 The document, the read back comparison with both lengths, the supersession note, and the pointer recorded where it will be found.
+
+## Check the output before you return it
+
+Save the output to a file and run `python3 scripts/check-output.py <file>`. The
+contract it checks is `scripts/output-contract.json`.
+
+- Exit 0, `COMPLETE`: return the output.
+- Exit 2, `INCOMPLETE`: do not present the output as finished. Fill what you can, run
+  the check again, and if parts stay missing, return the output under the heading
+  `Incomplete` with every reason the check printed.
 
 ## Quality bar
 

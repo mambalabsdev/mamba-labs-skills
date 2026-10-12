@@ -3,12 +3,16 @@ name: company-identity-resolution
 description: |
   Resolve a messy company name to the right domain and canonical record, and say how confident the match is. Use when a list has company names but no domains, when names are ambiguous, or when enrichment is matching the wrong company.
 license: MIT
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+tags: [clay_operator, identity_enrichment]
 metadata:
-  category: identity-enrichment
-  tags: [clay_operator, identity_enrichment]
-compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 2.0.0
+  title: "Company Identity Resolution"
+  category: "identity-enrichment"
+  tags: "clay_operator, identity_enrichment"
+  keywords: "identity, i have company names but no domains, the enrichment matched the wrong company, resolve these company names, which domain is this company, ambiguous company names"
+  version: "2.1.0"
 ---
+
 # Company Identity Resolution
 
 ## What this does
@@ -39,12 +43,24 @@ use them instead of asking the user to repeat themselves:
 If none exist, do the work from what the user gives you, then offer to write the
 missing file so the next skill in the pack starts warmer.
 
-## Live data
+## Tool connection
 
 Resolution takes a name, a domain, or a profile URL and returns the canonical record with the others filled in.
 
-- **company-identity-resolver**: name, domain and profile URL reconciled into one canonical company record
-  Store page: https://apify.com/mambalabs/company-identity-resolver
+This skill calls live data through the Mamba Labs MCP server, which runs the
+actors on Apify with your own Apify token (https://console.apify.com/account/integrations).
+
+- Installed as a plugin: the server is already wired, and the plugin asks for the token once.
+- Installed by hand: copy `.mcp.json` from this folder into your project root and set
+  `APIFY_TOKEN` in your environment, or run:
+
+```
+claude mcp add mamba-gtm-suite -e APIFY_TOKEN=<your token> -- npx -y @mambalabsdev/mcp-gtm-suite@1.10.0
+```
+
+| Actor | MCP tool | Used for | Store page |
+| --- | --- | --- | --- |
+| Company Identity Resolver | `resolve_company_identity` | name, domain and profile URL reconciled into one canonical company record | https://apify.com/mambalabs/company-identity-resolver |
 
 Runnable example input:
 
@@ -56,6 +72,14 @@ Runnable example input:
 }
 ```
 
+**Cost line.** Before any live call, state how many calls you plan and which actors
+they bill. After the run, report the calls made, the calls that failed, and the Apify
+usage where the tool reports it. Each actor bills the user's own Apify account at its
+Store price.
+
+**No token, no live data.** If no Apify token is available, say so and stop the live
+steps. Never fill a live section from memory and present it as live.
+
 ## Method
 
 1. Normalize the input names first: strip legal suffixes, punctuation and trailing descriptors, because those are the main source of false misses.
@@ -64,10 +88,26 @@ Runnable example input:
 4. Watch for the three collision types: same name different company, parent versus subsidiary, and pre rebrand versus post rebrand. Each needs a different tiebreak.
 5. Use the hints as tiebreaks, not as filters, so a wrong hint does not eliminate the right answer.
 6. Report the resolution rate for the batch, because that number decides whether the list is usable at all.
+7. Check the output with `scripts/check-output.py` before you return it.
+
+## Approval stop
+
+This skill does not send email or write to a CRM. If the user asks it to, stop first:
+show what would be sent or written and wait for an explicit yes.
 
 ## Output
 
 The resolved table with input, resolved domain, canonical name, confidence and method; the unresolved rows flagged for review; and the batch resolution rate.
+
+## Check the output before you return it
+
+Save the output to a file and run `python3 scripts/check-output.py <file>`. The
+contract it checks is `scripts/output-contract.json`.
+
+- Exit 0, `COMPLETE`: return the output.
+- Exit 2, `INCOMPLETE`: do not present the output as finished. Fill what you can, run
+  the check again, and if parts stay missing, return the output under the heading
+  `Incomplete` with every reason the check printed.
 
 ## Quality bar
 

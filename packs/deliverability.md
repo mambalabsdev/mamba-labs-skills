@@ -35,15 +35,15 @@ Every free skill sits on a 30 day review cycle. Fixes and improvements ship as r
 
 These encode the system rather than the single task. They are not in this repo.
 
-| Skill | What it does |
-| --- | --- |
-| `suppression-architect` | Design the suppression layer so a contact who should never be emailed cannot be emailed from any campaign or channel |
-| `email-deliverability-audit` | Audit an entire sending infrastructure across every domain and inbox, rank the failures by risk, and produce the fix list in the order that recovers deliverability fastest |
-| `inbox-placement-triage` | Diagnose why a campaign that used to get replies is now landing in spam, and separate an infrastructure cause from a content cause from a list cause |
+| Skill | Price | What it does |
+| --- | --- | --- |
+| `suppression-architect` | 9.99 USD | Design the suppression layer so a contact who should never be emailed cannot be emailed from any campaign or channel |
+| `email-deliverability-audit` | 9.99 USD | Audit an entire sending infrastructure across every domain and inbox, rank the failures by risk, and produce the fix list in the order that recovers deliverability fastest |
+| `inbox-placement-triage` | 9.99 USD | Diagnose why a campaign that used to get replies is now landing in spam, and separate an infrastructure cause from a content cause from a list cause |
 
 Most premium skills are on a weekly review cycle. Fixes and improvements ship as updates, and buyers receive release notes by email.
 
-The full pack: https://mambabuilt.com/skills
+The full pack, every premium skill above plus the free ones: 14.99 USD at https://mambabuilt.com/store
 
 ## Shared context
 

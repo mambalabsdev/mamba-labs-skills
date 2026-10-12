@@ -3,12 +3,16 @@ name: workplace-program-signal
 description: |
   Detect which workplace programs and benefits a company runs, as a signal for anyone selling into people operations, benefits or internal communications. Use when targeting HR buyers, checking benefits maturity, or looking for companies with or without a specific program.
 license: MIT
+compatibility: "Claude Code, Claude Desktop, Codex CLI, Cursor, Gemini CLI, and other agents that read SKILL.md. Live data steps need Node.js 18 or newer and an Apify API token."
+tags: [signal_based_selling, signal_research]
 metadata:
-  category: signal-research
-  tags: [signal_based_selling, signal_research]
-compatibility: [Claude Code, Codex CLI, Cursor, MCP-compatible agents]
-version: 2.0.0
+  title: "Workplace Program Signal"
+  category: "signal-research"
+  tags: "signal_based_selling, signal_research"
+  keywords: "signals, what benefits does this company offer, hr buyer targeting, benefits maturity check, do they have this program, people operations prospecting"
+  version: "2.1.0"
 ---
+
 # Workplace Program Signal
 
 ## What this does
@@ -39,27 +43,30 @@ use them instead of asking the user to repeat themselves:
 If none exist, do the work from what the user gives you, then offer to write the
 missing file so the next skill in the pack starts warmer.
 
-## Live data
+## Tool connection
 
 Programs are detected across the company's own pages and its job postings, which catches programs that are described in postings but never listed on a benefits page.
 
-- **workplace-program-detector**: workplace program and benefit detection across web pages and job postings
-  Store page: https://apify.com/mambalabs/workplace-program-detector
+| Actor | MCP tool | Used for | Store page |
+| --- | --- | --- | --- |
+| Workplace Program Detector | none, use `scripts/apify-run.py` | workplace program and benefit detection across web pages and job postings | https://apify.com/mambalabs/workplace-program-detector |
 
-Runnable example input:
+This actor has no MCP tool. Call it directly:
 
-```json
-{
-  "domain": "example.com",
-  "programs": [
-    "parental",
-    "learning",
-    "wellbeing"
-  ],
-  "scan_job_postings": true,
-  "scan_web_pages": true
-}
 ```
+APIFY_TOKEN=<your token> python3 scripts/apify-run.py workplace-program-detector [input.json]
+```
+
+With no input file the script runs the example in `scripts/inputs/`. It exits non zero
+on a failed or empty run, so an empty result is never read as an answer.
+
+**Cost line.** Before any live call, state how many calls you plan and which actors
+they bill. After the run, report the calls made, the calls that failed, and the Apify
+usage where the tool reports it. Each actor bills the user's own Apify account at its
+Store price.
+
+**No token, no live data.** If no Apify token is available, say so and stop the live
+steps. Never fill a live section from memory and present it as live.
 
 ## Method
 
@@ -69,10 +76,26 @@ Runnable example input:
 4. Check headcount. Below a certain size, absence of a formal program is normal and not a signal at all.
 5. Write the angle carefully. Program topics touch people's working conditions, so the message must be about the operational problem, not about implying a company treats people badly.
 6. State detection confidence and where the evidence came from.
+7. Check the output with `scripts/check-output.py` before you return it.
+
+## Approval stop
+
+This skill does not send email or write to a CRM. If the user asks it to, stop first:
+show what would be sent or written and wait for an explicit yes.
 
 ## Output
 
 The program table with present, absent or unknown per program, the evidence source, the headcount context, and the angle for the chosen direction.
+
+## Check the output before you return it
+
+Save the output to a file and run `python3 scripts/check-output.py <file>`. The
+contract it checks is `scripts/output-contract.json`.
+
+- Exit 0, `COMPLETE`: return the output.
+- Exit 2, `INCOMPLETE`: do not present the output as finished. Fill what you can, run
+  the check again, and if parts stay missing, return the output under the heading
+  `Incomplete` with every reason the check printed.
 
 ## Quality bar
 

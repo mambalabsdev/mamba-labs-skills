@@ -1,0 +1,74 @@
+{
+  "sku": "outbound-copy-humanizer",
+  "tier": "free",
+  "title": "Outbound Copy Humanizer",
+  "previous_title": null,
+  "one_line": "Rewrite outbound copy so it reads like a person wrote it, removing the tells that mark a message as generated.",
+  "description": "Rewrite outbound copy so it reads like a person wrote it, removing the tells that mark a message as generated. Use when copy sounds robotic, when a draft is full of hedges and stock phrases, or when someone wants their outreach to sound like them.",
+  "paragraph": "Generated outbound has a recognizable surface: tripled adjectives, a hedge before every claim, transitions nobody says out loud, and a closing sentence that restates the email. This skill strips those patterns and rebuilds the sentence rhythm against the sender's own writing, without flattening the message into slang.",
+  "keywords": [
+    "outbound",
+    "this sounds robotic",
+    "make this sound human",
+    "too much ai voice",
+    "rewrite in my voice",
+    "humanize this copy"
+  ],
+  "family": "outbound-email",
+  "packs": [
+    "cold-email-system"
+  ],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}
