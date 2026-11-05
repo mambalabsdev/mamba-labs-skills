@@ -38,21 +38,21 @@ Install in this order. Each assumes the ones above it have run at least once.
 
 Every free skill sits on a 30 day review cycle. Fixes and improvements ship as repo updates.
 
-## Premium skills in this pack
+## Download skills in this pack
 
-These encode the system rather than the single task. They are not in this repo.
+These encode the system rather than the single task. They are not in this repo. They are free by email.
 
-| Skill | Price | What it does |
+| Skill | Cost | What it does |
 | --- | --- | --- |
-| `clay-build-gate` | 9.99 USD | Gate every Clay table instruction through a pre flight check before the user touches the workspace |
-| `clay-waterfall-designer` | 7.99 USD | Design a work email waterfall that finds the most addresses for the least money, with verification placed where it actually protects the send |
-| `icp-fit-scoring` | 7.99 USD | Score an account list from zero to one hundred against your ICP and split it into tiers you can route on |
-| `clay-people-search-workbook` | 7.99 USD | Build the full company to contact workbook in Clay: source companies, qualify them, find the right people, waterfall their emails, and export a send ready list |
-| `company-discovery-list-builder` | 7.99 USD | Build a company list from a market definition rather than from an existing list, using hiring activity or filing language as the discovery mechanism |
+| `clay-build-gate` | Free | Gate every Clay table instruction through a pre flight check before the user touches the workspace |
+| `clay-waterfall-designer` | Free | Design a work email waterfall that finds the most addresses for the least money, with verification placed where it actually protects the send |
+| `icp-fit-scoring` | Free | Score an account list from zero to one hundred against your ICP and split it into tiers you can route on |
+| `clay-people-search-workbook` | Free | Build the full company to contact workbook in Clay: source companies, qualify them, find the right people, waterfall their emails, and export a send ready list |
+| `company-discovery-list-builder` | Free | Build a company list from a market definition rather than from an existing list, using hiring activity or filing language as the discovery mechanism |
 
-Most premium skills are on a weekly review cycle. Fixes and improvements ship as updates, and buyers receive release notes by email.
+Most download skills are on a weekly review cycle. Fixes and improvements ship as updates.
 
-The full pack, every premium skill above plus the free ones: 19 USD at https://mambabuilt.com/store
+The full pack, every download skill above, is free by email at https://mambabuilt.com/skills/packs/clay-operator-pack
 
 ## Shared context
 

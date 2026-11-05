@@ -38,32 +38,32 @@ Install in this order. Each assumes the ones above it have run at least once.
 
 Every free skill sits on a 30 day review cycle. Fixes and improvements ship as repo updates.
 
-## Premium skills in this pack
+## Download skills in this pack
 
-These encode the system rather than the single task. They are not in this repo.
+These encode the system rather than the single task. They are not in this repo. They are free by email.
 
-| Skill | Price | What it does |
+| Skill | Cost | What it does |
 | --- | --- | --- |
-| `client-onboarding-brief` | 7.99 USD | Turn a signed client into a working brief: access, scope, success measure, and the assumptions that will cause the first argument if left unstated |
-| `competitor-battlecard` | 7.99 USD | Build an internal battlecard against one competitor that a rep can use without getting caught out |
-| `abm-account-plan` | 7.99 USD | Build a working plan for one named account: who to reach, in what order, on what trigger, and what has to be true to keep spending time on it |
-| `win-loss-analysis` | 9.99 USD | Work out why deals are actually won and lost, using evidence that did not come from the person who lost them |
-| `weekly-client-report` | 5.99 USD | Write the weekly client update that reports outcomes rather than activity, and says the hard thing early |
-| `crm-audit` | 5.99 USD | Audit a CRM for the data and process problems that are costing pipeline, and produce a prioritized remediation plan |
-| `lead-lifecycle-designer` | 5.99 USD | Define lifecycle stages and the entry and exit rules that make pipeline reporting mean something |
-| `deal-attribution-audit` | 5.99 USD | Work out which deals a channel or an agency actually sourced, and produce a number both sides accept |
-| `reply-classifier-router` | 5.99 USD | Classify inbound replies to outbound campaigns and route each one to the right next action, with a draft reply where a draft is appropriate |
-| `email-deliverability-audit` | 9.99 USD | Audit an entire sending infrastructure across every domain and inbox, rank the failures by risk, and produce the fix list in the order that recovers deliverability fastest |
-| `suppression-architect` | 9.99 USD | Design the suppression layer so a contact who should never be emailed cannot be emailed from any campaign or channel |
-| `reactivation-campaign-builder` | 7.99 USD | Rework a list of previously contacted prospects into a compliant reactivation campaign, with cooldown windows, field coverage checks and copy that acknowledges the prior contact |
-| `wave-launch-precheck` | 9.99 USD | Run the pre launch check on a campaign wave and either clear it or block it with a named reason |
-| `crm-enrichment-refresh` | 7.99 USD | Keep CRM company data current with a scheduled enrichment that only re enriches what actually changed |
-| `company-change-monitor` | 9.99 USD | Watch an account list for meaningful changes and alert on the ones worth acting on |
-| `account-intelligence-brief` | 9.99 USD | Produce a complete pre call brief on one company: identity, firmographics, social presence, hiring, stack, funding and fit score, with a recommended angle and talk track |
+| `client-onboarding-brief` | Free | Turn a signed client into a working brief: access, scope, success measure, and the assumptions that will cause the first argument if left unstated |
+| `competitor-battlecard` | Free | Build an internal battlecard against one competitor that a rep can use without getting caught out |
+| `abm-account-plan` | Free | Build a working plan for one named account: who to reach, in what order, on what trigger, and what has to be true to keep spending time on it |
+| `win-loss-analysis` | Free | Work out why deals are actually won and lost, using evidence that did not come from the person who lost them |
+| `weekly-client-report` | Free | Write the weekly client update that reports outcomes rather than activity, and says the hard thing early |
+| `crm-audit` | Free | Audit a CRM for the data and process problems that are costing pipeline, and produce a prioritized remediation plan |
+| `lead-lifecycle-designer` | Free | Define lifecycle stages and the entry and exit rules that make pipeline reporting mean something |
+| `deal-attribution-audit` | Free | Work out which deals a channel or an agency actually sourced, and produce a number both sides accept |
+| `reply-classifier-router` | Free | Classify inbound replies to outbound campaigns and route each one to the right next action, with a draft reply where a draft is appropriate |
+| `email-deliverability-audit` | Free | Audit an entire sending infrastructure across every domain and inbox, rank the failures by risk, and produce the fix list in the order that recovers deliverability fastest |
+| `suppression-architect` | Free | Design the suppression layer so a contact who should never be emailed cannot be emailed from any campaign or channel |
+| `reactivation-campaign-builder` | Free | Rework a list of previously contacted prospects into a compliant reactivation campaign, with cooldown windows, field coverage checks and copy that acknowledges the prior contact |
+| `wave-launch-precheck` | Free | Run the pre launch check on a campaign wave and either clear it or block it with a named reason |
+| `crm-enrichment-refresh` | Free | Keep CRM company data current with a scheduled enrichment that only re enriches what actually changed |
+| `company-change-monitor` | Free | Watch an account list for meaningful changes and alert on the ones worth acting on |
+| `account-intelligence-brief` | Free | Produce a complete pre call brief on one company: identity, firmographics, social presence, hiring, stack, funding and fit score, with a recommended angle and talk track |
 
-Most premium skills are on a weekly review cycle. Fixes and improvements ship as updates, and buyers receive release notes by email.
+Most download skills are on a weekly review cycle. Fixes and improvements ship as updates.
 
-The full pack, every premium skill above plus the free ones: 59 USD at https://mambabuilt.com/store
+The full pack, every download skill above, is free by email at https://mambabuilt.com/skills/packs/agency-delivery-pack
 
 ## Shared context
 

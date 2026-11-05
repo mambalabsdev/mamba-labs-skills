@@ -37,29 +37,29 @@ Install in this order. Each assumes the ones above it have run at least once.
 
 Every free skill sits on a 30 day review cycle. Fixes and improvements ship as repo updates.
 
-## Premium skills in this pack
+## Download skills in this pack
 
-These encode the system rather than the single task. They are not in this repo.
+These encode the system rather than the single task. They are not in this repo. They are free by email.
 
-| Skill | Price | What it does |
+| Skill | Cost | What it does |
 | --- | --- | --- |
-| `funding-event-trigger` | 7.99 USD | Find companies that raised recently and build the timing aware outbound that follows a round |
-| `earnings-window-timing` | 9.99 USD | Time outreach to public companies around their reporting calendar, avoiding the quiet period and landing when the relevant team is free |
-| `company-change-monitor` | 9.99 USD | Watch an account list for meaningful changes and alert on the ones worth acting on |
-| `gtm-signal-aggregator` | 7.99 USD | Combine hiring, tech stack and funding signals into one score per account and a branch decision on which message to send |
-| `icp-fit-scoring` | 7.99 USD | Score an account list from zero to one hundred against your ICP and split it into tiers you can route on |
-| `company-discovery-list-builder` | 7.99 USD | Build a company list from a market definition rather than from an existing list, using hiring activity or filing language as the discovery mechanism |
-| `clay-people-search-workbook` | 7.99 USD | Build the full company to contact workbook in Clay: source companies, qualify them, find the right people, waterfall their emails, and export a send ready list |
-| `competitor-battlecard` | 7.99 USD | Build an internal battlecard against one competitor that a rep can use without getting caught out |
-| `abm-account-plan` | 7.99 USD | Build a working plan for one named account: who to reach, in what order, on what trigger, and what has to be true to keep spending time on it |
-| `expansion-signal-monitor` | 7.99 USD | Watch existing customers for the public signals that mean expansion or risk, and act before renewal |
-| `crm-enrichment-refresh` | 7.99 USD | Keep CRM company data current with a scheduled enrichment that only re enriches what actually changed |
-| `first-party-data-post` | 5.99 USD | Turn data you already have into a study nobody else can publish, and get every downstream asset out of one analysis |
-| `account-intelligence-brief` | 9.99 USD | Produce a complete pre call brief on one company: identity, firmographics, social presence, hiring, stack, funding and fit score, with a recommended angle and talk track |
+| `funding-event-trigger` | Free | Find companies that raised recently and build the timing aware outbound that follows a round |
+| `earnings-window-timing` | Free | Time outreach to public companies around their reporting calendar, avoiding the quiet period and landing when the relevant team is free |
+| `company-change-monitor` | Free | Watch an account list for meaningful changes and alert on the ones worth acting on |
+| `gtm-signal-aggregator` | Free | Combine hiring, tech stack and funding signals into one score per account and a branch decision on which message to send |
+| `icp-fit-scoring` | Free | Score an account list from zero to one hundred against your ICP and split it into tiers you can route on |
+| `company-discovery-list-builder` | Free | Build a company list from a market definition rather than from an existing list, using hiring activity or filing language as the discovery mechanism |
+| `clay-people-search-workbook` | Free | Build the full company to contact workbook in Clay: source companies, qualify them, find the right people, waterfall their emails, and export a send ready list |
+| `competitor-battlecard` | Free | Build an internal battlecard against one competitor that a rep can use without getting caught out |
+| `abm-account-plan` | Free | Build a working plan for one named account: who to reach, in what order, on what trigger, and what has to be true to keep spending time on it |
+| `expansion-signal-monitor` | Free | Watch existing customers for the public signals that mean expansion or risk, and act before renewal |
+| `crm-enrichment-refresh` | Free | Keep CRM company data current with a scheduled enrichment that only re enriches what actually changed |
+| `first-party-data-post` | Free | Turn data you already have into a study nobody else can publish, and get every downstream asset out of one analysis |
+| `account-intelligence-brief` | Free | Produce a complete pre call brief on one company: identity, firmographics, social presence, hiring, stack, funding and fit score, with a recommended angle and talk track |
 
-Most premium skills are on a weekly review cycle. Fixes and improvements ship as updates, and buyers receive release notes by email.
+Most download skills are on a weekly review cycle. Fixes and improvements ship as updates.
 
-The full pack, every premium skill above plus the free ones: 49 USD at https://mambabuilt.com/store
+The full pack, every download skill above, is free by email at https://mambabuilt.com/skills/packs/signal-based-selling-pack
 
 ## Shared context
 

@@ -31,19 +31,19 @@ Install in this order. Each assumes the ones above it have run at least once.
 
 Every free skill sits on a 30 day review cycle. Fixes and improvements ship as repo updates.
 
-## Premium skills in this pack
+## Download skills in this pack
 
-These encode the system rather than the single task. They are not in this repo.
+These encode the system rather than the single task. They are not in this repo. They are free by email.
 
-| Skill | Price | What it does |
+| Skill | Cost | What it does |
 | --- | --- | --- |
-| `listing-page-optimizer` | 7.99 USD | Optimize a marketplace or directory listing so it is found in the marketplace search and converts the visit into a first run |
-| `programmatic-seo-planner` | 5.99 USD | Plan a programmatic page set that has something on every page worth reading, and a data source that keeps it current |
-| `first-party-data-post` | 5.99 USD | Turn data you already have into a study nobody else can publish, and get every downstream asset out of one analysis |
+| `listing-page-optimizer` | Free | Optimize a marketplace or directory listing so it is found in the marketplace search and converts the visit into a first run |
+| `programmatic-seo-planner` | Free | Plan a programmatic page set that has something on every page worth reading, and a data source that keeps it current |
+| `first-party-data-post` | Free | Turn data you already have into a study nobody else can publish, and get every downstream asset out of one analysis |
 
-Most premium skills are on a weekly review cycle. Fixes and improvements ship as updates, and buyers receive release notes by email.
+Most download skills are on a weekly review cycle. Fixes and improvements ship as updates.
 
-The full pack, every premium skill above plus the free ones: 9.99 USD at https://mambabuilt.com/store
+The full pack, every download skill above, is free by email at https://mambabuilt.com/skills/packs/seo-content-engine-pack
 
 ## Shared context
 

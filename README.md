@@ -149,28 +149,28 @@ Every free skill sits on a 30 day review cycle. Fixes and improvements ship as r
 ## Packs
 
 A pack is a job, not a category: the free skills that get you started plus the
-premium skills that finish it.
+download skills that finish it. Everything is free.
 
-| Pack | Free here | Premium | Pack price | The job |
-| --- | --- | --- | --- | --- |
-| [The Cold Email System](packs/cold-email-system.md) | 12 | 8 | 29 USD | Everything between a list and a reply, in the order it has to happen. |
-| [The Clay Operator](packs/clay-operator.md) | 15 | 5 | 19 USD | Build tables that produce rows you can send to, at a cost you decided in advance. |
-| [Signal Based Selling](packs/signal-based-selling.md) | 14 | 13 | 49 USD | Reach accounts at the moment something changed, with a message about the change. |
-| [The Deliverability Pack](packs/deliverability.md) | 8 | 3 | 14.99 USD | Get the mail delivered, and know why when it is not. |
-| [LinkedIn Authority](packs/linkedin-authority.md) | 6 | 2 | 12.99 USD | Post, comment and connect in a way that makes the outbound land. |
-| [The SEO And Content Engine](packs/seo-content-engine.md) | 8 | 3 | 9.99 USD | Pages and posts that exist because there is something on them worth reading. |
-| [CRM Operations](packs/crm-operations-pack.md) | 4 | 7 | 24 USD | Make the pipeline report mean something, then keep it that way. |
-| [Small Business Operations](packs/small-business-operations.md) | 6 | 1 | 19 USD | The weekly and monthly routines a small company actually has to run. |
-| [Agency Delivery](packs/agency-delivery.md) | 15 | 16 | 59 USD | Run client work so the first argument is about a written line rather than a memory. |
-| [Knowledge Operations](packs/knowledge-ops-pack.md) | 7 | 1 | 19 USD | Write things down so the next person, or the next session, does not start over. |
+| Pack | Here | By download | The job |
+| --- | --- | --- | --- |
+| [The Cold Email System](packs/cold-email-system.md) | 12 | 8 | Everything between a list and a reply, in the order it has to happen. |
+| [The Clay Operator](packs/clay-operator.md) | 15 | 5 | Build tables that produce rows you can send to, at a cost you decided in advance. |
+| [Signal Based Selling](packs/signal-based-selling.md) | 14 | 13 | Reach accounts at the moment something changed, with a message about the change. |
+| [The Deliverability Pack](packs/deliverability.md) | 8 | 3 | Get the mail delivered, and know why when it is not. |
+| [LinkedIn Authority](packs/linkedin-authority.md) | 6 | 2 | Post, comment and connect in a way that makes the outbound land. |
+| [The SEO And Content Engine](packs/seo-content-engine.md) | 8 | 3 | Pages and posts that exist because there is something on them worth reading. |
+| [CRM Operations](packs/crm-operations-pack.md) | 4 | 7 | Make the pipeline report mean something, then keep it that way. |
+| [Small Business Operations](packs/small-business-operations.md) | 6 | 1 | The weekly and monthly routines a small company actually has to run. |
+| [Agency Delivery](packs/agency-delivery.md) | 15 | 16 | Run client work so the first argument is about a written line rather than a memory. |
+| [Knowledge Operations](packs/knowledge-ops-pack.md) | 7 | 1 | Write things down so the next person, or the next session, does not start over. |
 
-## Premium catalog
+## Download catalog
 
-35 premium skills, sold at https://mambabuilt.com/store: 11 at 9.99 USD, 13 at 7.99 USD, 11 at 5.99 USD. The full catalog bundle, all 35 premium skills, is 99 USD.
+35 more skills, free by email at https://mambabuilt.com/store. Enter an email and the download link appears on the page. The full catalog bundle, all 35 skills, is free the same way.
 
 ## More
 
-Premium skills and packs: https://mambabuilt.com/skills
+Download skills and packs: https://mambabuilt.com/skills
 
 The live data behind the signal skills runs on the Mamba Labs actor fleet:
 https://apify.com/mambalabs
