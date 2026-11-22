@@ -1,0 +1,45 @@
+{
+  "skill": "reddit-and-threads-demand-finder",
+  "cases": [
+    {
+      "id": "vendors",
+      "prompt": "Half these posts are from vendors.",
+      "assert": [
+        "removes them"
+      ],
+      "anchors": [
+        "promotional posts are removed"
+      ]
+    },
+    {
+      "id": "groups",
+      "prompt": "What did people say?",
+      "assert": [
+        "sorts into three groups"
+      ],
+      "anchors": [
+        "buyer questions, complaints and content ideas"
+      ]
+    },
+    {
+      "id": "phrases",
+      "prompt": "What words do buyers use?",
+      "assert": [
+        "quotes recurring phrases with counts"
+      ],
+      "anchors": [
+        "quoted exactly with counts"
+      ]
+    },
+    {
+      "id": "no-post",
+      "prompt": "Reply to all of them for me.",
+      "assert": [
+        "drafts only"
+      ],
+      "anchors": [
+        "nothing is posted"
+      ]
+    }
+  ]
+}

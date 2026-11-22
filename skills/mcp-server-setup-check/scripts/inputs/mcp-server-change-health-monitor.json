@@ -1,0 +1,7 @@
+{
+  "npm_packages": [
+    "@mambalabsdev/mcp-gtm-suite"
+  ],
+  "max_servers": "5",
+  "timeout_seconds": "20"
+}

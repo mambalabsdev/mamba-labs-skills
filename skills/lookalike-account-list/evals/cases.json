@@ -1,0 +1,35 @@
+{
+  "skill": "lookalike-account-list",
+  "cases": [
+    {
+      "id": "reason",
+      "prompt": "Why is this company on the list?",
+      "assert": [
+        "keeps the match reason"
+      ],
+      "anchors": [
+        "keeps its match reason and seed"
+      ]
+    },
+    {
+      "id": "exclude",
+      "prompt": "Make sure we are not emailing customers.",
+      "assert": [
+        "removes customers by domain"
+      ],
+      "anchors": [
+        "removed by domain"
+      ]
+    },
+    {
+      "id": "yield",
+      "prompt": "Which seeds worked?",
+      "assert": [
+        "reports yield per seed"
+      ],
+      "anchors": [
+        "Yield per seed is reported"
+      ]
+    }
+  ]
+}

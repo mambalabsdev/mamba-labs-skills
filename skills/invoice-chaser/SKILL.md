@@ -95,6 +95,12 @@ contract it checks is `scripts/output-contract.json`.
 - Escalation moves up the chain before it changes tone
 - Every message asks for a date
 
+## Optional: run it on live data
+
+This skill works with no tool. To add live data, run Company Contact Details Extractor (https://apify.com/mambalabs/company-contact-details-extractor?fpr=mamba) on your own Apify
+account to find the accounts payable contact on the customer's website.
+No Apify account yet: https://console.apify.com/sign-up?fpr=mamba
+
 ## Related skills
 
 - `cash-runway-snapshot`

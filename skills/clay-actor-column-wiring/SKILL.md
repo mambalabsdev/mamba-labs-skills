@@ -99,6 +99,12 @@ contract it checks is `scripts/output-contract.json`.
 - The first run is one row
 - The actor column carries a run condition before the full ramp
 
+## Optional: run it on live data
+
+This skill works with no tool. To add live data, run Domain to LinkedIn URL Resolver (https://apify.com/mambalabs/domain-to-linkedin-url-resolver?fpr=mamba) on your own Apify
+account to use it as the worked example column: domain in, company profile URL out.
+No Apify account yet: https://console.apify.com/sign-up?fpr=mamba
+
 ## Related skills
 
 - `clay-failure-triage`

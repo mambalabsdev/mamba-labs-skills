@@ -101,6 +101,12 @@ contract it checks is `scripts/output-contract.json`.
 - No advice to re run the full table appears anywhere
 - The proof step is a check, not an assertion
 
+## Optional: run it on live data
+
+This skill works with no tool. To add live data, run Company Identity Resolver (https://apify.com/mambalabs/company-identity-resolver?fpr=mamba) on your own Apify
+account to resolve the company first when a domain input fails in a Clay column.
+No Apify account yet: https://console.apify.com/sign-up?fpr=mamba
+
 ## Related skills
 
 - `clay-build-gate`

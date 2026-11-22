@@ -1,0 +1,45 @@
+{
+  "skill": "email-waterfall-on-your-keys",
+  "cases": [
+    {
+      "id": "order",
+      "prompt": "Which provider should go first?",
+      "assert": [
+        "sets the order from a test run"
+      ],
+      "anchors": [
+        "order comes from a test run"
+      ]
+    },
+    {
+      "id": "cap",
+      "prompt": "Run all 5,000 contacts.",
+      "assert": [
+        "sets a provider unit cap"
+      ],
+      "anchors": [
+        "cap on provider units"
+      ]
+    },
+    {
+      "id": "verify",
+      "prompt": "Export what it found.",
+      "assert": [
+        "verifies first and separates catch all"
+      ],
+      "anchors": [
+        "catch all kept separate"
+      ]
+    },
+    {
+      "id": "unit-cost",
+      "prompt": "Which provider is cheapest?",
+      "assert": [
+        "compares cost per verified address"
+      ],
+      "anchors": [
+        "Cost per verified address is reported"
+      ]
+    }
+  ]
+}

@@ -93,6 +93,12 @@ contract it checks is `scripts/output-contract.json`.
 - Language is captured verbatim
 - The output is written back into ICP.md
 
+## Optional: run it on live data
+
+This skill works with no tool. To add live data, run Review Platform Reputation Enricher (https://apify.com/mambalabs/review-platform-reputation-enricher?fpr=mamba) on your own Apify
+account to read public reviews before the interviews, so the questions start from real language.
+No Apify account yet: https://console.apify.com/sign-up?fpr=mamba
+
 ## Related skills
 
 - `icp-definition-builder`

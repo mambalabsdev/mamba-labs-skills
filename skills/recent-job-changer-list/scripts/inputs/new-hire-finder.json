@@ -1,0 +1,16 @@
+{
+  "company_domains": [
+    "example.com"
+  ],
+  "target_titles": [
+    "sales",
+    "revenue operations"
+  ],
+  "lookback_months": "6",
+  "move_types": [
+    "new_hire"
+  ],
+  "serper_api_key": "${SERPER_API_KEY?}",
+  "prospeo_api_key": "${PROSPEO_API_KEY?}",
+  "max_people_per_company": "10"
+}

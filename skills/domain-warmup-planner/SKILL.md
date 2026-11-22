@@ -89,6 +89,12 @@ contract it checks is `scripts/output-contract.json`.
 - The pause metric is named and has a threshold
 - The options are concrete, with inbox counts and costs
 
+## Optional: run it on live data
+
+This skill works with no tool. To add live data, run Domain Deliverability Checker (https://apify.com/mambalabs/domain-deliverability-checker?fpr=mamba) on your own Apify
+account to check SPF, DKIM, DMARC and blacklists on each domain before the ramp starts.
+No Apify account yet: https://console.apify.com/sign-up?fpr=mamba
+
 ## Related skills
 
 - `domain-health-precheck`

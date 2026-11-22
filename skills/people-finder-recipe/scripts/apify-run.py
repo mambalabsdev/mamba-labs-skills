@@ -6,8 +6,9 @@ Usage:
 
 With no input file, the runnable example in scripts/inputs/<actor slug>.json is used.
 The token is read from the APIFY_TOKEN environment variable and is never printed.
-Get one at https://console.apify.com/account/integrations. The run bills your own
-Apify account at the actor's Store price.
+No account yet: create one free at https://console.apify.com/sign-up?fpr=mamba, then
+copy the token from https://console.apify.com/settings/integrations. The run bills your
+own Apify account at the actor's Store price.
 
 Provider keys. An input file may reference environment variables instead of holding a
 key: "${SERPER_API_KEY}" must be set, "${PROSPEO_API_KEY?}" is optional and is dropped

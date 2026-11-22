@@ -12,7 +12,7 @@ Cold email fails in five places and only one of them is the copy. The list is no
 
 ## What is in it
 
-This pack is the sequence of gates a campaign passes through before it is allowed to send, plus the copy work that happens inside those gates. The free skills fix one email and one setting. The paid skills encode the system: the whole sequence with its exit gate, the suppression layer that holds across channels, the reactivation motion, and the launch precheck that blocks a wave rather than blessing it.
+This pack is the sequence of gates a campaign passes through before it is allowed to send, plus the copy work that happens inside those gates. The free skills fix one email and one setting. The download skills encode the system: the whole sequence with its exit gate, the suppression layer that holds across channels, the reactivation motion, and the launch precheck that blocks a wave rather than blessing it.
 
 ## Free skills in this pack
 

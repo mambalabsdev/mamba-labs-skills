@@ -24,7 +24,7 @@
   "logo_svg": "listing/logo.svg",
   "example_output": null,
   "mcp_servers": [
-    "@mambalabsdev/mcp-gtm-suite@1.12.0"
+    "@mambalabsdev/mcp-gtm-suite@1.14.9"
   ],
   "mcp_tools": [
     "fingerprint_outbound_infrastructure"
@@ -38,7 +38,7 @@
       "item": "Apify account and API token (`APIFY_TOKEN`)",
       "needed": "required",
       "used_for": "Runs the live data actors",
-      "cost": "A free Apify account works. Each run bills your own Apify account at the actor's Store price: outbound-infrastructure-fingerprint 0.004 USD per domain."
+      "cost": "A free Apify account works. Each run bills your own Apify account at the actor's Store price: outbound-infrastructure-fingerprint 0.0025 USD per domain."
     },
     {
       "item": "Node.js 18 or newer",

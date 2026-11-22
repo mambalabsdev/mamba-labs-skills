@@ -94,6 +94,12 @@ contract it checks is `scripts/output-contract.json`.
 - The commitment states money, time and people
 - It fits one page
 
+## Optional: run it on live data
+
+This skill works with no tool. To add live data, run Company Firmographic Enricher (https://apify.com/mambalabs/company-firmographic-enricher?fpr=mamba) on your own Apify
+account to pull the prospect facts the page cites.
+No Apify account yet: https://console.apify.com/sign-up?fpr=mamba
+
 ## Related skills
 
 - `objection-handling-library`

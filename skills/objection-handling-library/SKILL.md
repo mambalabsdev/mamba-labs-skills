@@ -94,6 +94,12 @@ contract it checks is `scripts/output-contract.json`.
 - Responses with no supporting proof are flagged as gaps rather than shipped
 - Untested responses are labeled untested
 
+## Optional: run it on live data
+
+This skill works with no tool. To add live data, run B2B Reddit Conversation Monitor (https://apify.com/mambalabs/b2b-reddit-conversation-monitor?fpr=mamba) on your own Apify
+account to collect the objections buyers raise in public, next to the ones in your replies.
+No Apify account yet: https://console.apify.com/sign-up?fpr=mamba
+
 ## Related skills
 
 - `reply-classifier-router`

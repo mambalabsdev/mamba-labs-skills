@@ -94,6 +94,12 @@ contract it checks is `scripts/output-contract.json`.
 - Every factual claim has a named source
 - Internal links are specified with their placement
 
+## Optional: run it on live data
+
+This skill works with no tool. To add live data, run Google Trends Scraper (https://apify.com/mambalabs/google-trends-scraper?fpr=mamba) on your own Apify
+account to check whether interest in the topic is rising before you commission the piece.
+No Apify account yet: https://console.apify.com/sign-up?fpr=mamba
+
 ## Related skills
 
 - `first-party-data-post`

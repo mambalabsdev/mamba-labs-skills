@@ -90,6 +90,12 @@ contract it checks is `scripts/output-contract.json`.
 - Unmeasured baselines are flagged
 - Asserted claims name the evidence that would verify them
 
+## Optional: run it on live data
+
+This skill works with no tool. To add live data, run Website Screenshot Capture (https://apify.com/mambalabs/website-screenshot-capture?fpr=mamba) on your own Apify
+account to capture the live page a claim is about, as evidence the claim can be checked against.
+No Apify account yet: https://console.apify.com/sign-up?fpr=mamba
+
 ## Related skills
 
 - `knowledge-write-discipline`

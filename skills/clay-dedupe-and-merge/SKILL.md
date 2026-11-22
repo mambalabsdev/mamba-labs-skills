@@ -100,6 +100,12 @@ contract it checks is `scripts/output-contract.json`.
 - Precedence is set per field
 - The post merge audit includes a count of fields that went from populated to blank, and that count is zero
 
+## Optional: run it on live data
+
+This skill works with no tool. To add live data, run Company Identity Resolver (https://apify.com/mambalabs/company-identity-resolver?fpr=mamba) on your own Apify
+account to give every row a canonical domain before you merge, so near duplicates match.
+No Apify account yet: https://console.apify.com/sign-up?fpr=mamba
+
 ## Related skills
 
 - `clay-build-gate`

@@ -1,0 +1,96 @@
+{
+  "sku": "linkedin-url-audit",
+  "tier": "free",
+  "title": "LinkedIn URL Audit",
+  "previous_title": null,
+  "one_line": "Recheck the company profile URLs already stored in a CRM or table, and find the ones that point at the wrong company, a dead page, or nothing.",
+  "description": "Recheck the company profile URLs already stored in a CRM or table, and find the ones that point at the wrong company, a dead page, or nothing. Use when a profile URL column was filled months ago, when enrichment matched on name alone, or before a LinkedIn campaign pulls from stored URLs.",
+  "paragraph": "Company profile URLs go stale quietly. Companies rebrand, merge, and open country pages, and an enrichment that matched on name alone picks the wrong one in a share of rows nobody measured. This skill resolves every stored domain again, compares the fresh URL with the stored one, and sorts each row into kept, replaced, or flagged, so the column can be trusted before a campaign or a report reads it.",
+  "keywords": [
+    "identity",
+    "audit my linkedin urls",
+    "recheck the linkedin column",
+    "linkedin url hygiene",
+    "stale company profile urls"
+  ],
+  "family": "identity-enrichment",
+  "packs": [],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [
+    "@mambalabsdev/mcp-gtm-suite@1.14.9"
+  ],
+  "mcp_tools": [
+    "resolve_linkedin_url",
+    "resolve_company_identity"
+  ],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "requirements": [
+    {
+      "item": "Apify account and API token (`APIFY_TOKEN`)",
+      "needed": "required",
+      "used_for": "Runs the live data actors",
+      "cost": "A free Apify account works. Each run bills your own Apify account at the actor's Store price: domain-to-linkedin-url-resolver 0.006 USD per domain; company-identity-resolver 0.007 USD per company."
+    },
+    {
+      "item": "Node.js 18 or newer",
+      "needed": "required",
+      "used_for": "The MCP tool calls",
+      "cost": "Free. It starts the Mamba Labs MCP server with `npx`."
+    }
+  ],
+  "requirements_summary": "Needs an Apify token (usage billed to your Apify account); Node.js 18+.",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true,
+        "requirements_summary": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true,
+        "requirements_summary": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

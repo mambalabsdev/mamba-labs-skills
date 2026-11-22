@@ -91,6 +91,12 @@ contract it checks is `scripts/output-contract.json`.
 - The document opens with the finding, not the method
 - Supersession is stated in the document
 
+## Optional: run it on live data
+
+This skill works with no tool. To add live data, run Business PDF Field Extractor (https://apify.com/mambalabs/business-pdf-field-extractor?fpr=mamba) on your own Apify
+account to pull the fields out of a PDF before you file it, so the stored document is searchable.
+No Apify account yet: https://console.apify.com/sign-up?fpr=mamba
+
 ## Related skills
 
 - `results-doc-verifier`

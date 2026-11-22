@@ -91,6 +91,12 @@ contract it checks is `scripts/output-contract.json`.
 - Preview text is rendered beside each subject
 - Each variant states what it is testing
 
+## Optional: run it on live data
+
+This skill works with no tool. To add live data, run News Media Mention Monitor (https://apify.com/mambalabs/news-media-mention-monitor?fpr=mamba) on your own Apify
+account to find a recent mention that makes a subject line specific.
+No Apify account yet: https://console.apify.com/sign-up?fpr=mamba
+
 ## Related skills
 
 - `cold-email-structure-checker`

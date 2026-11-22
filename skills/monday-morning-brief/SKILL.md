@@ -102,6 +102,12 @@ contract it checks is `scripts/output-contract.json`.
 - The brief fits one screen
 - Last week's decisions are carried forward with a status
 
+## Optional: run it on live data
+
+This skill works with no tool. To add live data, run Company Change Event Feed (https://apify.com/mambalabs/company-change-event-feed?fpr=mamba) on your own Apify
+account to list the account changes that happened this week.
+No Apify account yet: https://console.apify.com/sign-up?fpr=mamba
+
 ## Related skills
 
 - `weekly-pipeline-review`

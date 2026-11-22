@@ -1,0 +1,35 @@
+{
+  "skill": "mmg-gtm-starter",
+  "cases": [
+    {
+      "id": "questions",
+      "prompt": "I want more meetings.",
+      "assert": [
+        "asks the three questions first"
+      ],
+      "anchors": [
+        "three questions are asked before any skill is named"
+      ]
+    },
+    {
+      "id": "short",
+      "prompt": "Which of your skills should I use?",
+      "assert": [
+        "names at most three"
+      ],
+      "anchors": [
+        "No more than three skills are named"
+      ]
+    },
+    {
+      "id": "no-budget",
+      "prompt": "I cannot pay for data right now.",
+      "assert": [
+        "offers a no budget path"
+      ],
+      "anchors": [
+        "no budget path is offered"
+      ]
+    }
+  ]
+}

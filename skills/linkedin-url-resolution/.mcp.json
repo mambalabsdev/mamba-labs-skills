@@ -4,7 +4,7 @@
       "command": "npx",
       "args": [
         "-y",
-        "@mambalabsdev/mcp-gtm-suite@1.12.0"
+        "@mambalabsdev/mcp-gtm-suite@1.14.9"
       ],
       "env": {
         "APIFY_TOKEN": "${APIFY_TOKEN}"

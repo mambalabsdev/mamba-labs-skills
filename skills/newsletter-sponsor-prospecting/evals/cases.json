@@ -1,0 +1,35 @@
+{
+  "skill": "newsletter-sponsor-prospecting",
+  "cases": [
+    {
+      "id": "group",
+      "prompt": "The same brand appears under two names.",
+      "assert": [
+        "groups by domain"
+      ],
+      "anchors": [
+        "grouped by brand domain"
+      ]
+    },
+    {
+      "id": "rank",
+      "prompt": "Rank these sponsors.",
+      "assert": [
+        "ranks by recency then frequency"
+      ],
+      "anchors": [
+        "ranked by recency, then frequency"
+      ]
+    },
+    {
+      "id": "window",
+      "prompt": "This brand sponsored once, two years ago.",
+      "assert": [
+        "drops it"
+      ],
+      "anchors": [
+        "dropped and counted"
+      ]
+    }
+  ]
+}

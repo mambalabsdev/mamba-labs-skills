@@ -1,0 +1,35 @@
+{
+  "skill": "rfp-and-tender-watch",
+  "cases": [
+    {
+      "id": "open",
+      "prompt": "Show me tenders for CRM work.",
+      "assert": [
+        "keeps only open notices with time to respond"
+      ],
+      "anchors": [
+        "Only open notices with time to respond"
+      ]
+    },
+    {
+      "id": "call",
+      "prompt": "Should we bid on these?",
+      "assert": [
+        "gives a call and reason per notice"
+      ],
+      "anchors": [
+        "bid or no bid call with a reason"
+      ]
+    },
+    {
+      "id": "weekly",
+      "prompt": "Run it again this week.",
+      "assert": [
+        "reports only new notices"
+      ],
+      "anchors": [
+        "report only new notices"
+      ]
+    }
+  ]
+}

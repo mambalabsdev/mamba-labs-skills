@@ -98,6 +98,12 @@ contract it checks is `scripts/output-contract.json`.
 - Savings are given in credits and in the currency the user asked about
 - The recommendation orders fixes by money saved, not by column order
 
+## Optional: run it on live data
+
+This skill works with no tool. To add live data, run Email Waterfall Orchestrator (https://apify.com/mambalabs/email-waterfall-orchestrator?fpr=mamba) on your own Apify
+account to run the email waterfall on your own provider keys instead of credit heavy columns.
+No Apify account yet: https://console.apify.com/sign-up?fpr=mamba
+
 ## Related skills
 
 - `clay-build-gate`

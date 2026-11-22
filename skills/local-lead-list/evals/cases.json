@@ -1,0 +1,35 @@
+{
+  "skill": "local-lead-list",
+  "cases": [
+    {
+      "id": "wording",
+      "prompt": "Find HVAC companies in Austin.",
+      "assert": [
+        "searches more than one wording"
+      ],
+      "anchors": [
+        "more than one wording"
+      ]
+    },
+    {
+      "id": "dedupe",
+      "prompt": "Some businesses appear twice.",
+      "assert": [
+        "merges by phone and website"
+      ],
+      "anchors": [
+        "merged by phone and website"
+      ]
+    },
+    {
+      "id": "closed",
+      "prompt": "Some of these look closed.",
+      "assert": [
+        "drops and counts them"
+      ],
+      "anchors": [
+        "Closed places are dropped and counted"
+      ]
+    }
+  ]
+}

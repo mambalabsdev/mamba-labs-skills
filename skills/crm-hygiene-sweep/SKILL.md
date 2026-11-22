@@ -101,6 +101,12 @@ contract it checks is `scripts/output-contract.json`.
 - The drift rate is tracked across sweeps
 - The manual list is capped and the excess is routed to an intake fix
 
+## Optional: run it on live data
+
+This skill works with no tool. To add live data, run Email Verifier (https://apify.com/mambalabs/email-verifier?fpr=mamba) on your own Apify
+account to re verify the emails on new and changed records.
+No Apify account yet: https://console.apify.com/sign-up?fpr=mamba
+
 ## Related skills
 
 - `crm-audit`

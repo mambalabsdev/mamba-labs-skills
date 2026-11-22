@@ -1,0 +1,35 @@
+{
+  "skill": "ai-answer-visibility-check",
+  "cases": [
+    {
+      "id": "neutral",
+      "prompt": "Ask ChatGPT about our brand.",
+      "assert": [
+        "uses buyer questions without the brand name"
+      ],
+      "anchors": [
+        "Questions do not contain the brand name"
+      ]
+    },
+    {
+      "id": "share",
+      "prompt": "How visible are we?",
+      "assert": [
+        "reports share of answers per brand"
+      ],
+      "anchors": [
+        "Share of answers is reported"
+      ]
+    },
+    {
+      "id": "sources",
+      "prompt": "Where do these answers come from?",
+      "assert": [
+        "lists the most cited sources"
+      ],
+      "anchors": [
+        "most cited sources are listed"
+      ]
+    }
+  ]
+}

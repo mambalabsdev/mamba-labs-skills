@@ -1,0 +1,95 @@
+{
+  "sku": "newsletter-sponsor-prospecting",
+  "tier": "free",
+  "title": "Newsletter Sponsor Prospecting",
+  "previous_title": null,
+  "one_line": "Find the brands that already pay to sponsor newsletters, podcasts and creators in a niche, and turn their sponsorship history into a prospect list.",
+  "description": "Find the brands that already pay to sponsor newsletters, podcasts and creators in a niche, and turn their sponsorship history into a prospect list. Use when selling sponsorships, an audience, or marketing services to brands that already spend on creator and newsletter ads.",
+  "paragraph": "A brand that sponsored three newsletters in a niche last quarter has a budget line and a buyer for exactly what a sponsorship seller offers. This skill reads the sponsors of the newsletters in a niche and the brands seen sponsoring creators, groups the sightings by brand, and ranks brands by how recently and how often they bought, so the list starts with active buyers instead of guesses.",
+  "keywords": [
+    "signals",
+    "who sponsors newsletters in my niche",
+    "find sponsors for my newsletter",
+    "brands that buy creator sponsorships",
+    "sponsor prospect list",
+    "podcast sponsor leads"
+  ],
+  "family": "signal-research",
+  "packs": [],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [
+    "newsletter-sponsor-tracker",
+    "brand-sponsor-finder"
+  ],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "requirements": [
+    {
+      "item": "Apify account and API token (`APIFY_TOKEN`)",
+      "needed": "required",
+      "used_for": "Runs the live data actors",
+      "cost": "A free Apify account works. Each run bills your own Apify account at the actor's Store price: newsletter-sponsor-tracker 0.004 USD per sponsor row and 0.065 USD per brand search; brand-sponsor-finder 0.02 USD per brand row and 0.005 USD per sighting row."
+    },
+    {
+      "item": "Python 3 with root certificates",
+      "needed": "required",
+      "used_for": "The direct actor script `scripts/apify-run.py`",
+      "cost": "Free. On a python.org install on macOS, run `Install Certificates.command` once, or the script falls back to the system certificate file and says so if it cannot."
+    }
+  ],
+  "requirements_summary": "Needs an Apify token (usage billed to your Apify account); Python 3.",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true,
+        "requirements_summary": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true,
+        "requirements_summary": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "skill": "creator-shortlist",
+  "cases": [
+    {
+      "id": "fit",
+      "prompt": "Give me the biggest creators in fitness.",
+      "assert": [
+        "defines fit and ranks fit before size"
+      ],
+      "anchors": [
+        "Ranking puts fit before size"
+      ]
+    },
+    {
+      "id": "active",
+      "prompt": "This creator has not posted since spring.",
+      "assert": [
+        "drops inactive creators"
+      ],
+      "anchors": [
+        "no post in 30 days are dropped"
+      ]
+    },
+    {
+      "id": "contact",
+      "prompt": "How do we reach them?",
+      "assert": [
+        "keeps only creators with a contact route"
+      ],
+      "anchors": [
+        "business contact route"
+      ]
+    }
+  ]
+}

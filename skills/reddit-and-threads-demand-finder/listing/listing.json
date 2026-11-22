@@ -1,0 +1,78 @@
+{
+  "sku": "reddit-and-threads-demand-finder",
+  "tier": "free",
+  "title": "Reddit and Threads Demand Finder",
+  "previous_title": null,
+  "one_line": "Find posts where people describe the problem you solve or ask for a tool like yours, and sort them into buyer questions, complaints and content ideas.",
+  "description": "Find posts where people describe the problem you solve or ask for a tool like yours, and sort them into buyer questions, complaints and content ideas. Use when someone wants to find demand on Reddit or Threads, research buyer language, or find threads worth answering.",
+  "paragraph": "People describe their problems in public, in their own words, long before they fill in a form. This skill reads the posts you paste or export for a set of keywords, keeps the ones written by someone with the problem rather than someone selling a fix, and sorts them into buyer questions worth answering, complaints about current tools, and recurring phrases that belong in your copy.",
+  "keywords": [
+    "seo and content",
+    "find people asking for a tool like ours",
+    "reddit demand research",
+    "buyer language from reddit",
+    "threads worth replying to"
+  ],
+  "family": "seo-content",
+  "packs": [],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "requirements": [],
+  "requirements_summary": "Needs no account, key or paid service: it works from the files, exports and answers you give it.",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true,
+        "requirements_summary": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true,
+        "requirements_summary": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

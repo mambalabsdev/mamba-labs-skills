@@ -1,0 +1,79 @@
+{
+  "sku": "ai-answer-visibility-check",
+  "tier": "free",
+  "title": "AI Answer Visibility Check",
+  "previous_title": null,
+  "one_line": "Check whether ChatGPT, Perplexity and other AI answer engines name your brand when a buyer asks about your category, which competitors they name instead, and which sources they cite.",
+  "description": "Check whether ChatGPT, Perplexity and other AI answer engines name your brand when a buyer asks about your category, which competitors they name instead, and which sources they cite. Use when someone asks if AI search recommends them, wants an AI visibility baseline, or needs to know which pages to improve for AI answers.",
+  "paragraph": "Buyers now ask an AI assistant for a shortlist before they visit a website. This skill takes the questions a buyer would ask, records which brands each answer names and in what position, lists the sources the answers cite, and turns the gaps into a short list of pages to write or improve. It works from answers you paste, and can run live with an actor.",
+  "keywords": [
+    "seo and content",
+    "does chatgpt recommend us",
+    "ai search visibility",
+    "are we in perplexity answers",
+    "which competitors does ai name",
+    "geo baseline"
+  ],
+  "family": "seo-content",
+  "packs": [],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "requirements": [],
+  "requirements_summary": "Needs no account, key or paid service: it works from the files, exports and answers you give it.",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": false,
+      "checks": {
+        "title": true,
+        "one_line": false,
+        "paragraph": true,
+        "requirements_summary": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": false,
+      "checks": {
+        "title": true,
+        "one_line": false,
+        "keywords": true,
+        "requirements_summary": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

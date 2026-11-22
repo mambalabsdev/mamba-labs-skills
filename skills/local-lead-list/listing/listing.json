@@ -1,0 +1,79 @@
+{
+  "sku": "local-lead-list",
+  "tier": "free",
+  "title": "Local Lead List",
+  "previous_title": null,
+  "one_line": "Build a clean list of local businesses for a category and area, with the fields a caller or emailer needs, duplicates removed and closed businesses dropped.",
+  "description": "Build a clean list of local businesses for a category and area, with the fields a caller or emailer needs, duplicates removed and closed businesses dropped. Use when someone sells to local businesses, needs a list of plumbers, dentists or restaurants in a city, or wants a map based prospect list.",
+  "paragraph": "Local lists go wrong in the same ways: chains mixed with independents, the same business listed twice, closed places, and no way to reach the owner. This skill sets the category and the area, removes chains if you do not sell to them, deduplicates by phone and website, drops closed places, and ranks the rest by a simple signal you choose, such as a low review count or no website.",
+  "keywords": [
+    "signals",
+    "list of local businesses",
+    "find plumbers in denver",
+    "local leads from google maps",
+    "map based prospect list",
+    "small business list for my city"
+  ],
+  "family": "signal-research",
+  "packs": [],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "requirements": [],
+  "requirements_summary": "Needs no account, key or paid service: it works from the files, exports and answers you give it.",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true,
+        "requirements_summary": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true,
+        "requirements_summary": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

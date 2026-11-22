@@ -93,6 +93,12 @@ contract it checks is `scripts/output-contract.json`.
 - The statement is tested as an email first line and as a headline
 - The result is written back into BRAND.md
 
+## Optional: run it on live data
+
+This skill works with no tool. To add live data, run Lookalike Company Finder (https://apify.com/mambalabs/lookalike-company-finder?fpr=mamba) on your own Apify
+account to list the real alternatives a buyer compares you with.
+No Apify account yet: https://console.apify.com/sign-up?fpr=mamba
+
 ## Related skills
 
 - `brand-context-builder`

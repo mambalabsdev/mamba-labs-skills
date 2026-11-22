@@ -98,6 +98,12 @@ contract it checks is `scripts/output-contract.json`.
 - Cut recommendations are whole builds
 - The cost of each cut is expressed in expected contacts
 
+## Optional: run it on live data
+
+This skill works with no tool. To add live data, run People Finder and Email Verifier (https://apify.com/mambalabs/people-finder?fpr=mamba) on your own Apify
+account to price a people search outside Clay credits as a comparison line.
+No Apify account yet: https://console.apify.com/sign-up?fpr=mamba
+
 ## Related skills
 
 - `clay-cost-audit`

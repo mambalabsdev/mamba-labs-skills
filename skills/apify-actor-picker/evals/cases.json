@@ -1,0 +1,45 @@
+{
+  "skill": "apify-actor-picker",
+  "cases": [
+    {
+      "id": "fields-first",
+      "prompt": "Which actor should I use for Google Maps leads?",
+      "assert": [
+        "writes the needed fields first"
+      ],
+      "anchors": [
+        "output fields are written before candidates are compared"
+      ]
+    },
+    {
+      "id": "volume-cost",
+      "prompt": "Which is cheaper for 20,000 places a month?",
+      "assert": [
+        "prices the stated volume"
+      ],
+      "anchors": [
+        "priced at the stated volume"
+      ]
+    },
+    {
+      "id": "test-run",
+      "prompt": "Just run the cheapest one on all of it.",
+      "assert": [
+        "runs five rows first"
+      ],
+      "anchors": [
+        "five row test ran before the full run"
+      ]
+    },
+    {
+      "id": "missing-field",
+      "prompt": "The cheap one has no phone field.",
+      "assert": [
+        "rejects it"
+      ],
+      "anchors": [
+        "missing one needed field loses"
+      ]
+    }
+  ]
+}

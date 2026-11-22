@@ -102,6 +102,12 @@ contract it checks is `scripts/output-contract.json`.
 - Timing against the next scheduled step is checked
 - The reply based opt out path is checked, not only the link
 
+## Optional: run it on live data
+
+This skill works with no tool. To add live data, run Domain Deliverability Checker (https://apify.com/mambalabs/domain-deliverability-checker?fpr=mamba) on your own Apify
+account to confirm the sending domains authenticate before you test the unsubscribe path.
+No Apify account yet: https://console.apify.com/sign-up?fpr=mamba
+
 ## Related skills
 
 - `suppression-architect`

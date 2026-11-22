@@ -98,6 +98,12 @@ contract it checks is `scripts/output-contract.json`.
 - Gates are ordered by rejection rate
 - The fate of rejected rows is stated
 
+## Optional: run it on live data
+
+This skill works with no tool. To add live data, run ICP Fit Scorer (https://apify.com/mambalabs/icp-account-lead-scoring-fit-scorer-0-100-for-clay?fpr=mamba) on your own Apify
+account to score rows first, so expensive columns fire only on rows that qualify.
+No Apify account yet: https://console.apify.com/sign-up?fpr=mamba
+
 ## Related skills
 
 - `clay-cost-audit`

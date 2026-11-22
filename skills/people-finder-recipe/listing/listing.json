@@ -36,7 +36,7 @@
       "item": "Apify account and API token (`APIFY_TOKEN`)",
       "needed": "required",
       "used_for": "Runs the live data actors",
-      "cost": "A free Apify account works. Each run bills your own Apify account at the actor's Store price: people-finder 0.02 USD per company searched, 0.02 USD per person, 0.04 USD per email found and 0.015 USD per email verified; team-page-people-extractor 0.006 USD per person."
+      "cost": "A free Apify account works. Each run bills your own Apify account at the actor's Store price: people-finder 0.02 USD per company searched, 0.02 USD per person, 0.04 USD per email found and 0.015 USD per email verified; team-page-people-extractor 0.005 USD per person."
     },
     {
       "item": "Python 3 with root certificates",
@@ -57,13 +57,13 @@
       "cost": "Billed by that provider on your own plan. This skill adds no markup."
     },
     {
-      "item": "One of: Reoon API key or BounceBan API key",
+      "item": "BounceBan API key (`BOUNCEBAN_API_KEY`, bounceban.com)",
       "needed": "optional",
       "used_for": "Verifying those emails",
-      "cost": "Billed by that provider on your own plan. This skill adds no markup."
+      "cost": "Billed by BounceBan on your own plan."
     }
   ],
-  "requirements_summary": "Needs an Apify token (usage billed to your Apify account); Python 3; Serper API key. Optional: one of Prospeo API key or Icypeas API key; one of Reoon API key or BounceBan API key.",
+  "requirements_summary": "Needs an Apify token (usage billed to your Apify account); Python 3; Serper API key. Optional: one of Prospeo API key or Icypeas API key; BounceBan API key.",
   "channels": {
     "agent_skills_spec": {
       "pass": true,

@@ -1,0 +1,104 @@
+{
+  "sku": "lookalike-account-list",
+  "tier": "free",
+  "title": "Lookalike Account List",
+  "previous_title": null,
+  "one_line": "Turn your best customers into a list of companies that look like them, scored on why they match, with firmographics filled and existing customers removed.",
+  "description": "Turn your best customers into a list of companies that look like them, scored on why they match, with firmographics filled and existing customers removed. Use when someone wants more accounts like their best ones, a seed based target list, or lookalike audiences for outbound.",
+  "paragraph": "A list built from a few great customers beats a list built from filters, but only if the match is explained and checked. This skill starts from seed domains, finds companies that share their market and model, fills firmographics, removes customers and open deals, and keeps the reason each company matched, so a seller can see why it is on the list.",
+  "keywords": [
+    "signals",
+    "find companies like my best customers",
+    "lookalike accounts",
+    "more accounts like these",
+    "seed list to target list",
+    "similar companies"
+  ],
+  "family": "signal-research",
+  "packs": [],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [
+    "@mambalabsdev/mcp-gtm-suite@1.14.9"
+  ],
+  "mcp_tools": [
+    "enrich_company_firmographics"
+  ],
+  "direct_actors": [
+    "lookalike-company-finder"
+  ],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "requirements": [
+    {
+      "item": "Apify account and API token (`APIFY_TOKEN`)",
+      "needed": "required",
+      "used_for": "Runs the live data actors",
+      "cost": "A free Apify account works. Each run bills your own Apify account at the actor's Store price: lookalike-company-finder 0.005 USD per lookalike company; company-firmographic-enricher 0.0035 USD per company."
+    },
+    {
+      "item": "Node.js 18 or newer",
+      "needed": "required",
+      "used_for": "The MCP tool calls",
+      "cost": "Free. It starts the Mamba Labs MCP server with `npx`."
+    },
+    {
+      "item": "Python 3 with root certificates",
+      "needed": "required",
+      "used_for": "The direct actor script `scripts/apify-run.py`",
+      "cost": "Free. On a python.org install on macOS, run `Install Certificates.command` once, or the script falls back to the system certificate file and says so if it cannot."
+    }
+  ],
+  "requirements_summary": "Needs an Apify token (usage billed to your Apify account); Node.js 18+; Python 3.",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true,
+        "requirements_summary": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true,
+        "requirements_summary": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

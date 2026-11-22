@@ -91,6 +91,12 @@ contract it checks is `scripts/output-contract.json`.
 - A multi skill request returns an order, not a list
 - The context file check runs and recommends the builder when files are missing
 
+## Optional: run it on live data
+
+This skill works with no tool. To add live data, run B2B Prospect Engine (https://apify.com/mambalabs/b2b-prospect-engine?fpr=mamba) on your own Apify
+account to cover the most common prospecting requests with one actor.
+No Apify account yet: https://console.apify.com/sign-up?fpr=mamba
+
 ## Related skills
 
 - `brand-context-builder`

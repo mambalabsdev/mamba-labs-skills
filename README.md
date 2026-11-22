@@ -4,7 +4,7 @@
 
 Free skills that teach AI agents to run signal based go to market work. Built from production campaigns and wired to live data, not prompt text.
 
-**56 free skills, 12 families, 10 packs.**
+**71 free skills, 12 families, 10 packs.**
 
 ## Install
 
@@ -60,8 +60,13 @@ Every free skill sits on a 30 day review cycle. Fixes and improvements ship as r
 - [`event-presence-prospecting`](skills/event-presence-prospecting): Find which conferences a company sponsors, exhibits at, or speaks at, and use that as a budget and audience signal. Needs an Apify token (usage billed to your Apify account); Node.js 18+.
 - [`hiring-signal-spotter`](skills/hiring-signal-spotter): Read a company's open roles as a buying signal and turn them into an outreach angle. Needs an Apify token (usage billed to your Apify account); Node.js 18+.
 - [`job-board-keyword-scanner`](skills/job-board-keyword-scanner): Scan a company's job postings for the specific words that indicate a problem your product solves. Needs an Apify token (usage billed to your Apify account); Node.js 18+.
+- [`local-lead-list`](skills/local-lead-list): Build a clean list of local businesses for a category and area, with the fields a caller or emailer needs, duplicates removed and closed businesses dropped. Needs no account, key or paid service: it works from the files, exports and answers you give it.
+- [`lookalike-account-list`](skills/lookalike-account-list): Turn your best customers into a list of companies that look like them, scored on why they match, with firmographics filled and existing customers removed. Needs an Apify token (usage billed to your Apify account); Node.js 18+; Python 3.
+- [`newsletter-sponsor-prospecting`](skills/newsletter-sponsor-prospecting): Find the brands that already pay to sponsor newsletters, podcasts and creators in a niche, and turn their sponsorship history into a prospect list. Needs an Apify token (usage billed to your Apify account); Python 3.
 - [`outbound-stack-fingerprint`](skills/outbound-stack-fingerprint): Detect whether a company runs cold outbound, which tools it sends with, and how many sending domains it operates. Needs an Apify token (usage billed to your Apify account); Node.js 18+.
 - [`public-award-prospecting`](skills/public-award-prospecting): Find companies that just won a government contract or public grant and reach them while the money is new. Needs an Apify token (usage billed to your Apify account); Node.js 18+.
+- [`recent-job-changer-list`](skills/recent-job-changer-list): Build a list of people who started a new role in the last few months at target accounts, or who left a customer for a new company, and give each one a reason to reach out now. Needs an Apify token (usage billed to your Apify account); Python 3; Serper API key. Optional: Prospeo API key.
+- [`rfp-and-tender-watch`](skills/rfp-and-tender-watch): Watch public tender and RFP portals for open notices that match what you sell, and send a weekly shortlist with deadlines and a bid or no bid call. Needs an Apify token (usage billed to your Apify account); Python 3.
 - [`tech-stack-signal-reader`](skills/tech-stack-signal-reader): Detect which tools a company runs from its own website and turn the stack into a qualification and an angle. Needs an Apify token (usage billed to your Apify account); Node.js 18+.
 - [`workplace-program-signal`](skills/workplace-program-signal): Detect which workplace programs and benefits a company runs, as a signal for anyone selling into people operations, benefits or internal communications. Needs an Apify token (usage billed to your Apify account); Python 3.
 
@@ -69,11 +74,36 @@ Every free skill sits on a 30 day review cycle. Fixes and improvements ship as r
 
 - [`company-identity-resolution`](skills/company-identity-resolution): Resolve a messy company name to the right domain and canonical record, and say how confident the match is. Needs an Apify token (usage billed to your Apify account); Node.js 18+.
 - [`contact-classification`](skills/contact-classification): Classify contacts by department, seniority and role from their job title, and route them to the right persona. Needs an Apify token (usage billed to your Apify account); Node.js 18+.
+- [`email-waterfall-on-your-keys`](skills/email-waterfall-on-your-keys): Run a work email waterfall across your own finder accounts, verify every address it returns, and report the find rate and the cost per verified email. Needs an Apify token (usage billed to your Apify account); Python 3; one of Findymail API key, Prospeo API key or Icypeas API key; API key for the verification provider you pick.
 - [`firmographic-enrichment`](skills/firmographic-enrichment): Fill headcount, industry, headquarters and revenue band on a company list, and report honestly which fields actually filled. Needs an Apify token (usage billed to your Apify account); Node.js 18+.
 - [`icp-definition-builder`](skills/icp-definition-builder): Turn a description of a business into a structured ideal customer profile with firmographic criteria, signals, pain indicators and exclusion rules. Needs no account, key or paid service: it works from the files, exports and answers you give it.
 - [`legal-entity-resolution`](skills/legal-entity-resolution): Resolve a company domain to its registered legal entity, company number and tax identifier. Needs an Apify token (usage billed to your Apify account); Node.js 18+.
+- [`linkedin-url-audit`](skills/linkedin-url-audit): Recheck the company profile URLs already stored in a CRM or table, and find the ones that point at the wrong company, a dead page, or nothing. Needs an Apify token (usage billed to your Apify account); Node.js 18+.
 - [`linkedin-url-resolution`](skills/linkedin-url-resolution): Turn a list of company domains into company profile URLs, and fill the gaps a native enrichment leaves behind. Needs an Apify token (usage billed to your Apify account); Node.js 18+.
-- [`people-finder-recipe`](skills/people-finder-recipe): Find the right people at a list of companies without pulling a hundred irrelevant contacts per account. Needs an Apify token (usage billed to your Apify account); Python 3; Serper API key. Optional: one of Prospeo API key or Icypeas API key; one of Reoon API key or BounceBan API key.
+- [`mobile-phone-waterfall-cost-planner`](skills/mobile-phone-waterfall-cost-planner): Plan and price a mobile number waterfall before it runs: the provider order, the expected find rate, the cost per mobile found, and a cap that stops overspend. Needs an Apify token (usage billed to your Apify account); Python 3; one of Prospeo API key, Lusha API key or ContactOut API key.
+- [`people-finder-recipe`](skills/people-finder-recipe): Find the right people at a list of companies without pulling a hundred irrelevant contacts per account. Needs an Apify token (usage billed to your Apify account); Python 3; Serper API key. Optional: one of Prospeo API key or Icypeas API key; BounceBan API key.
+
+### Agency operations
+
+- [`apify-actor-picker`](skills/apify-actor-picker): Choose the right Apify actor for a data job by reading the input schema, the output fields, the pricing and the run history before the first run. Needs no account, key or paid service: it works from the files, exports and answers you give it.
+- [`brand-context-builder`](skills/brand-context-builder): Interview once and write the shared context files that every other skill reads. Needs no account, key or paid service: it works from the files, exports and answers you give it.
+- [`friction-log-to-rules`](skills/friction-log-to-rules): Turn the things that went wrong in a working session into standing rules that stop them recurring. Needs no account, key or paid service: it works from the files, exports and answers you give it.
+- [`mamba-gtm-router`](skills/mamba-gtm-router): Route a plain language go to market request to the right skill, and name the ones that would help but are not installed. Needs no account, key or paid service: it works from the files, exports and answers you give it.
+- [`mcp-server-setup-check`](skills/mcp-server-setup-check): Install an MCP server in an agent and prove it works: the package version, the tool list, one real call, and the token it needs. Needs an Apify token (usage billed to your Apify account); Python 3.
+- [`mmg-gtm-starter`](skills/mmg-gtm-starter): Start here. Ask what the user is trying to get done, name the two or three Mamba Labs skills and actors that do it, in order, and what each one needs. Needs no account, key or paid service: it works from the files, exports and answers you give it.
+- [`partner-sourcing-plan`](skills/partner-sourcing-plan): Find the partners whose customers are your buyers, and structure the first conversation so it produces something. Needs an Apify token (usage billed to your Apify account); Node.js 18+.
+- [`work-order-writer`](skills/work-order-writer): Write a work order an agent or a contractor can execute end to end without asking a question. Needs no account, key or paid service: it works from the files, exports and answers you give it.
+
+### SEO and content
+
+- [`agent-readability-audit`](skills/agent-readability-audit): Check whether a website can be read and used by AI agents, and fix what blocks them. Needs an Apify token (usage billed to your Apify account); Node.js 18+.
+- [`ai-answer-visibility-check`](skills/ai-answer-visibility-check): Check whether ChatGPT, Perplexity and other AI answer engines name your brand when a buyer asks about your category, which competitors they name instead, and which sources they cite. Needs no account, key or paid service: it works from the files, exports and answers you give it.
+- [`comparison-page-builder`](skills/comparison-page-builder): Write a comparison or alternatives page that a reader trusts and a competitor cannot get taken down. Needs no account, key or paid service: it works from the files, exports and answers you give it.
+- [`content-brief-builder`](skills/content-brief-builder): Write a content brief a writer can execute without inventing the substance, including where the non generic part comes from. Needs no account, key or paid service: it works from the files, exports and answers you give it.
+- [`directory-submission-plan`](skills/directory-submission-plan): Pick the directories and marketplaces worth listing on, and prepare one set of assets that fits all of them. Needs no account, key or paid service: it works from the files, exports and answers you give it.
+- [`publishing-cadence-reader`](skills/publishing-cadence-reader): Measure how often a company actually publishes and read that as a content investment signal. Needs an Apify token (usage billed to your Apify account); Node.js 18+.
+- [`reddit-and-threads-demand-finder`](skills/reddit-and-threads-demand-finder): Find posts where people describe the problem you solve or ask for a tool like yours, and sort them into buyer questions, complaints and content ideas. Needs no account, key or paid service: it works from the files, exports and answers you give it.
+- [`wcag-and-cookie-quick-audit`](skills/wcag-and-cookie-quick-audit): Run a quick accessibility and cookie consent check on a website, rank the issues by risk, and give a fix list a developer can work through. Needs no account, key or paid service: it works from the files, exports and answers you give it.
 
 ### Clay builds
 
@@ -93,21 +123,13 @@ Every free skill sits on a 30 day review cycle. Fixes and improvements ship as r
 - [`sequencer-campaign-config`](skills/sequencer-campaign-config): Configure a sending platform campaign correctly the first time: schedule, tracking, limits, timezone and the fields that silently reset. Needs an Apify token (usage billed to your Apify account); Node.js 18+; Instantly v2 or Smartlead API key.
 - [`subject-line-lab`](skills/subject-line-lab): Generate and screen cold email subject lines against truncation, spam triggers and the preview text they create. Needs no account, key or paid service: it works from the files, exports and answers you give it.
 
-### Agency operations
+### Sales enablement
 
-- [`brand-context-builder`](skills/brand-context-builder): Interview once and write the shared context files that every other skill reads. Needs no account, key or paid service: it works from the files, exports and answers you give it.
-- [`friction-log-to-rules`](skills/friction-log-to-rules): Turn the things that went wrong in a working session into standing rules that stop them recurring. Needs no account, key or paid service: it works from the files, exports and answers you give it.
-- [`mamba-gtm-router`](skills/mamba-gtm-router): Route a plain language go to market request to the right skill, and name the ones that would help but are not installed. Needs no account, key or paid service: it works from the files, exports and answers you give it.
-- [`partner-sourcing-plan`](skills/partner-sourcing-plan): Find the partners whose customers are your buyers, and structure the first conversation so it produces something. Needs an Apify token (usage billed to your Apify account); Node.js 18+.
-- [`work-order-writer`](skills/work-order-writer): Write a work order an agent or a contractor can execute end to end without asking a question. Needs no account, key or paid service: it works from the files, exports and answers you give it.
-
-### SEO and content
-
-- [`agent-readability-audit`](skills/agent-readability-audit): Check whether a website can be read and used by AI agents, and fix what blocks them. Needs an Apify token (usage billed to your Apify account); Node.js 18+.
-- [`comparison-page-builder`](skills/comparison-page-builder): Write a comparison or alternatives page that a reader trusts and a competitor cannot get taken down. Needs no account, key or paid service: it works from the files, exports and answers you give it.
-- [`content-brief-builder`](skills/content-brief-builder): Write a content brief a writer can execute without inventing the substance, including where the non generic part comes from. Needs no account, key or paid service: it works from the files, exports and answers you give it.
-- [`directory-submission-plan`](skills/directory-submission-plan): Pick the directories and marketplaces worth listing on, and prepare one set of assets that fits all of them. Needs no account, key or paid service: it works from the files, exports and answers you give it.
-- [`publishing-cadence-reader`](skills/publishing-cadence-reader): Measure how often a company actually publishes and read that as a content investment signal. Needs an Apify token (usage billed to your Apify account); Node.js 18+.
+- [`creator-shortlist`](skills/creator-shortlist): Build a shortlist of creators for a brand partnership or sponsorship, judged on audience fit, recent activity and a way to reach them, not follower count alone. Needs no account, key or paid service: it works from the files, exports and answers you give it.
+- [`customer-research-interview`](skills/customer-research-interview): Run customer interviews that produce usable language instead of agreement, and turn the transcripts into a sharper ICP. Needs no account, key or paid service: it works from the files, exports and answers you give it.
+- [`objection-handling-library`](skills/objection-handling-library): Build an objection library from the replies you actually received, with a tested response per objection. Needs no account, key or paid service: it works from the files, exports and answers you give it.
+- [`positioning-statement`](skills/positioning-statement): Write a positioning statement that names the real alternative and survives contact with a sales call. Needs no account, key or paid service: it works from the files, exports and answers you give it.
+- [`sales-one-pager`](skills/sales-one-pager): Write the one page document a prospect forwards internally to the person who has to approve. Needs no account, key or paid service: it works from the files, exports and answers you give it.
 
 ### Deliverability
 
@@ -115,13 +137,6 @@ Every free skill sits on a 30 day review cycle. Fixes and improvements ship as r
 - [`domain-health-precheck`](skills/domain-health-precheck): Check whether one sending domain is safe for cold outreach by reading its SPF, DKIM and DMARC records and its blacklist status. Needs an Apify token (usage billed to your Apify account); Node.js 18+. Optional: DNS access at your registrar, to apply the fixes.
 - [`domain-warmup-planner`](skills/domain-warmup-planner): Plan the warmup ramp for new sending domains and inboxes so real campaign volume starts on the date it is needed. Needs no account, key or paid service: it works from the files, exports and answers you give it.
 - [`unsubscribe-compliance-check`](skills/unsubscribe-compliance-check): Check that outbound campaigns carry a working unsubscribe path and that opt outs land somewhere that actually stops the next send. Needs access to your sending platform (Instantly, Smartlead or similar); seed inboxes at Gmail, Microsoft and Yahoo that you control, or an inbox placement test service.
-
-### Sales enablement
-
-- [`customer-research-interview`](skills/customer-research-interview): Run customer interviews that produce usable language instead of agreement, and turn the transcripts into a sharper ICP. Needs no account, key or paid service: it works from the files, exports and answers you give it.
-- [`objection-handling-library`](skills/objection-handling-library): Build an objection library from the replies you actually received, with a tested response per objection. Needs no account, key or paid service: it works from the files, exports and answers you give it.
-- [`positioning-statement`](skills/positioning-statement): Write a positioning statement that names the real alternative and survives contact with a sales call. Needs no account, key or paid service: it works from the files, exports and answers you give it.
-- [`sales-one-pager`](skills/sales-one-pager): Write the one page document a prospect forwards internally to the person who has to approve. Needs no account, key or paid service: it works from the files, exports and answers you give it.
 
 ### Small business operations
 
@@ -173,7 +188,7 @@ download skills that finish it. Everything is free.
 Download skills and packs: https://mambabuilt.com/skills
 
 The live data behind the signal skills runs on the Mamba Labs actor fleet:
-https://apify.com/mambalabs
+https://apify.com/mambalabs?fpr=mamba
 
 ## License
 

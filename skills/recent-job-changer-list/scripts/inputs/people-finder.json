@@ -1,0 +1,17 @@
+{
+  "domain": "example.com",
+  "targetCount": 3,
+  "jobTitles": [
+    "Head of Revenue Operations",
+    "VP Sales"
+  ],
+  "excludeJobTitles": [
+    "intern",
+    "assistant"
+  ],
+  "verifyEmails": true,
+  "serpApiKey": "${SERPER_API_KEY}",
+  "prospeoApiKey": "${PROSPEO_API_KEY?}",
+  "icypeasApiKey": "${ICYPEAS_API_KEY?}",
+  "bounceBanApiKey": "${BOUNCEBAN_API_KEY?}"
+}

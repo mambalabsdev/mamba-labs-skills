@@ -1,0 +1,94 @@
+{
+  "sku": "rfp-and-tender-watch",
+  "tier": "free",
+  "title": "RFP and Tender Watch",
+  "previous_title": null,
+  "one_line": "Watch public tender and RFP portals for open notices that match what you sell, and send a weekly shortlist with deadlines and a bid or no bid call.",
+  "description": "Watch public tender and RFP portals for open notices that match what you sell, and send a weekly shortlist with deadlines and a bid or no bid call. Use when someone sells to the public sector, wants to find RFPs, or needs a tender watch that does not flood them with noise.",
+  "paragraph": "Public tenders are buying intent with a deadline, but the portals return hundreds of loosely matched notices. This skill sets keywords and exclusions from what you actually sell, keeps only open notices, ranks them by deadline and fit, and makes a bid or no bid call per notice with the reason, so the weekly list is short enough to act on.",
+  "keywords": [
+    "signals",
+    "find rfps for us",
+    "tender watch",
+    "public sector bids",
+    "government contracts we could win",
+    "weekly rfp shortlist"
+  ],
+  "family": "signal-research",
+  "packs": [],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [
+    "open-tender-rfp-finder"
+  ],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "requirements": [
+    {
+      "item": "Apify account and API token (`APIFY_TOKEN`)",
+      "needed": "required",
+      "used_for": "Runs the live data actors",
+      "cost": "A free Apify account works. Each run bills your own Apify account at the actor's Store price: open-tender-rfp-finder 0.003 USD per notice row."
+    },
+    {
+      "item": "Python 3 with root certificates",
+      "needed": "required",
+      "used_for": "The direct actor script `scripts/apify-run.py`",
+      "cost": "Free. On a python.org install on macOS, run `Install Certificates.command` once, or the script falls back to the system certificate file and says so if it cannot."
+    }
+  ],
+  "requirements_summary": "Needs an Apify token (usage billed to your Apify account); Python 3.",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true,
+        "requirements_summary": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true,
+        "requirements_summary": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

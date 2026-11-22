@@ -90,6 +90,12 @@ contract it checks is `scripts/output-contract.json`.
 - The report gives a single go or no go verdict
 - Fallbacks are checked for grammar, not just for presence
 
+## Optional: run it on live data
+
+This skill works with no tool. To add live data, run Lead File Import Checker (https://apify.com/mambalabs/lead-file-import-checker?fpr=mamba) on your own Apify
+account to check the lead file itself before the merge variables are linted against it.
+No Apify account yet: https://console.apify.com/sign-up?fpr=mamba
+
 ## Related skills
 
 - `cold-email-sequence-system`

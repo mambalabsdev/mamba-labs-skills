@@ -1,0 +1,7 @@
+{
+  "seed_domains": [
+    "example.com"
+  ],
+  "max_results": "25",
+  "use_classifier": "true"
+}

@@ -91,6 +91,12 @@ contract it checks is `scripts/output-contract.json`.
 - No narrative section appears
 - The document is timestamped and names what it supersedes
 
+## Optional: run it on live data
+
+This skill works with no tool. To add live data, run Site Crawler for Links and Tables (https://apify.com/mambalabs/site-crawler-links-tables?fpr=mamba) on your own Apify
+account to snapshot the links and tables of the site the handoff covers.
+No Apify account yet: https://console.apify.com/sign-up?fpr=mamba
+
 ## Related skills
 
 - `knowledge-write-discipline`

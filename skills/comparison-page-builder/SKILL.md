@@ -92,6 +92,12 @@ contract it checks is `scripts/output-contract.json`.
 - The recommendation is conditional on the reader's situation
 - A review date appears in the published content
 
+## Optional: run it on live data
+
+This skill works with no tool. To add live data, run Review Platform Reputation Enricher (https://apify.com/mambalabs/review-platform-reputation-enricher?fpr=mamba) on your own Apify
+account to pull the public ratings of each alternative the page compares.
+No Apify account yet: https://console.apify.com/sign-up?fpr=mamba
+
 ## Related skills
 
 - `programmatic-seo-planner`

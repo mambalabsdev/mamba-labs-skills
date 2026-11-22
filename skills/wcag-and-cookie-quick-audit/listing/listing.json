@@ -1,0 +1,79 @@
+{
+  "sku": "wcag-and-cookie-quick-audit",
+  "tier": "free",
+  "title": "WCAG and Cookie Quick Audit",
+  "previous_title": null,
+  "one_line": "Run a quick accessibility and cookie consent check on a website, rank the issues by risk, and give a fix list a developer can work through.",
+  "description": "Run a quick accessibility and cookie consent check on a website, rank the issues by risk, and give a fix list a developer can work through. Use when someone asks if their site is accessible, wants a WCAG check, worries about cookie consent, or needs a pre launch compliance pass.",
+  "paragraph": "Accessibility and consent problems are found the same way: by checking what the page actually does. This skill checks the main page types for the accessibility failures that affect the most users, such as missing alt text, low contrast, unlabeled form fields and keyboard traps, and checks whether tracking loads before the visitor consents. It ranks issues by risk and writes the fix for each.",
+  "keywords": [
+    "seo and content",
+    "is our site accessible",
+    "wcag check",
+    "cookie consent audit",
+    "does tracking fire before consent",
+    "pre launch compliance check"
+  ],
+  "family": "seo-content",
+  "packs": [],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "requirements": [],
+  "requirements_summary": "Needs no account, key or paid service: it works from the files, exports and answers you give it.",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true,
+        "requirements_summary": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true,
+        "requirements_summary": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

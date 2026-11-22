@@ -1,0 +1,79 @@
+{
+  "sku": "apify-actor-picker",
+  "tier": "free",
+  "title": "Apify Actor Picker",
+  "previous_title": null,
+  "one_line": "Choose the right Apify actor for a data job by reading the input schema, the output fields, the pricing and the run history before the first run.",
+  "description": "Choose the right Apify actor for a data job by reading the input schema, the output fields, the pricing and the run history before the first run. Use when someone asks which scraper or actor to use, wants to compare actors, or is about to run an actor they have not used before.",
+  "paragraph": "The Apify Store holds thousands of actors and many of them claim the same job. The expensive mistakes are an actor whose output lacks the one field you need, a pricing model that bills per page when you expected per result, and an actor that fails a fifth of its runs. This skill turns the choice into a short check: the fields you need, the fields each candidate returns, the cost of your actual volume, and the failure rate, with a test run on five rows before the full run.",
+  "keywords": [
+    "agency",
+    "which apify actor should i use",
+    "compare these scrapers",
+    "find an actor for this data",
+    "is this actor any good",
+    "pick a scraper"
+  ],
+  "family": "agency-operations",
+  "packs": [],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "requirements": [],
+  "requirements_summary": "Needs no account, key or paid service: it works from the files, exports and answers you give it.",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true,
+        "requirements_summary": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true,
+        "requirements_summary": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

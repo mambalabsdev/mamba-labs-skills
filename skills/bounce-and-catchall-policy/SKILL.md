@@ -91,6 +91,12 @@ contract it checks is `scripts/output-contract.json`.
 - Role addresses are decided by persona, not by a blanket rule
 - The soft bounce threshold is a number and its record location is named
 
+## Optional: run it on live data
+
+This skill works with no tool. To add live data, run Email Verifier (https://apify.com/mambalabs/email-verifier?fpr=mamba) on your own Apify
+account to classify each address as valid, catch all, role or invalid before the policy applies.
+No Apify account yet: https://console.apify.com/sign-up?fpr=mamba
+
 ## Related skills
 
 - `clay-waterfall-designer`

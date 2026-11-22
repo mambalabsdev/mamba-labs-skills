@@ -91,6 +91,12 @@ contract it checks is `scripts/output-contract.json`.
 - Every file carries a written date and a review date
 - Disallowed claims are recorded in BRAND.md
 
+## Optional: run it on live data
+
+This skill works with no tool. To add live data, run Company Firmographic Enricher (https://apify.com/mambalabs/company-firmographic-enricher?fpr=mamba) on your own Apify
+account to pull your own company's headcount, industry and location to seed BRAND.md and ICP.md.
+No Apify account yet: https://console.apify.com/sign-up?fpr=mamba
+
 ## Related skills
 
 - `icp-definition-builder`

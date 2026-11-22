@@ -1,0 +1,45 @@
+{
+  "skill": "linkedin-url-audit",
+  "cases": [
+    {
+      "id": "outcomes",
+      "prompt": "Audit these 800 stored LinkedIn URLs.",
+      "assert": [
+        "sorts every row into kept, replaced, or flagged"
+      ],
+      "anchors": [
+        "kept, replaced, or flagged"
+      ]
+    },
+    {
+      "id": "stale-share",
+      "prompt": "How bad is our LinkedIn column?",
+      "assert": [
+        "reports the stale share"
+      ],
+      "anchors": [
+        "stale share is reported"
+      ]
+    },
+    {
+      "id": "format",
+      "prompt": "Half the URLs have tracking parameters.",
+      "assert": [
+        "normalizes before comparing"
+      ],
+      "anchors": [
+        "Compare slugs, not strings"
+      ]
+    },
+    {
+      "id": "hand-check",
+      "prompt": "Write the fixes back to the CRM.",
+      "assert": [
+        "checks replaced rows by hand first"
+      ],
+      "anchors": [
+        "checked by hand before any write back"
+      ]
+    }
+  ]
+}

@@ -94,6 +94,12 @@ contract it checks is `scripts/output-contract.json`.
 - A submission tracker records approvals and rejections
 - A review date is set to check what actually sent traffic
 
+## Optional: run it on live data
+
+This skill works with no tool. To add live data, run Launch Directory List Builder (https://apify.com/mambalabs/launch-directory-list-builder?fpr=mamba) on your own Apify
+account to build the directory list with submission links and terms.
+No Apify account yet: https://console.apify.com/sign-up?fpr=mamba
+
 ## Related skills
 
 - `listing-page-optimizer`

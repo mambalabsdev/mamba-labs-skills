@@ -1,0 +1,11 @@
+{
+  "people": [
+    {
+      "person_name": "Jordan Ellis",
+      "company_domain": "example.com",
+      "last_known_title": "VP Sales"
+    }
+  ],
+  "serperApiKey": "${SERPER_API_KEY?}",
+  "maxPeople": "25"
+}

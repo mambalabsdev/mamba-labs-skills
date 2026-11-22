@@ -1,0 +1,79 @@
+{
+  "sku": "mmg-gtm-starter",
+  "tier": "free",
+  "title": "Mamba Labs GTM Starter",
+  "previous_title": null,
+  "one_line": "Start here. Ask what the user is trying to get done, name the two or three Mamba Labs skills and actors that do it, in order, and what each one needs.",
+  "description": "Start here. Ask what the user is trying to get done, name the two or three Mamba Labs skills and actors that do it, in order, and what each one needs. Use when someone is new to these skills, asks where to start, or describes a go to market goal without naming a tool.",
+  "paragraph": "A catalog of more than a hundred skills is only useful if the first choice is right. This skill asks three questions: the goal, what the user already has, and what they can spend. It then names the shortest path through the catalog: the skill to run first, the one after it, the Mamba Labs actor or MCP server that supplies live data, and what each needs, with links to install them.",
+  "keywords": [
+    "agency",
+    "where do i start",
+    "which skill should i use",
+    "help me set up outbound",
+    "what can these skills do",
+    "start here"
+  ],
+  "family": "agency-operations",
+  "packs": [],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "requirements": [],
+  "requirements_summary": "Needs no account, key or paid service: it works from the files, exports and answers you give it.",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true,
+        "requirements_summary": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true,
+        "requirements_summary": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

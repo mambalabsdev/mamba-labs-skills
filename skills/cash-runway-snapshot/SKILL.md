@@ -91,6 +91,12 @@ contract it checks is `scripts/output-contract.json`.
 - The late payment case is modeled on the largest single receivable
 - An action date is given, distinct from the date cash runs out
 
+## Optional: run it on live data
+
+This skill works with no tool. To add live data, run Google Sheets Import and Export (https://apify.com/mambalabs/google-sheets-import-export?fpr=mamba) on your own Apify
+account to pull the cash and spend lines from the sheet they live in.
+No Apify account yet: https://console.apify.com/sign-up?fpr=mamba
+
 ## Related skills
 
 - `month-end-narrative`

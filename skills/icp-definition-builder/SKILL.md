@@ -91,6 +91,12 @@ contract it checks is `scripts/output-contract.json`.
 - The tier rule is deterministic enough that two people sort the same list identically
 - The profile is derived from stated wins rather than from ambition
 
+## Optional: run it on live data
+
+This skill works with no tool. To add live data, run ICP Fit Scorer (https://apify.com/mambalabs/icp-account-lead-scoring-fit-scorer-0-100-for-clay?fpr=mamba) on your own Apify
+account to score a company list against the ICP this skill writes.
+No Apify account yet: https://console.apify.com/sign-up?fpr=mamba
+
 ## Related skills
 
 - `icp-fit-scoring`

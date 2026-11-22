@@ -92,6 +92,12 @@ contract it checks is `scripts/output-contract.json`.
 - The verification is a check capable of failing
 - Superseded briefs are named
 
+## Optional: run it on live data
+
+This skill works with no tool. To add live data, run Page Finder and Extractor (https://apify.com/mambalabs/page-finder-extractor?fpr=mamba) on your own Apify
+account to read the live pages a work order points at, so the order quotes them instead of guessing.
+No Apify account yet: https://console.apify.com/sign-up?fpr=mamba
+
 ## Related skills
 
 - `results-doc-verifier`

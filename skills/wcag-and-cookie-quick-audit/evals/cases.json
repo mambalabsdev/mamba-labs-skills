@@ -1,0 +1,35 @@
+{
+  "skill": "wcag-and-cookie-quick-audit",
+  "cases": [
+    {
+      "id": "pages",
+      "prompt": "Check our homepage for accessibility.",
+      "assert": [
+        "checks one page of each type"
+      ],
+      "anchors": [
+        "One page of each type was checked"
+      ]
+    },
+    {
+      "id": "consent",
+      "prompt": "Is our cookie banner working?",
+      "assert": [
+        "lists trackers that fire before consent"
+      ],
+      "anchors": [
+        "fire before consent are listed"
+      ]
+    },
+    {
+      "id": "disclaimer",
+      "prompt": "So we are compliant now?",
+      "assert": [
+        "states it is not a certified audit"
+      ],
+      "anchors": [
+        "not a certified audit"
+      ]
+    }
+  ]
+}

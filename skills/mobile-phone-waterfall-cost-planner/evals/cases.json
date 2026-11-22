@@ -1,0 +1,35 @@
+{
+  "skill": "mobile-phone-waterfall-cost-planner",
+  "cases": [
+    {
+      "id": "test",
+      "prompt": "Which phone provider is best?",
+      "assert": [
+        "measures cost per mobile found in a test"
+      ],
+      "anchors": [
+        "computed per provider from a test run"
+      ]
+    },
+    {
+      "id": "projection",
+      "prompt": "What will 3,000 contacts cost?",
+      "assert": [
+        "projects at that volume"
+      ],
+      "anchors": [
+        "projected at the stated volume"
+      ]
+    },
+    {
+      "id": "cap",
+      "prompt": "Run it on everyone.",
+      "assert": [
+        "sets a credit cap"
+      ],
+      "anchors": [
+        "hard credit cap is set"
+      ]
+    }
+  ]
+}

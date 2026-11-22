@@ -1,0 +1,94 @@
+{
+  "sku": "mcp-server-setup-check",
+  "tier": "free",
+  "title": "MCP Server Setup Check",
+  "previous_title": null,
+  "one_line": "Install an MCP server in an agent and prove it works: the package version, the tool list, one real call, and the token it needs.",
+  "description": "Install an MCP server in an agent and prove it works: the package version, the tool list, one real call, and the token it needs. Use when someone adds an MCP server, a server stopped answering, tools are missing, or an upgrade may have changed the tools.",
+  "paragraph": "An MCP server that installs without an error can still expose no tools, an older version than expected, or tools whose inputs changed. This skill checks the installed version against the registry, lists the tools the agent actually sees, makes one real call with a small input, and records the result, so the next failure starts from a known good state rather than a guess. The gtm-suite server is the worked example.",
+  "keywords": [
+    "agency",
+    "set up an mcp server",
+    "my mcp tools are missing",
+    "check this mcp server works",
+    "did the mcp upgrade change anything",
+    "mcp server not responding"
+  ],
+  "family": "agency-operations",
+  "packs": [],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [
+    "mcp-server-change-health-monitor"
+  ],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "requirements": [
+    {
+      "item": "Apify account and API token (`APIFY_TOKEN`)",
+      "needed": "required",
+      "used_for": "Runs the live data actors",
+      "cost": "A free Apify account works. Each run bills your own Apify account at the actor's Store price: mcp-server-change-health-monitor 0.005 USD per server check and 0.02 USD per package check."
+    },
+    {
+      "item": "Python 3 with root certificates",
+      "needed": "required",
+      "used_for": "The direct actor script `scripts/apify-run.py`",
+      "cost": "Free. On a python.org install on macOS, run `Install Certificates.command` once, or the script falls back to the system certificate file and says so if it cannot."
+    }
+  ],
+  "requirements_summary": "Needs an Apify token (usage billed to your Apify account); Python 3.",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true,
+        "requirements_summary": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true,
+        "requirements_summary": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

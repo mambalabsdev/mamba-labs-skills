@@ -91,6 +91,12 @@ contract it checks is `scripts/output-contract.json`.
 - Duplicate rules are identified as a placement problem
 - Each rule has a stated home
 
+## Optional: run it on live data
+
+This skill works with no tool. To add live data, run MCP Server Change and Health Monitor (https://apify.com/mambalabs/mcp-server-change-health-monitor?fpr=mamba) on your own Apify
+account to watch the MCP servers your sessions depend on, so a broken tool shows up before it becomes friction.
+No Apify account yet: https://console.apify.com/sign-up?fpr=mamba
+
 ## Related skills
 
 - `work-order-writer`

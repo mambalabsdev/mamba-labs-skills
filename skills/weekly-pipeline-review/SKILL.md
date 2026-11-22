@@ -102,6 +102,12 @@ contract it checks is `scripts/output-contract.json`.
 - The working list is cut to stated capacity
 - A close out list is produced
 
+## Optional: run it on live data
+
+This skill works with no tool. To add live data, run Job Change Tracker (https://apify.com/mambalabs/job-change-tracker?fpr=mamba) on your own Apify
+account to flag deals whose champion changed jobs.
+No Apify account yet: https://console.apify.com/sign-up?fpr=mamba
+
 ## Related skills
 
 - `lead-lifecycle-designer`

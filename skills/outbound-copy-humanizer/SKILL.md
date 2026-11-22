@@ -90,6 +90,12 @@ contract it checks is `scripts/output-contract.json`.
 - No adjective triples remain
 - The removal list names the pattern, not just the words
 
+## Optional: run it on live data
+
+This skill works with no tool. To add live data, run Funding and Press Signal Scanner (https://apify.com/mambalabs/funding-press-signal-scanner?fpr=mamba) on your own Apify
+account to find a specific recent fact about the prospect to replace a generic line.
+No Apify account yet: https://console.apify.com/sign-up?fpr=mamba
+
 ## Related skills
 
 - `cold-email-structure-checker`

@@ -1,0 +1,25 @@
+{
+  "contacts": [
+    {
+      "first_name": "Jordan",
+      "last_name": "Ellis",
+      "company_domain": "example.com"
+    }
+  ],
+  "providerKeys": {
+    "findymail": "${FINDYMAIL_API_KEY?}",
+    "prospeo": "${PROSPEO_API_KEY?}",
+    "icypeas": "${ICYPEAS_API_KEY?}",
+    "reoon": "${REOON_API_KEY?}",
+    "bounceban": "${BOUNCEBAN_API_KEY?}"
+  },
+  "_requires_any": [
+    [
+      "FINDYMAIL_API_KEY",
+      "PROSPEO_API_KEY",
+      "ICYPEAS_API_KEY"
+    ]
+  ],
+  "maxContacts": 25,
+  "maxProviderUnits": 50
+}

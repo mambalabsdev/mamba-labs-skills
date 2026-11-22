@@ -1,0 +1,7 @@
+{
+  "emails": [
+    "jordan@example.com"
+  ],
+  "provider": "zerobounce",
+  "api_key": "${EMAIL_VERIFIER_API_KEY}"
+}

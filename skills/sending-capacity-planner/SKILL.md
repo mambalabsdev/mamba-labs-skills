@@ -91,6 +91,12 @@ contract it checks is `scripts/output-contract.json`.
 - Warmup time is included before a new account counts toward capacity
 - The finish date is a date
 
+## Optional: run it on live data
+
+This skill works with no tool. To add live data, run Domain Deliverability Checker (https://apify.com/mambalabs/domain-deliverability-checker?fpr=mamba) on your own Apify
+account to confirm each sending domain is healthy before it counts as capacity.
+No Apify account yet: https://console.apify.com/sign-up?fpr=mamba
+
 ## Related skills
 
 - `domain-warmup-planner`

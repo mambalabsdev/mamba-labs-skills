@@ -1,0 +1,79 @@
+{
+  "sku": "creator-shortlist",
+  "tier": "free",
+  "title": "Creator Shortlist",
+  "previous_title": null,
+  "one_line": "Build a shortlist of creators for a brand partnership or sponsorship, judged on audience fit, recent activity and a way to reach them, not follower count alone.",
+  "description": "Build a shortlist of creators for a brand partnership or sponsorship, judged on audience fit, recent activity and a way to reach them, not follower count alone. Use when a brand wants creators to work with, an agency needs a creator list, or someone asks for influencers in a niche.",
+  "paragraph": "Follower count is the field everyone sorts by and the one that predicts the least. This skill judges creators on whether their audience matches the buyer, whether they posted in the last 30 days, whether they already do sponsorships, and whether there is a business contact route, then returns a shortlist small enough to contact this week.",
+  "keywords": [
+    "enablement",
+    "find creators for our brand",
+    "influencer shortlist",
+    "creators in this niche",
+    "who should we sponsor",
+    "creator outreach list"
+  ],
+  "family": "sales-enablement",
+  "packs": [],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "requirements": [],
+  "requirements_summary": "Needs no account, key or paid service: it works from the files, exports and answers you give it.",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "paragraph": true,
+        "requirements_summary": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": true,
+      "checks": {
+        "title": true,
+        "one_line": true,
+        "keywords": true,
+        "requirements_summary": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

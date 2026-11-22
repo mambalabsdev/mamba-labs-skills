@@ -1,0 +1,45 @@
+{
+  "skill": "mcp-server-setup-check",
+  "cases": [
+    {
+      "id": "pin",
+      "prompt": "Add the gtm-suite server to my Claude Code.",
+      "assert": [
+        "pins the version"
+      ],
+      "anchors": [
+        "version is pinned in the config"
+      ]
+    },
+    {
+      "id": "compare",
+      "prompt": "Some tools are missing.",
+      "assert": [
+        "compares the agent tool list with the published one"
+      ],
+      "anchors": [
+        "compared with the published tool list"
+      ]
+    },
+    {
+      "id": "real-call",
+      "prompt": "It installed fine, so it works.",
+      "assert": [
+        "makes one real call"
+      ],
+      "anchors": [
+        "One real call was made"
+      ]
+    },
+    {
+      "id": "token",
+      "prompt": "Put my key in the config file.",
+      "assert": [
+        "keeps the token in the environment"
+      ],
+      "anchors": [
+        "read from the environment, not stored in the config"
+      ]
+    }
+  ]
+}

@@ -10,7 +10,7 @@
   "plugins": [
     {
       "name": "mamba-labs-skills",
-      "description": "Free Mamba Labs agent skills for signal based GTM: ICP, outbound copy, deliverability, Clay, CRM, LinkedIn, SEO and agency operations. 56 skills, each with an output check and an approval stop before any send or write.",
+      "description": "Free Mamba Labs agent skills for signal based GTM: ICP, outbound copy, deliverability, Clay, CRM, LinkedIn, SEO and agency operations. 71 skills, each with an output check and an approval stop before any send or write.",
       "source": "./",
       "strict": false,
       "version": "2.1.0",
@@ -36,6 +36,8 @@
       "skills": [
         "./skills/agent-readability-audit",
         "./skills/ai-adoption-signal-reader",
+        "./skills/ai-answer-visibility-check",
+        "./skills/apify-actor-picker",
         "./skills/bounce-and-catchall-policy",
         "./skills/brand-context-builder",
         "./skills/cash-runway-snapshot",
@@ -50,11 +52,13 @@
         "./skills/comparison-page-builder",
         "./skills/contact-classification",
         "./skills/content-brief-builder",
+        "./skills/creator-shortlist",
         "./skills/crm-hygiene-sweep",
         "./skills/customer-research-interview",
         "./skills/directory-submission-plan",
         "./skills/domain-health-precheck",
         "./skills/domain-warmup-planner",
+        "./skills/email-waterfall-on-your-keys",
         "./skills/event-presence-prospecting",
         "./skills/firmographic-enrichment",
         "./skills/friction-log-to-rules",
@@ -68,10 +72,17 @@
         "./skills/linkedin-comment-strategy",
         "./skills/linkedin-post-writer",
         "./skills/linkedin-profile-optimizer",
+        "./skills/linkedin-url-audit",
         "./skills/linkedin-url-resolution",
+        "./skills/local-lead-list",
+        "./skills/lookalike-account-list",
         "./skills/mamba-gtm-router",
+        "./skills/mcp-server-setup-check",
         "./skills/merge-variable-linter",
+        "./skills/mmg-gtm-starter",
+        "./skills/mobile-phone-waterfall-cost-planner",
         "./skills/monday-morning-brief",
+        "./skills/newsletter-sponsor-prospecting",
         "./skills/objection-handling-library",
         "./skills/outbound-copy-humanizer",
         "./skills/outbound-stack-fingerprint",
@@ -80,13 +91,17 @@
         "./skills/positioning-statement",
         "./skills/public-award-prospecting",
         "./skills/publishing-cadence-reader",
+        "./skills/recent-job-changer-list",
+        "./skills/reddit-and-threads-demand-finder",
         "./skills/results-doc-verifier",
+        "./skills/rfp-and-tender-watch",
         "./skills/sales-one-pager",
         "./skills/sending-capacity-planner",
         "./skills/sequencer-campaign-config",
         "./skills/subject-line-lab",
         "./skills/tech-stack-signal-reader",
         "./skills/unsubscribe-compliance-check",
+        "./skills/wcag-and-cookie-quick-audit",
         "./skills/weekly-pipeline-review",
         "./skills/work-order-writer",
         "./skills/workplace-program-signal"
@@ -96,7 +111,7 @@
           "command": "npx",
           "args": [
             "-y",
-            "@mambalabsdev/mcp-gtm-suite@1.12.0"
+            "@mambalabsdev/mcp-gtm-suite@1.14.9"
           ],
           "env": {
             "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
@@ -117,7 +132,7 @@
         "APIFY_TOKEN": {
           "type": "string",
           "title": "Apify API token",
-          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Get one at https://console.apify.com/account/integrations",
+          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Create a free account at https://console.apify.com/sign-up?fpr=mamba, then copy the token from https://console.apify.com/settings/integrations",
           "sensitive": true,
           "required": true
         }
@@ -146,7 +161,7 @@
           "command": "npx",
           "args": [
             "-y",
-            "@mambalabsdev/mcp-gtm-suite@1.12.0"
+            "@mambalabsdev/mcp-gtm-suite@1.14.9"
           ],
           "env": {
             "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
@@ -157,7 +172,7 @@
         "APIFY_TOKEN": {
           "type": "string",
           "title": "Apify API token",
-          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Get one at https://console.apify.com/account/integrations",
+          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Create a free account at https://console.apify.com/sign-up?fpr=mamba, then copy the token from https://console.apify.com/settings/integrations",
           "sensitive": true,
           "required": true
         }
@@ -186,7 +201,7 @@
           "command": "npx",
           "args": [
             "-y",
-            "@mambalabsdev/mcp-gtm-suite@1.12.0"
+            "@mambalabsdev/mcp-gtm-suite@1.14.9"
           ],
           "env": {
             "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
@@ -197,11 +212,49 @@
         "APIFY_TOKEN": {
           "type": "string",
           "title": "Apify API token",
-          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Get one at https://console.apify.com/account/integrations",
+          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Create a free account at https://console.apify.com/sign-up?fpr=mamba, then copy the token from https://console.apify.com/settings/integrations",
           "sensitive": true,
           "required": true
         }
       }
+    },
+    {
+      "name": "ai-answer-visibility-check",
+      "description": "Check whether ChatGPT, Perplexity and other AI answer engines name your brand when a buyer asks about your category, which competitors they name instead, and which sources they cite. Use when someone asks if AI search recommends them, wants an AI visibility baseline, or needs to know which pages to improve for AI answers.",
+      "source": "./",
+      "strict": false,
+      "version": "2.1.0",
+      "category": "seo-content",
+      "keywords": [
+        "seo and content",
+        "does chatgpt recommend us",
+        "ai search visibility",
+        "are we in perplexity answers",
+        "which competitors does ai name",
+        "geo baseline"
+      ],
+      "skills": [
+        "./skills/ai-answer-visibility-check"
+      ]
+    },
+    {
+      "name": "apify-actor-picker",
+      "description": "Choose the right Apify actor for a data job by reading the input schema, the output fields, the pricing and the run history before the first run. Use when someone asks which scraper or actor to use, wants to compare actors, or is about to run an actor they have not used before.",
+      "source": "./",
+      "strict": false,
+      "version": "2.1.0",
+      "category": "agency-operations",
+      "keywords": [
+        "agency",
+        "which apify actor should i use",
+        "compare these scrapers",
+        "find an actor for this data",
+        "is this actor any good",
+        "pick a scraper"
+      ],
+      "skills": [
+        "./skills/apify-actor-picker"
+      ]
     },
     {
       "name": "bounce-and-catchall-policy",
@@ -414,7 +467,7 @@
           "command": "npx",
           "args": [
             "-y",
-            "@mambalabsdev/mcp-gtm-suite@1.12.0"
+            "@mambalabsdev/mcp-gtm-suite@1.14.9"
           ],
           "env": {
             "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
@@ -425,7 +478,7 @@
         "APIFY_TOKEN": {
           "type": "string",
           "title": "Apify API token",
-          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Get one at https://console.apify.com/account/integrations",
+          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Create a free account at https://console.apify.com/sign-up?fpr=mamba, then copy the token from https://console.apify.com/settings/integrations",
           "sensitive": true,
           "required": true
         }
@@ -473,7 +526,7 @@
           "command": "npx",
           "args": [
             "-y",
-            "@mambalabsdev/mcp-gtm-suite@1.12.0"
+            "@mambalabsdev/mcp-gtm-suite@1.14.9"
           ],
           "env": {
             "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
@@ -484,7 +537,7 @@
         "APIFY_TOKEN": {
           "type": "string",
           "title": "Apify API token",
-          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Get one at https://console.apify.com/account/integrations",
+          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Create a free account at https://console.apify.com/sign-up?fpr=mamba, then copy the token from https://console.apify.com/settings/integrations",
           "sensitive": true,
           "required": true
         }
@@ -507,6 +560,25 @@
       ],
       "skills": [
         "./skills/content-brief-builder"
+      ]
+    },
+    {
+      "name": "creator-shortlist",
+      "description": "Build a shortlist of creators for a brand partnership or sponsorship, judged on audience fit, recent activity and a way to reach them, not follower count alone. Use when a brand wants creators to work with, an agency needs a creator list, or someone asks for influencers in a niche.",
+      "source": "./",
+      "strict": false,
+      "version": "2.1.0",
+      "category": "sales-enablement",
+      "keywords": [
+        "enablement",
+        "find creators for our brand",
+        "influencer shortlist",
+        "creators in this niche",
+        "who should we sponsor",
+        "creator outreach list"
+      ],
+      "skills": [
+        "./skills/creator-shortlist"
       ]
     },
     {
@@ -600,7 +672,7 @@
         "APIFY_TOKEN": {
           "type": "string",
           "title": "Apify API token",
-          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Get one at https://console.apify.com/account/integrations",
+          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Create a free account at https://console.apify.com/sign-up?fpr=mamba, then copy the token from https://console.apify.com/settings/integrations",
           "sensitive": true,
           "required": true
         }
@@ -626,6 +698,25 @@
       ]
     },
     {
+      "name": "email-waterfall-on-your-keys",
+      "description": "Run a work email waterfall across your own finder accounts, verify every address it returns, and report the find rate and the cost per verified email. Use when someone wants to find work emails without platform credits, compare finder providers, or replace a credit heavy enrichment column.",
+      "source": "./",
+      "strict": false,
+      "version": "2.1.0",
+      "category": "identity-enrichment",
+      "keywords": [
+        "identity",
+        "find work emails with my own keys",
+        "email waterfall",
+        "cheaper than clay credits for emails",
+        "compare email finders",
+        "verify the emails we found"
+      ],
+      "skills": [
+        "./skills/email-waterfall-on-your-keys"
+      ]
+    },
+    {
       "name": "event-presence-prospecting",
       "description": "Find which conferences a company sponsors, exhibits at, or speaks at, and use that as a budget and audience signal. Use when someone wants event based prospecting, wants to know if a prospect will be at a show, or is planning outreach around a conference.",
       "source": "./",
@@ -648,7 +739,7 @@
           "command": "npx",
           "args": [
             "-y",
-            "@mambalabsdev/mcp-gtm-suite@1.12.0"
+            "@mambalabsdev/mcp-gtm-suite@1.14.9"
           ],
           "env": {
             "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
@@ -659,7 +750,7 @@
         "APIFY_TOKEN": {
           "type": "string",
           "title": "Apify API token",
-          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Get one at https://console.apify.com/account/integrations",
+          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Create a free account at https://console.apify.com/sign-up?fpr=mamba, then copy the token from https://console.apify.com/settings/integrations",
           "sensitive": true,
           "required": true
         }
@@ -688,7 +779,7 @@
           "command": "npx",
           "args": [
             "-y",
-            "@mambalabsdev/mcp-gtm-suite@1.12.0"
+            "@mambalabsdev/mcp-gtm-suite@1.14.9"
           ],
           "env": {
             "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
@@ -699,7 +790,7 @@
         "APIFY_TOKEN": {
           "type": "string",
           "title": "Apify API token",
-          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Get one at https://console.apify.com/account/integrations",
+          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Create a free account at https://console.apify.com/sign-up?fpr=mamba, then copy the token from https://console.apify.com/settings/integrations",
           "sensitive": true,
           "required": true
         }
@@ -765,7 +856,7 @@
           "command": "npx",
           "args": [
             "-y",
-            "@mambalabsdev/mcp-gtm-suite@1.12.0"
+            "@mambalabsdev/mcp-gtm-suite@1.14.9"
           ],
           "env": {
             "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
@@ -776,7 +867,7 @@
         "APIFY_TOKEN": {
           "type": "string",
           "title": "Apify API token",
-          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Get one at https://console.apify.com/account/integrations",
+          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Create a free account at https://console.apify.com/sign-up?fpr=mamba, then copy the token from https://console.apify.com/settings/integrations",
           "sensitive": true,
           "required": true
         }
@@ -842,7 +933,7 @@
           "command": "npx",
           "args": [
             "-y",
-            "@mambalabsdev/mcp-gtm-suite@1.12.0"
+            "@mambalabsdev/mcp-gtm-suite@1.14.9"
           ],
           "env": {
             "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
@@ -853,7 +944,7 @@
         "APIFY_TOKEN": {
           "type": "string",
           "title": "Apify API token",
-          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Get one at https://console.apify.com/account/integrations",
+          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Create a free account at https://console.apify.com/sign-up?fpr=mamba, then copy the token from https://console.apify.com/settings/integrations",
           "sensitive": true,
           "required": true
         }
@@ -901,7 +992,7 @@
           "command": "npx",
           "args": [
             "-y",
-            "@mambalabsdev/mcp-gtm-suite@1.12.0"
+            "@mambalabsdev/mcp-gtm-suite@1.14.9"
           ],
           "env": {
             "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
@@ -912,7 +1003,7 @@
         "APIFY_TOKEN": {
           "type": "string",
           "title": "Apify API token",
-          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Get one at https://console.apify.com/account/integrations",
+          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Create a free account at https://console.apify.com/sign-up?fpr=mamba, then copy the token from https://console.apify.com/settings/integrations",
           "sensitive": true,
           "required": true
         }
@@ -976,6 +1067,45 @@
       ]
     },
     {
+      "name": "linkedin-url-audit",
+      "description": "Recheck the company profile URLs already stored in a CRM or table, and find the ones that point at the wrong company, a dead page, or nothing. Use when a profile URL column was filled months ago, when enrichment matched on name alone, or before a LinkedIn campaign pulls from stored URLs.",
+      "source": "./",
+      "strict": false,
+      "version": "2.1.0",
+      "category": "identity-enrichment",
+      "keywords": [
+        "identity",
+        "audit my linkedin urls",
+        "recheck the linkedin column",
+        "linkedin url hygiene",
+        "stale company profile urls"
+      ],
+      "skills": [
+        "./skills/linkedin-url-audit"
+      ],
+      "mcpServers": {
+        "mamba-gtm-suite": {
+          "command": "npx",
+          "args": [
+            "-y",
+            "@mambalabsdev/mcp-gtm-suite@1.14.9"
+          ],
+          "env": {
+            "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
+          }
+        }
+      },
+      "userConfig": {
+        "APIFY_TOKEN": {
+          "type": "string",
+          "title": "Apify API token",
+          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Create a free account at https://console.apify.com/sign-up?fpr=mamba, then copy the token from https://console.apify.com/settings/integrations",
+          "sensitive": true,
+          "required": true
+        }
+      }
+    },
+    {
       "name": "linkedin-url-resolution",
       "description": "Turn a list of company domains into company profile URLs, and fill the gaps a native enrichment leaves behind. Use when a profile URL column has holes, when someone needs profile URLs from domains, or when building a social enrichment pipeline.",
       "source": "./",
@@ -998,7 +1128,7 @@
           "command": "npx",
           "args": [
             "-y",
-            "@mambalabsdev/mcp-gtm-suite@1.12.0"
+            "@mambalabsdev/mcp-gtm-suite@1.14.9"
           ],
           "env": {
             "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
@@ -1009,7 +1139,66 @@
         "APIFY_TOKEN": {
           "type": "string",
           "title": "Apify API token",
-          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Get one at https://console.apify.com/account/integrations",
+          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Create a free account at https://console.apify.com/sign-up?fpr=mamba, then copy the token from https://console.apify.com/settings/integrations",
+          "sensitive": true,
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "local-lead-list",
+      "description": "Build a clean list of local businesses for a category and area, with the fields a caller or emailer needs, duplicates removed and closed businesses dropped. Use when someone sells to local businesses, needs a list of plumbers, dentists or restaurants in a city, or wants a map based prospect list.",
+      "source": "./",
+      "strict": false,
+      "version": "2.1.0",
+      "category": "signal-research",
+      "keywords": [
+        "signals",
+        "list of local businesses",
+        "find plumbers in denver",
+        "local leads from google maps",
+        "map based prospect list",
+        "small business list for my city"
+      ],
+      "skills": [
+        "./skills/local-lead-list"
+      ]
+    },
+    {
+      "name": "lookalike-account-list",
+      "description": "Turn your best customers into a list of companies that look like them, scored on why they match, with firmographics filled and existing customers removed. Use when someone wants more accounts like their best ones, a seed based target list, or lookalike audiences for outbound.",
+      "source": "./",
+      "strict": false,
+      "version": "2.1.0",
+      "category": "signal-research",
+      "keywords": [
+        "signals",
+        "find companies like my best customers",
+        "lookalike accounts",
+        "more accounts like these",
+        "seed list to target list",
+        "similar companies"
+      ],
+      "skills": [
+        "./skills/lookalike-account-list"
+      ],
+      "mcpServers": {
+        "mamba-gtm-suite": {
+          "command": "npx",
+          "args": [
+            "-y",
+            "@mambalabsdev/mcp-gtm-suite@1.14.9"
+          ],
+          "env": {
+            "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
+          }
+        }
+      },
+      "userConfig": {
+        "APIFY_TOKEN": {
+          "type": "string",
+          "title": "Apify API token",
+          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Create a free account at https://console.apify.com/sign-up?fpr=mamba, then copy the token from https://console.apify.com/settings/integrations",
           "sensitive": true,
           "required": true
         }
@@ -1035,6 +1224,25 @@
       ]
     },
     {
+      "name": "mcp-server-setup-check",
+      "description": "Install an MCP server in an agent and prove it works: the package version, the tool list, one real call, and the token it needs. Use when someone adds an MCP server, a server stopped answering, tools are missing, or an upgrade may have changed the tools.",
+      "source": "./",
+      "strict": false,
+      "version": "2.1.0",
+      "category": "agency-operations",
+      "keywords": [
+        "agency",
+        "set up an mcp server",
+        "my mcp tools are missing",
+        "check this mcp server works",
+        "did the mcp upgrade change anything",
+        "mcp server not responding"
+      ],
+      "skills": [
+        "./skills/mcp-server-setup-check"
+      ]
+    },
+    {
       "name": "merge-variable-linter",
       "description": "Check that every merge variable in a sequence resolves against the fields actually present on the rows, before the campaign sends. Use when someone is about to launch, has seen blank gaps in a sent email, or wants their personalization tokens verified.",
       "source": "./",
@@ -1054,6 +1262,44 @@
       ]
     },
     {
+      "name": "mmg-gtm-starter",
+      "description": "Start here. Ask what the user is trying to get done, name the two or three Mamba Labs skills and actors that do it, in order, and what each one needs. Use when someone is new to these skills, asks where to start, or describes a go to market goal without naming a tool.",
+      "source": "./",
+      "strict": false,
+      "version": "2.1.0",
+      "category": "agency-operations",
+      "keywords": [
+        "agency",
+        "where do i start",
+        "which skill should i use",
+        "help me set up outbound",
+        "what can these skills do",
+        "start here"
+      ],
+      "skills": [
+        "./skills/mmg-gtm-starter"
+      ]
+    },
+    {
+      "name": "mobile-phone-waterfall-cost-planner",
+      "description": "Plan and price a mobile number waterfall before it runs: the provider order, the expected find rate, the cost per mobile found, and a cap that stops overspend. Use when someone wants mobile numbers for a call list, compares phone data providers, or needs to know what a phone enrichment will cost.",
+      "source": "./",
+      "strict": false,
+      "version": "2.1.0",
+      "category": "identity-enrichment",
+      "keywords": [
+        "identity",
+        "how much will mobile numbers cost",
+        "phone number waterfall",
+        "find mobile numbers",
+        "compare phone data providers",
+        "build a call list"
+      ],
+      "skills": [
+        "./skills/mobile-phone-waterfall-cost-planner"
+      ]
+    },
+    {
       "name": "monday-morning-brief",
       "description": "Produce the weekly operating brief: what moved, what is at risk, and the three things that need a decision. Use when someone wants a Monday update, a weekly business summary, or a recurring brief across their tools.",
       "source": "./",
@@ -1070,6 +1316,25 @@
       ],
       "skills": [
         "./skills/monday-morning-brief"
+      ]
+    },
+    {
+      "name": "newsletter-sponsor-prospecting",
+      "description": "Find the brands that already pay to sponsor newsletters, podcasts and creators in a niche, and turn their sponsorship history into a prospect list. Use when selling sponsorships, an audience, or marketing services to brands that already spend on creator and newsletter ads.",
+      "source": "./",
+      "strict": false,
+      "version": "2.1.0",
+      "category": "signal-research",
+      "keywords": [
+        "signals",
+        "who sponsors newsletters in my niche",
+        "find sponsors for my newsletter",
+        "brands that buy creator sponsorships",
+        "sponsor prospect list",
+        "podcast sponsor leads"
+      ],
+      "skills": [
+        "./skills/newsletter-sponsor-prospecting"
       ]
     },
     {
@@ -1133,7 +1398,7 @@
           "command": "npx",
           "args": [
             "-y",
-            "@mambalabsdev/mcp-gtm-suite@1.12.0"
+            "@mambalabsdev/mcp-gtm-suite@1.14.9"
           ],
           "env": {
             "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
@@ -1144,7 +1409,7 @@
         "APIFY_TOKEN": {
           "type": "string",
           "title": "Apify API token",
-          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Get one at https://console.apify.com/account/integrations",
+          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Create a free account at https://console.apify.com/sign-up?fpr=mamba, then copy the token from https://console.apify.com/settings/integrations",
           "sensitive": true,
           "required": true
         }
@@ -1173,7 +1438,7 @@
           "command": "npx",
           "args": [
             "-y",
-            "@mambalabsdev/mcp-gtm-suite@1.12.0"
+            "@mambalabsdev/mcp-gtm-suite@1.14.9"
           ],
           "env": {
             "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
@@ -1184,7 +1449,7 @@
         "APIFY_TOKEN": {
           "type": "string",
           "title": "Apify API token",
-          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Get one at https://console.apify.com/account/integrations",
+          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Create a free account at https://console.apify.com/sign-up?fpr=mamba, then copy the token from https://console.apify.com/settings/integrations",
           "sensitive": true,
           "required": true
         }
@@ -1251,7 +1516,7 @@
           "command": "npx",
           "args": [
             "-y",
-            "@mambalabsdev/mcp-gtm-suite@1.12.0"
+            "@mambalabsdev/mcp-gtm-suite@1.14.9"
           ],
           "env": {
             "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
@@ -1262,7 +1527,7 @@
         "APIFY_TOKEN": {
           "type": "string",
           "title": "Apify API token",
-          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Get one at https://console.apify.com/account/integrations",
+          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Create a free account at https://console.apify.com/sign-up?fpr=mamba, then copy the token from https://console.apify.com/settings/integrations",
           "sensitive": true,
           "required": true
         }
@@ -1291,7 +1556,7 @@
           "command": "npx",
           "args": [
             "-y",
-            "@mambalabsdev/mcp-gtm-suite@1.12.0"
+            "@mambalabsdev/mcp-gtm-suite@1.14.9"
           ],
           "env": {
             "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
@@ -1302,11 +1567,48 @@
         "APIFY_TOKEN": {
           "type": "string",
           "title": "Apify API token",
-          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Get one at https://console.apify.com/account/integrations",
+          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Create a free account at https://console.apify.com/sign-up?fpr=mamba, then copy the token from https://console.apify.com/settings/integrations",
           "sensitive": true,
           "required": true
         }
       }
+    },
+    {
+      "name": "recent-job-changer-list",
+      "description": "Build a list of people who started a new role in the last few months at target accounts, or who left a customer for a new company, and give each one a reason to reach out now. Use when someone wants new hire outreach, champion tracking, or a list of buyers in their first 90 days.",
+      "source": "./",
+      "strict": false,
+      "version": "2.1.0",
+      "category": "signal-research",
+      "keywords": [
+        "signals",
+        "who just changed jobs",
+        "new hires at my target accounts",
+        "track my champions",
+        "people in their first 90 days",
+        "job change outreach"
+      ],
+      "skills": [
+        "./skills/recent-job-changer-list"
+      ]
+    },
+    {
+      "name": "reddit-and-threads-demand-finder",
+      "description": "Find posts where people describe the problem you solve or ask for a tool like yours, and sort them into buyer questions, complaints and content ideas. Use when someone wants to find demand on Reddit or Threads, research buyer language, or find threads worth answering.",
+      "source": "./",
+      "strict": false,
+      "version": "2.1.0",
+      "category": "seo-content",
+      "keywords": [
+        "seo and content",
+        "find people asking for a tool like ours",
+        "reddit demand research",
+        "buyer language from reddit",
+        "threads worth replying to"
+      ],
+      "skills": [
+        "./skills/reddit-and-threads-demand-finder"
+      ]
     },
     {
       "name": "results-doc-verifier",
@@ -1325,6 +1627,25 @@
       ],
       "skills": [
         "./skills/results-doc-verifier"
+      ]
+    },
+    {
+      "name": "rfp-and-tender-watch",
+      "description": "Watch public tender and RFP portals for open notices that match what you sell, and send a weekly shortlist with deadlines and a bid or no bid call. Use when someone sells to the public sector, wants to find RFPs, or needs a tender watch that does not flood them with noise.",
+      "source": "./",
+      "strict": false,
+      "version": "2.1.0",
+      "category": "signal-research",
+      "keywords": [
+        "signals",
+        "find rfps for us",
+        "tender watch",
+        "public sector bids",
+        "government contracts we could win",
+        "weekly rfp shortlist"
+      ],
+      "skills": [
+        "./skills/rfp-and-tender-watch"
       ]
     },
     {
@@ -1388,7 +1709,7 @@
           "command": "npx",
           "args": [
             "-y",
-            "@mambalabsdev/mcp-gtm-suite@1.12.0"
+            "@mambalabsdev/mcp-gtm-suite@1.14.9"
           ],
           "env": {
             "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
@@ -1399,7 +1720,7 @@
         "APIFY_TOKEN": {
           "type": "string",
           "title": "Apify API token",
-          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Get one at https://console.apify.com/account/integrations",
+          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Create a free account at https://console.apify.com/sign-up?fpr=mamba, then copy the token from https://console.apify.com/settings/integrations",
           "sensitive": true,
           "required": true
         }
@@ -1447,7 +1768,7 @@
           "command": "npx",
           "args": [
             "-y",
-            "@mambalabsdev/mcp-gtm-suite@1.12.0"
+            "@mambalabsdev/mcp-gtm-suite@1.14.9"
           ],
           "env": {
             "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
@@ -1458,7 +1779,7 @@
         "APIFY_TOKEN": {
           "type": "string",
           "title": "Apify API token",
-          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Get one at https://console.apify.com/account/integrations",
+          "description": "Your Apify API token. The skills run Mamba Labs actors on your own Apify account. Create a free account at https://console.apify.com/sign-up?fpr=mamba, then copy the token from https://console.apify.com/settings/integrations",
           "sensitive": true,
           "required": true
         }
@@ -1481,6 +1802,25 @@
       ],
       "skills": [
         "./skills/unsubscribe-compliance-check"
+      ]
+    },
+    {
+      "name": "wcag-and-cookie-quick-audit",
+      "description": "Run a quick accessibility and cookie consent check on a website, rank the issues by risk, and give a fix list a developer can work through. Use when someone asks if their site is accessible, wants a WCAG check, worries about cookie consent, or needs a pre launch compliance pass.",
+      "source": "./",
+      "strict": false,
+      "version": "2.1.0",
+      "category": "seo-content",
+      "keywords": [
+        "seo and content",
+        "is our site accessible",
+        "wcag check",
+        "cookie consent audit",
+        "does tracking fire before consent",
+        "pre launch compliance check"
+      ],
+      "skills": [
+        "./skills/wcag-and-cookie-quick-audit"
       ]
     },
     {

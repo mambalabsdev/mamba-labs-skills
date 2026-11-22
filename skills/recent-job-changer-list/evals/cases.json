@@ -1,0 +1,45 @@
+{
+  "skill": "recent-job-changer-list",
+  "cases": [
+    {
+      "id": "dated",
+      "prompt": "Find people who changed jobs at these 50 accounts.",
+      "assert": [
+        "keeps only dated moves with a source"
+      ],
+      "anchors": [
+        "carries a date and a source"
+      ]
+    },
+    {
+      "id": "undated",
+      "prompt": "Some profiles show a new title but no start date.",
+      "assert": [
+        "drops and counts them"
+      ],
+      "anchors": [
+        "Undated moves are dropped and counted"
+      ]
+    },
+    {
+      "id": "champion-fit",
+      "prompt": "Our best champion moved to a new company.",
+      "assert": [
+        "checks the new company against the ICP"
+      ],
+      "anchors": [
+        "checked against the ICP"
+      ]
+    },
+    {
+      "id": "two-lists",
+      "prompt": "Give me one list of everyone.",
+      "assert": [
+        "keeps new hires and moved contacts separate"
+      ],
+      "anchors": [
+        "two separate lists"
+      ]
+    }
+  ]
+}

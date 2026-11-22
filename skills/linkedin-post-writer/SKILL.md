@@ -95,6 +95,12 @@ contract it checks is `scripts/output-contract.json`.
 - The post does not end on an engagement question
 - Voice markers from the samples are applied and named
 
+## Optional: run it on live data
+
+This skill works with no tool. To add live data, run Threads Keyword Search (https://apify.com/mambalabs/threads-keyword-search?fpr=mamba) on your own Apify
+account to find what people are saying about the topic this week before you write.
+No Apify account yet: https://console.apify.com/sign-up?fpr=mamba
+
 ## Related skills
 
 - `linkedin-comment-strategy`

@@ -1,0 +1,7 @@
+{
+  "mode": "newsletter",
+  "newsletter_urls": [
+    "https://www.example.com"
+  ],
+  "issues_to_scan": "10"
+}

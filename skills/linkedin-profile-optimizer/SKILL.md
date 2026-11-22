@@ -93,6 +93,12 @@ contract it checks is `scripts/output-contract.json`.
 - Proof appears above the fold
 - The result is checked on a phone viewport
 
+## Optional: run it on live data
+
+This skill works with no tool. To add live data, run Reddit Search Thread Scraper (https://apify.com/mambalabs/reddit-search-thread-scraper?fpr=mamba) on your own Apify
+account to find the words buyers use about the problem, for the headline and About section.
+No Apify account yet: https://console.apify.com/sign-up?fpr=mamba
+
 ## Related skills
 
 - `linkedin-post-writer`

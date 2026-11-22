@@ -94,6 +94,12 @@ contract it checks is `scripts/output-contract.json`.
 - No praise opener and no pitch appears
 - Length stays within three sentences
 
+## Optional: run it on live data
+
+This skill works with no tool. To add live data, run Multi Platform Social Posts and Comments (https://apify.com/mambalabs/multi-platform-social-posts-comments?fpr=mamba) on your own Apify
+account to pull recent posts and comments on a topic, to pick which ones to comment on.
+No Apify account yet: https://console.apify.com/sign-up?fpr=mamba
+
 ## Related skills
 
 - `linkedin-post-writer`

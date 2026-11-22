@@ -1,0 +1,108 @@
+{
+  "sku": "recent-job-changer-list",
+  "tier": "free",
+  "title": "Recent Job Changer List",
+  "previous_title": null,
+  "one_line": "Build a list of people who started a new role in the last few months at target accounts, or who left a customer for a new company, and give each one a reason to reach out now.",
+  "description": "Build a list of people who started a new role in the last few months at target accounts, or who left a customer for a new company, and give each one a reason to reach out now. Use when someone wants new hire outreach, champion tracking, or a list of buyers in their first 90 days.",
+  "paragraph": "A person in the first months of a new role is reviewing tools, budgets and vendors, and a champion who moved companies brings a warm relationship to a new account. This skill finds both groups, dates each move from a source, and drops the moves it cannot date, because an undated move reads as fresh when it may be two years old.",
+  "keywords": [
+    "signals",
+    "who just changed jobs",
+    "new hires at my target accounts",
+    "track my champions",
+    "people in their first 90 days",
+    "job change outreach"
+  ],
+  "family": "signal-research",
+  "packs": [],
+  "price_usd": 0,
+  "logo_png": "listing/logo.png",
+  "logo_svg": "listing/logo.svg",
+  "example_output": null,
+  "mcp_servers": [],
+  "mcp_tools": [],
+  "direct_actors": [
+    "new-hire-finder",
+    "job-change-tracker",
+    "people-finder"
+  ],
+  "approval_stop": null,
+  "validator": "scripts/check-output.py",
+  "version": "2.1.0",
+  "requirements": [
+    {
+      "item": "Apify account and API token (`APIFY_TOKEN`)",
+      "needed": "required",
+      "used_for": "Runs the live data actors",
+      "cost": "A free Apify account works. Each run bills your own Apify account at the actor's Store price: new-hire-finder 0.085 USD per new hire found; job-change-tracker 0.025 USD per person read and 0.006 USD per profile resolved; people-finder 0.02 USD per company searched, 0.02 USD per person, 0.04 USD per email found and 0.015 USD per email verified."
+    },
+    {
+      "item": "Python 3 with root certificates",
+      "needed": "required",
+      "used_for": "The direct actor script `scripts/apify-run.py`",
+      "cost": "Free. On a python.org install on macOS, run `Install Certificates.command` once, or the script falls back to the system certificate file and says so if it cannot."
+    },
+    {
+      "item": "Serper API key (`SERPER_API_KEY`, serper.dev)",
+      "needed": "required",
+      "used_for": "The people search inside people-finder, and a wider web search in the other two actors",
+      "cost": "Billed by Serper on your own account. This skill adds no markup."
+    },
+    {
+      "item": "Prospeo API key (`PROSPEO_API_KEY`, prospeo.io)",
+      "needed": "optional",
+      "used_for": "A second source for recent hires",
+      "cost": "Billed by Prospeo on your own plan."
+    }
+  ],
+  "requirements_summary": "Needs an Apify token (usage billed to your Apify account); Python 3; Serper API key. Optional: Prospeo API key.",
+  "channels": {
+    "agent_skills_spec": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "agentskills.io specification"
+    },
+    "claude_plugin": {
+      "pass": true,
+      "checks": {
+        "name": true,
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "Claude plugin directory rules"
+    },
+    "mcprush": {
+      "pass": false,
+      "checks": {
+        "title": true,
+        "one_line": false,
+        "paragraph": true,
+        "requirements_summary": true
+      },
+      "rules_source": "mcprush skill listing form, read by Lane D"
+    },
+    "agensi": {
+      "pass": false,
+      "checks": {
+        "title": true,
+        "one_line": false,
+        "keywords": true,
+        "requirements_summary": true
+      },
+      "rules_source": "conservative defaults; Agensi publishes no documented limit"
+    },
+    "smithery_skills": {
+      "pass": true,
+      "checks": {
+        "description": true,
+        "requirements_summary": true
+      },
+      "rules_source": "Smithery skill reads SKILL.md frontmatter"
+    }
+  }
+}

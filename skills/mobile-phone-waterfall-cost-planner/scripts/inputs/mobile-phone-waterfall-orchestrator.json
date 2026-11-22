@@ -1,0 +1,22 @@
+{
+  "mode": "find",
+  "contacts": [
+    {
+      "contact_id": "example-1",
+      "full_name": "Jordan Ellis",
+      "company_domain": "example.com"
+    }
+  ],
+  "prospeo_api_key": "${PROSPEO_API_KEY?}",
+  "lusha_api_key": "${LUSHA_API_KEY?}",
+  "contactout_api_key": "${CONTACTOUT_API_KEY?}",
+  "_requires_any": [
+    [
+      "PROSPEO_API_KEY",
+      "LUSHA_API_KEY",
+      "CONTACTOUT_API_KEY"
+    ]
+  ],
+  "max_contacts": 10,
+  "max_provider_credits": 20
+}

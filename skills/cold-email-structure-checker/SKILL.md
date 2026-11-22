@@ -92,6 +92,12 @@ contract it checks is `scripts/output-contract.json`.
 - Exactly one call to action survives in the rewrite
 - Each of the seven checks gets an explicit pass or fail, never a maybe
 
+## Optional: run it on live data
+
+This skill works with no tool. To add live data, run GTM Hiring Signal Scraper (https://apify.com/mambalabs/gtm-hiring-signal-scraper?fpr=mamba) on your own Apify
+account to find a real signal for the first line the checker asks for.
+No Apify account yet: https://console.apify.com/sign-up?fpr=mamba
+
 ## Related skills
 
 - `subject-line-lab`
